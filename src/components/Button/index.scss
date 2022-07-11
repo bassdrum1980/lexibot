@@ -1,0 +1,11 @@
+@import 'styles/variables.scss';
+
+button {
+  display: inline-block;
+  color: $black;
+
+  &--isDisabled {
+    opacity: 0.5;
+    pointer-events: none; // stops all events from occuring
+  }
+}
