@@ -9,7 +9,7 @@ const App = () => {
     <div>
       <Button className={['xl', 'active']} ref={btnRef}>Click me</Button>
     </div>
-  )
+  );
 };
 
 export default App;
