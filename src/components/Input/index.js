@@ -23,7 +23,7 @@ const defaultProps = {
 };
 
 const Input = ({
-  placeholder, value, name, onChange, className, isDisabled, isValid, ...rest
+  placeholder, value, name, onChange, className, isDisabled, isValid, style, ...rest
 }) => (
   <input
     type="text"
@@ -36,6 +36,7 @@ const Input = ({
       Array.isArray(className) ? className.join(' ') : className,
       { 'input--disabled': isDisabled },
       { 'input--invalid': !isValid },
+      `input--${style}`,
     )}
     disabled={isDisabled}
     {...rest}
