@@ -30,6 +30,7 @@ const Input = ({
     placeholder={placeholder}
     value={value}
     name={name}
+    id={name}
     onChange={onChange}
     className={classnames(
       'input',

@@ -10,8 +10,8 @@ const App = () => {
   return (
     <div>
       <Button className={['xl', 'active']} ref={btnRef}>Click me</Button>
-      <Input onChange={(e) => setValue(e.target.value)} placeholder="type smth" value={value} disabled />
-      <Input onChange={(e) => setValue(e.target.value)} placeholder="type smth" value={value} />
+      <Input onChange={(e) => setValue(e.target.value)} placeholder="type smth" value={value} disabled name="input1" />
+      <Input onChange={(e) => setValue(e.target.value)} placeholder="type smth" value={value} name="input2" />
     </div>
   );
 };
