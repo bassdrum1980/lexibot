@@ -11,6 +11,7 @@ const propTypes = {
   className: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   isDisabled: PropTypes.bool,
   isValid: PropTypes.bool,
+  style: PropTypes.string,
 };
 
 const defaultProps = {
@@ -20,6 +21,7 @@ const defaultProps = {
   className: '',
   isDisabled: false,
   isValid: true,
+  style: '',
 };
 
 const Input = ({
