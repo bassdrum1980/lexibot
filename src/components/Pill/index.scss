@@ -1,0 +1,87 @@
+@import 'styles/variables.scss';
+
+$noun: #890DBD;
+$pronoun: #B60785;
+$interjection: #378904;
+$preposition: #019ED0;
+$conjunction: #C80E0E;
+$verb: #0052AF;
+$adverb: #049F96;
+$adjective: #BC4807;
+$various: #B89300;
+
+.pill {
+  position: relative;
+  display: inline-block;
+
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 140%;
+  text-transform: uppercase;
+  
+  &:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    border-radius: 1px;
+    opacity: .2;
+    content: '';
+  }
+
+  &--noun {
+    color: $noun;
+    &:after {
+      background-color: $noun;
+    }
+  }
+  &--pronoun {
+    color: $pronoun;
+    &:after {
+      background-color: $pronoun;
+    }
+  }
+  &--interjection {
+    color: $interjection;
+    &:after {
+      background-color: $interjection;
+    }
+  }
+  &--preposition {
+    color: $preposition;
+    &:after {
+      background-color: $preposition;
+    }
+  }
+  &--conjunction {
+    color: $conjunction;
+    &:after {
+      background-color: $conjunction;
+    }
+  }
+  &--verb {
+    color: $verb;
+    &:after {
+      background-color: $verb;
+    }
+  }
+  &--adverb {
+    color: $adverb;
+    &:after {
+      background-color: $adverb;
+    }
+  }
+  &--adjective {
+    color: $adjective;
+    &:after {
+      background-color: $adjective;
+    }
+  }
+  &--various {
+    color: $various;
+    &:after {
+      background-color: $various;
+    }
+  }
+}
