@@ -1,0 +1,12 @@
+@import 'styles/variables.scss';
+
+textarea {
+  // color: $gray1;
+  // background-color: $gray10;
+  // border: 1px solid $gray8;
+
+  &--isDisabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
