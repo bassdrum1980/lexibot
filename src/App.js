@@ -1,13 +1,20 @@
-import { useRef, useEffect } from 'react';
-import { Button } from 'components';
+import { useState } from 'react';
+import { Button, Progress } from 'components';
 
 const App = () => {
-  const btnRef = useRef(null);
-  useEffect(() => console.log(btnRef), []);
+  const [progress, setProgress] = useState(20);
 
   return (
     <div>
-      <Button className={['xl', 'active']} ref={btnRef}>Click me</Button>
+      <div style={{ backgroundColor: '#136FD1', padding: '10px 16px' }}>
+        <Progress progress={progress} />
+      </div>
+      <Button
+        className={['xl', 'active']}
+        onClick={() => setProgress(Math.random() * 100)}
+      >
+        Click me for progress!
+      </Button>
     </div>
   );
 };
