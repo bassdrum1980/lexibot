@@ -1,5 +1,5 @@
 import { useRef, useEffect } from 'react';
-import { Button } from 'components';
+import { Button, Week } from 'components';
 
 const App = () => {
   const btnRef = useRef(null);
@@ -8,6 +8,7 @@ const App = () => {
   return (
     <div>
       <Button className={['xl', 'active']} ref={btnRef}>Click me</Button>
+      <Week stats={[20, 12, 34, 11, 9, 31, 17]} />
     </div>
   );
 };

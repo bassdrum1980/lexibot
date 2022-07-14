@@ -1,0 +1,57 @@
+@import 'styles/variables.scss';
+
+/* temporary variables */
+$gray6: #7B8794;
+$gray8: #CBD2D9;
+$flameTop:#FF9960;
+$flameBottom: #FF5C00;
+
+/* temp styles */
+li {
+  list-style-type: none;
+}
+
+.week {
+  padding: 20px 0 7px 0;
+}
+
+.week__list {
+  display: flex;
+  padding: 5px 0;
+  justify-content: center;
+}
+
+.week__item {
+  padding: 0 7px;
+  text-align: center;
+
+  span {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: $gray6;
+  }
+
+  svg {
+    width: 23px;
+  }
+
+  .top-stop {
+    stop-color: $gray8;
+  }
+
+  .bot-stop {
+    stop-color: $gray8;
+  }
+
+  &.--active {
+    .top-stop {
+      stop-color: $flameTop;
+    }
+  
+    .bot-stop {
+      stop-color: $flameBottom;
+    }
+  }
+}
