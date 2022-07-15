@@ -13,7 +13,7 @@ const IconStar = () => {
         fill={`url(#${gradient})`}
       />
     </svg>
-  )
+  );
 };
 
 export default IconStar;
