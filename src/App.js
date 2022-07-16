@@ -1,8 +1,11 @@
-import { useState } from 'react';
-import { Spinner, Button, Week, Pill, Progress } from 'components';
+import { useRef, useEffect, useState } from 'react';
+import { Spinner, Button, Week, Pill, Progress, Input } from 'components';
 
 const App = () => {
   const [progress, setProgress] = useState(20);
+  const [value, setValue] = useState('');
+  const btnRef = useRef(null);
+  useEffect(() => console.log(btnRef), []);
 
   return (
     <div>
@@ -34,9 +37,12 @@ const App = () => {
       <Button
         className={['xl', 'active']}
         onClick={() => setProgress(Math.random() * 100)}
+        ref={btnRef}
       >
         Click me for progress!
       </Button>
+      <Input onChange={(e) => setValue(e.target.value)} placeholder="type smth" value={value} disabled name="input1" />
+      <Input onChange={(e) => setValue(e.target.value)} placeholder="type smth" value={value} name="input2" />
     </div>
   );
 };
