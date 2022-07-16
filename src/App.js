@@ -1,13 +1,11 @@
-import { useRef, useEffect } from 'react';
-import { Spinner, Button, Week, Pill } from 'components';
+import { useState } from 'react';
+import { Spinner, Button, Week, Pill, Progress } from 'components';
 
 const App = () => {
-  const btnRef = useRef(null);
-  useEffect(() => console.log(btnRef), []);
+  const [progress, setProgress] = useState(20);
 
   return (
     <div>
-      <Button className={['xl', 'active']} ref={btnRef}>Click me</Button>
       <Spinner />
       <Week stats={[20, 12, 34, 11, 9, 31, 17]} />
       <hr />
@@ -30,6 +28,15 @@ const App = () => {
       <Pill type="various">photography</Pill>
       ,
       <Pill type="various">optics</Pill>
+      <div style={{ backgroundColor: '#136FD1', padding: '10px 16px' }}>
+        <Progress progress={progress} />
+      </div>
+      <Button
+        className={['xl', 'active']}
+        onClick={() => setProgress(Math.random() * 100)}
+      >
+        Click me for progress!
+      </Button>
     </div>
   );
 };
