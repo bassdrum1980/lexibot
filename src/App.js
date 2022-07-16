@@ -1,5 +1,5 @@
 import { useRef, useEffect } from 'react';
-import { Button } from 'components';
+import { Spinner } from 'components';
 
 const App = () => {
   const btnRef = useRef(null);
@@ -7,7 +7,7 @@ const App = () => {
 
   return (
     <div>
-      <Button className={['xl', 'active']} ref={btnRef}>Click me</Button>
+      <Spinner />
     </div>
   );
 };
