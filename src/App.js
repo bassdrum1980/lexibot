@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
-import { Spinner, Button, Week, Pill, Progress, Input } from 'components';
+import { Spinner, Button, Week, Pill, Progress, Input, Textarea } from 'components';
 
 const App = () => {
   const [progress, setProgress] = useState(20);
@@ -43,6 +43,7 @@ const App = () => {
       </Button>
       <Input onChange={(e) => setValue(e.target.value)} placeholder="type smth" value={value} disabled name="input1" />
       <Input onChange={(e) => setValue(e.target.value)} placeholder="type smth" value={value} name="input2" />
+      <Textarea name="textarea" onChange={(e) => setValue(e.target.value)} value={value} />
     </div>
   );
 };
