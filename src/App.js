@@ -3,12 +3,20 @@ import { Spinner, Button, Week, Pill, Progress, Input, Textarea } from 'componen
 
 const App = () => {
   const [progress, setProgress] = useState(20);
-  const [value, setValue] = useState('');
+  const [input01, setInput01] = useState('traitorous');
+  const [input02, setInput02] = useState('coercion');
+  const [input03, setInput03] = useState('');
   const btnRef = useRef(null);
   useEffect(() => console.log(btnRef), []);
 
   return (
     <div>
+      <div className="form-control">
+        <Input onChange={(e) => setInput01(e.target.value)} placeholder="type smth" value={input01} name="input1" />
+      </div>
+      <div className="form-control">
+        <Input onChange={(e) => setInput02(e.target.value)} placeholder="type smth" value={input02} isValid={false} name="input1" />
+      </div>
       <Spinner />
       <Week stats={[20, 12, 34, 11, 9, 31, 17]} />
       <hr />
@@ -41,9 +49,7 @@ const App = () => {
       >
         Click me for progress!
       </Button>
-      <Input onChange={(e) => setValue(e.target.value)} placeholder="type smth" value={value} disabled name="input1" />
-      <Input onChange={(e) => setValue(e.target.value)} placeholder="type smth" value={value} name="input2" />
-      <Textarea name="textarea" onChange={(e) => setValue(e.target.value)} value={value} />
+      <Textarea name="textarea" onChange={(e) => setInput03(e.target.value)} value={input03} />
     </div>
   );
 };

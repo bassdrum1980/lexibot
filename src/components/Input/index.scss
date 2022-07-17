@@ -1,5 +1,45 @@
 @import 'styles/variables.scss';
 
-input {
-  color: $black;
+input[type="text"],
+textarea {
+  display: block;
+  width: 100%;
+
+  padding: 13px 16px 15px 16px;
+  box-sizing: border-box;
+
+  border: 1px solid $gray8;
+  border-radius: 5px;
+  background-color: $gray10;
+
+  font-size: 15px;
+  line-height: 150%;
+  color: $gray1;
+  caret-color: $gray1;
+
+  &::placeholder {
+    color: $gray6;
+  }
+
+  &:focus {
+    border-color: $gray6;
+    outline: none;
+  }
+
+  &.input--invalid {
+    border-color: $red8;
+    background-color: $red11;
+
+    color: $red4;
+    caret-color: $red4;
+
+    &:focus {
+      border-color: $red6;
+    }
+  }
+}
+
+textarea {
+  height: 96px;
+  resize: none;
 }
