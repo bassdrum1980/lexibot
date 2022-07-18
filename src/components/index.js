@@ -5,3 +5,4 @@ export { default as Pill } from './Pill';
 export { default as Progress } from './Progress';
 export { default as Input } from './Input';
 export { default as Textarea } from './Textarea';
+export { default as Icon } from './Icon';

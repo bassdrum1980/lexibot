@@ -1,5 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
-import { Spinner, Button, Week, Pill, Progress, Input, Textarea } from 'components';
+import {
+  Spinner, Button, Week, Pill, Progress, Input, Textarea, Icon,
+} from 'components';
 
 const App = () => {
   const [progress, setProgress] = useState(20);
@@ -11,6 +13,16 @@ const App = () => {
 
   return (
     <div>
+      <Icon
+        name="mic"
+        size={24}
+        color="red"
+      />
+      <Icon
+        name="mic"
+        size={48}
+        color="blue"
+      />
       <div className="form-control">
         <Input onChange={(e) => setInput01(e.target.value)} placeholder="type smth" value={input01} name="input1" />
       </div>
