@@ -1,13 +1,7 @@
 @use 'sass:color';
 
-/* COLOR PALETTES */ 
-/* 
-  base palette
-  primary hue - 197
-  gray10 - 204
-*/
-$orange-gradient: linear-gradient(175deg, #FF9960 0%, #FF5C00 100%);
-
+// COLORS
+// 'Base' theme
 $gray1: #1B2529; 
 $gray2: #32454B;
 $gray3: #3E5259;
@@ -19,49 +13,6 @@ $gray8: #CBD5D9;
 $gray9: #E4E9EB;
 $gray10: #F5F8FA;
 
-/* 
-  study palette
-  primary hue — 211
-*/
-$primary1--study: #136FD1;
-
-$primary-gradient--study: linear-gradient(175deg, #26AAF4 0%, #126FD1 100%);
-$primary-gradient--study--light: linear-gradient(175deg, #FFFFFF 0%, #F7FAFC 100%);
-
-$gray1--study: color.adjust($gray1, $hue: 14);
-$gray2--study: color.adjust($gray2, $hue: 14);
-$gray3--study: color.adjust($gray3, $hue: 14);
-$gray4--study: color.adjust($gray4, $hue: 14);
-$gray5--study: color.adjust($gray5, $hue: 14);
-$gray6--study: color.adjust($gray6, $hue: 14);
-$gray7--study: color.adjust($gray7, $hue: 14);
-$gray8--study: color.adjust($gray8, $hue: 14);
-$gray9--study: color.adjust($gray9, $hue: 14);
-$gray10--study: color.adjust($gray10, $hue: 7);
-
-/* 
-  search palette
-  primary hue — 284
-*/
-$primary1--search: #B21CE8;
-
-$primary-gradient--search: linear-gradient(175deg, #DE32ED 0%, #B31CE8 100%);
-$primary-gradient--search--light: linear-gradient(175deg, #FFFFFF 0%, #F9F5FA 100%);
-
-$gray1--search: color.adjust($gray1, $hue: 87);
-$gray2--search: color.adjust($gray2, $hue: 87);
-$gray3--search: color.adjust($gray3, $hue: 87);
-$gray4--search: color.adjust($gray4, $hue: 87);
-$gray5--search: color.adjust($gray5, $hue: 87);
-$gray6--search: color.adjust($gray6, $hue: 87);
-$gray7--search: color.adjust($gray7, $hue: 87);
-$gray8--search: color.adjust($gray8, $hue: 87);
-$gray9--search: color.adjust($gray9, $hue: 87);
-$gray10--search: color.adjust($gray10, $hue: 80);
-
-/*
-  reds
-*/
 $red1: #610316;
 $red2: #8A041A;
 $red3: #AB091E;
@@ -73,3 +24,46 @@ $red8: #FF9B9B;
 $red9: #FFBDBD;
 $red10: #FFE3E3;
 $red11: #FFEBEB;
+
+$pill-noun: #890DBD;
+$pill-pronoun: #B60785;
+$pill-interjection: #378904;
+$pill-preposition: #019ED0;
+$pill-conjunction: #C80E0E;
+$pill-verb: #0052AF;
+$pill-adverb: #049F96;
+$pill-adjective: #BC4807;
+$pill-various: #B89300;
+
+$orange-gradient: linear-gradient(175deg, #FF9960 0%, #FF5C00 100%);
+
+
+// 'Study' theme
+$gray1--study: color.adjust($gray1, $hue: 14);
+$gray2--study: color.adjust($gray2, $hue: 14);
+$gray3--study: color.adjust($gray3, $hue: 14);
+$gray4--study: color.adjust($gray4, $hue: 14);
+$gray5--study: color.adjust($gray5, $hue: 14);
+$gray6--study: color.adjust($gray6, $hue: 14);
+$gray7--study: color.adjust($gray7, $hue: 14);
+$gray8--study: color.adjust($gray8, $hue: 14);
+$gray9--study: color.adjust($gray9, $hue: 14);
+$gray10--study: color.adjust($gray10, $hue: 7);
+$primary1--study: #136FD1;
+$primary-gradient--study: linear-gradient(175deg, #26AAF4 0%, #126FD1 100%);
+$primary-gradient--study--light: linear-gradient(175deg, #FFFFFF 0%, #F7FAFC 100%);
+
+// 'Search' theme
+$gray1--search: color.adjust($gray1, $hue: 87);
+$gray2--search: color.adjust($gray2, $hue: 87);
+$gray3--search: color.adjust($gray3, $hue: 87);
+$gray4--search: color.adjust($gray4, $hue: 87);
+$gray5--search: color.adjust($gray5, $hue: 87);
+$gray6--search: color.adjust($gray6, $hue: 87);
+$gray7--search: color.adjust($gray7, $hue: 87);
+$gray8--search: color.adjust($gray8, $hue: 87);
+$gray9--search: color.adjust($gray9, $hue: 87);
+$gray10--search: color.adjust($gray10, $hue: 80);
+$primary1--search: #B21CE8;
+$primary-gradient--search: linear-gradient(175deg, #DE32ED 0%, #B31CE8 100%);
+$primary-gradient--search--light: linear-gradient(175deg, #FFFFFF 0%, #F9F5FA 100%);
