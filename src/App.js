@@ -13,6 +13,34 @@ const App = () => {
 
   return (
     <div>
+      <div className="form-control">
+        <Input
+          name="input1"
+          onChange={(e) => setInput01(e.target.value)}
+          placeholder="type smth"
+          value={input01}
+          className="form-input"
+        />
+      </div>
+      <div className="form-control">
+        <Input
+          name="input1"
+          onChange={(e) => setInput02(e.target.value)}
+          placeholder="type smth"
+          value={input02}
+          isValid={false}
+          className="form-input"
+        />
+      </div>
+      <div className="form-control">
+        <Textarea
+          name="textarea"
+          onChange={(e) => setInput03(e.target.value)}
+          placeholder="type smth"
+          value={input03}
+          className="form-textarea"
+        />
+      </div>
       <Icon
         name="mic"
         size={24}
@@ -23,25 +51,6 @@ const App = () => {
         size={48}
         color="blue"
       />
-      <div className="form-control">
-        <Input
-          onChange={(e) => setInput01(e.target.value)}
-          placeholder="type smth"
-          value={input01}
-          name="input1"
-          className="form-input"
-        />
-      </div>
-      <div className="form-control">
-        <Input
-          onChange={(e) => setInput02(e.target.value)}
-          placeholder="type smth"
-          value={input02}
-          isValid={false}
-          name="input1"
-          className="form-input"
-        />
-      </div>
       <Spinner />
       <Week stats={[20, 12, 34, 11, 9, 31, 17]} />
       <hr />
@@ -74,7 +83,6 @@ const App = () => {
       >
         Click me for progress!
       </Button>
-      <Textarea name="textarea" onChange={(e) => setInput03(e.target.value)} value={input03} />
     </div>
   );
 };

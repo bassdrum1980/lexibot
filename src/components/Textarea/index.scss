@@ -1,12 +1,46 @@
 @import 'styles/variables.scss';
+@import 'styles/utility-mixins/index.scss';
 
-textarea {
-  // color: $gray1;
-  // background-color: $gray10;
-  // border: 1px solid $gray8;
+.form-textarea {
+  display: block;
+  width: 100%;
+  height: $spacing-scale-11;
 
-  &--isDisabled {
-    opacity: 0.5;
-    pointer-events: none;
+  padding: $spacing-scale-4 $spacing-scale-5;
+  box-sizing: border-box;
+
+  @include border;
+  border-radius: $border-radius-small;
+
+  font-family: $font-family-content;
+  font-weight: $font-weight-regular;
+  font-style: normal;
+  line-height: $line-height-28;
+
+  color: $gray1;
+  caret-color: $gray1;
+  background-color: $gray10;
+
+  resize: none;
+
+  &::placeholder {
+    color: $gray6;
+  }
+
+  &:focus {
+    border-color: $gray6;
+    outline: none;
+  }
+
+  &.input--invalid {
+    border-color: $red8;
+    background-color: $red11;
+
+    color: $red4;
+    caret-color: $red4;
+
+    &:focus {
+      border-color: $red6;
+    }
   }
 }
