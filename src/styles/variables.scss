@@ -67,3 +67,31 @@ $gray10--search: color.adjust($gray10, $hue: 80);
 $primary1--search: #B21CE8;
 $primary-gradient--search: linear-gradient(175deg, #DE32ED 0%, #B31CE8 100%);
 $primary-gradient--search--light: linear-gradient(175deg, #FFFFFF 0%, #F9F5FA 100%);
+
+// TYPOGRAPHY
+$font-size-base: 1rem;
+
+// UI typescale
+$font-size-ui-ssm: px-to-rem(12px);
+$font-size-ui-sm: px-to-rem(14px);
+$font-size-ui: px-to-rem(16px);
+$font-size-ui-h2: px-to-rem(20px);
+$font-size-ui-h1: px-to-rem(60px);
+
+// Content typescale
+$font-size-content: px-to-rem(15px);
+$font-size-content-h4: px-to-rem(20px);
+$font-size-content-h3: px-to-rem(24px);
+$font-size-content-h2: px-to-rem(28px);
+$font-size-content-h1: px-to-rem(36px);
+
+// Fonts
+$font-family-ui: -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI', 'Noto Sans', Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+$font-family-content: 'Merriweather', serif;
+
+// Font-weight
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-bold: 600;
+
+// Line-height

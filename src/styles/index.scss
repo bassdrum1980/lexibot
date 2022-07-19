@@ -1,6 +1,7 @@
 @import './fonts.scss';
+@import './functions.scss';
 @import './variables.scss';
 
 body {
-  padding: 200px;
+  padding: px-to-rem(50px);
 }

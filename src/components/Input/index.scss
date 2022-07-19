@@ -2,7 +2,9 @@
 
 input[type="text"],
 textarea {
-  font-family: 'Merriweather-regular', serif;
+  font-family: $font-family-content;
+  font-style: normal;
+  font-weight: $font-weight-regular;
 
   display: block;
   width: 100%;
