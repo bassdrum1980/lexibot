@@ -19,7 +19,6 @@ const App = () => {
           onChange={(e) => setInput01(e.target.value)}
           placeholder="type smth"
           value={input01}
-          className="form-input"
         />
       </div>
       <div className="form-control">
@@ -29,7 +28,6 @@ const App = () => {
           placeholder="type smth"
           value={input02}
           isValid={false}
-          className="form-input"
         />
       </div>
       <div className="form-control">
@@ -38,7 +36,6 @@ const App = () => {
           onChange={(e) => setInput03(e.target.value)}
           placeholder="type smth"
           value={input03}
-          className="form-textarea"
         />
       </div>
       <Icon

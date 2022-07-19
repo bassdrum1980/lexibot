@@ -31,10 +31,10 @@ const Textarea = ({
     id={name}
     onChange={onChange}
     className={classnames(
-      'input',
+      'form-textarea',
       Array.isArray(className) ? className.join(' ') : className,
-      { 'input--disabled': isDisabled },
-      { 'input--invalid': !isValid },
+      { 'form-textarea--disabled': isDisabled },
+      { 'form-textarea--invalid': !isValid },
     )}
     disabled={isDisabled}
     {...rest}

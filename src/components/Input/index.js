@@ -10,7 +10,6 @@ const propTypes = {
   className: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   isDisabled: PropTypes.bool,
   isValid: PropTypes.bool,
-  style: PropTypes.string,
 };
 
 const defaultProps = {
@@ -20,11 +19,10 @@ const defaultProps = {
   className: '',
   isDisabled: false,
   isValid: true,
-  style: '',
 };
 
 const Input = ({
-  placeholder, value, name, onChange, className, isDisabled, isValid, style, ...rest
+  placeholder, value, name, onChange, className, isDisabled, isValid, ...rest
 }) => (
   <input
     type="text"
@@ -34,11 +32,10 @@ const Input = ({
     id={name}
     onChange={onChange}
     className={classnames(
-      'input',
+      'form-input',
       Array.isArray(className) ? className.join(' ') : className,
-      { 'input--disabled': isDisabled },
-      { 'input--invalid': !isValid },
-      `input--${style}`,
+      { 'form-input--disabled': isDisabled },
+      { 'form-input--invalid': !isValid },
     )}
     disabled={isDisabled}
     {...rest}
