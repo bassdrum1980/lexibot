@@ -24,10 +24,23 @@ const App = () => {
         color="blue"
       />
       <div className="form-control">
-        <Input onChange={(e) => setInput01(e.target.value)} placeholder="type smth" value={input01} name="input1" />
+        <Input
+          onChange={(e) => setInput01(e.target.value)}
+          placeholder="type smth"
+          value={input01}
+          name="input1"
+          className="form-input"
+        />
       </div>
       <div className="form-control">
-        <Input onChange={(e) => setInput02(e.target.value)} placeholder="type smth" value={input02} isValid={false} name="input1" />
+        <Input
+          onChange={(e) => setInput02(e.target.value)}
+          placeholder="type smth"
+          value={input02}
+          isValid={false}
+          name="input1"
+          className="form-input"
+        />
       </div>
       <Spinner />
       <Week stats={[20, 12, 34, 11, 9, 31, 17]} />

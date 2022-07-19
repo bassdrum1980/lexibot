@@ -1,4 +1,16 @@
 @use 'sass:color';
+@import './functions.scss';
+
+// Layout
+$grid-size: px-to-rem(8px);
+$spacing-scale-1: 0.25 * $grid-size;
+$spacing-scale-2: 0.5 * $grid-size;
+$spacing-scale-3: 1 * $grid-size;
+$spacing-scale-4: 1.5 * $grid-size;
+$spacing-scale-5: 2 * $grid-size;
+$spacing-scale-6: 2.5 * $grid-size;
+$spacing-scale-7: 3 * $grid-size;
+$spacing-scale-8: 4 * $grid-size;
 
 // COLORS
 // 'Base' theme
@@ -95,3 +107,16 @@ $font-weight-regular: 400;
 $font-weight-bold: 600;
 
 // Line-height
+$line-height-16: px-to-rem(16px);
+$line-height-28: px-to-rem(28px);
+
+// BORDERS
+// Border-size
+$border-size-1: 1px;
+
+// Border-color
+$border-color: $gray8;
+
+// Border-radius
+$border-radius-small: $spacing-scale-2;
+$border-radius-full: 50%;
