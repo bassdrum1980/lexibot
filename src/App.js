@@ -14,7 +14,7 @@ const App = () => {
   return (
     <div>
       <FormGroup>
-        <label htmlFor="input1">Word</label>
+        <label htmlFor="inputWord">Word</label>
         <Input
           name="inputWord"
           onChange={(e) => setInputWord(e.target.value)}
@@ -23,10 +23,11 @@ const App = () => {
         />
       </FormGroup>
       <FormGroup
+        isRequired
         note="Required"
         isValid={false}
       >
-        <label htmlFor="input2">Thesaurus</label>
+        <label htmlFor="inputThesaurus">Thesaurus</label>
         <Input
           name="inputThesaurus"
           onChange={(e) => setInputThesaurus(e.target.value)}
@@ -38,7 +39,7 @@ const App = () => {
       <FormGroup>
         <label htmlFor="inputDefinition">Definition</label>
         <Textarea
-          name="textarea"
+          name="inputDefinition"
           onChange={(e) => setInputDefinition(e.target.value)}
           placeholder="type smth"
           value={inputDefinition}
