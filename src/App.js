@@ -1,43 +1,49 @@
 import { useRef, useEffect, useState } from 'react';
 import {
-  Spinner, Button, Week, Pill, Progress, Input, Textarea, Icon,
+  Spinner, Button, Week, Pill, Progress, Input, Textarea, Icon, FormGroup,
 } from 'components';
 
 const App = () => {
   const [progress, setProgress] = useState(20);
-  const [input01, setInput01] = useState('traitorous');
-  const [input02, setInput02] = useState('coercion');
-  const [input03, setInput03] = useState('');
+  const [inputWord, setInputWord] = useState('traitorous');
+  const [inputThesaurus, setInputThesaurus] = useState('coercion');
+  const [inputDefinition, setInputDefinition] = useState('');
   const btnRef = useRef(null);
   useEffect(() => console.log(btnRef), []);
 
   return (
     <div>
-      <div className="form-control">
+      <FormGroup>
+        <label htmlFor="input1">Word</label>
         <Input
-          name="input1"
-          onChange={(e) => setInput01(e.target.value)}
+          name="inputWord"
+          onChange={(e) => setInputWord(e.target.value)}
           placeholder="type smth"
-          value={input01}
+          value={inputWord}
         />
-      </div>
-      <div className="form-control">
+      </FormGroup>
+      <FormGroup
+        note="Required"
+        isValid={false}
+      >
+        <label htmlFor="input2">Thesaurus</label>
         <Input
-          name="input1"
-          onChange={(e) => setInput02(e.target.value)}
+          name="inputThesaurus"
+          onChange={(e) => setInputThesaurus(e.target.value)}
           placeholder="type smth"
-          value={input02}
+          value={inputThesaurus}
           isValid={false}
         />
-      </div>
-      <div className="form-control">
+      </FormGroup>
+      <FormGroup>
+        <label htmlFor="inputDefinition">Definition</label>
         <Textarea
           name="textarea"
-          onChange={(e) => setInput03(e.target.value)}
+          onChange={(e) => setInputDefinition(e.target.value)}
           placeholder="type smth"
-          value={input03}
+          value={inputDefinition}
         />
-      </div>
+      </FormGroup>
       <Icon
         name="mic"
         size={24}

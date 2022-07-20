@@ -40,6 +40,10 @@
       {
         "ignore": [ "components", "styles"]
       }
-      ]
+      ],
+    "jsx-a11y/label-has-associated-control": [ 2, {
+      "controlComponents": ["Input", "Textarea"],
+      "depth": 3
+    }]
   }
 }
