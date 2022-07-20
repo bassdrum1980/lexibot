@@ -28,4 +28,19 @@
     font-size: $font-size-ui-ssm;
     color: $gray6;
   }
+
+  &--required {
+    label::after {
+      margin-left: $spacing-scale-1;
+      position: relative;
+      top: -$spacing-scale-1;
+      
+      color: $red5;
+      content: '*';
+    }
+
+    .form-group__note {
+      color: $red6;
+    }
+  }
 }
