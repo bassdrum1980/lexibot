@@ -17,28 +17,28 @@ $spacing-scale-11: 12 * $grid-size;
 
 // COLORS
 // 'Base' theme
-$gray1: #1B2529; 
-$gray2: #32454B;
-$gray3: #3E5259;
-$gray4: #52666D;
-$gray5: #61757C;
-$gray6: #7B8E94;
-$gray7: #9AABB1;
-$gray8: #CBD5D9;
-$gray9: #E4E9EB;
-$gray10: #F5F8FA;
+$gray1000: #1B2529; // gra1
+$gray900: #32454B; // 2
+$gray800: #3E5259; // 3
+$gray700: #52666D; // 4
+$gray600: #61757C; // 5
+$gray500: #7B8E94; // 6
+$gray400: #9AABB1; // 7
+$gray300: #CBD5D9; // 8
+$gray200: #E4E9EB; // 9
+$gray100: #F5F8FA; // 10
 
-$red1: #610316;
-$red2: #8A041A;
-$red3: #AB091E;
-$red4: #CF1124;
-$red5: #E12D39;
-$red6: #EF4E4E;
-$red7: #F86A6A;
-$red8: #FF9B9B;
-$red9: #FFBDBD;
-$red10: #FFE3E3;
-$red11: #FFEBEB;
+$red1000: #610316;
+$red900: #8A041A;
+$red800: #AB091E;
+$red700: #CF1124;
+$red600: #E12D39;
+$red500: #EF4E4E;
+$red400: #F86A6A;
+$red300: #FF9B9B;
+$red200: #FFBDBD;
+$red100: #FFE3E3;
+$red50: #FFEBEB;
 
 $pill-noun: #890DBD;
 $pill-pronoun: #B60785;
@@ -54,32 +54,32 @@ $orange-gradient: linear-gradient(175deg, #FF9960 0%, #FF5C00 100%);
 
 
 // 'Study' theme
-$gray1--study: color.adjust($gray1, $hue: 14);
-$gray2--study: color.adjust($gray2, $hue: 14);
-$gray3--study: color.adjust($gray3, $hue: 14);
-$gray4--study: color.adjust($gray4, $hue: 14);
-$gray5--study: color.adjust($gray5, $hue: 14);
-$gray6--study: color.adjust($gray6, $hue: 14);
-$gray7--study: color.adjust($gray7, $hue: 14);
-$gray8--study: color.adjust($gray8, $hue: 14);
-$gray9--study: color.adjust($gray9, $hue: 14);
-$gray10--study: color.adjust($gray10, $hue: 7);
-$primary1--study: #136FD1;
+$gray1000--study: color.adjust($gray1000, $hue: 14);
+$gray900--study: color.adjust($gray900, $hue: 14);
+$gray800--study: color.adjust($gray800, $hue: 14);
+$gray700--study: color.adjust($gray700, $hue: 14);
+$gray600--study: color.adjust($gray600, $hue: 14);
+$gray500--study: color.adjust($gray500, $hue: 14);
+$gray400--study: color.adjust($gray400, $hue: 14);
+$gray300--study: color.adjust($gray300, $hue: 14);
+$gray200--study: color.adjust($gray200, $hue: 14);
+$gray100--study: color.adjust($gray100, $hue: 7);
+$primary1000--study: #136FD1;
 $primary-gradient--study: linear-gradient(175deg, #26AAF4 0%, #126FD1 100%);
 $primary-gradient--study--light: linear-gradient(175deg, #FFFFFF 0%, #F7FAFC 100%);
 
 // 'Search' theme
-$gray1--search: color.adjust($gray1, $hue: 87);
-$gray2--search: color.adjust($gray2, $hue: 87);
-$gray3--search: color.adjust($gray3, $hue: 87);
-$gray4--search: color.adjust($gray4, $hue: 87);
-$gray5--search: color.adjust($gray5, $hue: 87);
-$gray6--search: color.adjust($gray6, $hue: 87);
-$gray7--search: color.adjust($gray7, $hue: 87);
-$gray8--search: color.adjust($gray8, $hue: 87);
-$gray9--search: color.adjust($gray9, $hue: 87);
-$gray10--search: color.adjust($gray10, $hue: 80);
-$primary1--search: #B21CE8;
+$gray1000--search: color.adjust($gray1000, $hue: 87);
+$gray900--search: color.adjust($gray900, $hue: 87);
+$gray800--search: color.adjust($gray800, $hue: 87);
+$gray700--search: color.adjust($gray700, $hue: 87);
+$gray600--search: color.adjust($gray600, $hue: 87);
+$gray500--search: color.adjust($gray500, $hue: 87);
+$gray400--search: color.adjust($gray400, $hue: 87);
+$gray300--search: color.adjust($gray300, $hue: 87);
+$gray200--search: color.adjust($gray200, $hue: 87);
+$gray100--search: color.adjust($gray100, $hue: 80);
+$primary1000--search: #B21CE8;
 $primary-gradient--search: linear-gradient(175deg, #DE32ED 0%, #B31CE8 100%);
 $primary-gradient--search--light: linear-gradient(175deg, #FFFFFF 0%, #F9F5FA 100%);
 
@@ -121,7 +121,7 @@ $letter-spacing-r: px-to-rem(0.5px);
 $border-size-1: 1px;
 
 // Border-color
-$border-color: $gray8;
+$border-color: $gray300;
 
 // Border-radius
 $border-radius-small: $spacing-scale-2;

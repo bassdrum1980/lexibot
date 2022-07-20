@@ -2,7 +2,7 @@
 
 /* temporary variables */
 $gray6: #7B8794;
-$gray8: #CBD2D9;
+$gray300: #CBD2D9;
 $flameTop:#FF9960;
 $flameBottom: #FF5C00;
 
@@ -30,7 +30,7 @@ li {
     margin-bottom: 4px;
     font-size: 14px;
     text-transform: uppercase;
-    color: $gray6;
+    color: $gray500;
   }
 
   svg {
@@ -38,11 +38,11 @@ li {
   }
 
   .top-stop {
-    stop-color: $gray8;
+    stop-color: $gray300;
   }
 
   .bot-stop {
-    stop-color: $gray8;
+    stop-color: $gray300;
   }
 
   &.--active {

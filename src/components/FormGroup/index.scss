@@ -16,7 +16,7 @@
 
   label {
     font-size: $font-size-ui-sm;
-    color: $gray3;
+    color: $gray400;
   }
 
   .form-group__note {
@@ -26,7 +26,7 @@
     top: $spacing-scale-1;
     
     font-size: $font-size-ui-ssm;
-    color: $gray6;
+    color: $gray500;
   }
 
   &--required {
@@ -35,12 +35,12 @@
       position: relative;
       top: -$spacing-scale-1;
       
-      color: $red5;
+      color: $red600;
       content: '*';
     }
 
     .form-group__note {
-      color: $red6;
+      color: $red500;
     }
   }
 }

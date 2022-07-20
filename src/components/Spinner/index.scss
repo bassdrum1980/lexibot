@@ -1,5 +1,4 @@
-/* temp variables */
-$gray6: #7B8E94;
+@import 'styles/variables.scss';
 
 .spinner {
   position: relative;
@@ -15,7 +14,7 @@ $gray6: #7B8E94;
     top: 0;
     bottom: 0;
     border-radius: 50%;
-    border: 4px solid $gray6;
+    border: 4px solid $gray500;
     border-right-color: #fff;
     animation: spinner 1.1s infinite linear;
     content: '';

@@ -2,8 +2,7 @@
 
 button {
   display: inline-block;
-  color: $gray1--study;
-
+  
   &--isDisabled {
     opacity: 0.5;
     pointer-events: none; // stops all events from occuring

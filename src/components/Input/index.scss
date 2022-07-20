@@ -16,28 +16,28 @@
   font-style: normal;
   line-height: $line-height-28;
 
-  color: $gray1;
-  caret-color: $gray1;
-  background-color: $gray10;
+  color: $gray1000;
+  caret-color: $gray1000;
+  background-color: $gray100;
 
   &::placeholder {
-    color: $gray6;
+    color: $gray500;
   }
 
   &:focus {
-    border-color: $gray6;
+    border-color: $gray500;
     outline: none;
   }
 
   &--invalid {
-    border-color: $red8;
-    background-color: $red11;
+    border-color: $red300;
+    background-color: $red50;
 
-    color: $red4;
-    caret-color: $red4;
+    color: $red700;
+    caret-color: $red700;
 
     &:focus {
-      border-color: $red6;
+      border-color: $red500;
     }
   }
 }
