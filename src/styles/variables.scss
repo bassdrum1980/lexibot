@@ -112,6 +112,7 @@ $font-weight-bold: 600;
 
 // Line-height
 $line-height-16: px-to-rem(16px);
+$line-height-24: px-to-rem(24px);
 $line-height-28: px-to-rem(28px);
 
 // Letter-spacing
@@ -123,6 +124,7 @@ $border-size-1: 1px;
 
 // Border-color
 $border-color: $gray300;
+$border-color--danger: $red300;
 
 // Border-radius
 $border-radius-small: $spacing-px-4;

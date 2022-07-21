@@ -1,10 +1,67 @@
 @import 'styles/variables.scss';
+@import 'styles/utility-mixins/index.scss';
 
-button {
-  display: inline-block;
+.button {
+  // общие стили
+  box-sizing: border-box;
   
-  &--isDisabled {
-    opacity: 0.5;
-    pointer-events: none; // stops all events from occuring
+  font-family: $font-family-ui;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-ui;
+  line-height: $line-height-24;
+
+  color: $gray1000;
+  @include bg-white;
+  
+  @include noborder;
+  @include round;
+
+  // Styles
+  &--primary {
+    color: #fff;
+    background-color: $gray900;
+  }
+  &--tertiary {
+    @include border;
+  }
+  &--link {
+    font-weight: $font-weight-regular;
+    @include bg-none;
+  }
+  &--destructive {
+    @include border--danger;
+    color: $red600;
+  }
+
+  // Sizes
+  &--sm {
+    padding: $spacing-px-8 $spacing-px-24;
+  }
+  &--m {
+    padding: $spacing-px-16 $spacing-px-48;
+
+    &.button--link {
+      padding-top: $spacing-px-12;
+      padding-bottom: $spacing-px-12;
+    }
+  }
+  &--l {
+    padding: $spacing-px-20 $spacing-px-64;
+  }
+
+  // Widths
+  &--fill {
+    display: block;
+    width: 100%;
+  }
+  &--hug {
+    display: inline-block;
+  }
+
+  // States
+  &:hover,
+  &:active {
+    cursor: pointer;
+    opacity: .9;
   }
 }

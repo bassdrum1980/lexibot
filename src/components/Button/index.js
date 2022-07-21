@@ -4,23 +4,32 @@ import PropTypes from 'prop-types';
 import './index.scss';
 
 const propTypes = {
+  type: PropTypes.oneOf(['button', 'reset', 'submit', null]),
+  size: PropTypes.oneOf(['sm', 'm', 'l', null]),
+  width: PropTypes.oneOf(['fill', 'hug', null]),
+  btnStyle: PropTypes.oneOf(['primary', 'secondary', 'tertiary', 'link', 'destructive', null]),
   onClick: PropTypes.func.isRequired,
   className: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
-  isDisabled: PropTypes.bool,
-  size: PropTypes.string,
-  type: PropTypes.oneOf(['button', 'reset', 'submit', null]),
 };
 
 const defaultProps = {
-  className: '',
-  isDisabled: false,
-  size: 'sm',
   type: 'button',
+  size: 'm',
+  width: 'fill',
+  btnStyle: 'primary',
+  className: '',
 };
 
 const Button = React.forwardRef(
   ({
-    children, onClick, className, isDisabled, size, type, ...rest
+    type,
+    size, // m
+    width, // fill, hug
+    btnStyle, // primary, secondary, tertiary, link, destructive
+    className,
+    onClick,
+    children,
+    ...rest
   }, ref) => (
     <button
       type={type}
@@ -29,10 +38,10 @@ const Button = React.forwardRef(
       className={classnames(
         'button',
         Array.isArray(className) ? className.join(' ') : className,
-        { 'button--isDisabled': isDisabled },
+        `button--${btnStyle}`,
         `button--${size}`,
+        `button--${width}`,
       )}
-      disabled={isDisabled}
       {...rest}
     >
       {children}

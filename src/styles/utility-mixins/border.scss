@@ -1,3 +1,15 @@
 @mixin border {
   border: solid $border-size-1 $border-color;
 }
+
+@mixin border--danger {
+  border: solid $border-size-1 $border-color--danger;
+}
+
+@mixin noborder {
+  border: none;
+}
+
+@mixin round {
+  border-radius: px-to-rem(9999px);
+}

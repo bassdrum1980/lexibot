@@ -42,6 +42,13 @@ const App = () => {
         label="definition"
         onChange={(e) => setInputDefinition(e.target.value)}
       />
+      <Button
+        btnStyle="primary"
+        onClick={() => setProgress(Math.random() * 100)}
+        ref={btnRef}
+      >
+        Click me for progress!
+      </Button>
       <Icon
         name="mic"
         size={24}
@@ -77,13 +84,6 @@ const App = () => {
       <div style={{ backgroundColor: '#136FD1', padding: '10px 16px' }}>
         <Progress progress={progress} />
       </div>
-      <Button
-        className={['xl', 'active']}
-        onClick={() => setProgress(Math.random() * 100)}
-        ref={btnRef}
-      >
-        Click me for progress!
-      </Button>
     </div>
   );
 };

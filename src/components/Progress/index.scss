@@ -1,3 +1,5 @@
+@import 'styles/variables.scss';
+@import 'styles/utility-mixins/index.scss';
 .progress {
   position: relative;
   height: 4px;
@@ -12,5 +14,5 @@
   bottom: 0;
   border-radius: inherit;
   transition: width 500ms ease-out;
-  background-color: #fff;
+  @include border--danger;
 }
