@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 import {
-  Spinner, Button, Week, Pill, Progress, Input, Textarea, Icon, FormGroup,
+  Spinner, Button, Week, Pill, Progress, Input, Textarea, Icon,
 } from 'components';
 
 const App = () => {
@@ -13,41 +13,35 @@ const App = () => {
 
   return (
     <div>
-      <FormGroup>
-        <label htmlFor="inputWord">Word</label>
-        <Input
-          name="inputWord"
-          id="inputWord"
-          onChange={(e) => setInputWord(e.target.value)}
-          placeholder="type smth"
-          value={inputWord}
-        />
-      </FormGroup>
-      <FormGroup
+      <Input
+        name="inputWord"
+        id="inputWord"
+        placeholder="type smth"
+        value={inputWord}
         isRequired
-        note="Required"
         isValid={false}
-      >
-        <label htmlFor="inputThesaurus">Thesaurus</label>
-        <Input
-          name="inputThesaurus"
-          id="inputThesaurus"
-          onChange={(e) => setInputThesaurus(e.target.value)}
-          placeholder="type smth"
-          value={inputThesaurus}
-          isValid={false}
-        />
-      </FormGroup>
-      <FormGroup>
-        <label htmlFor="inputDefinition">Definition</label>
-        <Textarea
-          name="inputDefinition"
-          id="inputDefinition"
-          onChange={(e) => setInputDefinition(e.target.value)}
-          placeholder="type smth"
-          value={inputDefinition}
-        />
-      </FormGroup>
+        label="word"
+        validationText="required"
+        onChange={(e) => setInputWord(e.target.value)}
+      />
+      <Input
+        name="inputThesaurus"
+        id="inputThesaurus"
+        placeholder="type smth"
+        value={inputThesaurus}
+        isRequired
+        label="thesaurus"
+        validationText="required"
+        onChange={(e) => setInputThesaurus(e.target.value)}
+      />
+      <Textarea
+        name="inputDefinition"
+        id="inputDefinition"
+        placeholder="type smth"
+        value={inputDefinition}
+        label="definition"
+        onChange={(e) => setInputDefinition(e.target.value)}
+      />
       <Icon
         name="mic"
         size={24}
