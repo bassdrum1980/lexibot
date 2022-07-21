@@ -4,7 +4,7 @@
 .form-group {
   label {
     display: inline-block;
-    margin-bottom: $spacing-scale-3;
+    margin-bottom: $spacing-px-8;
     
     font-family: $font-family-ui;
     font-weight: $font-weight-regular;
@@ -16,7 +16,7 @@
   }
 
   .form-group__validationText {
-    margin-top: $spacing-scale-3;
+    margin-top: $spacing-px-8;
     font-family: $font-family-ui;
     font-weight: $font-weight-regular;
     font-size: $font-size-ui-ssm;
@@ -29,9 +29,9 @@
   .form-textarea {
     display: block;
     width: 100%;
-    height: $spacing-scale-11;
+    height: $spacing-px-96;
   
-    padding: $spacing-scale-4 $spacing-scale-5;
+    padding: $spacing-px-12 $spacing-px-16;
     box-sizing: border-box;
   
     @include border;
@@ -64,16 +64,16 @@
     .form-group__validationText {
       position: absolute;
       right: 0;
-      top: $spacing-scale-1;
+      top: $spacing-px-2;
       margin-top: 0;
     }
   }
 
   &.form-group--required {
     label::after {
-      margin-left: $spacing-scale-1;
+      margin-left: $spacing-px-2;
       position: relative;
-      top: -$spacing-scale-1;
+      top: -$spacing-px-2;
   
       color: $red600;
       content: '*';
