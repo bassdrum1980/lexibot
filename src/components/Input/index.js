@@ -3,45 +3,65 @@ import PropTypes from 'prop-types';
 import './index.scss';
 
 const propTypes = {
-  placeholder: PropTypes.string,
-  value: PropTypes.string,
   name: PropTypes.string,
   id: PropTypes.string,
-  onChange: PropTypes.func.isRequired,
+  placeholder: PropTypes.string,
+  value: PropTypes.string,
   className: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
-  isDisabled: PropTypes.bool,
+  isRequired: PropTypes.bool,
   isValid: PropTypes.bool,
+  label: PropTypes.string,
+  validationText: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
-  placeholder: '',
-  value: '',
   name: '',
   id: '',
+  placeholder: '',
+  value: '',
   className: '',
-  isDisabled: false,
+  isRequired: false,
   isValid: true,
+  label: '',
+  validationText: '',
 };
 
 const Input = ({
-  placeholder, value, name, id, onChange, className, isDisabled, isValid, ...rest
+  name,
+  id,
+  placeholder,
+  value,
+  className,
+  isRequired,
+  isValid,
+  label,
+  validationText,
+  onChange,
+  ...rest
 }) => (
-  <input
-    type="text"
-    placeholder={placeholder}
-    value={value}
-    name={name}
-    id={id}
-    onChange={onChange}
+  <div
     className={classnames(
-      'form-input',
+      'form-group',
       Array.isArray(className) ? className.join(' ') : className,
-      { 'form-input--disabled': isDisabled },
-      { 'form-input--invalid': !isValid },
+      { 'form-group--required': isRequired },
+      { 'form-group--invalid': !isValid },
+      { 'form-group--has-label': label },
     )}
-    disabled={isDisabled}
     {...rest}
-  />
+  >
+    {label && <label htmlFor={id}>{label}</label>}
+    <input
+      type="text"
+      placeholder={placeholder}
+      value={value}
+      name={name}
+      id={id}
+      onChange={onChange}
+      className="form-input"
+    />
+    {validationText && <span className="form-group__validationText">{validationText}</span>}
+  </div>
 );
 
 Input.displayName = 'Input';

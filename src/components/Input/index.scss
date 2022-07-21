@@ -1,43 +1,96 @@
 @import 'styles/variables.scss';
 @import 'styles/utility-mixins/index.scss';
 
-.form-input {
-  display: block;
-  width: 100%;
+.form-group {
+  label {
+    display: inline-block;
+    margin-bottom: $spacing-scale-3;
 
-  padding: $spacing-scale-4 $spacing-scale-5;
-  box-sizing: border-box;
+    font-family: $font-family-ui;
+    font-weight: $font-weight-regular;
+    font-size: $font-size-ui-sm;
+    line-height: $line-height-16;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-r;
+    color: $gray800;
+  }
 
-  @include border;
-  border-radius: $border-radius-small;
-
-  font-family: $font-family-content;
-  font-weight: $font-weight-regular;
-  font-style: normal;
-  line-height: $line-height-28;
-
-  color: $gray1000;
-  caret-color: $gray1000;
-  background-color: $gray100;
-
-  &::placeholder {
+  .form-group__validationText {
+    margin-top: $spacing-scale-3;
+    font-family: $font-family-ui;
+    font-weight: $font-weight-regular;
+    font-size: $font-size-ui-ssm;
+    line-height: $line-height-16;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-r;
     color: $gray500;
   }
 
-  &:focus {
-    border-color: $gray500;
-    outline: none;
+  .form-input {
+    display: block;
+    width: 100%;
+  
+    padding: $spacing-scale-4 $spacing-scale-5;
+    box-sizing: border-box;
+  
+    @include border;
+    border-radius: $border-radius-small;
+  
+    font-family: $font-family-content;
+    font-weight: $font-weight-regular;
+    font-style: normal;
+    line-height: $line-height-28;
+  
+    color: $gray1000;
+    caret-color: $gray1000;
+    background-color: $gray100;
+  
+    &::placeholder {
+      color: $gray500;
+    }
+  
+    &:focus {
+      border-color: $gray500;
+      outline: none;
+    }
   }
 
-  &--invalid {
-    border-color: $red300;
-    background-color: $red50;
+  &.form-group--has-label {
+    position: relative;
+    
+    .form-group__validationText {
+      position: absolute;
+      right: 0;
+      top: $spacing-scale-1;
+      margin-top: 0;
+    }
+  }
 
-    color: $red700;
-    caret-color: $red700;
+  &.form-group--required {
+    label::after {
+      margin-left: $spacing-scale-1;
+      position: relative;
+      top: -$spacing-scale-1;
+  
+      color: $red600;
+      content: '*';
+    }
+  }
 
-    &:focus {
-      border-color: $red500;
+  &.form-group--invalid {
+    .form-group__validationText {
+      color: $red500;
+    }
+
+    .form-input {
+      border-color: $red300;
+      background-color: $red50;
+      color: $red700;
+      caret-color: $red700;
+
+      &:focus {
+        border-color: $red500;
+      }
     }
   }
 }
