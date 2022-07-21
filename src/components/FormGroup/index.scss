@@ -16,7 +16,7 @@
 
   label {
     font-size: $font-size-ui-sm;
-    color: $gray400;
+    color: $gray800;
   }
 
   .form-group__note {
@@ -27,6 +27,10 @@
     
     font-size: $font-size-ui-ssm;
     color: $gray500;
+
+    &--invalid {
+      color: $red500;
+    }
   }
 
   &--required {
@@ -37,10 +41,6 @@
       
       color: $red600;
       content: '*';
-    }
-
-    .form-group__note {
-      color: $red500;
     }
   }
 }
