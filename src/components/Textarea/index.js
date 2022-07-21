@@ -3,47 +3,67 @@ import PropTypes from 'prop-types';
 import './index.scss';
 
 const propTypes = {
-  placeholder: PropTypes.string,
-  value: PropTypes.string,
   name: PropTypes.string,
   id: PropTypes.string,
-  onChange: PropTypes.func.isRequired,
+  placeholder: PropTypes.string,
+  value: PropTypes.string,
   className: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
-  isDisabled: PropTypes.bool,
+  isRequired: PropTypes.bool,
   isValid: PropTypes.bool,
+  label: PropTypes.string,
+  validationText: PropTypes.string,
+  onChange: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
-  placeholder: '',
-  value: '',
   name: '',
   id: '',
+  placeholder: '',
+  value: '',
   className: '',
-  isDisabled: false,
+  isRequired: false,
   isValid: true,
+  label: '',
+  validationText: '',
 };
 
 const Textarea = ({
-  placeholder, value, name, id, onChange, className, isDisabled, isValid, ...rest
+  name,
+  id,
+  placeholder,
+  value,
+  className,
+  isRequired,
+  isValid,
+  label,
+  validationText,
+  onChange,
+  ...rest
 }) => (
-  <textarea
-    placeholder={placeholder}
-    value={value}
-    name={name}
-    id={id}
-    onChange={onChange}
+  <div
     className={classnames(
-      'form-textarea',
+      'form-group',
       Array.isArray(className) ? className.join(' ') : className,
-      { 'form-textarea--disabled': isDisabled },
-      { 'form-textarea--invalid': !isValid },
+      { 'form-group--required': isRequired },
+      { 'form-group--invalid': !isValid },
+      { 'form-group--has-label': label },
     )}
-    disabled={isDisabled}
     {...rest}
-  />
+  >
+    {label && <label htmlFor={id}>{label}</label>}
+    <textarea
+      placeholder={placeholder}
+      value={value}
+      name={name}
+      id={id}
+      onChange={onChange}
+      className="form-textarea"
+    />
+    {validationText && <span className="form-group__validationText">{validationText}</span>}
+  </div>
 );
 
-Textarea.displayName = 'Textarea';
+Textarea.displayName = 'Input';
 Textarea.propTypes = propTypes;
 Textarea.defaultProps = defaultProps;
 
