@@ -6,6 +6,7 @@ const propTypes = {
   placeholder: PropTypes.string,
   value: PropTypes.string,
   name: PropTypes.string,
+  id: PropTypes.string,
   onChange: PropTypes.func.isRequired,
   className: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   isDisabled: PropTypes.bool,
@@ -16,19 +17,20 @@ const defaultProps = {
   placeholder: '',
   value: '',
   name: '',
+  id: '',
   className: '',
   isDisabled: false,
   isValid: true,
 };
 
 const Textarea = ({
-  placeholder, value, name, onChange, className, isDisabled, isValid, ...rest
+  placeholder, value, name, id, onChange, className, isDisabled, isValid, ...rest
 }) => (
   <textarea
     placeholder={placeholder}
     value={value}
     name={name}
-    id={name}
+    id={id}
     onChange={onChange}
     className={classnames(
       'form-textarea',

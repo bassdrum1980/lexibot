@@ -17,6 +17,7 @@ const App = () => {
         <label htmlFor="inputWord">Word</label>
         <Input
           name="inputWord"
+          id="inputWord"
           onChange={(e) => setInputWord(e.target.value)}
           placeholder="type smth"
           value={inputWord}
@@ -30,6 +31,7 @@ const App = () => {
         <label htmlFor="inputThesaurus">Thesaurus</label>
         <Input
           name="inputThesaurus"
+          id="inputThesaurus"
           onChange={(e) => setInputThesaurus(e.target.value)}
           placeholder="type smth"
           value={inputThesaurus}
@@ -40,6 +42,7 @@ const App = () => {
         <label htmlFor="inputDefinition">Definition</label>
         <Textarea
           name="inputDefinition"
+          id="inputDefinition"
           onChange={(e) => setInputDefinition(e.target.value)}
           placeholder="type smth"
           value={inputDefinition}
