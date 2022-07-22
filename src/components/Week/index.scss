@@ -1,8 +1,7 @@
 @import 'styles/variables.scss';
+@import 'styles/utility-mixins/index.scss';
 
 /* temporary variables */
-$gray6: #7B8794;
-$gray300: #CBD2D9;
 $flameTop:#FF9960;
 $flameBottom: #FF5C00;
 
@@ -27,8 +26,10 @@ li {
 
   span {
     display: block;
-    margin-bottom: 4px;
-    font-size: 14px;
+    margin-bottom: $spacing-px-4;
+
+    @include font-ui;
+    @include font-size-ui-sm;
     text-transform: uppercase;
     color: $gray500;
   }

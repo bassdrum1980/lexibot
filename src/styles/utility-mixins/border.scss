@@ -6,14 +6,14 @@
   border: solid $border-size-1 $border-color--danger;
 }
 
-@mixin noborder {
+@mixin border-none {
   border: none;
 }
 
-@mixin round {
+@mixin border-radius-full {
   border-radius: px-to-rem(9999px);
 }
 
-@mixin round-sm {
+@mixin border-radius-sm {
   border-radius: $border-radius-small;
 }

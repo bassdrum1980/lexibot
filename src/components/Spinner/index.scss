@@ -1,10 +1,11 @@
 @import 'styles/variables.scss';
+@import 'styles/utility-mixins/index.scss';
 
 .spinner {
   position: relative;
   display: inline-block;
-  width: 32px;
-  height: 32px;
+  width: $spacing-px-32;
+  height: $spacing-px-32;
   vertical-align: middle;
 
   &:before {
@@ -13,8 +14,9 @@
     right: 0;
     top: 0;
     bottom: 0;
-    border-radius: 50%;
-    border: 4px solid $gray500;
+
+    @include border-radius-full;
+    border: $spacing-px-4 solid $gray500;
     border-right-color: #fff;
     animation: spinner 1.1s infinite linear;
     content: '';

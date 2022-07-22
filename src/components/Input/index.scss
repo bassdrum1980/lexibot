@@ -2,49 +2,48 @@
 @import 'styles/utility-mixins/index.scss';
 
 .form-group {
+  label,
+  .form-group__validationText {
+    @include font-ui;
+    @include font-weight-regular;
+    @include line-height-16;
+    @include letter-spacing-05;
+
+    text-transform: uppercase;
+  }
+
   label {
     display: inline-block;
     margin-bottom: $spacing-px-8;
 
-    font-family: $font-family-ui;
-    font-weight: $font-weight-regular;
-    font-size: $font-size-ui-sm;
-    line-height: $line-height-16;
-    text-transform: uppercase;
-    letter-spacing: $letter-spacing-r;
+    @include font-size-ui-sm;
     color: $gray800;
   }
 
   .form-group__validationText {
     margin-top: $spacing-px-8;
-    font-family: $font-family-ui;
-    font-weight: $font-weight-regular;
-    font-size: $font-size-ui-ssm;
-    line-height: $line-height-16;
-    text-transform: uppercase;
-    letter-spacing: $letter-spacing-r;
+
+    @include font-size-ui-ssm;
     color: $gray500;
   }
 
   .form-input {
     display: block;
     width: 100%;
-  
     padding: $spacing-px-12 $spacing-px-16;
     box-sizing: border-box;
   
-    @include border;
-    @include round-sm;
-  
-    font-family: $font-family-content;
-    font-weight: $font-weight-regular;
-    font-style: normal;
-    line-height: $line-height-28;
-  
+    @include font-content;
+    @include font-weight-regular;
+    @include font-size-content;
+    @include line-height-28;
     color: $gray1000;
     caret-color: $gray1000;
+    
+    @include border;
+    @include border-radius-sm;
     background-color: $gray100;
-  
+      
     &::placeholder {
       color: $gray500;
     }
@@ -68,9 +67,9 @@
 
   &.form-group--required {
     label::after {
-      margin-left: $spacing-px-2;
       position: relative;
       top: -$spacing-px-2;
+      margin-left: $spacing-px-2;
   
       color: $red600;
       content: '*';
@@ -83,10 +82,11 @@
     }
 
     .form-input {
-      border-color: $red300;
-      background-color: $red50;
       color: $red700;
       caret-color: $red700;
+      
+      border-color: $red300;
+      background-color: $red50;
 
       &:focus {
         border-color: $red500;

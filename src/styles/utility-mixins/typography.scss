@@ -1,0 +1,35 @@
+// Font-family
+@mixin font-ui {font-family: $font-family-ui}
+@mixin font-content {font-family: $font-family-content}
+
+// Font-size UI
+@mixin font-size-ui-sssm {font-size: $font-size-ui-11}
+@mixin font-size-ui-ssm {font-size: $font-size-ui-12}
+@mixin font-size-ui-sm {font-size: $font-size-ui-14}
+// TODO: переименовать font-size-ui в font-size-ui-base
+@mixin font-size-ui {font-size: $font-size-ui-16}
+@mixin font-size-ui-h2 {font-size: $font-size-ui-20}
+@mixin font-size-ui-h1 {font-size: $font-size-ui-60}
+
+// Font-size Content
+// TODO: аналогично переименовать в -base
+@mixin font-size-content {font-size: $font-size-content-15}
+@mixin font-size-content-h4 {font-size: $font-size-content-20}
+@mixin font-size-content-h3 {font-size: $font-size-content-24}
+@mixin font-size-content-h2 {font-size: $font-size-content-28}
+@mixin font-size-content-h1 {font-size: $font-size-content-36}
+
+// Font-weight
+@mixin font-weight-light {font-weight: $font-weight-light}
+@mixin font-weight-regular {font-weight: $font-weight-regular}
+@mixin font-weight-bold {font-weight: $font-weight-bold}
+
+// Line-height
+@mixin line-height-12 {line-height: $line-height-12}
+@mixin line-height-16 {line-height: $line-height-16}
+@mixin line-height-20 {line-height: $line-height-20}
+@mixin line-height-24 {line-height: $line-height-24}
+@mixin line-height-28 {line-height: $line-height-28}
+
+// Letter-spacing
+@mixin letter-spacing-05 {letter-spacing: $letter-spacing-05}

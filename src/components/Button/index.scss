@@ -4,17 +4,16 @@
 .button {
   box-sizing: border-box;
   
-  font-family: $font-family-ui;
-  font-weight: $font-weight-bold;
-  font-size: $font-size-ui;
-  line-height: $line-height-24;
+  @include font-ui;
+  @include font-weight-bold;
+  @include font-size-ui;
+  @include line-height-24;
   text-align: center;
-
   color: $gray1000;
-  @include bg-white;
   
-  @include noborder;
-  @include round;
+  @include bg-white;
+  @include border-none;
+  @include border-radius-full;
 
   // Styles
   &--primary {
@@ -25,23 +24,23 @@
     @include border;
   }
   &--link {
-    font-weight: $font-weight-regular;
+    @include font-weight-regular;
     @include bg-none;
   }
   &--destructive {
-    @include border--danger;
     color: $red600;
+    @include border--danger;
   }
   &--with-legend {
+    @include line-height-20;
     @include border;
-    @include round-sm;
-    line-height: $line-height-20;
+    @include border-radius-sm;
 
     .button__legend {
       display: block;
-      font-size: $font-size-ui-sssm;
-      font-weight: $font-weight-light;
-      line-height: $line-height-12;
+      @include font-size-ui-sssm;
+      @include font-weight-light;
+      @include line-height-12;
       color: $gray500;
     }
   }

@@ -1,12 +1,14 @@
 @import 'styles/variables.scss';
+@import 'styles/utility-mixins/index.scss';
 
 .pill {
   position: relative;
   display: inline-block;
 
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 140%;
+  @include font-ui;
+  @include font-size-ui-ssm;
+  @include font-weight-bold;
+  @include line-height-16;
   text-transform: uppercase;
   
   &:after {
@@ -14,10 +16,12 @@
     left: 0;
     right: 0;
     bottom: 0;
-    height: 2px;
-    border-radius: 1px;
-    opacity: .2;
+    height: $spacing-px-2;
+    
     content: '';
+    
+    @include border-radius-full;
+    opacity: .2;
   }
 
   &--noun {

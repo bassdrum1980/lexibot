@@ -88,19 +88,19 @@ $primary-gradient--search--light: linear-gradient(175deg, #FFFFFF 0%, #F9F5FA 10
 //$font-size-base: 1rem;
 
 // UI typescale
-$font-size-ui-sssm: px-to-rem(11px);
-$font-size-ui-ssm: px-to-rem(12px);
-$font-size-ui-sm: px-to-rem(14px);
-$font-size-ui: px-to-rem(16px);
-$font-size-ui-h2: px-to-rem(20px);
-$font-size-ui-h1: px-to-rem(60px);
+$font-size-ui-11: px-to-rem(11px);
+$font-size-ui-12: px-to-rem(12px);
+$font-size-ui-14: px-to-rem(14px);
+$font-size-ui-16: px-to-rem(16px);
+$font-size-ui-20: px-to-rem(20px);
+$font-size-ui-60: px-to-rem(60px);
 
 // Content typescale
-$font-size-content: px-to-rem(15px);
-$font-size-content-h4: px-to-rem(20px);
-$font-size-content-h3: px-to-rem(24px);
-$font-size-content-h2: px-to-rem(28px);
-$font-size-content-h1: px-to-rem(36px);
+$font-size-content-15: px-to-rem(15px);
+$font-size-content-20: px-to-rem(20px);
+$font-size-content-24: px-to-rem(24px);
+$font-size-content-28: px-to-rem(28px);
+$font-size-content-36: px-to-rem(36px);
 
 // Fonts
 $font-family-ui: -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI', 'Noto Sans', Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
@@ -119,7 +119,7 @@ $line-height-24: px-to-rem(24px);
 $line-height-28: px-to-rem(28px);
 
 // Letter-spacing
-$letter-spacing-r: px-to-rem(0.5px);
+$letter-spacing-05: px-to-rem(0.5px);
 
 // BORDERS
 // Border-size
