@@ -9,6 +9,7 @@
   font-weight: $font-weight-bold;
   font-size: $font-size-ui;
   line-height: $line-height-24;
+  text-align: center;
 
   color: $gray1000;
   @include bg-white;
@@ -32,10 +33,23 @@
     @include border--danger;
     color: $red600;
   }
+  &--with-legend {
+    @include border;
+    @include round-sm;
+    line-height: $line-height-20;
+
+    .button__legend {
+      display: block;
+      font-size: $font-size-ui-sssm;
+      font-weight: $font-weight-light;
+      line-height: $line-height-12;
+      color: $gray500;
+    }
+  }
 
   // Sizes
   &--sm {
-    padding: $spacing-px-8 $spacing-px-24;
+    padding: $spacing-px-12;
   }
   &--m {
     padding: $spacing-px-16 $spacing-px-48;

@@ -7,7 +7,15 @@ const propTypes = {
   type: PropTypes.oneOf(['button', 'reset', 'submit', null]),
   size: PropTypes.oneOf(['sm', 'm', 'l', null]),
   width: PropTypes.oneOf(['fill', 'hug', null]),
-  btnStyle: PropTypes.oneOf(['primary', 'secondary', 'tertiary', 'link', 'destructive', null]),
+  btnStyle: PropTypes.oneOf([
+    'primary',
+    'secondary',
+    'tertiary',
+    'link',
+    'destructive',
+    'with-legend',
+    null,
+  ]),
   onClick: PropTypes.func.isRequired,
   className: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
 };

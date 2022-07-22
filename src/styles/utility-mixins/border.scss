@@ -13,3 +13,7 @@
 @mixin round {
   border-radius: px-to-rem(9999px);
 }
+
+@mixin round-sm {
+  border-radius: $border-radius-small;
+}

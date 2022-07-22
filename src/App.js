@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 import {
-  Spinner, Button, Week, Pill, Progress, Input, Textarea, Icon,
+  Spinner, Button, ButtonWithLegend, Week, Pill, Progress, Input, Textarea, Icon,
 } from 'components';
 
 const App = () => {
@@ -9,6 +9,7 @@ const App = () => {
   const [inputThesaurus, setInputThesaurus] = useState('coercion');
   const [inputDefinition, setInputDefinition] = useState('');
   const btnRef = useRef(null);
+  const btnLegendRef = useRef(null);
   useEffect(() => console.log(btnRef), []);
 
   return (
@@ -49,6 +50,15 @@ const App = () => {
       >
         Click me for progress!
       </Button>
+      <ButtonWithLegend
+        btnStyle="with-legend"
+        legend="4 days"
+        onClick={() => setProgress(Math.random() * 100)}
+        ref={btnLegendRef}
+      >
+        Good
+      </ButtonWithLegend>
+
       <Icon
         name="mic"
         size={24}

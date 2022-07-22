@@ -88,6 +88,7 @@ $primary-gradient--search--light: linear-gradient(175deg, #FFFFFF 0%, #F9F5FA 10
 //$font-size-base: 1rem;
 
 // UI typescale
+$font-size-ui-sssm: px-to-rem(11px);
 $font-size-ui-ssm: px-to-rem(12px);
 $font-size-ui-sm: px-to-rem(14px);
 $font-size-ui: px-to-rem(16px);
@@ -111,7 +112,9 @@ $font-weight-regular: 400;
 $font-weight-bold: 600;
 
 // Line-height
+$line-height-12: px-to-rem(12px);
 $line-height-16: px-to-rem(16px);
+$line-height-20: px-to-rem(20px);
 $line-height-24: px-to-rem(24px);
 $line-height-28: px-to-rem(28px);
 
@@ -128,4 +131,3 @@ $border-color--danger: $red300;
 
 // Border-radius
 $border-radius-small: $spacing-px-4;
-$border-radius-full: 50%;
