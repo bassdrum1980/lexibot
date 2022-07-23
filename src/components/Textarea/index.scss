@@ -14,7 +14,7 @@
 
   label {
     display: inline-block;
-    margin-bottom: $spacing-px-8;
+    @include margin-b-8;
 
     @include font-size-ui-sm;
     color: $gray800;

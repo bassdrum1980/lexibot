@@ -26,8 +26,8 @@ li {
 
   span {
     display: block;
-    margin-bottom: $spacing-px-4;
-
+    @include margin-b-4;
+    
     @include font-ui;
     @include font-size-ui-sm;
     text-transform: uppercase;
