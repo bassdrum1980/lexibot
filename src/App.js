@@ -13,7 +13,7 @@ const App = () => {
   useEffect(() => console.log(btnRef), []);
 
   return (
-    <div>
+    <div className="container">
       <Input
         name="inputWord"
         id="inputWord"

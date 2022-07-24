@@ -1,0 +1,44 @@
+.container {
+  // TODO: сделать луп который генерирует этот десяток переменных
+  // вынести в функцию и использовать для каждой темы
+
+  --gray1000: #{$gray1000};
+  --gray900: #{$gray900};
+  --gray800: #{$gray800};
+  --gray700: #{$gray700};
+  --gray600: #{$gray600};
+  --gray500: #{$gray500};
+  --gray400: #{$gray400};
+  --gray300: #{$gray300};
+  --gray200: #{$gray200};
+  --gray100: #{$gray100};
+  --primary1000: #{$primary1000};
+
+  &--study {
+    --gray1000: #{$gray1000--study};
+    --gray900: #{$gray900--study};
+    --gray800: #{$gray800--study};
+    --gray700: #{$gray700--study};
+    --gray600: #{$gray600--study};
+    --gray500: #{$gray500--study};
+    --gray400: #{$gray400--study};
+    --gray300: #{$gray300--study};
+    --gray200: #{$gray200--study};
+    --gray100: #{$gray100--study};
+    --primary1000: #{$primary1000--study};
+  }
+
+  &--search {
+    --gray1000: #{$gray1000--search};
+    --gray900: #{$gray900--search};
+    --gray800: #{$gray800--search};
+    --gray700: #{$gray700--search};
+    --gray600: #{$gray600--search};
+    --gray500: #{$gray500--search};
+    --gray400: #{$gray400--search};
+    --gray300: #{$gray300--search};
+    --gray200: #{$gray200--search};
+    --gray100: #{$gray100--search};
+    --primary1000: #{$primary1000--search};
+  }
+}

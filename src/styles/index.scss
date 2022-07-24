@@ -2,6 +2,7 @@
 @import './functions.scss';
 @import './variables.scss';
 @import './utility-mixins/index.scss';
+@import './layout.scss';
 
 body {
   padding: px-to-rem(50px);
