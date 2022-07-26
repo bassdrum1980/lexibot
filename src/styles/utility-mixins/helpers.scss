@@ -1,0 +1,40 @@
+/*
+  This loop produces a set of custom properties based
+  on maps with specific color palettes.
+
+  The color palettes for each theme are stored in 
+  theme-specific maps.
+  $gray: (
+    100: #F5F8FA,
+    200: #E4E9EB,
+    300: #CBD5D9,
+    400: #9AABB1,
+    500: #7B8E94,
+    600: #61757C,
+    700: #52666D,
+    800: #3E5259,
+    900: #32454B,
+    1000: #1B2529, 
+  );
+
+  Call the mixin, provide it with a palette and prefix:
+  @include theme-to-custom-properties($gray, 'gray');
+
+  Which results in the following output:
+  --gray100: #F5F8FA;
+  --gray200: #E4E9EB;
+  --gray300: #CBD5D9;
+  --gray400: #9AABB1;
+  --gray500: #7B8E94;
+  --gray600: #61757C;
+  --gray700: #52666D;
+  --gray800: #3E5259;
+  --gray900: #32454B;
+  --gray1000: #1B2529;
+*/
+
+@mixin theme-to-custom-properties ($palette, $prefix) {
+  @each $index, $color in $palette {
+    --#{$prefix}#{$index}: #{$color};
+  }
+}

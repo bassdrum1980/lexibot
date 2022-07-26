@@ -1,4 +1,5 @@
 @use 'sass:color';
+@use 'sass:map';
 @import './functions.scss';
 
 // Layout
@@ -20,75 +21,109 @@ $spacing-px-192: 24 * $grid-size;
 $spacing-px-256: 32 * $grid-size;
 $spacing-px-384: 48 * $grid-size;
 
-// COLORS
-// 'Base' theme
-$gray1000: #1B2529;
-$gray900: #32454B;
-$gray800: #3E5259;
-$gray700: #52666D;
-$gray600: #61757C;
-$gray500: #7B8E94;
-$gray400: #9AABB1;
-$gray300: #CBD5D9;
-$gray200: #E4E9EB;
-$gray100: #F5F8FA;
+// TODO: продолжить с миксинами (бордеры например, на фокус у меня нет миксина)
 
-$primary1000: #034F69;
+/*
+  Colors
 
-$red1000: #610316;
-$red900: #8A041A;
-$red800: #AB091E;
-$red700: #CF1124;
-$red600: #E12D39;
-$red500: #EF4E4E;
-$red400: #F86A6A;
-$red300: #FF9B9B;
-$red200: #FFBDBD;
-$red100: #FFE3E3;
-$red50: #FFEBEB;
+  Most of the color palettes are theme specific.
+  I store them in sass maps, translate them
+  to sets of css custom properties and attach to 
+  the '.container' element (see layout.scss).
 
-$pill-noun: #890DBD;
-$pill-pronoun: #B60785;
-$pill-interjection: #378904;
-$pill-preposition: #019ED0;
-$pill-conjunction: #C80E0E;
-$pill-verb: #0052AF;
-$pill-adverb: #049F96;
-$pill-adjective: #BC4807;
-$pill-various: #B89300;
+  Thus, you can see me using custom properties for
+  theme-specific colors and sass variables / map.get() 
+  expressions for shared colors.
 
-$orange-gradient: linear-gradient(175deg, #FF9960 0%, #FF5C00 100%);
+  Naming convention — 
+  $color-colorname--theme => $color-gray--study
+*/
 
+// Shared colors
+$color-gray: (
+  100: #F5F8FA,
+  200: #E4E9EB,
+  300: #CBD5D9,
+  400: #9AABB1,
+  500: #7B8E94,
+  600: #61757C,
+  700: #52666D,
+  800: #3E5259,
+  900: #32454B,
+  1000: #1B2529, 
+);
+$color-primary: (
+  1000: #034F69,
+);
+$color-danger: (
+  50: #FFEBEB,
+  100: #FFE3E3,
+  200: #FFBDBD,
+  300: #FF9B9B,
+  400: #F86A6A,
+  500: #EF4E4E,
+  600: #E12D39,
+  700: #CF1124,
+  800: #AB091E,
+  900: #8A041A,
+  1000: #610316, 
+);
+$color-pill: (
+  'noun': #890DBD,
+  'pronoun': #B60785,
+  'interjection': #B60785,
+  'preposition': #019ED0,
+  'conjunction': #C80E0E,
+  'verb': #0052AF,
+  'adverb': #049F96,
+  'adjective': #BC4807,
+  'various': #B89300
+);
+$color-gradient: (
+  'flame': linear-gradient(175deg, #FF9960 0%, #FF5C00 100%),
+);
 
 // 'Study' theme
-$gray1000--study: color.adjust($gray1000, $hue: 14);
-$gray900--study: color.adjust($gray900, $hue: 14);
-$gray800--study: color.adjust($gray800, $hue: 14);
-$gray700--study: color.adjust($gray700, $hue: 14);
-$gray600--study: color.adjust($gray600, $hue: 14);
-$gray500--study: color.adjust($gray500, $hue: 14);
-$gray400--study: color.adjust($gray400, $hue: 14);
-$gray300--study: color.adjust($gray300, $hue: 14);
-$gray200--study: color.adjust($gray200, $hue: 14);
-$gray100--study: color.adjust($gray100, $hue: 7);
-$primary1000--study: #136FD1;
-$primary-gradient--study: linear-gradient(175deg, #26AAF4 0%, #126FD1 100%);
-$primary-gradient--study--light: linear-gradient(175deg, #FFFFFF 0%, #F7FAFC 100%);
+$color-gray--study: (
+  100: color.adjust(map.get($color-gray, 100), $hue: 7),
+  200: color.adjust(map.get($color-gray, 200), $hue: 14),
+  300: color.adjust(map.get($color-gray, 300), $hue: 14),
+  400: color.adjust(map.get($color-gray, 400), $hue: 14),
+  500: color.adjust(map.get($color-gray, 500), $hue: 14),
+  600: color.adjust(map.get($color-gray, 600), $hue: 14),
+  700: color.adjust(map.get($color-gray, 700), $hue: 14),
+  800: color.adjust(map.get($color-gray, 800), $hue: 14),
+  900: color.adjust(map.get($color-gray, 900), $hue: 14),
+  1000: color.adjust(map.get($color-gray, 1000), $hue: 14), 
+);
+$color-primary--study: (
+  1000: #136FD1,
+);
+$color-gradient--study: (
+  'primary': linear-gradient(175deg, #26AAF4 0%, #126FD1 100%),
+  'primary--light': linear-gradient(175deg, #FFFFFF 0%, #F7FAFC 100%),
+);
 
 // 'Search' theme
-$gray1000--search: color.adjust($gray1000, $hue: 87);
-$gray900--search: color.adjust($gray900, $hue: 87);
-$gray800--search: color.adjust($gray800, $hue: 87);
-$gray700--search: color.adjust($gray700, $hue: 87);
-$gray600--search: color.adjust($gray600, $hue: 87);
-$gray500--search: color.adjust($gray500, $hue: 87);
-$gray400--search: color.adjust($gray400, $hue: 87);
-$gray300--search: color.adjust($gray300, $hue: 87);
-$gray200--search: color.adjust($gray200, $hue: 87);
-$gray100--search: color.adjust($gray100, $hue: 80);
-$primary1000--search: #B21CE8;
-$primary-gradient--search: linear-gradient(175deg, #DE32ED 0%, #B31CE8 100%);
-$primary-gradient--search--light: linear-gradient(175deg, #FFFFFF 0%, #F9F5FA 100%);
+$color-gray--search: (
+  100: color.adjust(map.get($color-gray, 100), $hue: 80),
+  200: color.adjust(map.get($color-gray, 200), $hue: 87),
+  300: color.adjust(map.get($color-gray, 300), $hue: 87),
+  400: color.adjust(map.get($color-gray, 400), $hue: 87),
+  500: color.adjust(map.get($color-gray, 500), $hue: 87),
+  600: color.adjust(map.get($color-gray, 600), $hue: 87),
+  700: color.adjust(map.get($color-gray, 700), $hue: 87),
+  800: color.adjust(map.get($color-gray, 800), $hue: 87),
+  900: color.adjust(map.get($color-gray, 900), $hue: 87),
+  1000: color.adjust(map.get($color-gray, 1000), $hue: 87), 
+);
+$color-primary--search: (
+  1000: #B21CE8,
+);
+$color-gradient--search: (
+  'primary': linear-gradient(175deg, #DE32ED 0%, #B31CE8 100%),
+  'primary--light': linear-gradient(175deg, #FFFFFF 0%, #F9F5FA 100%),
+);
 
 // TYPOGRAPHY
 //$font-size-base: 1rem;
@@ -132,8 +167,8 @@ $letter-spacing-05: px-to-rem(0.5px);
 $border-size-1: 1px;
 
 // Border-color
-$border-color: $gray300;
-$border-color--danger: $red300;
+$border-color: var(--gray300);
+$border-color--danger: map.get($color-danger, 300);
 
 // Border-radius
 $border-radius-small: $spacing-px-4;

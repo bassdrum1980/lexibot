@@ -1,3 +1,4 @@
+@use 'sass:map';
 @import 'styles/variables.scss';
 @import 'styles/utility-mixins/index.scss';
 
@@ -17,14 +18,14 @@
     @include margin-b-8;
 
     @include font-size-ui-sm;
-    color: $gray800;
+    color: var(--gray800);
   }
 
   .form-group__validationText {
     margin-top: $spacing-px-8;
 
     @include font-size-ui-ssm;
-    color: $gray500;
+    color: var(--gray500);
   }
 
   .form-input {
@@ -37,19 +38,19 @@
     @include font-weight-regular;
     @include font-size-content;
     @include line-height-28;
-    color: $gray1000;
-    caret-color: $gray1000;
+    color: var(--gray1000);
+    caret-color: var(--gray1000);
     
     @include border;
     @include border-radius-sm;
-    background-color: $gray100;
+    background-color: var(--gray100);
       
     &::placeholder {
-      color: $gray500;
+      color: var(--gray500);
     }
   
     &:focus {
-      border-color: $gray500;
+      border-color: var(--gray500);
       outline: none;
     }
   }
@@ -71,25 +72,25 @@
       top: -$spacing-px-2;
       margin-left: $spacing-px-2;
   
-      color: $red600;
+      color: map.get($color-danger, 600);
       content: '*';
     }
   }
 
   &.form-group--invalid {
     .form-group__validationText {
-      color: $red500;
+      color: map.get($color-danger, 500);
     }
 
     .form-input {
-      color: $red700;
-      caret-color: $red700;
+      color: map.get($color-danger, 700);
+      caret-color: map.get($color-danger, 700);
       
-      border-color: $red300;
-      background-color: $red50;
+      @include border--danger;
+      background-color: map.get($color-danger, 50);
 
       &:focus {
-        border-color: $red500;
+        border-color: map.get($color-danger, 500);
       }
     }
   }

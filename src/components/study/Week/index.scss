@@ -1,3 +1,4 @@
+@use 'sass:map';
 @import 'styles/variables.scss';
 @import 'styles/utility-mixins/index.scss';
 
@@ -31,7 +32,7 @@ li {
     @include font-ui;
     @include font-size-ui-sm;
     text-transform: uppercase;
-    color: $gray500;
+    color: map.get($color-gray, 500);
   }
 
   svg {
@@ -39,11 +40,11 @@ li {
   }
 
   .top-stop {
-    stop-color: $gray300;
+    stop-color: map.get($color-gray, 300);
   }
 
   .bot-stop {
-    stop-color: $gray300;
+    stop-color: map.get($color-gray, 300);
   }
 
   &.--active {
