@@ -1,9 +1,9 @@
-@import './fonts.scss';
-@import './functions.scss';
-@import './variables.scss';
-@import './utility-mixins/index.scss';
-@import './mixins/index.scss';
-@import './layout.scss';
+@import 'fonts';
+@import 'functions';
+@import 'variables';
+@import 'utility-mixins/index';
+@import 'mixins/index';
+@import 'layout';
 
 body {
   padding: px-to-rem(50px);
