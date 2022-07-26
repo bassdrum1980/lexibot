@@ -1,6 +1,7 @@
 @use 'sass:map';
 @import 'styles/variables.scss';
 @import 'styles/utility-mixins/index.scss';
+@import 'styles/mixins/index.scss';
 
 .pill {
   position: relative;
@@ -25,58 +26,5 @@
     opacity: .2;
   }
 
-  &--noun {
-    color: map.get($color-pill, 'noun');
-    &:after {
-      background-color: map.get($color-pill, 'noun');
-    }
-  }
-  &--pronoun {
-    color: map.get($color-pill, 'pronoun');
-    &:after {
-      background-color: map.get($color-pill, 'pronoun');
-    }
-  }
-  &--interjection {
-    color: map.get($color-pill, 'interjection');
-    &:after {
-      background-color: map.get($color-pill, 'interjection');
-    }
-  }
-  &--preposition {
-    color: map.get($color-pill, 'preposition');
-    &:after {
-      background-color: map.get($color-pill, 'preposition');
-    }
-  }
-  &--conjunction {
-    color: map.get($color-pill, 'conjunction');
-    &:after {
-      background-color: map.get($color-pill, 'conjunction');
-    }
-  }
-  &--verb {
-    color: map.get($color-pill, 'verb');
-    &:after {
-      background-color: map.get($color-pill, 'verb');
-    }
-  }
-  &--adverb {
-    color: map.get($color-pill, 'adverb');
-    &:after {
-      background-color: map.get($color-pill, 'adverb');
-    }
-  }
-  &--adjective {
-    color: map.get($color-pill, 'adjective');
-    &:after {
-      background-color: map.get($color-pill, 'adjective');
-    }
-  }
-  &--various {
-    color: map.get($color-pill, 'various');
-    &:after {
-      background-color: map.get($color-pill, 'various');
-    }
-  }
+  @include pill-variants($color-pill);
 }

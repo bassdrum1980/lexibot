@@ -1,0 +1,10 @@
+@mixin pill-variants($pills) {
+  @each $name, $color in $pills {
+    &--#{$name} {
+      color: $color;
+      &:after {
+        background-color: $color;
+      }
+    }
+  }
+}
