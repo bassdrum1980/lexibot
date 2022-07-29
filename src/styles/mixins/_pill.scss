@@ -1,5 +1,21 @@
-@mixin pill-variants($pills) {
-  @each $name, $color in $pills {
+/*
+  This loop expects a map with names (keys) and colors (values).
+  It generates a set of modifiers for the pill component.
+  One modifier per one name/color pair.
+
+  Expected ouput:
+  
+  &--pillname {
+    color: pillcolor;
+    &:after {
+      background-color: pillcolor;
+    }
+  }
+  ...
+
+*/
+@mixin pill-variants($palette) {
+  @each $name, $color in $palette {
     &--#{$name} {
       color: $color;
       &:after {
