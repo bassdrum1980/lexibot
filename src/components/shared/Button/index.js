@@ -13,7 +13,7 @@ const propTypes = {
     'tertiary',
     'link',
     'destructive',
-    'with-legend',
+    'legend',
     null,
   ]),
   onClick: PropTypes.func.isRequired,

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from './index';
+import { Button } from 'components';
 import './index.scss';
 
 const propTypes = {
@@ -11,13 +11,13 @@ const defaultProps = {
   legend: '',
 };
 
-const ButtonWithLegend = ({
+const ButtonLegend = ({
   legend,
   children,
   ...rest
 }) => (
   <Button
-    btnStyle="with-legend"
+    btnStyle="legend"
     size="sm"
     {...rest}
   >
@@ -26,8 +26,8 @@ const ButtonWithLegend = ({
   </Button>
 );
 
-ButtonWithLegend.displayName = 'ButtonWithLegend'; // dev tools alias
-ButtonWithLegend.propTypes = propTypes;
-ButtonWithLegend.defaultProps = defaultProps;
+ButtonLegend.displayName = 'ButtonLegend'; // dev tools alias
+ButtonLegend.propTypes = propTypes;
+ButtonLegend.defaultProps = defaultProps;
 
-export default ButtonWithLegend;
+export default ButtonLegend;

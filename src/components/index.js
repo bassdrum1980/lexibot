@@ -1,5 +1,5 @@
 export { default as Button } from './shared/Button';
-export { default as ButtonWithLegend } from './shared/Button/ButtonWithLegend';
+export { default as ButtonLegend } from './shared/ButtonLegend';
 export { default as Spinner } from './shared/Spinner';
 export { default as Week } from './study/Week';
 export { default as Pill } from './shared/Pill';

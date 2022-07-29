@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 import {
-  Spinner, Button, ButtonWithLegend, Week, Pill, Progress, Input, Textarea, Icon,
+  Spinner, Button, ButtonLegend, Week, Pill, Progress, Input, Textarea, Icon,
 } from 'components';
 
 const App = () => {
@@ -50,14 +50,14 @@ const App = () => {
       >
         Click me for progress!
       </Button>
-      <ButtonWithLegend
-        btnStyle="with-legend"
+      <ButtonLegend
+        btnStyle="legend"
         legend="4 days"
         onClick={() => setProgress(Math.random() * 100)}
         ref={btnLegendRef}
       >
         Good
-      </ButtonWithLegend>
+      </ButtonLegend>
 
       <Icon
         name="mic"

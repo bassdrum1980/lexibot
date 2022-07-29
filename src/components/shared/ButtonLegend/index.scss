@@ -1,0 +1,17 @@
+@use 'sass:map';
+@import 'styles/variables.scss';
+@import 'styles/utility-mixins/index.scss';
+
+.button--legend {  
+  @include line-height-20;
+  @include border;
+  @include border-radius-sm;
+
+  .button__legend {
+    display: block;
+    @include font-size-ui-sssm;
+    @include font-weight-light;
+    @include line-height-12;
+    color: var(--gray500);
+  }
+}
