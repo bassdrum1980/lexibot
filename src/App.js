@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 import {
-  Spinner, Button, ButtonLegend, Week, Pill, Progress, Input, Textarea, Icon,
+  Spinner, Button, ButtonLegend, Week, Pill, Progress, FormGroup, Input, Textarea, Icon,
 } from 'components';
 
 const App = () => {
@@ -15,34 +15,40 @@ const App = () => {
   return (
     <div className="container">
       <Input
-        name="inputWord"
-        id="inputWord"
+        type="text"
         placeholder="type smth"
         value={inputWord}
-        isRequired
+        name="inputWord"
+        id="inputWord"
         isValid={false}
-        label="word"
-        validationText="required"
         onChange={(e) => setInputWord(e.target.value)}
       />
-      <Input
-        name="inputThesaurus"
-        id="inputThesaurus"
-        placeholder="type smth"
-        value={inputThesaurus}
-        isRequired
+      <FormGroup
         label="thesaurus"
         validationText="required"
-        onChange={(e) => setInputThesaurus(e.target.value)}
-      />
-      <Textarea
-        name="inputDefinition"
-        id="inputDefinition"
-        placeholder="type smth"
-        value={inputDefinition}
+        isRequired
+      >
+        <Input
+          type="text"
+          id="inputThesaurus"
+          name="inputThesaurus"
+          value={inputThesaurus}
+          placeholder="type smth"
+          onChange={(e) => setInputThesaurus(e.target.value)}
+          isValid={false}
+        />
+      </FormGroup>
+      <FormGroup
         label="definition"
-        onChange={(e) => setInputDefinition(e.target.value)}
-      />
+      >
+        <Textarea
+          name="inputDefinition"
+          id="inputDefinition"
+          value={inputDefinition}
+          placeholder="type smth"
+          onChange={(e) => setInputDefinition(e.target.value)}
+        />
+      </FormGroup>
       <Button
         btnStyle="primary"
         onClick={() => setProgress(Math.random() * 100)}

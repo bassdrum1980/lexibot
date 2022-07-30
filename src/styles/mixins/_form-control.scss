@@ -1,0 +1,44 @@
+@mixin form-control {
+  display: block;
+  width: 100%;
+  padding: $spacing-px-12 $spacing-px-16;
+  box-sizing: border-box;
+
+  @include font-content;
+  @include font-weight-regular;
+  @include font-size-content;
+  @include line-height-28;
+  color: var(--gray1000);
+  caret-color: var(--gray1000);
+
+  @include border;
+  @include border-radius-sm;
+  background-color: var(--gray100);
+}
+
+@mixin form-control--placeholder {
+  &::placeholder {
+    color: var(--gray500);
+  }
+}
+
+@mixin form-control--focus {
+  &:focus {
+    border-color: var(--gray500);
+    outline: none;
+  }
+}
+
+@mixin form-control--invalid {
+  &--invalid {
+    color: map.get($color-danger, 700);
+    caret-color: map.get($color-danger, 700);
+    
+    @include border--danger;
+    background-color: map.get($color-danger, 50);
+
+    &:focus {
+      border-color: map.get($color-danger, 500);
+    }
+  }
+}

@@ -16,7 +16,7 @@ if (!iconPortal) {
 const propTypes = {
   name: PropTypes.string,
   color: PropTypes.string,
-  size: PropTypes.string,
+  size: PropTypes.number,
   fillColor: PropTypes.string,
   className: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
 };
