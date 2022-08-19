@@ -1,4 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
+import { Outlet } from 'react-router-dom';
 import {
   Spinner, Button, ButtonLegend, Week, Pill, Progress, FormGroup, Input, Textarea, Icon,
 } from 'components';
@@ -14,6 +15,8 @@ const App = () => {
 
   return (
     <div className="container">
+      <Outlet />
+
       <Input
         type="text"
         placeholder="type smth"
