@@ -11,6 +11,7 @@ import App from './App';
 import Search from './pages/Search';
 import Study from './pages/Study';
 import References from './pages/_references';
+import * as routes from './routing';
 import 'styles/index.scss';
 
 import { store } from './store';
@@ -21,9 +22,9 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route path="search" element={<Search />} />
-          <Route path="study" element={<Study />} />
-          <Route path="references" element={<References />} />
+          <Route path={routes.searchURL} element={<Search />} />
+          <Route path={routes.studyURL} element={<Study />} />
+          <Route path={routes.referencesURL} element={<References />} />
         </Route>
       </Routes>
     </BrowserRouter>
