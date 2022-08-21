@@ -34,7 +34,7 @@
 */
 
 @mixin theme-to-custom-properties ($palette, $prefix) {
-  @each $index, $color in $palette {
-    --#{$prefix}#{$index}: #{$color};
+  @each $key, $value in $palette {
+    --#{$prefix}#{$key}: #{$value};
   }
 }
