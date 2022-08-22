@@ -7,14 +7,11 @@ import {
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
+import { Search, Study, References } from 'pages';
 import App from './App';
-import Search from './pages/Search';
-import Study from './pages/Study';
-import References from './pages/_references';
 import * as routes from './routing';
-import 'styles/index.scss';
-
 import { store } from './store';
+import 'styles/index.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

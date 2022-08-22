@@ -38,7 +38,7 @@
     "import/no-unresolved": [
       "error",
       {
-        "ignore": ["features", "components", "styles"]
+        "ignore": ["pages", "features", "components", "styles"]
       }
       ],
     "jsx-a11y/label-has-associated-control": [ 2, {
