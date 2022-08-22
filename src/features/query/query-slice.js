@@ -1,3 +1,5 @@
+// https://github.com/christofferbergj/react-redux-toolkit-example/blob/master/src/features/users/usersSlice.ts
+
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
 
