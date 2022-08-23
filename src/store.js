@@ -1,4 +1,6 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import logger from 'redux-logger';
+import * as api from 'config/api';
 import { queryReducer } from './features/query/query-slice';
 import { userReducer } from './features/user/user-slice';
 
@@ -12,4 +14,10 @@ export const store = configureStore({
     user: userReducer,
   },
   devTools: true,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+    thunk: {
+      extraArgument: api,
+    },
+    logger,
+  }),
 });

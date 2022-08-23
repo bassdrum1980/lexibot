@@ -22,13 +22,12 @@ export const fetchUser = createAsyncThunk('@@user/fetch-user', async (tgid) => {
     tgid,
     timezone: calculateOffset(),
   });
-
   return result;
 });
 
 const initialState = {
   user: null,
-  loading: 'idle',
+  loading: 'idle', // loading
   error: null,
 };
 
@@ -38,16 +37,16 @@ export const userSlice = createSlice({
   reducers: {},
   extraReducers: {
     [fetchUser.pending]: (state) => {
-      state.loading = 'pending';
+      state.loading = 'loading';
       state.error = null;
     },
     [fetchUser.fulfilled]: (state, action) => {
       state.loading = 'idle';
       state.user = action.payload.data;
     },
-    [fetchUser.rejected]: (state) => {
+    [fetchUser.rejected]: (state, action) => {
       state.loading = 'idle';
-      state.error = 'Error while loading user profile';
+      state.error = action.error.message;
     },
   },
 });
