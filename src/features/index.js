@@ -1,1 +1,2 @@
 export { default as SearchField } from './query/SearchField';
+export { default as UserLoader } from './user/UserLoader';
