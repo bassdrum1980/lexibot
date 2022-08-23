@@ -15,7 +15,8 @@
       "error",
       "ignorePackages",
       {
-        "js": "never"
+        "js": "never",
+        "jsx": "never"
       }
     ],
     "react/jsx-filename-extension": [
@@ -38,7 +39,7 @@
     "import/no-unresolved": [
       "error",
       {
-        "ignore": ["pages", "features", "components", "styles"]
+        "ignore": ["config", "pages", "features", "components", "styles"]
       }
       ],
     "jsx-a11y/label-has-associated-control": [ 2, {
