@@ -1,5 +1,3 @@
-// https://github.com/christofferbergj/react-redux-toolkit-example/blob/master/src/features/users/usersSlice.ts
-
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
 
@@ -16,4 +14,4 @@ const querySlice = createSlice({
 export const { setQuery } = querySlice.actions;
 export const queryReducer = querySlice.reducer;
 
-export const selectQuery = (state) => state.query;
+export const selectQuery = (state) => state.search.query;
