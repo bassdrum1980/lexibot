@@ -18,6 +18,5 @@ export const store = configureStore({
     thunk: {
       extraArgument: api,
     },
-    logger,
-  }),
+  }).concat(logger),
 });

@@ -1,24 +1,10 @@
 /* eslint-disable no-param-reassign */
 // https://github.com/christofferbergj/react-redux-toolkit-example/blob/master/src/features/users/usersSlice.ts
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { calculateOffset } from './calculate-offset';
 
-import { httpsCallable } from 'firebase/functions';
-import { functions } from 'config/firebase';
-
-export const fetchUser = createAsyncThunk('@@user/fetch-user', async (tgid) => {
-  // I use this occasion in order to correct
-  // user's timezone in the db.
-  // TODO: this feature needs refactoring
-  const calculateOffset = () => {
-    const offset = new Date().getTimezoneOffset();
-    if (offset) {
-      return (offset / 60) * -1;
-    }
-    return 0;
-  };
-
-  const fetchUserAttributes = httpsCallable(functions, 'fetchUserAttributes');
-  const result = await fetchUserAttributes({
+export const fetchUser = createAsyncThunk('@@user/fetch-user', async (tgid, { extra }) => {
+  const result = await extra.fetchUserAttributes({
     tgid,
     timezone: calculateOffset(),
   });
