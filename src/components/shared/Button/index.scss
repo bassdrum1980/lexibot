@@ -10,7 +10,7 @@
   @include font-size-ui;
   @include line-height-24;
   text-align: center;
-  color: var(--gray1000);
+  color: var(--primary1000);
   
   @include bg-white;
   @include border-none;
@@ -25,6 +25,7 @@
     @include border;
   }
   &--link {
+    color: var(--gray1000);
     @include font-weight-regular;
     @include bg-none;
   }
