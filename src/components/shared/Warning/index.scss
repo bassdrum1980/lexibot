@@ -1,0 +1,60 @@
+@use 'sass:map';
+@import 'styles/variables.scss';
+@import 'styles/utility-mixins/index.scss';
+
+.warning {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  @include flex-column;
+  @include bg-white;
+  text-align: center;
+}
+
+.warning__content {
+  @include flex-grow;
+  @include flex-row;
+  @include flex-align-center;
+  
+  @include grid-padding;
+  @include font-ui;
+
+  h2 {
+    @include margin-b-8;
+    @include font-size-ui-h2;
+    @include font-weight-bold;
+    @include line-height-24;
+  }
+
+  p {
+    @include font-size-ui-sm;
+    @include line-height-20;
+
+    white-space: pre-line;
+    color: var(--gray800);
+  }
+}
+
+.warning__content__wrapper {
+  @include grid-optical-compensation;
+}
+
+.warning--error .warning__content h2 {
+  color: map.get($color-danger, 800);
+}
+
+.warning--warning .warning__content h2 {
+  color: map.get($color-warning, 800);
+}
+
+.warning--info .warning__content h2 {
+  color: map.get($color-info, 800);
+}
+
+.warning__footer {
+  @include flex-no-grow;
+  padding: $spacing-px-40 0;
+}
