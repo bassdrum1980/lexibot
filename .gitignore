@@ -19,3 +19,4 @@ firebase-debug.log*
 .env.test.local
 .env.production.local
 
+src/config/firebase.js
