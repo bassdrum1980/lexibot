@@ -52,7 +52,7 @@ const Warning = ({
       <div className="warning__footer">
         <Button
           type="button"
-          btnStyle="secondary"
+          btnStyle="tertiary"
           width="hug"
           onClick={onClick}
         >
