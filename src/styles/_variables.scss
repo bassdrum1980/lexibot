@@ -21,6 +21,10 @@ $spacing-px-192: 24 * $grid-size;
 $spacing-px-256: 32 * $grid-size;
 $spacing-px-384: 48 * $grid-size;
 
+$grid-padding: $spacing-px-20;
+$grid-padding--narrow: $spacing-px-16;
+$grid-optical-compensation: -8.5vh;
+
 // TODO: продолжить с миксинами (бордеры например, на фокус у меня нет миксина)
 
 /*
@@ -67,6 +71,30 @@ $color-danger: (
   800: #AB091E,
   900: #8A041A,
   1000: #610316, 
+);
+$color-warning: (
+  100: #FFFBEA,
+  200: #FFF3C4,
+  300: #FCE588,
+  400: #FADB5F,
+  500: #F7C948,
+  600: #F0B429,
+  700: #DE911D,
+  800: #CB6E17,
+  900: #B44D12,
+  1000: #8D2B0B, 
+);
+$color-info: (
+  100: #E1FCF8,
+  200: #C1FEF6,
+  300: #92FDF2,
+  400: #62F4EB,
+  500: #3AE7E1,
+  600: #1CD4D4,
+  700: #0FB5BA,
+  800: #099AA4,
+  900: #07818F,
+  1000: #05606E, 
 );
 $color-pill: (
   'noun': #890DBD,

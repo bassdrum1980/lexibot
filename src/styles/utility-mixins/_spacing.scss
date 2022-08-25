@@ -11,3 +11,19 @@
 @mixin margin-b-48 {margin-bottom: $spacing-px-48}
 @mixin margin-b-64 {margin-bottom: $spacing-px-64}
 @mixin margin-b-96 {margin-bottom: $spacing-px-96}
+
+// Grid paddings
+@mixin grid-padding {
+  padding-left: $grid-padding;
+  padding-right: $grid-padding;
+}
+@mixin grid-padding-narrow {
+  padding-left: $grid-padding--narrow;
+  padding-right: $grid-padding--narrow;
+}
+
+// Compensation
+@mixin grid-optical-compensation {
+  position: relative;
+  margin-bottom: $grid-optical-compensation;
+}

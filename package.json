@@ -36,11 +36,13 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.4",
     "classnames": "^2.3.1",
+    "firebase": "^9.9.3",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",
     "react-router-dom": "^6.3.0",
-    "react-svg-sprite": "^1.0.8"
+    "react-svg-sprite": "^1.0.8",
+    "redux-logger": "^3.0.6"
   }
 }

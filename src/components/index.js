@@ -1,3 +1,4 @@
+export { default as Warning } from './shared/Warning';
 export { default as Container } from './shared/Container';
 export { default as Button } from './shared/Button';
 export { default as ButtonLegend } from './shared/ButtonLegend';
