@@ -42,3 +42,16 @@
     }
   }
 }
+
+@mixin form-input--rounded {
+  padding-left: $spacing-px-20;
+  padding-right: $spacing-px-20;
+  @include border-radius-full;
+}
+
+@mixin form-input--ui {
+  @include font-ui;
+  @include font-size-ui;
+  @include font-weight-bold;
+  @include letter-spacing-05;
+}

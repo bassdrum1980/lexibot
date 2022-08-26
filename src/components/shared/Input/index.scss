@@ -8,4 +8,11 @@
   @include form-control--placeholder;
   @include form-control--focus;
   @include form-control--invalid;
+
+  &--rounded {
+    @include form-input--rounded;
+  }
+  &--font-ui {
+    @include form-input--ui;
+  }
 }

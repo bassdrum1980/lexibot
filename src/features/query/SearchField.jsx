@@ -27,6 +27,8 @@ const SearchField = () => {
       type="text"
       onChange={debouncedOnSearch}
       defaultValue={query}
+      placeholder="Search Free Dictionary"
+      className="form-input--rounded form-input--font-ui"
     />
   );
 };
