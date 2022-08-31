@@ -1,7 +1,7 @@
 /**
  * Shows an array of system messages
  * (errors, warnings, info)
-  */
+*/
 
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
@@ -31,7 +31,6 @@ const Warning = ({
 }) => {
   useLayoutEffect(() => {
     // https://reactjs.org/docs/hooks-reference.html#useeffect
-    // мутировать дом нод через ref (container?) useref?
     // возвращать функцию которая удаляет класс с контейнера
   }, []);
 

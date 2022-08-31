@@ -12,6 +12,7 @@ const UserLoader = ({ children }) => {
     dispatch(fetchUser(testTgID));
   }, []);
 
+  // читабельнее отдельные if > return
   return (
     <>
       {loading === 'loading' && <span>Loading ...</span>}

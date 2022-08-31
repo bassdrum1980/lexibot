@@ -40,6 +40,7 @@ export const userSlice = createSlice({
 export const userReducer = userSlice.reducer;
 
 export const selectUser = (state) => state.user;
+// TODO: разбить на 2 селектора
 export const selectLoading = (state) => ({
   loading: state.user.loading,
   error: state.user.error,
