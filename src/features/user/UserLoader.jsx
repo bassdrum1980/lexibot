@@ -1,26 +1,23 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { testTgID } from 'config/telegram';
-import { fetchUser, selectLoading, selectUser } from './user-slice';
+import { fetchUser, selectLoading } from './user-slice';
 
 const UserLoader = ({ children }) => {
   const dispatch = useDispatch();
-  const user = useSelector(selectUser);
   const { loading, error } = useSelector(selectLoading);
 
   useEffect(() => {
     dispatch(fetchUser(testTgID));
   }, []);
 
-  // читабельнее отдельные if > return
+  if (loading === 'loading') return (<span>Loading ...</span>);
+  if (error) return (<span>{error}</span>);
+
   return (
+    // eslint-disable-next-line react/jsx-no-useless-fragment
     <>
-      {loading === 'loading' && <span>Loading ...</span>}
-      {error && <span>{error}</span>}
-      {loading === 'idle'
-        && !error
-        && user
-        && { ...children }}
+      {children}
     </>
   );
 };
