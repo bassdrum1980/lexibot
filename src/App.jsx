@@ -1,8 +1,8 @@
 import { Outlet, Link } from 'react-router-dom';
-import { Container, Warning } from 'components';
+// import { Warning } from 'components';
 
 const App = () => (
-  <Container>
+  <>
     {/* <Warning
       className="warning--error"
       title="Server Error"
@@ -13,7 +13,7 @@ const App = () => (
     <Link to="/study">Study</Link>
     <Link to="/references">References</Link>
     <Outlet />
-  </Container>
+  </>
 );
 
 export default App;
