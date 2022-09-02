@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { testTgID } from 'config/telegram';
+import { testTgID } from 'config';
 import { fetchUser, selectLoading } from './user-slice';
 
 const UserLoader = ({ children }) => {

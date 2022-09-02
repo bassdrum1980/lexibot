@@ -1,5 +1,5 @@
 import { httpsCallable } from 'firebase/functions';
-import { functions } from 'config/firebase';
+import { functions } from './firebase';
 
 /**
  * Fetch universal user ID and preferences
