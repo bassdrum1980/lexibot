@@ -1,11 +1,14 @@
 /**
- * Shows an array of system messages
+ * Shows system messages
  * (errors, warnings, info)
+ * 
+ * Adds modal-open on body on mount,
+ * removes on unmount.
 */
 
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import { useLayoutEffect } from 'react';
+import { useEffect } from 'react';
 import { Button } from 'components';
 import './index.scss';
 
@@ -29,9 +32,9 @@ const Warning = ({
   onClick,
   ...rest
 }) => {
-  useLayoutEffect(() => {
-    // https://reactjs.org/docs/hooks-reference.html#useeffect
-    // возвращать функцию которая удаляет класс с контейнера
+  useEffect(() => {
+    document.body.classList.add('modal-open');
+    return () => document.body.classList.remove('modal-open');
   }, []);
 
   return (

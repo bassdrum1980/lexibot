@@ -5,20 +5,16 @@ import { fetchUser, selectLoading } from './user-slice';
 
 const UserLoader = ({ children }) => {
   const dispatch = useDispatch();
-  const { loading, error } = useSelector(selectLoading);
+  const { loading } = useSelector(selectLoading);
 
   useEffect(() => {
     dispatch(fetchUser(testTgID));
   }, []);
 
   if (loading === 'loading') return (<span>Loading ...</span>);
-  if (error) return (<span>{error}</span>);
 
   return (
-    // eslint-disable-next-line react/jsx-no-useless-fragment
-    <>
-      {children}
-    </>
+    children
   );
 };
 
