@@ -25,5 +25,13 @@
 // Compensation
 @mixin grid-optical-compensation {
   position: relative;
+  margin-top: $grid-optical-compensation;
+}
+@mixin grid-optical-compensation--reversed {
+  position: relative;
   margin-bottom: $grid-optical-compensation;
+}
+@mixin grid-optical-compensation--s {
+  position: relative;
+  margin-top: $grid-optical-compensation--s;
 }

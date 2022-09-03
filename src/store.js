@@ -3,7 +3,7 @@ import logger from 'redux-logger';
 import { functionsAPI as api } from 'config';
 import { queryReducer } from './features/query/query-slice';
 import { userReducer } from './features/user/user-slice';
-import { warningReducer } from './features/warning/warning-slice';
+import { loadingReducer } from './features/loading/loading-slice';
 
 const search = combineReducers({
   query: queryReducer,
@@ -13,7 +13,7 @@ export const store = configureStore({
   reducer: {
     search,
     user: userReducer,
-    warning: warningReducer,
+    loading: loadingReducer,
   },
   devTools: true,
   middleware: (getDefaultMiddleware) => getDefaultMiddleware({

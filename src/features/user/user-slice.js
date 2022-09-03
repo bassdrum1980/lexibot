@@ -13,7 +13,7 @@ export const fetchUser = createAsyncThunk('@@user/fetch-user', async (tgid, { ex
 
 const initialState = {
   user: null,
-  loading: 'idle', // loading
+  // loading: 'idle', // loading
 };
 
 export const userSlice = createSlice({
@@ -21,19 +21,19 @@ export const userSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: {
-    [fetchUser.pending]: (state) => {
-      state.loading = 'loading';
-    },
+    // [fetchUser.pending]: (state) => {
+    //   state.loading = 'loading';
+    // },
     [fetchUser.fulfilled]: (state, action) => {
-      state.loading = 'idle';
+      // state.loading = 'idle';
       state.user = action.payload.data;
     },
-    [fetchUser.rejected]: (state) => {
-      state.loading = 'idle';
-    },
+    // [fetchUser.rejected]: (state) => {
+    //   state.loading = 'idle';
+    // },
   },
 });
 
 export const userReducer = userSlice.reducer;
 export const selectUser = (state) => state.user;
-export const selectLoading = (state) => state.user.loading;
+// export const selectLoading = (state) => state.user.loading;

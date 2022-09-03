@@ -3,6 +3,15 @@
 @import 'styles/utility-mixins/index.scss';
 
 .spinner {
+  height: 100%;
+  @include flex-column;
+  @include flex-align-center;
+  @include bg-95;
+}
+
+.spinner__spinner {
+  @include grid-optical-compensation--s;
+
   position: relative;
   display: inline-block;
   width: $spacing-px-32;
@@ -17,7 +26,7 @@
     bottom: 0;
 
     @include border-radius-full;
-    border: $spacing-px-4 solid map.get($color-gray, 500);
+    border: $spacing-px-2 solid map.get($color-gray, 500);
     border-right-color: #fff;
     animation: spinner 1.1s infinite linear;
     content: '';

@@ -3,13 +3,7 @@
 @import 'styles/utility-mixins/index.scss';
 
 .warning {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: $z-index-modal;
-
+  height: 100%;
   @include flex-column;
   @include bg-white;
   text-align: center;
@@ -40,7 +34,7 @@
 }
 
 .warning__content__wrapper {
-  @include grid-optical-compensation;
+  @include grid-optical-compensation--reversed;
 }
 
 .warning--error .warning__content h2 {

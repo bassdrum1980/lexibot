@@ -1,1 +1,1 @@
-export const testTgID = 999000999000999777;
+export const testTgID = 999000999000999;

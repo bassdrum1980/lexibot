@@ -19,7 +19,9 @@ const Spinner = ({
       Array.isArray(className) ? className.join(' ') : className,
     )}
     {...rest}
-  />
+  >
+    <div className="spinner__spinner" />
+  </div>
 );
 
 Spinner.displayName = 'Spinner';

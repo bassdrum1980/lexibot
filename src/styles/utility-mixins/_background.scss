@@ -5,3 +5,8 @@
 @mixin bg-white {
   background-color: #fff;
 }
+
+@mixin bg-95 {
+  background-color: var(--gray1000);
+  opacity: .95;
+}
