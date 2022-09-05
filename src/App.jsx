@@ -7,9 +7,9 @@ const App = () => (
   <ThemeProvider>
     <UserLoader>
       <LoadingWrapper>
-        <Link to="/search">Search</Link>
+        {/* <Link to="/search">Search</Link>
         <Link to="/study">Study</Link>
-        <Link to="/references">References</Link>
+        <Link to="/references">References</Link> */}
         <Outlet />
       </LoadingWrapper>
     </UserLoader>

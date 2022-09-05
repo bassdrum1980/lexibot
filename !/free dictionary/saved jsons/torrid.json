@@ -1,0 +1,36 @@
+[
+  {
+    "word": "torrid",
+    "phonetic": "/ˈtɒɹɪd/",
+    "phonetics": [
+      { "text": "/ˈtɒɹɪd/", "audio": "" },
+      { "text": "/ˈtɑɹɪd/", "audio": "" }
+    ],
+    "meanings": [
+      {
+        "partOfSpeech": "adjective",
+        "definitions": [
+          { "definition": "Very hot and dry.", "synonyms": [], "antonyms": [] },
+          {
+            "definition": "Full of intense emotions arising from sexual love; ardent and passionate.",
+            "synonyms": [],
+            "antonyms": [],
+            "example": "a torrid love scene in a film or novel"
+          },
+          {
+            "definition": "Full of difficulty.",
+            "synonyms": [],
+            "antonyms": []
+          }
+        ],
+        "synonyms": [],
+        "antonyms": []
+      }
+    ],
+    "license": {
+      "name": "CC BY-SA 3.0",
+      "url": "https://creativecommons.org/licenses/by-sa/3.0"
+    },
+    "sourceUrls": ["https://en.wiktionary.org/wiki/torrid"]
+  }
+]

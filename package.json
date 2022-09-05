@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --mode development",
     "dev": "webpack serve --mode development",
-    "server": "json-server --watch -p 3001 db.json --routes routes.json",
+    "server": "json-server db.json",
     "start": "concurrently \"yarn dev\" \"yarn server\""
   },
   "author": "",
