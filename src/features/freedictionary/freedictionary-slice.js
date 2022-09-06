@@ -12,7 +12,7 @@ const initialState = {
   data: null,
 };
 
-export const freedictionarySlice = createSlice({
+const freedictionarySlice = createSlice({
   name: '@@freedictionary',
   initialState,
   reducers: {},

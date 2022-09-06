@@ -2,8 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useMemo, useEffect } from 'react';
 import debounce from 'lodash/debounce';
 import { Input } from 'components';
-import { selectQuery, setQuery } from './query-slice';
-import { fetchFreeDictionary } from '../freedictionary/freedictionary-slice';
+import { selectQuery, setQuery, fetchFreeDictionary } from 'features';
 
 const SearchField = () => {
   const dispatch = useDispatch();

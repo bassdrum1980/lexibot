@@ -1,6 +1,6 @@
 import { Modal, Warning, Spinner } from 'components';
 import { useSelector } from 'react-redux';
-import { selectError, selectLoading } from './loading-slice';
+import { selectError, selectLoading } from 'features';
 
 const LoadingWrapper = ({ children }) => {
   const error = useSelector(selectError);

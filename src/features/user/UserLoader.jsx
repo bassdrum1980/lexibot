@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { testTgID } from 'config';
-import { fetchUser } from './user-slice';
+import { fetchUser } from 'features';
 
 const UserLoader = ({ children }) => {
   const dispatch = useDispatch();
