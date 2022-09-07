@@ -9,7 +9,7 @@ export const fetchFreeDictionary = createAsyncThunk('@@freedictionary/fetch-word
 
 const initialState = {
   word: null,
-  data: null,
+  rawData: null,
 };
 
 const freedictionarySlice = createSlice({
@@ -19,11 +19,11 @@ const freedictionarySlice = createSlice({
   extraReducers: {
     [fetchFreeDictionary.fulfilled]: (state, action) => {
       state.word = action.payload.word;
-      state.data = action.payload.data;
+      state.rawData = action.payload.data;
     },
   },
 });
 
 export const freedictionaryReducer = freedictionarySlice.reducer;
-export const selectWord = (state) => state.word;
-export const selectData = (state) => state.data;
+export const selectDictionaryWord = (state) => state.word;
+export const selectDictionaryRawData = (state) => state.rawData;

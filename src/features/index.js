@@ -3,7 +3,7 @@ export { setQuery, queryReducer, selectQuery } from './query/query-slice';
 export { default as SearchField } from './query/SearchField';
 // fredictionary
 export {
-  fetchFreeDictionary, freedictionaryReducer, selectWord, selectData,
+  fetchFreeDictionary, freedictionaryReducer, selectDictionaryWord, selectDictionaryRawData,
 } from './freedictionary/freedictionary-slice';
 // user
 export { fetchUser, userReducer, selectUser } from './user/user-slice';
