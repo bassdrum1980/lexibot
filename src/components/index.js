@@ -1,3 +1,4 @@
+export { default as Page } from './shared/Page';
 export { default as Modal } from './shared/Modal';
 export { default as Warning } from './shared/Warning';
 export { default as ThemeProvider } from './shared/ThemeProvider';

@@ -17,10 +17,16 @@
 
 // Grid paddings
 @mixin grid-padding {
+  padding: $grid-padding;
+}
+@mixin grid-padding--hor {
   padding-left: $grid-padding;
   padding-right: $grid-padding;
 }
 @mixin grid-padding-narrow {
+  padding: $grid-padding--narrow;
+}
+@mixin grid-padding-narrow--hor {
   padding-left: $grid-padding--narrow;
   padding-right: $grid-padding--narrow;
 }

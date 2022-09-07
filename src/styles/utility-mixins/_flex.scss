@@ -19,3 +19,11 @@
   align-items: center;
   justify-content: center;
 }
+
+@mixin flex-align-bottom {
+  align-items: flex-end;
+}
+
+@mixin flex-align-bottom--col {
+  justify-content: flex-end;
+}
