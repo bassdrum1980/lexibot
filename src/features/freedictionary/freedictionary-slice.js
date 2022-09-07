@@ -18,7 +18,7 @@ const freedictionarySlice = createSlice({
   reducers: {},
   extraReducers: {
     [fetchFreeDictionary.fulfilled]: (state, action) => {
-      state.word = action.payload.word;
+      state.word = action.payload.id;
       state.rawData = action.payload.data;
     },
   },

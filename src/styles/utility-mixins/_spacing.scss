@@ -12,6 +12,9 @@
 @mixin margin-b-64 {margin-bottom: $spacing-px-64}
 @mixin margin-b-96 {margin-bottom: $spacing-px-96}
 
+// Paddings
+@mixin padding-none {padding: 0;}
+
 // Grid paddings
 @mixin grid-padding {
   padding-left: $grid-padding;

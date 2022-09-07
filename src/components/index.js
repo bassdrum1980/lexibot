@@ -9,5 +9,6 @@ export { default as Pill } from './shared/Pill';
 export { default as Progress } from './study/Progress';
 export { default as FormGroup } from './shared/FormGroup';
 export { default as Input } from './shared/Input';
+export { default as InputWithAction } from './shared/InputWithAction';
 export { default as Textarea } from './shared/Textarea';
 export { default as Icon } from './svg/Icon';
