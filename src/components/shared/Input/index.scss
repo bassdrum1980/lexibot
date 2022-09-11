@@ -15,4 +15,8 @@
   &--font-ui {
     @include form-input--ui;
   }
+
+  &--noborder {
+    @include form-input--noborder;
+  }
 }

@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = 'torrid';
+const initialState = null;
 
 const querySlice = createSlice({
   name: '@@query',

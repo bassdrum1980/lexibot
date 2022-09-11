@@ -55,3 +55,7 @@
   @include font-weight-bold;
   @include letter-spacing-05;
 }
+
+@mixin form-input--noborder {
+  @include border-none;
+}
