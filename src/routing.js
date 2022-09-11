@@ -1,8 +1,7 @@
 /*
-Routes are used in index.js
-and by 'Container' (defines the current css theme).
+  Routes are used in index.js and 'ThemeProvider'
 */
 
-export const searchURL = 'search';
+export const searchURL = '';
 export const studyURL = 'study';
 export const referencesURL = 'references';
