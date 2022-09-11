@@ -9,6 +9,7 @@ export {
   selectDictionaryRawData,
   selectDictionaryEntries,
 } from './freedictionary/freedictionary-slice';
+export { default as SearchResults } from './freedictionary/SearchResults';
 // user
 export { fetchUser, userReducer, selectUser } from './user/user-slice';
 export { default as UserLoader } from './user/UserLoader';

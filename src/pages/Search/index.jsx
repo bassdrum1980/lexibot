@@ -1,5 +1,5 @@
 import { Page } from 'components';
-import { SearchField, selectDictionaryEntries } from 'features';
+import { SearchField, SearchResults, selectDictionaryEntries } from 'features';
 import { useSelector } from 'react-redux';
 
 const Search = () => {
@@ -11,6 +11,7 @@ const Search = () => {
     }
     >
       <SearchField />
+      {results.length !== 0 && <SearchResults />}
     </Page>
   );
 };
