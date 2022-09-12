@@ -1,9 +1,9 @@
 import { Page } from 'components';
-import { SearchField, SearchResults, selectDictionaryEntries } from 'features';
+import { SearchField, SearchResults, selectDictionaryMeanings } from 'features';
 import { useSelector } from 'react-redux';
 
 const Search = () => {
-  const results = useSelector(selectDictionaryEntries);
+  const results = useSelector(selectDictionaryMeanings);
 
   return (
     <Page className={

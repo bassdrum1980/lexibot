@@ -3,12 +3,12 @@ import './index.scss';
 
 const propTypes = {
   // TODO: replace by shape -- PropTypes.shape
-  entry: PropTypes.object.isRequired,
+  meaning: PropTypes.object.isRequired,
   handleOnClick: PropTypes.func.isRequired,
 };
 
 const Card = ({
-  entry,
+  meaning,
   handleOnClick,
 }) => (
   <div className="card">

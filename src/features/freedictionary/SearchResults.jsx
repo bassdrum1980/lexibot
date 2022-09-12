@@ -1,19 +1,25 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { selectDictionaryEntries } from 'features';
+import { selectDictionaryMeanings } from 'features';
 import { Card, Cards } from 'components';
 
 const SearchResults = () => {
-  // я беру результаты из слайса
-  const results = useSelector(selectDictionaryEntries);
-  // я создаю обработчик на выбор результата
-  // я беру компонент результат и рендерю аутпут
+  // Get meanings from the slice
+  const meanings = useSelector(selectDictionaryMeanings);
+  // A handler, let's user proceed to details page
+  const handleOnClick = (definition) => {
+    console.log(definition);
+  };
+
   return (
     <Cards>
-      {results.map(result => (
-        <Card entry={result} />
+      {meanings.map((item) => (
+        <Card
+          meaning={item}
+          handleOnClick={handleOnClick}
+        />
       ))}
     </Cards>
-  )
+  );
 };
 
 SearchResults.displayName = 'Search Results';

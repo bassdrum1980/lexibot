@@ -7,7 +7,7 @@ export {
   freedictionaryReducer,
   selectDictionaryWord,
   selectDictionaryRawData,
-  selectDictionaryEntries,
+  selectDictionaryMeanings,
 } from './freedictionary/freedictionary-slice';
 export { default as SearchResults } from './freedictionary/SearchResults';
 // user
