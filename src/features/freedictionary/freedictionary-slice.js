@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import parser from './parser';
 
 export const fetchFreeDictionary = createAsyncThunk('@@freedictionary/fetch-word', async (word, { extra }) => {
   const result = await extra.fetchFreeDictionary({
@@ -21,8 +22,7 @@ const freedictionarySlice = createSlice({
     [fetchFreeDictionary.fulfilled]: (state, action) => {
       state.word = action.payload.id;
       state.rawData = action.payload.data;
-      // TODO: parse raw results before adding
-      state.entries = action.payload.data;
+      state.entries = parser(action.payload.data);
     },
   },
 });
