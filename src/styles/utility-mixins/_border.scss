@@ -17,3 +17,12 @@
 @mixin border-radius-sm {
   border-radius: $border-radius-small;
 }
+
+@mixin border-radius-m {
+  border-radius: $border-radius-medium;
+}
+
+@mixin border-radius-top-m {
+  border-top-left-radius: $border-radius-medium;
+  border-top-right-radius: $border-radius-medium;
+}

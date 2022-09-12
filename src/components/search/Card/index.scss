@@ -1,0 +1,30 @@
+@import 'styles/variables.scss';
+@import 'styles/utility-mixins/index.scss';
+
+.card {
+  @include margin-t-16;
+  @include bg-white;
+  @include border-radius-m;
+}
+
+.card__title {
+  @include grid-padding;
+  @include border-radius-top-m;
+  background-color: var(--gray100);
+}
+
+.card__body {
+  padding: $spacing-px-24 $spacing-px-16 $spacing-px-32 $spacing-px-20;
+
+  @include font-content;
+  @include font-size-content;
+  @include line-height-24;
+
+  li:not(:last-child) {
+    @include margin-b-20;
+  }
+}
+
+.card__definition {
+
+}
