@@ -13,11 +13,18 @@ const Card = ({
 }) => (
   <div className="card">
     <div className="card__title">
-      <div className="card__partOfSpeech"></div>
-      <div className="card__translation"></div>
+      <div className="card__partOfSpeech">{meaning.partOfSpeech}</div>
+      {meaning.translation && <div className="card__translation">{meaning.translation}</div>}
     </div>
     <ul className="card__body">
-      <li className="card__definition">{/* label/labels, def, link */}</li>
+      {meaning.definitions.map((definition) => (
+        <li
+          className="card__definition"
+          key={definition.id}
+        >
+          {definition.definition}
+        </li>
+      ))}
     </ul>
   </div>
 );
