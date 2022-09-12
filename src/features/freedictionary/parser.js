@@ -3,15 +3,15 @@ import cloneDeep from 'lodash/cloneDeep';
 import { nanoid } from '@reduxjs/toolkit';
 
 /**
- * @param {*} raw 
- * @returns 
+ * @param {Array} raw - raw data from the free dictionary api
+ * @returns {Array} of meanings
  */
 
 const parser = (raw) => {
   // Clone incoming data
   const apiData = cloneDeep(raw);
 
-  // Resulting array of definitions groupped by meanings
+  // Resulting array of definitions grouped by meanings
   const meanings = [];
 
   // API returns an array of lexical entries
