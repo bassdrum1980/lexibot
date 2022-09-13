@@ -29,6 +29,7 @@ const parser = (raw) => {
       const meaning = {};
       meaning.definitions = [];
       meaning.partOfSpeech = partOfSpeech;
+      meaning.id = nanoid();
 
       // definition is the smallest particicle of data
       for (const def of elem.definitions) {

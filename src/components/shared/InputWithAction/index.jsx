@@ -22,7 +22,6 @@ const InputWithAction = ({
       <Icon
         name={iconName}
         size={32}
-        fillColor="var(--gray1000)"
       />
     </button>
   </div>

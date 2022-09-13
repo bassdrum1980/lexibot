@@ -25,7 +25,7 @@ const defaultProps = {
   name: '',
   color: '',
   size: '',
-  fillColor: '',
+  fillColor: 'none',
   className: '',
 };
 
@@ -33,7 +33,7 @@ const Icon = ({
   name,
   color,
   size,
-  fillColor = 'none',
+  fillColor,
   className,
   rest,
 }) => (

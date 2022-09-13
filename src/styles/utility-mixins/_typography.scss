@@ -25,11 +25,13 @@
 @mixin font-weight-bold {font-weight: $font-weight-bold}
 
 // Line-height
+@mixin line-height-zero {line-height: 0}
 @mixin line-height-12 {line-height: $line-height-12}
 @mixin line-height-16 {line-height: $line-height-16}
 @mixin line-height-20 {line-height: $line-height-20}
 @mixin line-height-24 {line-height: $line-height-24}
 @mixin line-height-28 {line-height: $line-height-28}
+@mixin line-height-32 {line-height: $line-height-32}
 
 // Letter-spacing
 @mixin letter-spacing-05 {letter-spacing: $letter-spacing-05}

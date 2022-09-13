@@ -14,6 +14,7 @@ const SearchResults = () => {
     <Cards>
       {meanings.map((item) => (
         <Card
+          key={item.id}
           meaning={item}
           handleOnClick={handleOnClick}
         />

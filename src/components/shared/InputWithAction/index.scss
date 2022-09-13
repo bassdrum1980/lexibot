@@ -1,5 +1,6 @@
 @import 'styles/variables.scss';
 @import 'styles/utility-mixins/index.scss';
+@import 'styles/mixins/index.scss';
 
 // когда и если экшенов станет больше, то можно будет сделать отдельный контейнер для них
 // который будет отпозиционирован вправо и иконки будут добавляться справа-налево
@@ -11,8 +12,6 @@
     right: 16px;
     top: 10px;
 
-    @include padding-none;
-    @include bg-none;
-    @include border-none;
+    @include button--icon;
   }
 }

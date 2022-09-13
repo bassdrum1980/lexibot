@@ -1,5 +1,6 @@
 @import 'styles/variables.scss';
 @import 'styles/utility-mixins/index.scss';
+@import 'styles/mixins/index.scss';
 
 .card {
   @include margin-t-16;
@@ -14,11 +15,10 @@
 }
 
 .card__body {
-  padding: $spacing-px-24 $spacing-px-16 $spacing-px-32 $spacing-px-20;
-
   @include font-content;
   @include font-size-content;
   @include line-height-24;
+  padding: $spacing-px-24 $spacing-px-16 $spacing-px-32 $spacing-px-20;
 
   li:not(:last-child) {
     @include margin-b-20;
@@ -26,5 +26,19 @@
 }
 
 .card__definition {
+  @include flex-row;
 
+  p {
+    @include flex-grow;
+    padding-top: $spacing-px-4;
+    padding-right: $grid-padding--narrow;
+  }
+}
+
+.card__action {
+  @include line-height-zero;
+}
+
+.card__action__btn {
+  @include button--icon;
 }
