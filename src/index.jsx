@@ -6,7 +6,6 @@ import {
   Route,
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
-
 import { Search, Study, References } from 'pages';
 import App from './App';
 import * as routes from './routing';
@@ -19,7 +18,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route path={routes.searchURL} element={<Search />} />
+          <Route path={`${routes.searchURL}/*`} element={<Search />} />
           <Route path={routes.studyURL} element={<Study />} />
           <Route path={routes.referencesURL} element={<References />} />
         </Route>

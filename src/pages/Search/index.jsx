@@ -1,21 +1,14 @@
-import { Page } from 'components';
-import { SearchField, SearchResults, selectDictionaryMeanings } from 'features';
-import { useSelector } from 'react-redux';
+import { Routes, Route } from 'react-router-dom';
+import SearchAdd from './SearchAdd';
+import SearchIndex from './SearchIndex';
 
-const Search = () => {
-  const results = useSelector(selectDictionaryMeanings);
+const Search = () => (
+  <Routes>
+    <Route path="/" element={<SearchIndex />} />
+    <Route path=":definitionId" element={<SearchAdd />} />
+  </Routes>
+);
 
-  return (
-    <Page className={
-      `page--search page--narrow-padding ${!results.length ? 'page--align-bottom' : ''}`
-    }
-    >
-      <SearchField />
-      {results.length !== 0 && <SearchResults />}
-    </Page>
-  );
-};
-
-Search.displayName = 'Search Page';
+Search.displayName = 'Search Root Page';
 
 export default Search;

@@ -11,8 +11,8 @@ const ThemeProvider = ({ children }) => {
 
   return (
     <div className={classnames('theme-provider', {
-      'theme-provider--search': pathname === routes.searchURL,
-      'theme-provider--study': pathname === routes.studyURL,
+      'theme-provider--search': pathname.startsWith(routes.searchURL),
+      'theme-provider--study': pathname.startsWith(routes.studyURL),
     })}
     >
       {children}
