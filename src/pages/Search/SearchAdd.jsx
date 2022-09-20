@@ -1,5 +1,6 @@
-import { Page } from 'components';
 import { useParams } from 'react-router-dom';
+
+import { Page } from 'components';
 
 const SearchAdd = () => {
   const { definitionId } = useParams();

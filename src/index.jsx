@@ -6,6 +6,7 @@ import {
   Route,
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
+
 import { Search, Study, References } from 'pages';
 import App from './App';
 import * as routes from './routing';

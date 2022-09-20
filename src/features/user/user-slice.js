@@ -1,6 +1,7 @@
 /* eslint-disable no-param-reassign */
 // https://github.com/christofferbergj/react-redux-toolkit-example/blob/master/src/features/users/usersSlice.ts
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+
 import { calculateOffset } from './calculate-offset';
 
 export const fetchUser = createAsyncThunk('@@user/fetch-user', async (tgid, { extra }) => {

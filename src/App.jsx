@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom';
+
 import { ThemeProvider } from 'components';
-import { UserLoader } from 'features';
-import { LoadingWrapper } from 'features';
+import { UserLoader, LoadingWrapper } from 'features';
 
 const App = () => (
   <ThemeProvider>

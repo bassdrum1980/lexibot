@@ -1,6 +1,7 @@
+import debounce from 'lodash/debounce';
 import { useSelector, useDispatch } from 'react-redux';
 import { useMemo, useEffect } from 'react';
-import debounce from 'lodash/debounce';
+
 import { InputWithAction } from 'components';
 import { selectQuery, setQuery, fetchFreeDictionary } from 'features';
 

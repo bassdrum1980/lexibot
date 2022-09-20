@@ -2,9 +2,9 @@
  * Shows system messages
  * (errors, warnings, info)
 */
-
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
+
 import { Button } from 'components';
 import './index.scss';
 

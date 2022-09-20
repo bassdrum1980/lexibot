@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 import { Input, Icon } from 'components';
 import './index.scss';
 

@@ -1,8 +1,9 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import './index.scss';
 import ReactDOMServer from 'react-dom/server';
+
 import SvgSprite from 'components/svg/SvgSprite';
+import './index.scss';
 
 const iconPortal = document.getElementById('icon-portal');
 if (!iconPortal) {

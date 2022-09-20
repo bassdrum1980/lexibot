@@ -1,5 +1,6 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
+
 import IconStar from './star';
 import { getWeekStats } from './getWeekStats';
 import './index.scss';

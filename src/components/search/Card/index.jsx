@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 import { Pill, Icon } from 'components';
 import './index.scss';
 
