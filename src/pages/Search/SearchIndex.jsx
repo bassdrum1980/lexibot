@@ -1,17 +1,23 @@
-import { Page } from 'components';
-import { SearchField, SearchResults, selectDictionaryMeanings } from 'features';
 import { useSelector } from 'react-redux';
+import classnames from 'classnames';
+
+import { SearchField, SearchResults, selectDictionaryMeanings } from 'features';
+import { Page } from 'components';
 
 const SearchIndex = () => {
   const results = useSelector(selectDictionaryMeanings);
 
   return (
     <Page className={
-      `page--search page--narrow-padding ${!results.length ? 'page--align-bottom' : ''}`
-    }
+        classnames(
+          'page--search',
+          'page--narrow-padding',
+          { 'page--align-bottom': !results.length },
+        )
+        }
     >
       <SearchField />
-      {results.length !== 0 && <SearchResults />}
+      {Boolean(results.length) && <SearchResults />}
     </Page>
   );
 };
