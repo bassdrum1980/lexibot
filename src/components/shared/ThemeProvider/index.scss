@@ -6,6 +6,7 @@
   /* Color themes */
   @include theme-to-custom-properties($color-gray, 'gray');
   @include theme-to-custom-properties($color-primary, 'primary');
+  @include theme-to-custom-properties($color-flame, 'flame');
   
   &--study {
     @include theme-to-custom-properties($color-gray--study, 'gray');

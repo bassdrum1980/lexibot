@@ -116,8 +116,12 @@ $color-pill: (
   'adjective': #BC4807,
   'various': #B89300
 );
+$color-flame: (
+  100: #FF9960,
+  1000: #FF5C00,
+);
 $color-gradient: (
-  'flame': linear-gradient(175deg, #FF9960 0%, #FF5C00 100%),
+  'flame': linear-gradient(175deg, map.get($color-flame, 100), map.get($color-flame, 1000)),
 );
 
 // 'Study' theme
