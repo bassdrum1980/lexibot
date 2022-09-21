@@ -9,49 +9,49 @@
 
 import { nanoid } from '@reduxjs/toolkit';
 
-/* eslint-disable no-restricted-syntax */
 const parser = (apiData) => {
   // resulting array of definitions grouped by meanings
-  const meanings = [];
+  const resMeanings = [];
 
   // apiData is an array of lexical entries
   apiData.forEach((lexical) => {
-    // lexical entry shares wordId and phonetics among multiple meanings
-    const { word } = lexical;
-
-    // TODO: how to pick a proper phonetic?
-    const phoneticsText = '';
-    const phoneticsAudio = '';
+    // meanings get same word id and phonetics from their lexical entry
+    const {
+      meanings, word, phonetic: transcription, phonetics,
+    } = lexical;
+    // there are might be multiple phonetics entries,
+    // for the simplicity sake I take the first one
+    const { audio } = phonetics.find((entry) => Boolean(entry.audio));
 
     // meaning includes up to several definitions,
     // shares part of speech and word id among them
-    lexical.meanings.forEach((m) => {
-      const { partOfSpeech } = m;
+    meanings.forEach((meaning) => {
+      const { partOfSpeech, definitions } = meaning;
 
-      const meaning = {};
-      meaning.definitions = [];
-      meaning.partOfSpeech = partOfSpeech;
-      meaning.id = nanoid();
+      const resMeaning = {};
+      resMeaning.definitions = [];
+      resMeaning.partOfSpeech = partOfSpeech;
+      resMeaning.id = nanoid();
 
       // definition is the smallest particicle of data
-      m.definitions.forEach((d) => {
-        const definition = {};
-        definition.word = word;
-        definition.phoneticsText = phoneticsText;
-        definition.phoneticsAudio = phoneticsAudio;
-        definition.partOfSpeech = partOfSpeech;
-        definition.definition = d.definition;
-        definition.synonyms = [...d.synonyms];
-        definition.antonyms = [...d.antonyms];
-        definition.example = d.example;
-        definition.id = nanoid();
-        meaning.definitions.push(definition);
+      definitions.forEach((definition) => {
+        const resDefinition = {};
+        resDefinition.word = word;
+        resDefinition.phoneticsText = transcription;
+        resDefinition.phoneticsAudio = audio;
+        resDefinition.partOfSpeech = partOfSpeech;
+        resDefinition.definition = definition.definition;
+        resDefinition.synonyms = [...definition.synonyms];
+        resDefinition.antonyms = [...definition.antonyms];
+        resDefinition.example = definition.example;
+        resDefinition.id = nanoid();
+        resMeaning.definitions.push(resDefinition);
       });
-      meanings.push(meaning);
+      resMeanings.push(resMeaning);
     });
   });
 
-  return meanings;
+  return resMeanings;
 };
 
 export default parser;
