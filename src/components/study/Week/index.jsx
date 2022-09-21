@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
-import IconStar from './star';
+import { Icon } from 'components';
 import { getWeekStats } from './getWeekStats';
 import './index.scss';
 
@@ -35,13 +35,13 @@ const Week = ({
           <li
             // eslint-disable-next-line react/no-array-index-key
             key={i}
-            className={classnames(
-              'week__item',
-              { '--active': currentStats[i].isPracticed },
-            )}
+            className="week__item"
           >
             <span>{currentStats[i].day}</span>
-            <IconStar />
+            <Icon
+              name={currentStats[i].isPracticed ? 'star-flame' : 'star'}
+              size={24}
+            />
           </li>
         ))}
       </ul>

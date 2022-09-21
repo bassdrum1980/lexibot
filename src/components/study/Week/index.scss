@@ -2,10 +2,6 @@
 @import 'styles/variables.scss';
 @import 'styles/utility-mixins/index.scss';
 
-/* temporary variables */
-$flameTop:#FF9960;
-$flameBottom: #FF5C00;
-
 /* temp styles */
 li {
   list-style-type: none;
@@ -33,27 +29,5 @@ li {
     @include font-size-ui-sm;
     text-transform: uppercase;
     color: map.get($color-gray, 500);
-  }
-
-  svg {
-    width: 23px;
-  }
-
-  .top-stop {
-    stop-color: map.get($color-gray, 300);
-  }
-
-  .bot-stop {
-    stop-color: map.get($color-gray, 300);
-  }
-
-  &.--active {
-    .top-stop {
-      stop-color: $flameTop;
-    }
-  
-    .bot-stop {
-      stop-color: $flameBottom;
-    }
   }
 }
