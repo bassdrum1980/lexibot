@@ -58,7 +58,7 @@ const Card = ({
                 type="submit"
               >
                 <Icon
-                  name="chevron-o"
+                  name="chevron-right"
                   size={32}
                 />
               </button>

@@ -3,6 +3,7 @@
  */
 import PropTypes from 'prop-types';
 
+import { Icon } from 'components';
 import './index.scss';
 
 const propTypes = {
@@ -16,6 +17,10 @@ const defaultProps = {
 
 const FormHeader = ({ title, onClick }) => (
   <div className="form-header">
+    <Icon
+      name="chevron-left"
+      size={32}
+    />
     {title}
   </div>
 );
