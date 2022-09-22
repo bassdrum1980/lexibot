@@ -20,3 +20,6 @@ firebase-debug.log*
 .env.production.local
 
 src/config/firebase.js
+
+# design files
+/!
