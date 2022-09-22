@@ -1,3 +1,11 @@
+/**
+ * This component wraps around the app,
+ * subscribes to the 'loading' slice,
+ * shows an appropriate modal window
+ * if any async action is in progress
+ * or has finished with an error.
+ */
+
 import { useSelector } from 'react-redux';
 
 import { Modal, Warning, Spinner } from 'components';
@@ -7,8 +15,13 @@ const LoadingWrapper = ({ children }) => {
   const error = useSelector(selectError);
   const loading = useSelector(selectLoading);
 
+  // to avoid mount / unmount of children on every change
+  // in the 'loading' slice, I always render children +
+  // show a necessary modal window if situation calls for it.
+  let modal = null;
+
   if (loading === 'loading') {
-    return (
+    modal = (
       <Modal>
         <Spinner />
       </Modal>
@@ -16,7 +29,7 @@ const LoadingWrapper = ({ children }) => {
   }
 
   if (error) {
-    return (
+    modal = (
       <Modal>
         <Warning
           className="warning--error"
@@ -28,7 +41,12 @@ const LoadingWrapper = ({ children }) => {
     );
   }
 
-  return children;
+  return (
+    <>
+      {modal}
+      {children}
+    </>
+  );
 };
 
 LoadingWrapper.displayName = 'LoadingWrapper';
