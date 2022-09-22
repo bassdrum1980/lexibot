@@ -19,7 +19,7 @@
   // Styles
   &--primary {
     color: #fff;
-    background-color: var(--primary1000);
+    @include bg-primary;
   }
   &--tertiary {
     @include border;

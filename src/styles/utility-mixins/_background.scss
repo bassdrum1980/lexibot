@@ -6,6 +6,10 @@
   background-color: #fff;
 }
 
+@mixin bg-primary {
+  background-color: var(--primary1000);
+}
+
 @mixin bg-95 {
   background-color: var(--gray1000);
   opacity: .95;

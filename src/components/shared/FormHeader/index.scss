@@ -1,0 +1,16 @@
+@import 'styles/variables.scss';
+@import 'styles/utility-mixins/index.scss';
+
+.form-header {
+  @include grid-padding-narrow;
+  @include bg-primary;
+  @include font-ui;
+  @include font-size-ui-sm;
+  //@include letter-spacing-05;
+  color: #fff;
+
+  // or future button
+  a, button {
+    margin-left: -$spacing-px-2;
+  }
+}
