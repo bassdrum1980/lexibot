@@ -21,7 +21,7 @@ const parser = (apiData) => {
     } = lexical;
     // there are might be multiple phonetics entries,
     // for the simplicity sake I take the first one
-    const { audio } = phonetics.find((entry) => Boolean(entry.audio));
+    const { audio } = phonetics.find((entry) => Boolean(entry.audio)) || { audio: null };
 
     // meaning includes up to several definitions,
     // shares part of speech and word id among them
