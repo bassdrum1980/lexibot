@@ -33,3 +33,11 @@ export const freedictionaryReducer = freedictionarySlice.reducer;
 export const selectDictionaryWord = (state) => state.search.word;
 export const selectDictionaryRawData = (state) => state.search.freedictionary.rawData;
 export const selectDictionaryMeanings = (state) => state.search.freedictionary.meanings;
+export const selectDictionaryDefinition = (state, definitionId) => {
+  const definitions = state.search.freedictionary.meanings.reduce(
+    (defs, meaning) => defs.concat(meaning.definitions),
+    [],
+  );
+
+  return definitions.find((def) => def.id === definitionId);
+};
