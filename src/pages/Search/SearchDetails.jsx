@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 
 import { Page, FormHeader } from 'components';
+import { ConfigureCard } from 'features';
 
 const SearchAdd = () => {
   const { definitionId } = useParams();
@@ -9,11 +10,12 @@ const SearchAdd = () => {
 
   return (
     <Page>
-      {definitionId}
-
       <FormHeader
         title="Back to search"
         onClick={onClick}
+      />
+      <ConfigureCard
+        definitionId={definitionId}
       />
     </Page>
   );
