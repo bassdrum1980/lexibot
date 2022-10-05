@@ -17,7 +17,6 @@
 
 @mixin flex-align-center {
   align-items: center;
-  justify-content: center;
 }
 
 @mixin flex-align-bottom {
@@ -26,4 +25,9 @@
 
 @mixin flex-align-bottom--col {
   justify-content: flex-end;
+}
+
+@mixin flex-align-justify-center {
+  align-items: center;
+  justify-content: center;
 }

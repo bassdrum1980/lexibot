@@ -53,7 +53,7 @@
   @include font-ui;
   @include font-size-ui;
   @include font-weight-bold;
-  @include letter-spacing-05;
+  //@include letter-spacing-05;
 }
 
 @mixin form-input--noborder {

@@ -5,7 +5,7 @@
 .spinner {
   height: 100%;
   @include flex-column;
-  @include flex-align-center;
+  @include flex-align-justify-center;
   @include bg-white;
 }
 

@@ -55,7 +55,7 @@ const Card = ({
             <div className="card__action">
               <button
                 className="card__action__btn"
-                type="submit"
+                type="button"
               >
                 <Icon
                   name="chevron-right"

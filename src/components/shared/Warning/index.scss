@@ -12,7 +12,7 @@
 .warning__content {
   @include flex-grow;
   @include flex-row;
-  @include flex-align-center;
+  @include flex-align-justify-center;
   
   @include grid-padding--hor;
   @include font-ui;

@@ -7,7 +7,7 @@ import { Icon } from 'components';
 import './index.scss';
 
 const propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   onClick: PropTypes.func.isRequired,
 };
 
@@ -17,10 +17,16 @@ const defaultProps = {
 
 const FormHeader = ({ title, onClick }) => (
   <div className="form-header">
-    <Icon
-      name="chevron-left"
-      size={32}
-    />
+    <button
+      onClick={onClick}
+      className="form-header__btn"
+      type="button"
+    >
+      <Icon
+        name="chevron-left"
+        size={32}
+      />
+    </button>
     {title}
   </div>
 );
