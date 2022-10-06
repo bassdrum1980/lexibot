@@ -2,7 +2,7 @@
 @import 'styles/utility-mixins/index.scss';
 
 .card-form-header {
-  padding: $grid-padding $spacing-px-24;
+  padding: $spacing-px-24 $grid-padding;
   background-color: var(--gray100);
 }
 
