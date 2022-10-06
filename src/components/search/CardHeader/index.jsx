@@ -21,7 +21,7 @@ const CardHeader = ({
 }) => (
   <div className="card-header">
     <Pill type={partOfSpeech}>{partOfSpeech}</Pill>
-    <h1 className="card-header__title">{word}</h1>
+    <h2 className="card-header__title">{word}</h2>
     <div className="card-header__definition">{definition}</div>
   </div>
 );

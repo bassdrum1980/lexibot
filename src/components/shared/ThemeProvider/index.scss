@@ -19,4 +19,6 @@
     @include theme-to-custom-properties($color-primary--search, 'primary');
     @include theme-to-custom-properties($color-gradient--search, 'gradient-');
   }  
+
+  color: var(--gray1000);
 }

@@ -200,13 +200,15 @@ $line-height-20: px-to-rem(20px);
 $line-height-24: px-to-rem(24px);
 $line-height-28: px-to-rem(28px);
 $line-height-32: px-to-rem(32px);
+$line-height-40: px-to-rem(40px);
+$line-height-44: px-to-rem(44px);
 
 // Letter-spacing
 $letter-spacing-05: px-to-rem(0.5px);
 
 // BORDERS
 // Border-size
-$border-size-1: 1px;
+$border-size-1: px-to-rem(1px);
 
 // Border-color
 $border-color: var(--gray300);
