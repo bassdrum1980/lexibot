@@ -1,6 +1,8 @@
 import { useParams, useNavigate } from 'react-router-dom';
 
-import { Page, FormHeader } from 'components';
+import {
+  Page, BackNav, PageActions, Button,
+} from 'components';
 import { ConfigureCard } from 'features';
 
 const SearchAdd = () => {
@@ -10,13 +12,24 @@ const SearchAdd = () => {
 
   return (
     <Page>
-      <FormHeader
+      <BackNav
         title="Back to search"
         onClick={onClick}
       />
       <ConfigureCard
         definitionId={definitionId}
       />
+      <PageActions>
+        <Button
+          type="submit"
+          size="m"
+          btnStyle="primary"
+          width="fill"
+          onClick={() => true}
+        >
+          Save Card
+        </Button>
+      </PageActions>
     </Page>
   );
 };
