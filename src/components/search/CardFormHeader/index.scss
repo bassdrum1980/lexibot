@@ -1,19 +1,19 @@
 @import 'styles/variables.scss';
 @import 'styles/utility-mixins/index.scss';
 
-.card-header {
+.card-form-header {
   padding: $grid-padding $spacing-px-24;
   background-color: var(--gray100);
 }
 
-.card-header__title {
+.card-form-header__title {
   @include font-content;
   @include font-weight-bold;
   @include font-size-content-h2;
   @include line-height-44;
 }
 
-.card-header__definition {
+.card-form-header__definition {
   @include font-content;
   @include font-size-content;
   @include line-height-24;

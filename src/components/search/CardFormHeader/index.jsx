@@ -14,19 +14,19 @@ const propTypes = {
   definition: PropTypes.string.isRequired,
 };
 
-const CardHeader = ({
+const CardFormHeader = ({
   partOfSpeech,
   word,
   definition,
 }) => (
-  <div className="card-header">
+  <div className="card-form-header">
     <Pill type={partOfSpeech}>{partOfSpeech}</Pill>
-    <h2 className="card-header__title">{word}</h2>
-    <div className="card-header__definition">{definition}</div>
+    <h2 className="card-form-header__title">{word}</h2>
+    <div className="card-form-header__definition">{definition}</div>
   </div>
 );
 
-CardHeader.displayName = 'Card Header';
-CardHeader.propTypes = propTypes;
+CardFormHeader.displayName = 'Card Form Header';
+CardFormHeader.propTypes = propTypes;
 
-export default CardHeader;
+export default CardFormHeader;

@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 
 import { selectDictionaryDefinition } from 'features';
-import { CardHeader } from 'components';
+import { CardFormHeader } from 'components';
 
 const propTypes = {
   definitionId: PropTypes.string.isRequired,
@@ -20,7 +20,7 @@ const ConfigureCard = ({ definitionId }) => {
   return (
     <>
       {definitionData.id}
-      <CardHeader
+      <CardFormHeader
         word={word}
         partOfSpeech={partOfSpeech}
         definition={definition}
