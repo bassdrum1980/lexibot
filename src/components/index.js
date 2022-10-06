@@ -1,3 +1,4 @@
+export { default as CardHeader } from './search/CardHeader';
 export { default as Cards } from './search/Cards';
 export { default as Card } from './search/Card';
 export { default as Page } from './shared/Page';
