@@ -20,6 +20,7 @@
 @mixin font-size-content-h1 {font-size: $font-size-content-36}
 
 // Font-weight
+@mixin font-weight-thin {font-weight: $font-weight-thin}
 @mixin font-weight-light {font-weight: $font-weight-light}
 @mixin font-weight-regular {font-weight: $font-weight-regular}
 @mixin font-weight-bold {font-weight: $font-weight-bold}
