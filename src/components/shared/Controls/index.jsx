@@ -16,14 +16,14 @@ const defaultProps = {
   className: '',
 };
 
-const PageActions = ({
+const Controls = ({
   className,
   children,
   ...rest
 }) => (
   <div
     className={classnames(
-      'page-actions',
+      'controls',
       Array.isArray(className) ? className.join(' ') : className,
     )}
     {...rest}
@@ -32,8 +32,8 @@ const PageActions = ({
   </div>
 );
 
-PageActions.displayName = 'Page Actions Section';
-PageActions.propTypes = propTypes;
-PageActions.defaultProps = defaultProps;
+Controls.displayName = 'Controls Section';
+Controls.propTypes = propTypes;
+Controls.defaultProps = defaultProps;
 
-export default PageActions;
+export default Controls;

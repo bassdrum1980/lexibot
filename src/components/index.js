@@ -1,7 +1,7 @@
 export { default as CardFormHeader } from './search/CardFormHeader';
 export { default as Cards } from './search/Cards';
 export { default as Card } from './search/Card';
-export { default as PageActions } from './shared/PageActions';
+export { default as Controls } from './shared/Controls';
 export { default as Page } from './shared/Page';
 export { default as Modal } from './shared/Modal';
 export { default as Warning } from './shared/Warning';

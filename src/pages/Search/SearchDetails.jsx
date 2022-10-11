@@ -1,8 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom';
 
-import {
-  Page, BackNav, PageActions, Button,
-} from 'components';
+import { Page, BackNav } from 'components';
 import { ConfigureCard } from 'features';
 
 const SearchAdd = () => {
@@ -19,21 +17,10 @@ const SearchAdd = () => {
       <ConfigureCard
         definitionId={definitionId}
       />
-      <PageActions>
-        <Button
-          type="submit"
-          size="m"
-          btnStyle="primary"
-          width="fill"
-          onClick={() => true}
-        >
-          Save Card
-        </Button>
-      </PageActions>
     </Page>
   );
 };
 
-SearchAdd.displayName = 'Search Add Page';
+SearchAdd.displayName = 'Search Details Page';
 
 export default SearchAdd;

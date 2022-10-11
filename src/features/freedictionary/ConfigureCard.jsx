@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 
 import { selectDictionaryDefinition } from 'features';
-import { CardFormHeader } from 'components';
+import { CardFormHeader, Controls, Button } from 'components';
 
 const propTypes = {
   definitionId: PropTypes.string.isRequired,
@@ -25,6 +25,17 @@ const ConfigureCard = ({ definitionId }) => {
         partOfSpeech={partOfSpeech}
         definition={definition}
       />
+      <Controls>
+        <Button
+          type="submit"
+          size="m"
+          btnStyle="primary"
+          width="fill"
+          onClick={() => true}
+        >
+          Save Card
+        </Button>
+      </Controls>
     </>
   );
 };
