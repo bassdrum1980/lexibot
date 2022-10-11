@@ -3,7 +3,11 @@
 @import 'styles/mixins/index.scss';
 
 .card-form-section {
-  
+  &:not(:last-child) {
+    @include margin-b-32;
+    @include border-b;
+    padding-bottom: $spacing-px-24;
+  }
 }
 
 .card-form-section__title {

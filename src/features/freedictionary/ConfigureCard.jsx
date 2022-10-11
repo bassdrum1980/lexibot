@@ -34,6 +34,12 @@ const ConfigureCard = ({ definitionId }) => {
         >
           Examples
         </CardFormSection>
+        <CardFormSection
+          title="Examples"
+          onClick={() => null}
+        >
+          Examples
+        </CardFormSection>
       </CardFormSections>
       <Controls>
         <Button

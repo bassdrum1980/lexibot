@@ -2,6 +2,10 @@
   border: solid $border-size-1 $border-color;
 }
 
+@mixin border-b {
+  border-bottom: solid $border-size-1 $border-color;
+}
+
 @mixin border--danger {
   border: solid $border-size-1 $border-color--danger;
 }
