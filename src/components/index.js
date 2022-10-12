@@ -1,3 +1,4 @@
+export { default as VariantPicker } from './search/VariantPicker';
 export { default as CardFormSections } from './search/CardFormSections';
 export { default as CardFormSection } from './search/CardFormSection';
 export { default as CardFormHeader } from './search/CardFormHeader';

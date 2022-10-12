@@ -6,7 +6,10 @@
   box-sizing: border-box;
   
   // Styles
-  &:not(&--plain) {
+  &--primary,
+  &--tertiary,
+  &--link,
+  &--destructive {
     @include font-ui;
     @include font-weight-bold;
     @include font-size-ui;
@@ -35,6 +38,7 @@
     @include border--danger;
   }
   &--plain {
+    @include padding-none;
     @include bg-none;
     @include border-none;
   }

@@ -8,7 +8,12 @@ import { useSelector } from 'react-redux';
 
 import { selectDictionaryDefinition } from 'features';
 import {
-  CardFormHeader, CardFormSection, CardFormSections, Controls, Button,
+  CardFormHeader,
+  CardFormSection,
+  CardFormSections,
+  Controls,
+  Button,
+  VariantPicker,
 } from 'components';
 
 const propTypes = {
@@ -35,10 +40,33 @@ const ConfigureCard = ({ definitionId }) => {
           Examples
         </CardFormSection>
         <CardFormSection
-          title="Examples"
+          title="Synonyms"
           onClick={() => null}
         >
-          Examples
+          <VariantPicker
+            variants={['traitorous', 'disloyal', 'perfidious', 'faithless']}
+            selected="traitorous"
+            onSelect={() => null}
+          />
+        </CardFormSection>
+        <CardFormSection
+          title="Synonyms"
+          onClick={() => null}
+        >
+          <VariantPicker
+            variants={[]}
+            onSelect={() => null}
+            emptyText="We couldn’t find any synonyms. You can add a synonym on your own or continue as is."
+          />
+        </CardFormSection>
+        <CardFormSection
+          title="Antonyms"
+          onClick={() => null}
+        >
+          <VariantPicker
+            variants={['loyal', 'faithful']}
+            onSelect={() => null}
+          />
         </CardFormSection>
       </CardFormSections>
       <Controls>

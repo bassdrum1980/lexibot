@@ -6,7 +6,7 @@ import './index.scss';
 
 const propTypes = {
   type: PropTypes.oneOf(['button', 'reset', 'submit', null]),
-  size: PropTypes.oneOf(['sm', 'm', 'l', null]),
+  size: PropTypes.oneOf(['sm', 'm', 'l', 'inline', null]),
   width: PropTypes.oneOf(['fill', 'hug', null]),
   btnStyle: PropTypes.oneOf([
     'primary',
@@ -15,6 +15,7 @@ const propTypes = {
     'link',
     'destructive',
     'legend',
+    'plain',
     null,
   ]),
   onClick: PropTypes.func.isRequired,
@@ -32,9 +33,9 @@ const defaultProps = {
 const Button = React.forwardRef(
   ({
     type,
-    size, // sm, m, l, inline
-    width, // fill, hug
-    btnStyle, // primary, secondary, tertiary, link, destructive, plain (no styling)
+    size,
+    width,
+    btnStyle,
     className,
     onClick,
     children,

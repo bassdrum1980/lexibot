@@ -15,6 +15,10 @@
   flex-grow: 0;
 }
 
+@mixin flex-wrap {
+  flex-wrap: wrap;
+}
+
 @mixin flex-align-center {
   align-items: center;
 }

@@ -214,6 +214,7 @@ $border-size-1: px-to-rem(1px);
 // Border-color
 $border-color: var(--gray300);
 $border-color--danger: map.get($color-danger, 300);
+$border-color--em: var(--gray1000);
 
 // Border-radius
 $border-radius-small: $spacing-px-4;

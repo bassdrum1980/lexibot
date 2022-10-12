@@ -30,3 +30,11 @@
   border-top-left-radius: $border-radius-medium;
   border-top-right-radius: $border-radius-medium;
 }
+
+@mixin border-pseudo {
+  border: 1px dotted $border-color--em;
+}
+
+@mixin border-pseudo-b {
+  border-bottom: 1px dotted $border-color--em;
+}

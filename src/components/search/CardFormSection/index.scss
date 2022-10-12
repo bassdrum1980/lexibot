@@ -12,6 +12,7 @@
 
 .card-form-section__title {
   @include flex-row;
+  @include margin-b-12;
 
   h2 {
     @include flex-grow;
