@@ -32,9 +32,9 @@ const defaultProps = {
 const Button = React.forwardRef(
   ({
     type,
-    size, // m
+    size, // sm, m, l, inline
     width, // fill, hug
-    btnStyle, // primary, secondary, tertiary, link, destructive
+    btnStyle, // primary, secondary, tertiary, link, destructive, plain (no styling)
     className,
     onClick,
     children,

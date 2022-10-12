@@ -5,18 +5,19 @@
 .button {
   box-sizing: border-box;
   
-  @include font-ui;
-  @include font-weight-bold;
-  @include font-size-ui;
-  @include line-height-24;
-  text-align: center;
-  color: var(--primary1000);
-  
-  @include bg-white;
-  @include border-none;
-  @include border-radius-full;
-
   // Styles
+  &:not(&--plain) {
+    @include font-ui;
+    @include font-weight-bold;
+    @include font-size-ui;
+    @include line-height-24;
+    text-align: center;
+    color: var(--primary1000);
+    
+    @include bg-white;
+    @include border-none;
+    @include border-radius-full;
+  }
   &--primary {
     color: #fff;
     @include bg-primary;
@@ -33,6 +34,10 @@
     color: map.get($color-danger, 600);
     @include border--danger;
   }
+  &--plain {
+    @include bg-none;
+    @include border-none;
+  }
   
   // Sizes
   &--sm {
@@ -48,6 +53,9 @@
   }
   &--l {
     padding: $spacing-px-20 $spacing-px-64;
+  }
+  &--inline {
+    // no paddings
   }
 
   // Widths
