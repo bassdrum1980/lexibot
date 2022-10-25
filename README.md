@@ -1,6 +1,6 @@
 <h1 align="center">Lexibot</h1>
 <p align="center">
-  ![logo](https://user-images.githubusercontent.com/41394178/197903369-8e51a7d7-6d85-429d-a6f1-c47539b67f1d.png)
+<img alt="Lexibot Logo" title="Lexibot Logo" src="https://user-images.githubusercontent.com/41394178/197903369-8e51a7d7-6d85-429d-a6f1-c47539b67f1d.png" />
 </p>
 <p align="center">
   Expanding personal vocabulary with spaced repetition approach.
@@ -11,5 +11,6 @@
   forgotten, helping you to retain it in your long term memory.
 </p>
 <p align="center">
-  ![hero](https://user-images.githubusercontent.com/41394178/197903380-0f29c695-eee6-404b-88d2-7dcbc9f5a825.png)
+<img alt="Lexibot Hero Image" title="Lexibot Hero Image" src="https://user-images.githubusercontent.com/41394178/197903380-0f29c695-eee6-404b-88d2-7dcbc9f5a825.png" />
+  ![hero]()
 </p>
