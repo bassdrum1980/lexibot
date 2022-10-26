@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react';
+import { useState } from 'react';
 import {
   Spinner, Button, ButtonLegend, Week, Pill, Progress, FormGroup, Input, Textarea, Icon,
 } from 'components';
@@ -8,9 +8,6 @@ const References = () => {
   const [inputWord, setInputWord] = useState('traitorous');
   const [inputThesaurus, setInputThesaurus] = useState('coercion');
   const [inputDefinition, setInputDefinition] = useState('');
-  const btnRef = useRef(null);
-  const btnLegendRef = useRef(null);
-  useEffect(() => console.log(btnRef), []);
 
   return (
     <>
@@ -52,7 +49,6 @@ const References = () => {
       <Button
         btnStyle="primary"
         onClick={() => setProgress(Math.random() * 100)}
-        ref={btnRef}
       >
         Click me for progress!
       </Button>
@@ -60,11 +56,9 @@ const References = () => {
         btnStyle="legend"
         legend="4 days"
         onClick={() => setProgress(Math.random() * 100)}
-        ref={btnLegendRef}
       >
         Good
       </ButtonLegend>
-  
       <Icon
         name="mic"
         size={24}
@@ -104,6 +98,6 @@ const References = () => {
   );
 };
 
-References.displayName = 'Refrences Page';
+References.displayName = 'References Page';
 
 export default References;
