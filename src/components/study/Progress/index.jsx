@@ -14,7 +14,9 @@ const defaultProps = {
 };
 
 const Progress = ({
-  progress, className, ...rest
+  progress,
+  className,
+  ...rest
 }) => (
   <div
     className={classnames(

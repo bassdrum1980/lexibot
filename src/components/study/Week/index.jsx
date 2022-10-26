@@ -18,7 +18,9 @@ const defaultProps = {
 };
 
 const Week = ({
-  stats, className, ...rest
+  stats,
+  className,
+  ...rest
 }) => {
   const currentStats = getWeekStats(stats);
 
@@ -31,15 +33,14 @@ const Week = ({
       {...rest}
     >
       <ul className="week__list">
-        {currentStats.map((day, i) => (
+        {currentStats.map(({ id, day, isPracticed }) => (
           <li
-            // eslint-disable-next-line react/no-array-index-key
-            key={i}
+            key={id}
             className="week__item"
           >
-            <span>{currentStats[i].day}</span>
+            <span>{day}</span>
             <Icon
-              name={currentStats[i].isPracticed ? 'star-flame' : 'star'}
+              name={isPracticed ? 'star-flame' : 'star'}
               size={24}
             />
           </li>

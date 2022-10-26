@@ -27,6 +27,10 @@
   align-items: flex-end;
 }
 
+@mixin flex-justify-center {
+  justify-content: center;
+}
+
 @mixin flex-align-bottom--col {
   justify-content: flex-end;
 }
