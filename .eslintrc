@@ -1,5 +1,5 @@
 {
-  "extends": ["airbnb"],
+  "extends": ["airbnb", "eslint-config-prettier"],
   "plugins": ["babel"],
   "parserOptions": {
     "ecmaVersion": 12,
@@ -41,10 +41,13 @@
       {
         "ignore": ["config", "pages", "features", "components", "styles"]
       }
-      ],
-    "jsx-a11y/label-has-associated-control": [ 2, {
-      "controlComponents": ["Input", "Textarea"],
-      "depth": 3
-    }]
+    ],
+    "jsx-a11y/label-has-associated-control": [
+      2,
+      {
+        "controlComponents": ["Input", "Textarea"],
+        "depth": 3
+      }
+    ]
   }
 }

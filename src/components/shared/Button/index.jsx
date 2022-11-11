@@ -31,16 +31,10 @@ const defaultProps = {
 };
 
 const Button = React.forwardRef(
-  ({
-    type,
-    size,
-    width,
-    btnStyle,
-    className,
-    onClick,
-    children,
-    ...rest
-  }, ref) => (
+  (
+    { type, size, width, btnStyle, className, onClick, children, ...rest },
+    ref
+  ) => (
     <button
       type={type}
       onClick={onClick}
@@ -50,13 +44,13 @@ const Button = React.forwardRef(
         Array.isArray(className) ? className.join(' ') : className,
         `button--${btnStyle}`,
         `button--${size}`,
-        `button--${width}`,
+        `button--${width}`
       )}
       {...rest}
     >
       {children}
     </button>
-  ),
+  )
 );
 
 Button.displayName = 'Button'; // dev tools alias
