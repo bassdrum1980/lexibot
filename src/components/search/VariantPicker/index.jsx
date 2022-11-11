@@ -22,30 +22,22 @@ const defaultProps = {
   emptyText: 'Looks like we couldn’t find anything...',
 };
 
-const VariantPicker = ({
-  variants,
-  selected,
-  onSelect,
-  emptyText,
-}) => {
+const VariantPicker = ({ variants, selected, onSelect, emptyText }) => {
   let content;
 
   if (variants.length > 0) {
     content = (
       <ul>
         {variants.map((variant) => (
-          <li
-            key={variant}
-          >
+          <li key={variant}>
             <Button
               size="inline"
               btnStyle="plain"
               width="hug"
-              className={classnames(
-                'variant-picker__variant',
-                { 'variant-picker__variant--selected': selected === variant },
-              )}
-              onClick={onSelect}
+              className={classnames('variant-picker__variant', {
+                'variant-picker__variant--selected': selected === variant,
+              })}
+              onClick={() => onSelect(variant)}
             >
               {variant}
             </Button>
@@ -56,19 +48,13 @@ const VariantPicker = ({
   }
 
   if (variants.length === 0) {
-    content = (
-      <p className="variant-picker__empty-text">{emptyText}</p>
-    );
+    content = <p className="variant-picker__empty-text">{emptyText}</p>;
   }
 
-  return (
-    <div className="variant-picker">
-      {content}
-    </div>
-  );
+  return <div className="variant-picker">{content}</div>;
 };
 
-VariantPicker.displayName = 'Variant picker';
+VariantPicker.displayName = 'Variant Picker';
 VariantPicker.propTypes = propTypes;
 VariantPicker.defaultProps = defaultProps;
 

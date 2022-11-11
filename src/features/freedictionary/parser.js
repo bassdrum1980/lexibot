@@ -16,12 +16,12 @@ const parser = (apiData) => {
   // apiData is an array of lexical entries
   apiData.forEach((lexical) => {
     // meanings get same word id and phonetics from their lexical entry
-    const {
-      meanings, word, phonetic: transcription, phonetics,
-    } = lexical;
+    const { meanings, word, phonetic: transcription, phonetics } = lexical;
     // there are might be multiple phonetics entries,
     // for the simplicity sake I take the first one
-    const { audio } = phonetics.find((entry) => Boolean(entry.audio)) || { audio: null };
+    const { audio } = phonetics.find((entry) => Boolean(entry.audio)) || {
+      audio: null,
+    };
 
     // meaning includes up to several definitions,
     // shares part of speech and word id among them
@@ -43,7 +43,7 @@ const parser = (apiData) => {
         resDefinition.definition = definition.definition;
         resDefinition.synonyms = [...definition.synonyms];
         resDefinition.antonyms = [...definition.antonyms];
-        resDefinition.example = definition.example;
+        resDefinition.example = definition.example || null;
         resDefinition.id = nanoid();
         resMeaning.definitions.push(resDefinition);
       });
