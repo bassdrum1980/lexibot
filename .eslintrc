@@ -11,6 +11,7 @@
     "browser": true
   },
   "rules": {
+    "no-unused-vars": "warn",
     "import/extensions": [
       "error",
       "ignorePackages",
