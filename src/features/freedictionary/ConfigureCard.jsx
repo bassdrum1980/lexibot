@@ -1,16 +1,17 @@
 /**
- * Component let's user to build a card
+ * Component allows the user to build a card
  * out of data from the api
  */
 
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
+import { useState } from 'react';
 
 import { selectDictionaryDefinition } from 'features';
 import {
   CardFormHeader,
-  CardFormSection,
   CardFormSections,
+  CardFormSection,
   Controls,
   Button,
   VariantPicker,
@@ -21,48 +22,52 @@ const propTypes = {
 };
 
 const ConfigureCard = ({ definitionId }) => {
-  const definitionData = useSelector((state) => selectDictionaryDefinition(state, definitionId));
-  const { word, partOfSpeech, definition } = definitionData;
+  const definitionData = useSelector((state) =>
+    selectDictionaryDefinition(state, definitionId)
+  );
+
+  const [card, setCard] = useState({
+    ...definitionData,
+    currentSynonym: null,
+    currentAntonym: null,
+  });
 
   return (
     <>
-      {definitionData.id}
       <CardFormHeader
-        word={word}
-        partOfSpeech={partOfSpeech}
-        definition={definition}
+        word={card.word}
+        partOfSpeech={card.partOfSpeech}
+        definition={card.definition}
       />
       <CardFormSections>
-        <CardFormSection
-          title="Examples"
-          onClick={() => null}
-        >
+        <CardFormSection title="Synonyms" onClick={() => null}>
+          <VariantPicker
+            variants={card.synonyms}
+            selected={card.currentSynonym}
+            onSelect={(synonym) =>
+              setCard({ ...card, currentSynonym: synonym })
+            }
+            emptyText="We couldn’t find any synonyms. You can add a synonym on your own or continue as is."
+          />
+        </CardFormSection>
+        <CardFormSection title="Examples" onClick={() => null}>
           Examples
         </CardFormSection>
-        <CardFormSection
-          title="Synonyms"
-          onClick={() => null}
-        >
+        <CardFormSection title="Synonyms" onClick={() => null}>
           <VariantPicker
             variants={['traitorous', 'disloyal', 'perfidious', 'faithless']}
             selected="traitorous"
             onSelect={() => null}
           />
         </CardFormSection>
-        <CardFormSection
-          title="Synonyms"
-          onClick={() => null}
-        >
+        <CardFormSection title="Synonyms" onClick={() => null}>
           <VariantPicker
-            variants={[]}
+            variants={card.synonyms}
             onSelect={() => null}
             emptyText="We couldn’t find any synonyms. You can add a synonym on your own or continue as is."
           />
         </CardFormSection>
-        <CardFormSection
-          title="Antonyms"
-          onClick={() => null}
-        >
+        <CardFormSection title="Antonyms" onClick={() => null}>
           <VariantPicker
             variants={['loyal', 'faithful']}
             onSelect={() => null}
