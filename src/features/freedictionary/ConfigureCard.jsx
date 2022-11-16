@@ -10,7 +10,7 @@ import { useState } from 'react';
 import { selectDictionaryDefinition } from 'features';
 import {
   CardFormHeader,
-  CardFormSections,
+  CardFormBody,
   CardFormSection,
   Controls,
   Button,
@@ -39,7 +39,7 @@ const ConfigureCard = ({ definitionId }) => {
         partOfSpeech={card.partOfSpeech}
         definition={card.definition}
       />
-      <CardFormSections>
+      <CardFormBody>
         <CardFormSection title="Synonyms" onClick={() => null}>
           <VariantPicker
             variants={card.synonyms}
@@ -73,7 +73,7 @@ const ConfigureCard = ({ definitionId }) => {
             onSelect={() => null}
           />
         </CardFormSection>
-      </CardFormSections>
+      </CardFormBody>
       <Controls>
         <Button
           type="submit"

@@ -1,5 +1,5 @@
 export { default as VariantPicker } from './search/VariantPicker';
-export { default as CardFormSections } from './search/CardFormSections';
+export { default as CardFormBody } from './search/CardFormBody';
 export { default as CardFormSection } from './search/CardFormSection';
 export { default as CardFormHeader } from './search/CardFormHeader';
 export { default as Cards } from './search/Cards';
