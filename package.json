@@ -7,7 +7,9 @@
     "build": "webpack --mode development",
     "dev": "webpack serve --mode development",
     "server": "json-server db.json",
-    "start": "concurrently \"yarn dev\" \"yarn server\""
+    "start": "concurrently \"yarn dev\" \"yarn server\"",
+    "lint": "eslint --ignore-path .gitignore --ext .js,jsx",
+    "validate": "npm run lint && npm run build"
   },
   "author": "",
   "license": "ISC",
