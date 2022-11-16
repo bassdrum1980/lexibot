@@ -43,7 +43,7 @@ const parser = (apiData) => {
         resDefinition.definition = definition.definition;
         resDefinition.synonyms = [...definition.synonyms];
         resDefinition.antonyms = [...definition.antonyms];
-        resDefinition.example = definition.example || null;
+        resDefinition.examples = [definition.example].filter(Boolean);
         resDefinition.id = nanoid();
         resMeaning.definitions.push(resDefinition);
       });
