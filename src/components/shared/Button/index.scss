@@ -4,9 +4,10 @@
 
 .button {
   box-sizing: border-box;
-  
+
   // Styles
   &--primary,
+  &--secondary,
   &--tertiary,
   &--link,
   &--destructive {
@@ -16,7 +17,7 @@
     @include line-height-24;
     text-align: center;
     color: var(--primary1000);
-    
+
     @include bg-white;
     @include border-none;
     @include border-radius-full;
@@ -42,7 +43,7 @@
     @include bg-none;
     @include border-none;
   }
-  
+
   // Sizes
   &--sm {
     padding: $spacing-px-12;
@@ -75,6 +76,6 @@
   &:hover,
   &:active {
     cursor: pointer;
-    opacity: .9;
+    opacity: 0.9;
   }
 }
