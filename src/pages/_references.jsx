@@ -1,6 +1,15 @@
 import { useState } from 'react';
 import {
-  Spinner, Button, ButtonLegend, Week, Pill, Progress, FormGroup, Input, Textarea, Icon,
+  Spinner,
+  Button,
+  ButtonLegend,
+  Week,
+  Pill,
+  Progress,
+  FormGroup,
+  Input,
+  Textarea,
+  Icon,
 } from 'components';
 
 const References = () => {
@@ -20,11 +29,7 @@ const References = () => {
         isValid={false}
         onChange={(e) => setInputWord(e.target.value)}
       />
-      <FormGroup
-        label="thesaurus"
-        validationText="required"
-        isRequired
-      >
+      <FormGroup label="thesaurus" validationText="required" isRequired>
         <Input
           type="text"
           id="inputThesaurus"
@@ -35,9 +40,7 @@ const References = () => {
           isValid={false}
         />
       </FormGroup>
-      <FormGroup
-        label="definition"
-      >
+      <FormGroup label="definition">
         <Textarea
           name="inputDefinition"
           id="inputDefinition"
@@ -59,16 +62,8 @@ const References = () => {
       >
         Good
       </ButtonLegend>
-      <Icon
-        name="mic"
-        size={24}
-        color="red"
-      />
-      <Icon
-        name="mic"
-        size={48}
-        color="blue"
-      />
+      <Icon name="mic" size={24} color="red" />
+      <Icon name="mic" size={48} color="blue" />
       <Spinner />
       <Week stats={[20, 12, 34, 11, 9, 31, 17]} />
       <hr />
@@ -88,9 +83,7 @@ const References = () => {
       <br />
       <Pill type="adjective">adjective</Pill>
       <br />
-      <Pill type="various">photography</Pill>
-      ,
-      <Pill type="various">optics</Pill>
+      <Pill type="various">photography</Pill>,<Pill type="various">optics</Pill>
       <div style={{ backgroundColor: '#136FD1', padding: '10px 16px' }}>
         <Progress progress={progress} />
       </div>
