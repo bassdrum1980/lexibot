@@ -35,7 +35,7 @@ const ExamplePicker = ({ examples, selected, onSelect, onCut, emptyText }) => {
 
   if (examples.length > 0) {
     content = (
-      <div className="example-picker">
+      <>
         {examples.map((example) => (
           <div
             key={example}
@@ -65,7 +65,7 @@ const ExamplePicker = ({ examples, selected, onSelect, onCut, emptyText }) => {
             )}
           </div>
         ))}
-      </div>
+      </>
     );
   }
 

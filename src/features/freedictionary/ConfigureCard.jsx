@@ -15,6 +15,7 @@ import {
   Controls,
   Button,
   VariantPicker,
+  ExamplePicker,
 } from 'components';
 
 const propTypes = {
@@ -30,7 +31,10 @@ const ConfigureCard = ({ definitionId }) => {
     ...definitionData,
     currentSynonym: null,
     currentAntonym: null,
+    currentExample: null,
   });
+
+  console.log(card);
 
   return (
     <>
@@ -40,6 +44,15 @@ const ConfigureCard = ({ definitionId }) => {
         definition={card.definition}
       />
       <CardFormBody>
+        <CardFormSection title="Examples" onClick={() => null}>
+          <ExamplePicker
+            examples={card.examples}
+            selected={card.currentExample}
+            onSelect={() => false}
+            onCut={() => false}
+            emptyText="No available examples, bummer. Add your own example."
+          />
+        </CardFormSection>
         <CardFormSection title="Synonyms" onClick={() => null}>
           <VariantPicker
             variants={card.synonyms}
@@ -50,27 +63,14 @@ const ConfigureCard = ({ definitionId }) => {
             emptyText="We couldn’t find any synonyms. You can add a synonym on your own or continue as is."
           />
         </CardFormSection>
-        <CardFormSection title="Examples" onClick={() => null}>
-          Examples
-        </CardFormSection>
-        <CardFormSection title="Synonyms" onClick={() => null}>
-          <VariantPicker
-            variants={['traitorous', 'disloyal', 'perfidious', 'faithless']}
-            selected="traitorous"
-            onSelect={() => null}
-          />
-        </CardFormSection>
-        <CardFormSection title="Synonyms" onClick={() => null}>
-          <VariantPicker
-            variants={card.synonyms}
-            onSelect={() => null}
-            emptyText="We couldn’t find any synonyms. You can add a synonym on your own or continue as is."
-          />
-        </CardFormSection>
         <CardFormSection title="Antonyms" onClick={() => null}>
           <VariantPicker
-            variants={['loyal', 'faithful']}
-            onSelect={() => null}
+            variants={card.antonyms}
+            selected={card.currentAntonym}
+            onSelect={(antonym) =>
+              setCard({ ...card, currentAntonym: antonym })
+            }
+            emptyText="We couldn’t find any antonyms. You can add an antonym on your own or continue as is."
           />
         </CardFormSection>
       </CardFormBody>

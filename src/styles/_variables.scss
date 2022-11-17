@@ -201,6 +201,9 @@ $font-weight-light: 300;
 $font-weight-regular: 400;
 $font-weight-bold: 600;
 
+// Font-style
+$font-style-cursive: italic;
+
 // Line-height
 $line-height-12: px-to-rem(12px);
 $line-height-16: px-to-rem(16px);
@@ -222,6 +225,7 @@ $border-size-1: px-to-rem(1px);
 $border-color: var(--gray300);
 $border-color--danger: map.get($color-danger, 300);
 $border-color--em: var(--gray1000);
+$border-color--primary: var(--primary1000);
 
 // Border-radius
 $border-radius-small: $spacing-px-4;
