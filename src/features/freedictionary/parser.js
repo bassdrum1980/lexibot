@@ -43,6 +43,9 @@ const parser = (apiData) => {
         resDefinition.definition = definition.definition;
         resDefinition.synonyms = [...definition.synonyms];
         resDefinition.antonyms = [...definition.antonyms];
+        // the current API gives us one or zero examples per definition
+        // we still want it to be an array, since the user can
+        // add custom examples
         resDefinition.examples = [definition.example].filter(Boolean);
         resDefinition.id = nanoid();
         resMeaning.definitions.push(resDefinition);
