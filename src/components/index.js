@@ -1,3 +1,4 @@
+export { default as ExamplePicker } from './search/ExamplePicker';
 export { default as VariantPicker } from './search/VariantPicker';
 export { default as CardFormBody } from './search/CardFormBody';
 export { default as CardFormSection } from './search/CardFormSection';
