@@ -13,11 +13,7 @@ const propTypes = {
   onClick: PropTypes.func.isRequired,
 };
 
-const CardFormSection = ({
-  title,
-  onClick,
-  children,
-}) => (
+const CardFormSection = ({ title, onClick, children }) => (
   <div className="card-form-section">
     <div className="card-form-section__title">
       <h2>{title}</h2>
@@ -26,10 +22,7 @@ const CardFormSection = ({
         type="button"
         onClick={onClick}
       >
-        <Icon
-          name="plus"
-          size={32}
-        />
+        <Icon name="plus" size={32} />
       </button>
     </div>
     {children}

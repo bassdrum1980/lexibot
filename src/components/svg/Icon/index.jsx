@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import ReactDOMServer from 'react-dom/server';
 
-import SvgSprite from 'components/svg/SvgSprite';
+import SvgSprite from '../SvgSprite';
 import './index.scss';
 
 const iconPortal = document.getElementById('icon-portal');
@@ -12,7 +12,7 @@ if (!iconPortal) {
   document.body.appendChild(divPortal);
   const sprites = ReactDOMServer.renderToString(<SvgSprite />);
   divPortal.insertAdjacentHTML('beforeend', sprites);
-};
+}
 
 const propTypes = {
   name: PropTypes.string,
@@ -30,14 +30,7 @@ const defaultProps = {
   className: '',
 };
 
-const Icon = ({
-  name,
-  color,
-  size,
-  fillColor,
-  className,
-  rest,
-}) => (
+const Icon = ({ name, color, size, fillColor, className, rest }) => (
   <svg
     role="img"
     width={`${size}px`}
@@ -46,7 +39,7 @@ const Icon = ({
     fill={fillColor}
     className={classnames(
       'icon',
-      Array.isArray(className) ? className.join(' ') : className,
+      Array.isArray(className) ? className.join(' ') : className
     )}
     {...rest}
   >
