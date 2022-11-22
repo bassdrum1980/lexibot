@@ -13,16 +13,24 @@ import './index.scss';
 const propTypes = {
   variants: PropTypes.arrayOf(PropTypes.string).isRequired,
   selected: PropTypes.string,
+  emptyTitle: PropTypes.string,
   emptyText: PropTypes.string,
   onSelect: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
   selected: null,
+  emptyTitle: '',
   emptyText: 'Looks like we couldn’t find anything...',
 };
 
-const VariantPicker = ({ variants, selected, onSelect, emptyText }) => {
+const VariantPicker = ({
+  variants,
+  selected,
+  onSelect,
+  emptyTitle,
+  emptyText,
+}) => {
   let content;
 
   if (variants.length > 0) {
@@ -48,7 +56,14 @@ const VariantPicker = ({ variants, selected, onSelect, emptyText }) => {
   }
 
   if (variants.length === 0) {
-    content = <p className="variant-picker__empty-text">{emptyText}</p>;
+    content = (
+      <>
+        {emptyTitle && (
+          <h3 className="variant-picker__empty-title">{emptyTitle}</h3>
+        )}
+        <p className="variant-picker__empty-text">{emptyText}</p>
+      </>
+    );
   }
 
   return <div className="variant-picker">{content}</div>;
