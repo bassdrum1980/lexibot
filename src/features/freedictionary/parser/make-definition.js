@@ -32,7 +32,7 @@ export default function makeDefinition(
   // (string or empty string)
   // we still want it to be an array, since the user
   // can add custom examples
-  definition.examples = [definition.example].filter(Boolean);
+  definition.examples = [sourceDefinition.example].filter(Boolean);
   definition.id = nanoid();
   return definition;
 }
