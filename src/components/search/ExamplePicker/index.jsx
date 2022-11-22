@@ -53,7 +53,7 @@ const ExamplePicker = ({ examples, selected, onSelect, onCut, emptyText }) => {
             {selected === example && (
               <Button
                 size="s"
-                btnStyle="secondary"
+                btnStyle="tertiary"
                 width="hug"
                 className={classnames('example-picker__example', {
                   'example-picker__example--selected': selected === example,

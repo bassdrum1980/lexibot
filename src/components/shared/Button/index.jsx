@@ -6,7 +6,7 @@ import './index.scss';
 
 const propTypes = {
   type: PropTypes.oneOf(['button', 'reset', 'submit', null]),
-  size: PropTypes.oneOf(['sm', 'm', 'l', 'inline', null]),
+  size: PropTypes.oneOf(['s', 'sm', 'm', 'l', 'inline', null]),
   width: PropTypes.oneOf(['fill', 'hug', null]),
   btnStyle: PropTypes.oneOf([
     'primary',
