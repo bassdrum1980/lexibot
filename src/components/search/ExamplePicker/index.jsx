@@ -15,6 +15,7 @@ import './index.scss';
 const propTypes = {
   examples: PropTypes.arrayOf(PropTypes.string).isRequired,
   selected: PropTypes.string,
+  emptyTitle: PropTypes.string,
   emptyText: PropTypes.string,
   onSelect: PropTypes.func.isRequired,
   onCut: PropTypes.func.isRequired,
@@ -22,10 +23,18 @@ const propTypes = {
 
 const defaultProps = {
   selected: null,
+  emptyTitle: '',
   emptyText: 'Looks like we couldn’t find anything...',
 };
 
-const ExamplePicker = ({ examples, selected, onSelect, onCut, emptyText }) => {
+const ExamplePicker = ({
+  examples,
+  selected,
+  onSelect,
+  onCut,
+  emptyTitle,
+  emptyText,
+}) => {
   let content;
   const handleKeyDown = (code, example) => {
     if (code === 'Enter' || code === 'NumpadEnter') {
@@ -72,7 +81,14 @@ const ExamplePicker = ({ examples, selected, onSelect, onCut, emptyText }) => {
   }
 
   if (examples.length === 0) {
-    content = <p className="example-picker__empty-text">{emptyText}</p>;
+    content = (
+      <>
+        {emptyTitle && (
+          <h3 className="variant-picker__empty-title">{emptyTitle}</h3>
+        )}
+        <p className="variant-picker__empty-text">{emptyText}</p>
+      </>
+    );
   }
 
   return <div className="example-picker">{content}</div>;
