@@ -8,10 +8,13 @@
  */
 
 export default function getAudioUrl(phonetics) {
+  if (!Array.isArray(phonetics)) {
+    return '';
+  }
   // there are might be multiple phonetics entries,
   // for the simplicity sake I take the first one
   const { audio: url } = phonetics.find((entry) => Boolean(entry.audio)) || {
-    audio: null,
+    audio: '',
   };
 
   return url;
