@@ -29,11 +29,10 @@ const ConfigureCard = ({ definitionId }) => {
 
   const [card, setCard] = useState({
     ...definitionData,
-    // hints can only be added when user configures card
     hints: [],
     currentSynonym: null,
     currentAntonym: null,
-    currentExample: null,
+    currentExample: definitionData.examples[0] || null,
     currentHint: null,
   });
 
@@ -52,7 +51,11 @@ const ConfigureCard = ({ definitionId }) => {
             examples={card.examples}
             selected={card.currentExample}
             onSelect={(example) =>
-              setCard({ ...card, currentExample: example })
+              setCard({
+                ...card,
+                currentExample:
+                  card.currentExample === example ? null : example,
+              })
             }
             onCut={(example) => console.log(example)}
             emptyText="No available examples, bummer. Add your own example."
