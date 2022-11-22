@@ -29,9 +29,12 @@ const ConfigureCard = ({ definitionId }) => {
 
   const [card, setCard] = useState({
     ...definitionData,
+    // hints can only be added when user configures card
+    hints: [],
     currentSynonym: null,
     currentAntonym: null,
     currentExample: null,
+    currentHint: null,
   });
 
   console.log(card);
@@ -60,7 +63,11 @@ const ConfigureCard = ({ definitionId }) => {
             variants={card.synonyms}
             selected={card.currentSynonym}
             onSelect={(synonym) =>
-              setCard({ ...card, currentSynonym: synonym })
+              setCard({
+                ...card,
+                currentSynonym:
+                  card.currentSynonym === synonym ? null : synonym,
+              })
             }
             emptyText="We couldn’t find any synonyms. You can add a synonym on your own or continue as is."
           />
@@ -70,9 +77,27 @@ const ConfigureCard = ({ definitionId }) => {
             variants={card.antonyms}
             selected={card.currentAntonym}
             onSelect={(antonym) =>
-              setCard({ ...card, currentAntonym: antonym })
+              setCard({
+                ...card,
+                currentAntonym:
+                  card.currentAntonym === antonym ? null : antonym,
+              })
             }
             emptyText="We couldn’t find any antonyms. You can add an antonym on your own or continue as is."
+          />
+        </CardFormSection>
+        <CardFormSection title="Hint" onClick={() => null}>
+          <VariantPicker
+            variants={card.hints}
+            selected={card.currentHint}
+            onSelect={(hint) =>
+              setCard({
+                ...card,
+                currentHint: card.currentHint === hint ? null : hint,
+              })
+            }
+            emptyTitle="Don’t overuse hints"
+            emptyText="We recommend using hints only in cases where it is possible to confuse two or more similar cards. If this is not the case, we suggest you go ahead without a hint."
           />
         </CardFormSection>
       </CardFormBody>
