@@ -48,8 +48,10 @@ const ConfigureCard = ({ definitionId }) => {
           <ExamplePicker
             examples={card.examples}
             selected={card.currentExample}
-            onSelect={() => false}
-            onCut={() => false}
+            onSelect={(example) =>
+              setCard({ ...card, currentExample: example })
+            }
+            onCut={(example) => console.log(example)}
             emptyText="No available examples, bummer. Add your own example."
           />
         </CardFormSection>

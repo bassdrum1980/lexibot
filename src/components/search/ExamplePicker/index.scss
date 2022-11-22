@@ -1,41 +1,12 @@
 @import 'styles/variables.scss';
 @import 'styles/utility-mixins/index.scss';
 
-.example-picker {
-  // ul {
-  //   @include flex-row;
-  //   @include flex-wrap;
-  //   gap: $spacing-px-12 $spacing-px-16;
-  // }
-
-  // .variant-picker__variant {
-  //   @include font-content;
-  //   @include font-size-content;
-  //   @include line-height-20;
-  //   @include border-pseudo-b;
-  // }
-
-  // .variant-picker__variant--selected {
-  //   @include border-none;
-  //   @include font-weight-bold;
-  //   color: var(--primary1000);
-  // }
-
-  // .variant-picker__empty-text {
-  //   @include font-ui;
-  //   @include font-size-ui-sm;
-  //   @include font-weight-light;
-  //   @include line-height-20;
-  //   color: var(--gray800);
-  // }
-}
-
 .example-picker__example {
+  @include flex-row;
   @include grid-padding;
   @include grid-padding-narrow--hor;
   @include border;
   @include border-radius-sm;
-
   background-color: var(--gray100);
 
   &:not(:last-child) {
@@ -45,11 +16,17 @@
   &--selected {
     @include border--primary;
   }
+}
 
-  p {
-    @include font-content;
-    @include font-size-content;
-    @include line-height-20;
-    @include font-style-cursive;
-  }
+.example-picker__text {
+  @include flex-grow;
+  @include font-content;
+  @include font-size-content;
+  @include line-height-20;
+  @include font-style-cursive;
+}
+
+.example-picker__action {
+  @include flex-no-grow;
+  padding-left: $spacing-px-8;
 }

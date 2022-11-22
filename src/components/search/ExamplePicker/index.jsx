@@ -49,19 +49,21 @@ const ExamplePicker = ({ examples, selected, onSelect, onCut, emptyText }) => {
               handleKeyDown(code, example);
             }}
           >
-            <p>{example}</p>
+            <p className="example-picker__text">{example}</p>
             {selected === example && (
-              <Button
-                size="s"
-                btnStyle="tertiary"
-                width="hug"
-                className={classnames('example-picker__example', {
-                  'example-picker__example--selected': selected === example,
-                })}
-                onClick={() => onCut(example)}
-              >
-                cut
-              </Button>
+              <div className="example-picker__action">
+                <Button
+                  size="s"
+                  btnStyle="tertiary"
+                  width="hug"
+                  className={classnames('example-picker__example', {
+                    'example-picker__example--selected': selected === example,
+                  })}
+                  onClick={() => onCut(example)}
+                >
+                  cut
+                </Button>
+              </div>
             )}
           </div>
         ))}
