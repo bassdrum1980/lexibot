@@ -28,7 +28,6 @@
   }
   &--tertiary {
     @include border;
-    @include border-radius-sm;
   }
   &--link {
     color: var(--gray1000);
@@ -48,6 +47,7 @@
   // Sizes
   &--s {
     padding: $spacing-px-4 $spacing-px-8;
+    @include border-radius-sm;
     @include font-size-ui-ssm;
     @include line-height-14;
     @include font-weight-light;
