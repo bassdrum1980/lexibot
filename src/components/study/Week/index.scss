@@ -2,32 +2,28 @@
 @import 'styles/variables.scss';
 @import 'styles/utility-mixins/index.scss';
 
-/* temp styles */
-li {
-  list-style-type: none;
-}
-
 .week {
-  padding: 20px 0 7px 0;
+  padding: $spacing-px-20 0 $spacing-px-8 0;
 }
 
 .week__list {
-  display: flex;
-  padding: 5px 0;
-  justify-content: center;
+  @include flex-row;
+  @include flex-justify-center;
+  
+  padding: $spacing-px-4 0;
 }
 
 .week__item {
-  padding: 0 7px;
+  padding: 0 $spacing-px-8;
   text-align: center;
 
   span {
-    display: block;
     @include margin-b-4;
-    
     @include font-ui;
     @include font-size-ui-sm;
+
+    display: block;
     text-transform: uppercase;
-    color: map.get($color-gray, 500);
+    color: var(--gray500);
   }
 }

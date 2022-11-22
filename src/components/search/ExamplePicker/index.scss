@@ -1,0 +1,47 @@
+@import 'styles/variables.scss';
+@import 'styles/utility-mixins/index.scss';
+
+.example-picker__example {
+  @include flex-row;
+  @include grid-padding;
+  @include grid-padding-narrow--hor;
+  @include border;
+  @include border-radius-sm;
+  column-gap: $spacing-px-20;
+  background-color: var(--gray100);
+
+  &:not(:last-child) {
+    @include margin-b-8;
+  }
+
+  &--selected {
+    @include border--primary;
+  }
+}
+
+.example-picker__text {
+  @include flex-grow;
+  @include font-content;
+  @include font-size-content;
+  @include line-height-20;
+  @include font-style-cursive;
+}
+
+.example-picker__action {
+  @include flex-no-grow;
+}
+
+.example-picker__empty-text {
+  @include font-ui;
+  @include font-size-ui-sm;
+  @include font-weight-light;
+  @include line-height-20;
+  color: var(--gray800);
+}
+
+.example-picker__empty-title {
+  @include margin-b-4;
+  @include line-height-20;
+  @include font-size-ui-sm;
+  @include font-weight-bold;
+}

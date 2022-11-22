@@ -17,7 +17,9 @@ const SearchField = () => {
   };
 
   const onChange = (event) => {
-    const { target: { value } } = event;
+    const {
+      target: { value },
+    } = event;
     dispatch(setQuery(value));
   };
 
@@ -26,12 +28,15 @@ const SearchField = () => {
 
   // Stop the invocation of the debounced function
   // after unmounting
-  useEffect(() => () => {
-    debouncedOnChange.cancel();
-  }, []);
+  useEffect(
+    () => () => {
+      debouncedOnChange.cancel();
+    },
+    []
+  );
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} autoComplete="off">
       <InputWithAction
         type="text"
         onChange={debouncedOnChange}

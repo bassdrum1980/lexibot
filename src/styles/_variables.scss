@@ -18,6 +18,7 @@ $spacing-px-24: 3 * $grid-size;
 $spacing-px-32: 4 * $grid-size;
 $spacing-px-40: 5 * $grid-size;
 $spacing-px-48: 6 * $grid-size;
+$spacing-px-56: 7 * $grid-size;
 $spacing-px-64: 8 * $grid-size;
 $spacing-px-96: 12 * $grid-size;
 $spacing-px-128: 16 * $grid-size;
@@ -54,74 +55,79 @@ $z-index-modal: 1000;
 
 // Shared colors
 $color-gray: (
-  100: #F5F8FA,
-  200: #E4E9EB,
-  300: #CBD5D9,
-  400: #9AABB1,
-  500: #7B8E94,
-  600: #61757C,
-  700: #52666D,
-  800: #3E5259,
-  900: #32454B,
-  1000: #1B2529, 
+  100: #f5f8fa,
+  200: #e4e9eb,
+  300: #cbd5d9,
+  400: #9aabb1,
+  500: #7b8e94,
+  600: #61757c,
+  700: #52666d,
+  800: #3e5259,
+  900: #32454b,
+  1000: #1b2529,
 );
 $color-primary: (
-  1000: #034F69,
+  1000: #034f69,
 );
 $color-danger: (
-  50: #FFEBEB,
-  100: #FFE3E3,
-  200: #FFBDBD,
-  300: #FF9B9B,
-  400: #F86A6A,
-  500: #EF4E4E,
-  600: #E12D39,
-  700: #CF1124,
-  800: #AB091E,
-  900: #8A041A,
-  1000: #610316, 
+  50: #ffebeb,
+  100: #ffe3e3,
+  200: #ffbdbd,
+  300: #ff9b9b,
+  400: #f86a6a,
+  500: #ef4e4e,
+  600: #e12d39,
+  700: #cf1124,
+  800: #ab091e,
+  900: #8a041a,
+  1000: #610316,
 );
 $color-warning: (
-  100: #FFFBEA,
-  200: #FFF3C4,
-  300: #FCE588,
-  400: #FADB5F,
-  500: #F7C948,
-  600: #F0B429,
-  700: #DE911D,
-  800: #CB6E17,
-  900: #B44D12,
-  1000: #8D2B0B, 
+  100: #fffbea,
+  200: #fff3c4,
+  300: #fce588,
+  400: #fadb5f,
+  500: #f7c948,
+  600: #f0b429,
+  700: #de911d,
+  800: #cb6e17,
+  900: #b44d12,
+  1000: #8d2b0b,
 );
 $color-info: (
-  100: #E1FCF8,
-  200: #C1FEF6,
-  300: #92FDF2,
-  400: #62F4EB,
-  500: #3AE7E1,
-  600: #1CD4D4,
-  700: #0FB5BA,
-  800: #099AA4,
-  900: #07818F,
-  1000: #05606E, 
+  100: #e1fcf8,
+  200: #c1fef6,
+  300: #92fdf2,
+  400: #62f4eb,
+  500: #3ae7e1,
+  600: #1cd4d4,
+  700: #0fb5ba,
+  800: #099aa4,
+  900: #07818f,
+  1000: #05606e,
 );
 $color-pill: (
-  'noun': #890DBD,
-  'pronoun': #B60785,
-  'interjection': #B60785,
-  'preposition': #019ED0,
-  'conjunction': #C80E0E,
-  'verb': #0052AF,
-  'adverb': #049F96,
-  'adjective': #BC4807,
-  'various': #B89300
+  'noun': #890dbd,
+  'pronoun': #b60785,
+  'interjection': #b60785,
+  'preposition': #019ed0,
+  'conjunction': #c80e0e,
+  'verb': #0052af,
+  'adverb': #049f96,
+  'adjective': #bc4807,
+  'various': #b89300,
 );
 $color-flame: (
-  100: #FF9960,
-  1000: #FF5C00,
+  100: #ff9960,
+  1000: #ff5c00,
 );
 $color-gradient: (
-  'flame': linear-gradient(175deg, map.get($color-flame, 100), map.get($color-flame, 1000)),
+  'flame':
+    linear-gradient(
+      175deg,
+      map.get($color-flame, 100),
+      map.get($color-flame, 1000)
+    ),
 );
 
 // 'Study' theme
@@ -135,14 +141,14 @@ $color-gray--study: (
   700: color.adjust(map.get($color-gray, 700), $hue: 14),
   800: color.adjust(map.get($color-gray, 800), $hue: 14),
   900: color.adjust(map.get($color-gray, 900), $hue: 14),
-  1000: color.adjust(map.get($color-gray, 1000), $hue: 14), 
+  1000: color.adjust(map.get($color-gray, 1000), $hue: 14),
 );
 $color-primary--study: (
-  1000: #136FD1,
+  1000: #136fd1,
 );
 $color-gradient--study: (
-  'primary': linear-gradient(175deg, #26AAF4 0%, #126FD1 100%),
-  'primary--light': linear-gradient(175deg, #FFFFFF 0%, #F7FAFC 100%),
+  'primary': linear-gradient(175deg, #26aaf4 0%, #126fd1 100%),
+  'primary--light': linear-gradient(175deg, #ffffff 0%, #f7fafc 100%),
 );
 
 // 'Search' theme
@@ -156,14 +162,14 @@ $color-gray--search: (
   700: color.adjust(map.get($color-gray, 700), $hue: 87),
   800: color.adjust(map.get($color-gray, 800), $hue: 87),
   900: color.adjust(map.get($color-gray, 900), $hue: 87),
-  1000: color.adjust(map.get($color-gray, 1000), $hue: 87), 
+  1000: color.adjust(map.get($color-gray, 1000), $hue: 87),
 );
 $color-primary--search: (
-  1000: #B21CE8,
+  1000: #b21ce8,
 );
 $color-gradient--search: (
-  'primary': linear-gradient(175deg, #DE32ED 0%, #B31CE8 100%),
-  'primary--light': linear-gradient(175deg, #FFFFFF 0%, #F9F5FA 100%),
+  'primary': linear-gradient(175deg, #de32ed 0%, #b31ce8 100%),
+  'primary--light': linear-gradient(175deg, #ffffff 0%, #f9f5fa 100%),
 );
 
 // TYPOGRAPHY
@@ -185,32 +191,42 @@ $font-size-content-28: px-to-rem(28px);
 $font-size-content-36: px-to-rem(36px);
 
 // Fonts
-$font-family-ui: -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI', 'Noto Sans', Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+$font-family-ui: -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI',
+  'Noto Sans', Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 $font-family-content: 'Merriweather', serif;
 
 // Font-weight
+$font-weight-thin: 200;
 $font-weight-light: 300;
 $font-weight-regular: 400;
 $font-weight-bold: 600;
 
+// Font-style
+$font-style-cursive: italic;
+
 // Line-height
 $line-height-12: px-to-rem(12px);
+$line-height-14: px-to-rem(14px);
 $line-height-16: px-to-rem(16px);
 $line-height-20: px-to-rem(20px);
 $line-height-24: px-to-rem(24px);
 $line-height-28: px-to-rem(28px);
 $line-height-32: px-to-rem(32px);
+$line-height-40: px-to-rem(40px);
+$line-height-44: px-to-rem(44px);
 
 // Letter-spacing
 $letter-spacing-05: px-to-rem(0.5px);
 
 // BORDERS
 // Border-size
-$border-size-1: 1px;
+$border-size-1: px-to-rem(1px);
 
 // Border-color
 $border-color: var(--gray300);
 $border-color--danger: map.get($color-danger, 300);
+$border-color--em: var(--gray1000);
+$border-color--primary: var(--primary1000);
 
 // Border-radius
 $border-radius-small: $spacing-px-4;

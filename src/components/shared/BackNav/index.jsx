@@ -15,7 +15,7 @@ const defaultProps = {
   title: 'Back',
 };
 
-const FormHeader = ({ title, onClick }) => (
+const BackNav = ({ title, onClick }) => (
   <div className="form-header">
     <button
       onClick={onClick}
@@ -31,7 +31,7 @@ const FormHeader = ({ title, onClick }) => (
   </div>
 );
 
-FormHeader.displayName = 'Form Header';
-FormHeader.propTypes = propTypes;
-FormHeader.defaultProps = defaultProps;
-export default FormHeader;
+BackNav.displayName = 'Back Nav';
+BackNav.propTypes = propTypes;
+BackNav.defaultProps = defaultProps;
+export default BackNav;

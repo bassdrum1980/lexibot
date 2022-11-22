@@ -1,36 +1,39 @@
+/**
+ * Renders a bar with the passed page's actions.
+ * Has a few different styles, defined by CSS-modifiers.
+ */
+
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
 import './index.scss';
 
 const propTypes = {
-  progress: PropTypes.number,
   className: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
 };
 
 const defaultProps = {
-  progress: 0,
   className: '',
 };
 
-const Progress = ({
-  progress,
+const Controls = ({
   className,
+  children,
   ...rest
 }) => (
   <div
     className={classnames(
-      'progress',
+      'controls',
       Array.isArray(className) ? className.join(' ') : className,
     )}
     {...rest}
   >
-    <div className="progress__bar" style={{ width: `${progress}%` }} />
+    {children}
   </div>
 );
 
-Progress.displayName = 'Progress';
-Progress.propTypes = propTypes;
-Progress.defaultProps = defaultProps;
+Controls.displayName = 'Controls Section';
+Controls.propTypes = propTypes;
+Controls.defaultProps = defaultProps;
 
-export default Progress;
+export default Controls;

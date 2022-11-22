@@ -4,25 +4,31 @@
 
 .button {
   box-sizing: border-box;
-  
-  @include font-ui;
-  @include font-weight-bold;
-  @include font-size-ui;
-  @include line-height-24;
-  text-align: center;
-  color: var(--primary1000);
-  
-  @include bg-white;
-  @include border-none;
-  @include border-radius-full;
 
   // Styles
+  &--primary,
+  &--secondary,
+  &--tertiary,
+  &--link,
+  &--destructive {
+    @include font-ui;
+    @include font-weight-bold;
+    @include font-size-ui;
+    @include line-height-24;
+    text-align: center;
+    color: var(--primary1000);
+
+    @include bg-white;
+    @include border-none;
+    @include border-radius-full;
+  }
   &--primary {
     color: #fff;
     @include bg-primary;
   }
   &--tertiary {
     @include border;
+    @include border-radius-sm;
   }
   &--link {
     color: var(--gray1000);
@@ -33,8 +39,20 @@
     color: map.get($color-danger, 600);
     @include border--danger;
   }
-  
+  &--plain {
+    @include padding-none;
+    @include bg-none;
+    @include border-none;
+  }
+
   // Sizes
+  &--s {
+    padding: $spacing-px-4 $spacing-px-8;
+    @include font-size-ui-ssm;
+    @include line-height-14;
+    @include font-weight-light;
+    @include letter-spacing-05;
+  }
   &--sm {
     padding: $spacing-px-12;
   }
@@ -48,6 +66,9 @@
   }
   &--l {
     padding: $spacing-px-20 $spacing-px-64;
+  }
+  &--inline {
+    // no paddings
   }
 
   // Widths
@@ -63,6 +84,6 @@
   &:hover,
   &:active {
     cursor: pointer;
-    opacity: .9;
+    opacity: 0.9;
   }
 }

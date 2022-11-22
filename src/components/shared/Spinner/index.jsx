@@ -11,13 +11,11 @@ const defaultProps = {
   className: '',
 };
 
-const Spinner = ({
-  className, ...rest
-}) => (
+const Spinner = ({ className, ...rest }) => (
   <div
     className={classnames(
       'spinner',
-      Array.isArray(className) ? className.join(' ') : className,
+      Array.isArray(className) ? className.join(' ') : className
     )}
     {...rest}
   >

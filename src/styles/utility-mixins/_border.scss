@@ -2,8 +2,16 @@
   border: solid $border-size-1 $border-color;
 }
 
+@mixin border-b {
+  border-bottom: solid $border-size-1 $border-color;
+}
+
 @mixin border--danger {
   border: solid $border-size-1 $border-color--danger;
+}
+
+@mixin border--primary {
+  border: solid $border-size-1 $border-color--primary;
 }
 
 @mixin border-none {
@@ -25,4 +33,12 @@
 @mixin border-radius-top-m {
   border-top-left-radius: $border-radius-medium;
   border-top-right-radius: $border-radius-medium;
+}
+
+@mixin border-pseudo {
+  border: 1px dotted $border-color--em;
+}
+
+@mixin border-pseudo-b {
+  border-bottom: 1px dotted $border-color--em;
 }

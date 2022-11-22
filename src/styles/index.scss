@@ -8,7 +8,9 @@
 @import 'layout';
 
 body {
-  
+  @include font-ui;
+  color: var(--gray1000);
+
   &.modal-open {
     overflow-y: hidden;
   }

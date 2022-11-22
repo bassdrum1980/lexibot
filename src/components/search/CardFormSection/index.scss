@@ -1,0 +1,30 @@
+@import 'styles/variables.scss';
+@import 'styles/utility-mixins/index.scss';
+@import 'styles/mixins/index.scss';
+
+.card-form-section {
+  &:not(:last-child) {
+    @include margin-b-32;
+    @include border-b;
+    padding-bottom: $spacing-px-24;
+  }
+}
+
+.card-form-section__title {
+  @include flex-row;
+  @include margin-b-12;
+
+  h2 {
+    @include flex-grow;
+    @include font-ui;
+    @include font-size-ui-h2;
+    @include font-weight-thin;
+
+    padding-top: $spacing-px-4;
+    padding-right: $grid-padding--narrow;
+  }
+}
+
+.card-form-section__action {
+  @include button--icon;
+}

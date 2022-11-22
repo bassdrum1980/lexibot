@@ -1,0 +1,7 @@
+@import 'styles/variables.scss';
+@import 'styles/utility-mixins/index.scss';
+
+.card-form-body {
+  padding: $grid-padding $grid-padding $spacing-px-32;
+  @include bg-white;
+}

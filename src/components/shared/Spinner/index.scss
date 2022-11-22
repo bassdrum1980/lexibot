@@ -1,4 +1,4 @@
-@use'sass:map';
+@use 'sass:map';
 @import 'styles/variables.scss';
 @import 'styles/utility-mixins/index.scss';
 
@@ -33,4 +33,8 @@
   }
 }
 
-@keyframes spinner { 100% {transform:rotate(360deg)} }
+@keyframes spinner {
+  100% {
+    transform: rotate(360deg);
+  }
+}

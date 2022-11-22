@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 
-import { Page, FormHeader } from 'components';
+import { Page, BackNav } from 'components';
+import { ConfigureCard } from 'features';
 
 const SearchAdd = () => {
   const { definitionId } = useParams();
@@ -9,16 +10,17 @@ const SearchAdd = () => {
 
   return (
     <Page>
-      {definitionId}
-
-      <FormHeader
+      <BackNav
         title="Back to search"
         onClick={onClick}
+      />
+      <ConfigureCard
+        definitionId={definitionId}
       />
     </Page>
   );
 };
 
-SearchAdd.displayName = 'Search Add Page';
+SearchAdd.displayName = 'Search Details Page';
 
 export default SearchAdd;
