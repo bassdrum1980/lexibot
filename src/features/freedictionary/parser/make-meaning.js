@@ -1,7 +1,8 @@
 /**
- * Expects a raw meaning object
+ * Expects a raw 'meaning' object
  * + extra few arguments,
- * builds and returns a self-sufficient meaning object
+ * builds and returns a usable 'meaning' object
+ * with a set of ready-to-use definitions
  * @param {Object} sourceMeaning
  * @param {String} word
  * @param {String} transcription

@@ -7,14 +7,10 @@
  * @returns {Array} of meanings
  */
 
-// получает массив lexical entries — проверить массив ли это?
-//
-
 import getAudioUrl from './get-audio-url';
 import makeMeaning from './make-meaning';
 
 const parser = (apiData) => {
-  // resulting array of definitions grouped by meanings
   const meanings = [];
 
   // apiData is an array of lexical entries
