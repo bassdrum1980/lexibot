@@ -27,8 +27,13 @@
   @include font-style-cursive;
 }
 
-.example-picker__action {
+.example-picker__cut-wrapper {
   @include flex-no-grow;
+}
+
+.example-picker__cut-button {
+  @include -margin-t-2;
+  @include -margin-b-2;
 }
 
 .example-picker__empty-text {

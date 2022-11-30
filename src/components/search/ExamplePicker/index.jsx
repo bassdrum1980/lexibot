@@ -60,14 +60,12 @@ const ExamplePicker = ({
           >
             <p className="example-picker__text">{example}</p>
             {selected === example && (
-              <div className="example-picker__action">
+              <div className="example-picker__cut-wrapper">
                 <Button
                   size="s"
                   btnStyle="tertiary"
                   width="hug"
-                  className={classnames('example-picker__example', {
-                    'example-picker__example--selected': selected === example,
-                  })}
+                  className="example-picker__cut-button"
                   onClick={() => onCut(example)}
                 >
                   cut
