@@ -1,3 +1,5 @@
+export { default as Backdrop } from './shared/Backdrop';
+export { default as AddVariant } from './search/AddVariant';
 export { default as ExamplePicker } from './search/ExamplePicker';
 export { default as VariantPicker } from './search/VariantPicker';
 export { default as CardFormBody } from './search/CardFormBody';

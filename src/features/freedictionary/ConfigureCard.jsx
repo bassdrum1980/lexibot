@@ -36,8 +36,6 @@ const ConfigureCard = ({ definitionId }) => {
     currentHint: null,
   });
 
-  console.log(card);
-
   return (
     <>
       <CardFormHeader
@@ -46,7 +44,17 @@ const ConfigureCard = ({ definitionId }) => {
         definition={card.definition}
       />
       <CardFormBody>
-        <CardFormSection title="Examples" onClick={() => null}>
+        <CardFormSection
+          title="Examples"
+          addLabel="example"
+          onAddVariant={(variant) =>
+            setCard({
+              ...card,
+              examples: [...card.examples, variant],
+              currentExample: variant,
+            })
+          }
+        >
           <ExamplePicker
             examples={card.examples}
             selected={card.currentExample}
@@ -61,7 +69,11 @@ const ConfigureCard = ({ definitionId }) => {
             emptyText="No available examples, bummer. Add your own example."
           />
         </CardFormSection>
-        <CardFormSection title="Synonyms" onClick={() => null}>
+        <CardFormSection
+          title="Synonyms"
+          addLabel="sunonym"
+          onAddVariant={() => null}
+        >
           <VariantPicker
             variants={card.synonyms}
             selected={card.currentSynonym}
@@ -75,7 +87,11 @@ const ConfigureCard = ({ definitionId }) => {
             emptyText="We couldn’t find any synonyms. You can add a synonym on your own or continue as is."
           />
         </CardFormSection>
-        <CardFormSection title="Antonyms" onClick={() => null}>
+        <CardFormSection
+          title="Antonyms"
+          addLabel="antonym"
+          onAddVariant={() => null}
+        >
           <VariantPicker
             variants={card.antonyms}
             selected={card.currentAntonym}
@@ -89,7 +105,7 @@ const ConfigureCard = ({ definitionId }) => {
             emptyText="We couldn’t find any antonyms. You can add an antonym on your own or continue as is."
           />
         </CardFormSection>
-        <CardFormSection title="Hint" onClick={() => null}>
+        <CardFormSection title="Hint" addLabel="hint" onAddVariant={() => null}>
           <VariantPicker
             variants={card.hints}
             selected={card.currentHint}

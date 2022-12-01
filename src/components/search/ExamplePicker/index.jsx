@@ -45,9 +45,11 @@ const ExamplePicker = ({
   if (examples.length > 0) {
     content = (
       <>
-        {examples.map((example) => (
+        {examples.map((example, index) => (
           <div
-            key={example}
+            // static list, no filtering, no reordering
+            // eslint-disable-next-line react/no-array-index-key
+            key={index}
             className={classnames('example-picker__example', {
               'example-picker__example--selected': selected === example,
             })}

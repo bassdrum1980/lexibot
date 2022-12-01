@@ -1,0 +1,23 @@
+@import 'styles/variables.scss';
+@import 'styles/utility-mixins/index.scss';
+
+.add-variant {
+  @include flex-column;
+  @include flex-align-bottom--col;
+  height: 100vh;
+}
+
+.add-variant__content,
+.add-variant__footer {
+  @include grid-padding--hor;
+  @include bg-white;
+}
+
+.add-variant__content {
+  padding-top: $spacing-px-40;
+}
+
+.add-variant__footer {
+  padding-top: $spacing-px-32;
+  padding-bottom: $spacing-px-24;
+}
