@@ -4,29 +4,27 @@ import PropTypes from 'prop-types';
 import './index.scss';
 
 const propTypes = {
+  value: PropTypes.string,
+  onInput: PropTypes.func.isRequired,
   className: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   isValid: PropTypes.bool,
-  onChange: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
+  value: '',
   className: '',
   isValid: true,
 };
 
-const Textarea = ({
-  className,
-  isValid,
-  onChange,
-  ...rest
-}) => (
+const Textarea = ({ value, onInput, className, isValid, ...rest }) => (
   <textarea
     className={classnames(
       'form-textarea',
       Array.isArray(className) ? className.join(' ') : className,
-      { 'form-textarea--invalid': !isValid },
+      { 'form-textarea--invalid': !isValid }
     )}
-    onChange={onChange}
+    onInput={onInput}
+    value={value}
     {...rest}
   />
 );
