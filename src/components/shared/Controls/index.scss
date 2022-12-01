@@ -3,4 +3,9 @@
 .controls {
   padding: $spacing-px-24 $grid-padding;
   background-color: var(--gray100);
+
+  &--plain {
+    padding: 0;
+    background-color: initial;
+  }
 }

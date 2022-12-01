@@ -1,5 +1,5 @@
 /**
- * Renders a bar with the passed page's actions.
+ * Renders a bar with page actions.
  * Has a few different styles, defined by CSS-modifiers.
  */
 
@@ -16,15 +16,11 @@ const defaultProps = {
   className: '',
 };
 
-const Controls = ({
-  className,
-  children,
-  ...rest
-}) => (
+const Controls = ({ className, children, ...rest }) => (
   <div
     className={classnames(
       'controls',
-      Array.isArray(className) ? className.join(' ') : className,
+      Array.isArray(className) ? className.join(' ') : className
     )}
     {...rest}
   >
