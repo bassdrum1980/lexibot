@@ -29,10 +29,12 @@ export default function makeDefinition(
   definition.synonyms = [...sourceDefinition.synonyms];
   definition.antonyms = [...sourceDefinition.antonyms];
   // the current API gives us one or zero examples per definition
-  // (string or empty string)
-  // we still want it to be an array, since the user
-  // can add custom examples
-  definition.examples = [sourceDefinition.example].filter(Boolean);
+  // (string / empty string)
+  // I still want it to be an array
+  // (since the user can add custom examples)
+  definition.examples = sourceDefinition.example
+    ? [{ value: sourceDefinition.example, id: nanoid() }]
+    : [];
   definition.id = nanoid();
   return definition;
 }

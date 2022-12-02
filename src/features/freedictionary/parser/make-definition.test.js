@@ -74,10 +74,12 @@ describe('sunny day scenarios', () => {
       antonyms: definition.antonyms,
     });
   });
-  test('definition has examples and it is an array', () => {
-    expect(result).toMatchObject({
-      examples: [definition.example],
-    });
+  test('definition.examples is an array', () => {
+    expect(result.examples).toBeInstanceOf(Array);
+  });
+  test('definition.examples[i] is an object with value & id fields', () => {
+    expect(result.examples[0]).toHaveProperty('value');
+    expect(result.examples[0]).toHaveProperty('id');
   });
   test('definition has id', () => {
     expect(result).toHaveProperty('id');
