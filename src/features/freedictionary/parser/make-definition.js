@@ -12,6 +12,7 @@
  */
 
 import { nanoid } from '@reduxjs/toolkit';
+import { addIdToEntities } from 'helpers';
 
 export default function makeDefinition(
   sourceDefinition,
@@ -26,15 +27,13 @@ export default function makeDefinition(
   definition.phoneticsAudio = audioUrl;
   definition.partOfSpeech = partOfSpeech;
   definition.definition = sourceDefinition.definition;
-  definition.synonyms = [...sourceDefinition.synonyms];
-  definition.antonyms = [...sourceDefinition.antonyms];
+  definition.synonyms = addIdToEntities(sourceDefinition.synonyms);
+  definition.antonyms = addIdToEntities(sourceDefinition.antonyms);
   // the current API gives us one or zero examples per definition
-  // (string / empty string)
+  // (string / undefined)
   // I still want it to be an array
   // (since the user can add custom examples)
-  definition.examples = sourceDefinition.example
-    ? [{ value: sourceDefinition.example, id: nanoid() }]
-    : [];
+  definition.examples = addIdToEntities([sourceDefinition.example]);
   definition.id = nanoid();
   return definition;
 }

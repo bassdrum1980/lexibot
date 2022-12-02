@@ -44,43 +44,57 @@ describe('sunny day scenarios', () => {
       word,
     });
   });
+
   test('definition has transcription', () => {
     expect(result).toMatchObject({
       phoneticsText: transcription,
     });
   });
+
   test('definition has audioUrl', () => {
     expect(result).toMatchObject({
       phoneticsAudio: audioUrl,
     });
   });
+
   test('definition has partOfSpeech', () => {
     expect(result).toMatchObject({
       partOfSpeech,
     });
   });
+
   test('definition has definition', () => {
     expect(result).toMatchObject({
       definition: definition.definition,
     });
   });
-  test('definition has synonyms', () => {
-    expect(result).toMatchObject({
-      synonyms: definition.synonyms,
-    });
+
+  test('definition.synonyms is an array', () => {
+    expect(result.synonyms).toBeInstanceOf(Array);
   });
-  test('definition has antonyms', () => {
-    expect(result).toMatchObject({
-      antonyms: definition.antonyms,
-    });
+  test('definition.synonyms[i] is an object with value & id fields', () => {
+    expect(result.synonyms[0]).toHaveProperty('value');
+    expect(result.synonyms[0]).toHaveProperty('id');
   });
+
+  test('definition.antonyms is an array', () => {
+    expect(result.antonyms).toBeInstanceOf(Array);
+  });
+
+  test('definition.antonyms[i] is an object with value & id fields', () => {
+    expect(result.antonyms[0]).toHaveProperty('value');
+    expect(result.antonyms[0]).toHaveProperty('id');
+  });
+
   test('definition.examples is an array', () => {
     expect(result.examples).toBeInstanceOf(Array);
   });
+
   test('definition.examples[i] is an object with value & id fields', () => {
     expect(result.examples[0]).toHaveProperty('value');
     expect(result.examples[0]).toHaveProperty('id');
   });
+
   test('definition has id', () => {
     expect(result).toHaveProperty('id');
   });
