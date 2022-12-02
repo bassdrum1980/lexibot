@@ -13,7 +13,12 @@ import { Button } from 'components';
 import './index.scss';
 
 const propTypes = {
-  examples: PropTypes.arrayOf(PropTypes.string).isRequired,
+  examples: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.string,
+      id: PropTypes.string,
+    })
+  ).isRequired,
   selected: PropTypes.string,
   emptyTitle: PropTypes.string,
   emptyText: PropTypes.string,
@@ -36,39 +41,37 @@ const ExamplePicker = ({
   emptyText,
 }) => {
   let content;
-  const handleKeyDown = (code, example) => {
+  const handleKeyDown = (code, id) => {
     if (code === 'Enter' || code === 'NumpadEnter') {
-      onSelect(example);
+      onSelect(id);
     }
   };
 
   if (examples.length > 0) {
     content = (
       <>
-        {examples.map((example, index) => (
+        {examples.map(({ value, id }) => (
           <div
-            // static list, no filtering, no reordering
-            // eslint-disable-next-line react/no-array-index-key
-            key={index}
+            key={id}
             className={classnames('example-picker__example', {
-              'example-picker__example--selected': selected === example,
+              'example-picker__example--selected': selected === id,
             })}
             role="button"
             tabIndex="0"
-            onClick={() => onSelect(example)}
+            onClick={() => onSelect(id)}
             onKeyDown={({ code }) => {
-              handleKeyDown(code, example);
+              handleKeyDown(code, id);
             }}
           >
-            <p className="example-picker__text">{example}</p>
-            {selected === example && (
+            <p className="example-picker__text">{value}</p>
+            {selected === id && (
               <div className="example-picker__cut-wrapper">
                 <Button
                   size="s"
                   btnStyle="tertiary"
                   width="hug"
                   className="example-picker__cut-button"
-                  onClick={() => onCut(example)}
+                  onClick={() => onCut(id)}
                 >
                   cut
                 </Button>

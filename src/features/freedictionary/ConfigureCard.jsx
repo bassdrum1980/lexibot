@@ -6,6 +6,7 @@
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
+import { nanoid } from '@reduxjs/toolkit';
 
 import { selectDictionaryDefinition } from 'features';
 import {
@@ -32,7 +33,7 @@ const ConfigureCard = ({ definitionId }) => {
     hints: [],
     currentSynonym: null,
     currentAntonym: null,
-    currentExample: definitionData.examples[0] || null,
+    currentExampleId: definitionData.examples[0].id || '',
     currentHint: null,
   });
 
@@ -47,25 +48,26 @@ const ConfigureCard = ({ definitionId }) => {
         <CardFormSection
           title="Examples"
           addLabel="example"
-          onAddVariant={(variant) =>
+          onAddVariant={(value) => {
+            const id = nanoid();
+
             setCard({
               ...card,
-              examples: [...card.examples, variant],
-              currentExample: variant,
-            })
-          }
+              examples: [...card.examples, { value, id }],
+              currentExampleId: id,
+            });
+          }}
         >
           <ExamplePicker
             examples={card.examples}
-            selected={card.currentExample}
-            onSelect={(example) =>
+            selected={card.currentExampleId}
+            onSelect={(id) =>
               setCard({
                 ...card,
-                currentExample:
-                  card.currentExample === example ? null : example,
+                currentExampleId: card.currentExampleId === id ? '' : id,
               })
             }
-            onCut={(example) => console.log(example)}
+            onCut={(id) => console.log(id)}
             emptyText="No available examples, bummer. Add your own example."
           />
         </CardFormSection>
