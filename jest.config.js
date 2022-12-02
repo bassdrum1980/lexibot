@@ -89,6 +89,7 @@ module.exports = {
     '^features(.*)$': '<rootDir>/src/features/',
     '^components(.*)$': '<rootDir>/src/components/',
     '^styles(.*)$': '<rootDir>/src/styles/',
+    '^helpers(.*)$': '<rootDir>/src/helpers/',
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader

@@ -16,6 +16,7 @@ module.exports = {
       features: path.resolve(__dirname, 'src/features/'),
       components: path.resolve(__dirname, 'src/components/'),
       styles: path.resolve(__dirname, 'src/styles/'),
+      helpers: path.resolve(__dirname, 'src/helpers/'),
     },
     extensions: ['.js', '.jsx'],
   },
