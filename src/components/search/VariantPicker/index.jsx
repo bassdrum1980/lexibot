@@ -11,7 +11,12 @@ import { Button } from 'components';
 import './index.scss';
 
 const propTypes = {
-  variants: PropTypes.arrayOf(PropTypes.string).isRequired,
+  variants: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.string,
+      id: PropTypes.string,
+    })
+  ),
   selected: PropTypes.string,
   emptyTitle: PropTypes.string,
   emptyText: PropTypes.string,
@@ -19,6 +24,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  variants: [],
   selected: null,
   emptyTitle: '',
   emptyText: 'Looks like we couldn’t find anything...',
@@ -36,18 +42,18 @@ const VariantPicker = ({
   if (variants.length > 0) {
     content = (
       <ul>
-        {variants.map((variant) => (
-          <li key={variant}>
+        {variants.map(({ value, id }) => (
+          <li key={id}>
             <Button
               size="inline"
               btnStyle="plain"
               width="hug"
               className={classnames('variant-picker__variant', {
-                'variant-picker__variant--selected': selected === variant,
+                'variant-picker__variant--selected': selected === id,
               })}
-              onClick={() => onSelect(variant)}
+              onClick={() => onSelect(id)}
             >
-              {variant}
+              {value}
             </Button>
           </li>
         ))}

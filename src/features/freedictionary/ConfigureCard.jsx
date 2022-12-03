@@ -31,7 +31,7 @@ const ConfigureCard = ({ definitionId }) => {
   const [card, setCard] = useState({
     ...definitionData,
     hints: [],
-    currentSynonym: null,
+    currentSynonymId: '',
     currentAntonym: null,
     currentExampleId: definitionData.examples[0].id || '',
     currentHint: null,
@@ -73,22 +73,23 @@ const ConfigureCard = ({ definitionId }) => {
         </CardFormSection>
         <CardFormSection
           title="Synonyms"
-          addLabel="sunonym"
+          addLabel="synonym"
           onAddVariant={() => null}
         >
           <VariantPicker
             variants={card.synonyms}
-            selected={card.currentSynonym}
-            onSelect={(synonym) =>
+            selected={card.currentSynonymId}
+            onSelect={(id) =>
               setCard({
                 ...card,
-                currentSynonym:
-                  card.currentSynonym === synonym ? null : synonym,
+                currentSynonymId: card.currentSynonymId === id ? '' : id,
               })
             }
             emptyText="We couldn’t find any synonyms. You can add a synonym on your own or continue as is."
           />
         </CardFormSection>
+        {/*
+        
         <CardFormSection
           title="Antonyms"
           addLabel="antonym"
@@ -107,6 +108,7 @@ const ConfigureCard = ({ definitionId }) => {
             emptyText="We couldn’t find any antonyms. You can add an antonym on your own or continue as is."
           />
         </CardFormSection>
+*/}
         <CardFormSection title="Hint" addLabel="hint" onAddVariant={() => null}>
           <VariantPicker
             variants={card.hints}
