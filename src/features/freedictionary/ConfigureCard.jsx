@@ -33,9 +33,19 @@ const ConfigureCard = ({ definitionId }) => {
     hints: [],
     currentSynonymId: '',
     currentAntonymId: '',
-    currentExampleId: definitionData.examples[0].id || '',
+    currentExampleId: definitionData.examples[0]?.id || '',
     currentHint: null,
   });
+
+  const handleAddVariant = (value, key, currentKey) => {
+    const id = nanoid();
+
+    setCard({
+      ...card,
+      [key]: [...card[key], { value, id }],
+      [currentKey]: id,
+    });
+  };
 
   return (
     <>
@@ -49,13 +59,7 @@ const ConfigureCard = ({ definitionId }) => {
           title="Examples"
           addLabel="example"
           onAddVariant={(value) => {
-            const id = nanoid();
-
-            setCard({
-              ...card,
-              examples: [...card.examples, { value, id }],
-              currentExampleId: id,
-            });
+            handleAddVariant(value, 'examples', 'currentExampleId');
           }}
         >
           <ExamplePicker
@@ -74,7 +78,9 @@ const ConfigureCard = ({ definitionId }) => {
         <CardFormSection
           title="Synonyms"
           addLabel="synonym"
-          onAddVariant={() => null}
+          onAddVariant={(value) => {
+            handleAddVariant(value, 'synonyms', 'currentSynonymId');
+          }}
         >
           <VariantPicker
             variants={card.synonyms}
@@ -91,7 +97,9 @@ const ConfigureCard = ({ definitionId }) => {
         <CardFormSection
           title="Antonyms"
           addLabel="antonym"
-          onAddVariant={() => null}
+          onAddVariant={(value) => {
+            handleAddVariant(value, 'antonyms', 'currentAntonymId');
+          }}
         >
           <VariantPicker
             variants={card.antonyms}
