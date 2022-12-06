@@ -39,11 +39,17 @@ const ConfigureCard = ({ definitionId }) => {
 
   const handleAddVariant = (value, key, currentKey) => {
     const id = nanoid();
-
     setCard({
       ...card,
       [key]: [...card[key], { value, id }],
       [currentKey]: id,
+    });
+  };
+
+  const handleSelectVariant = (id, currentKey) => {
+    setCard({
+      ...card,
+      [currentKey]: card[currentKey] === id ? null : id,
     });
   };
 
@@ -65,12 +71,7 @@ const ConfigureCard = ({ definitionId }) => {
           <ExamplePicker
             examples={card.examples}
             selected={card.currentExampleId}
-            onSelect={(id) =>
-              setCard({
-                ...card,
-                currentExampleId: card.currentExampleId === id ? '' : id,
-              })
-            }
+            onSelect={(id) => handleSelectVariant(id, 'currentExampleId')}
             onCut={(id) => console.log(id)}
             emptyText="No available examples, bummer. Add your own example."
           />
@@ -85,12 +86,7 @@ const ConfigureCard = ({ definitionId }) => {
           <VariantPicker
             variants={card.synonyms}
             selected={card.currentSynonymId}
-            onSelect={(id) =>
-              setCard({
-                ...card,
-                currentSynonymId: card.currentSynonymId === id ? '' : id,
-              })
-            }
+            onSelect={(id) => handleSelectVariant(id, 'currentSynonymId')}
             emptyText="We couldn’t find any synonyms. You can add a synonym on your own or continue as is."
           />
         </CardFormSection>
@@ -104,12 +100,7 @@ const ConfigureCard = ({ definitionId }) => {
           <VariantPicker
             variants={card.antonyms}
             selected={card.currentAntonymId}
-            onSelect={(id) =>
-              setCard({
-                ...card,
-                currentAntonymId: card.currentAntonymId === id ? null : id,
-              })
-            }
+            onSelect={(id) => handleSelectVariant(id, 'currentAntonymId')}
             emptyText="We couldn’t find any antonyms. You can add an antonym on your own or continue as is."
           />
         </CardFormSection>
@@ -123,12 +114,7 @@ const ConfigureCard = ({ definitionId }) => {
           <VariantPicker
             variants={card.hints}
             selected={card.currentHintId}
-            onSelect={(id) =>
-              setCard({
-                ...card,
-                currentHintId: card.currentHintId === id ? null : id,
-              })
-            }
+            onSelect={(id) => handleSelectVariant(id, 'currentHintId')}
             emptyTitle="Don’t overuse hints"
             emptyText="We recommend using hints only in cases where it is possible to confuse two or more similar cards. If this is not the case, we suggest you go ahead without a hint."
           />
