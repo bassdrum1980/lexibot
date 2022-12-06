@@ -64,57 +64,57 @@ const ConfigureCard = ({ definitionId }) => {
         <CardFormSection
           title="Examples"
           addLabel="example"
-          onAddVariant={(value) =>
+          handleAdd={(value) =>
             handleAddVariant(value, 'examples', 'currentExampleId')
           }
         >
           <ExamplePicker
             examples={card.examples}
             selected={card.currentExampleId}
-            onSelect={(id) => handleSelectVariant(id, 'currentExampleId')}
-            onCut={(id) => console.log(id)}
+            handleSelect={(id) => handleSelectVariant(id, 'currentExampleId')}
+            handleCut={(id) => console.log(id)}
             emptyText="No available examples, bummer. Add your own example."
           />
         </CardFormSection>
         <CardFormSection
           title="Synonyms"
           addLabel="synonym"
-          onAddVariant={(value) =>
+          handleAdd={(value) =>
             handleAddVariant(value, 'synonyms', 'currentSynonymId')
           }
         >
           <VariantPicker
             variants={card.synonyms}
             selected={card.currentSynonymId}
-            onSelect={(id) => handleSelectVariant(id, 'currentSynonymId')}
+            handleSelect={(id) => handleSelectVariant(id, 'currentSynonymId')}
             emptyText="We couldn’t find any synonyms. You can add a synonym on your own or continue as is."
           />
         </CardFormSection>
         <CardFormSection
           title="Antonyms"
           addLabel="antonym"
-          onAddVariant={(value) =>
+          handleAdd={(value) =>
             handleAddVariant(value, 'antonyms', 'currentAntonymId')
           }
         >
           <VariantPicker
             variants={card.antonyms}
             selected={card.currentAntonymId}
-            onSelect={(id) => handleSelectVariant(id, 'currentAntonymId')}
+            handleSelect={(id) => handleSelectVariant(id, 'currentAntonymId')}
             emptyText="We couldn’t find any antonyms. You can add an antonym on your own or continue as is."
           />
         </CardFormSection>
         <CardFormSection
           title="Hint"
           addLabel="hint"
-          onAddVariant={(value) =>
+          handleAdd={(value) =>
             handleAddVariant(value, 'hints', 'currentHintId')
           }
         >
           <VariantPicker
             variants={card.hints}
             selected={card.currentHintId}
-            onSelect={(id) => handleSelectVariant(id, 'currentHintId')}
+            handleSelect={(id) => handleSelectVariant(id, 'currentHintId')}
             emptyTitle="Don’t overuse hints"
             emptyText="We recommend using hints only in cases where it is possible to confuse two or more similar cards. If this is not the case, we suggest you go ahead without a hint."
           />

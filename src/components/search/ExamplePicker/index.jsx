@@ -22,8 +22,8 @@ const propTypes = {
   selected: PropTypes.string,
   emptyTitle: PropTypes.string,
   emptyText: PropTypes.string,
-  onSelect: PropTypes.func.isRequired,
-  onCut: PropTypes.func.isRequired,
+  handleSelect: PropTypes.func.isRequired,
+  handleCut: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
@@ -35,15 +35,16 @@ const defaultProps = {
 const ExamplePicker = ({
   examples,
   selected,
-  onSelect,
-  onCut,
+  handleSelect,
+  handleCut,
   emptyTitle,
   emptyText,
 }) => {
   let content;
+
   const handleKeyDown = (code, id) => {
     if (code === 'Enter' || code === 'NumpadEnter') {
-      onSelect(id);
+      handleSelect(id);
     }
   };
 
@@ -58,7 +59,7 @@ const ExamplePicker = ({
             })}
             role="button"
             tabIndex="0"
-            onClick={() => onSelect(id)}
+            onClick={() => handleSelect(id)}
             onKeyDown={({ code }) => {
               handleKeyDown(code, id);
             }}
@@ -71,7 +72,7 @@ const ExamplePicker = ({
                   btnStyle="tertiary"
                   width="hug"
                   className="example-picker__cut-button"
-                  onClick={() => onCut(id)}
+                  onClick={() => handleCut(id)}
                 >
                   cut
                 </Button>

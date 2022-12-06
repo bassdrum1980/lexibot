@@ -12,20 +12,11 @@ import './index.scss';
 const propTypes = {
   title: PropTypes.string.isRequired,
   addLabel: PropTypes.string.isRequired,
-  onAddVariant: PropTypes.func.isRequired,
+  handleAdd: PropTypes.func.isRequired,
 };
 
-const CardFormSection = ({ title, addLabel, onAddVariant, children }) => {
+const CardFormSection = ({ title, addLabel, handleAdd, children }) => {
   const [showModal, setShowModal] = useState(false);
-
-  const handleAdd = (variant) => {
-    onAddVariant(variant);
-    setShowModal(false);
-  };
-
-  const handleCancel = () => {
-    setShowModal(false);
-  };
 
   return (
     <div className="card-form-section">
@@ -45,8 +36,11 @@ const CardFormSection = ({ title, addLabel, onAddVariant, children }) => {
           <Backdrop />
           <AddVariant
             label={addLabel}
-            onAdd={handleAdd}
-            onCancel={handleCancel}
+            onAdd={(variant) => {
+              handleAdd(variant);
+              setShowModal(false);
+            }}
+            onCancel={() => setShowModal(false)}
           />
         </Modal>
       )}

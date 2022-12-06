@@ -20,7 +20,7 @@ const propTypes = {
   selected: PropTypes.string,
   emptyTitle: PropTypes.string,
   emptyText: PropTypes.string,
-  onSelect: PropTypes.func.isRequired,
+  handleSelect: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
@@ -33,7 +33,7 @@ const defaultProps = {
 const VariantPicker = ({
   variants,
   selected,
-  onSelect,
+  handleSelect,
   emptyTitle,
   emptyText,
 }) => {
@@ -51,7 +51,7 @@ const VariantPicker = ({
               className={classnames('variant-picker__variant', {
                 'variant-picker__variant--selected': selected === id,
               })}
-              onClick={() => onSelect(id)}
+              onClick={() => handleSelect(id)}
             >
               {value}
             </Button>
