@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { useState } from 'react';
 
-import { Button, Backdrop, Modal } from 'components';
+import { Button, Backdrop, Modal, CropExample } from 'components';
 import './index.scss';
 
 const propTypes = {
@@ -79,7 +79,7 @@ const ExamplePicker = ({
                     setShowModal(true);
                   }}
                 >
-                  cut
+                  crop
                 </Button>
               </div>
             )}
@@ -106,7 +106,7 @@ const ExamplePicker = ({
       {showModal && (
         <Modal>
           <Backdrop />
-          <CutExample
+          <CropExample
             example={examples.find((item) => item.id === selected)?.value}
             handleCut={(cropped) => {
               handleCut(selected, cropped);

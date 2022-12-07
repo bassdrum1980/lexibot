@@ -1,13 +1,13 @@
 /**
- * Component renders card's header
- * used in 'ConfigureCard' and 'EditCard' features.
+ * Component allow to crop an example,
+ * examples are often verbose, hence the need in cropping feature.
  */
 
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
 
-import { FormGroup, Textarea, Button, Controls } from 'components';
+import { Button, Controls } from 'components';
 import './index.scss';
 
 const propTypes = {
@@ -20,7 +20,7 @@ const defaultProps = {
   example: '',
 };
 
-const CutExample = ({ example, handleCut, handleCancel }) => {
+const CropExample = ({ example, handleCut, handleCancel }) => {
   const [tokens, setTokens] = useState(
     example.split(' ').map((token) => ({
       token,
@@ -36,26 +36,41 @@ const CutExample = ({ example, handleCut, handleCancel }) => {
     setTokens(nextTokens);
   };
 
+  const handleSubmit = () => {
+    handleCut(tokens.reduce((cropped, token) => cropped + token.token, ''));
+  };
+
   return (
     <div className="cut-example">
-      <div className="cut-example__content">{example.value}</div>
+      <div className="cut-example__content">
+        {tokens.map(({ token, id, selected }) => {
+          if (selected) return <span>{token}</span>;
+
+          return (
+            <Button
+              type="button"
+              btnStyle="link"
+              width="hug"
+              onClick={() => toggleToken(id)}
+            >
+              {token}
+            </Button>
+          );
+        })}
+      </div>
       <div className="cut-example__footer">
         <Controls className="controls--plain">
           <Button
             type="button"
             btnStyle="tertiary"
             width="fill"
-            onClick={() =>
-              handleCut(
-                tokens.reduce((cropped, token) => cropped + token.token, '')
-              )
-            }
+            onClick={handleSubmit}
           >
             Add
           </Button>
           <Button
             type="button"
-            btnStyle="link"
+            btnStyle="plain"
             width="fill"
             onClick={handleCancel}
           >
@@ -67,8 +82,8 @@ const CutExample = ({ example, handleCut, handleCancel }) => {
   );
 };
 
-CutExample.displayName = 'Cut Example Dialog';
-CutExample.propTypes = propTypes;
-CutExample.defaultProps = defaultProps;
+CropExample.displayName = 'Crop Example Dialog';
+CropExample.propTypes = propTypes;
+CropExample.defaultProps = defaultProps;
 
-export default CutExample;
+export default CropExample;
