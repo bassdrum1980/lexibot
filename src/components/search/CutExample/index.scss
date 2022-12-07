@@ -1,0 +1,23 @@
+@import 'styles/variables.scss';
+@import 'styles/utility-mixins/index.scss';
+
+.cut-example {
+  @include flex-column;
+  @include flex-align-bottom--col;
+  height: 100vh;
+}
+
+.cut-example__content,
+.cut-example__footer {
+  @include grid-padding--hor;
+  @include bg-white;
+}
+
+.cut-example__content {
+  padding-top: $spacing-px-40;
+}
+
+.cut-example__footer {
+  padding-top: $spacing-px-32;
+  padding-bottom: $spacing-px-24;
+}

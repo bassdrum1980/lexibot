@@ -8,8 +8,9 @@
 
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import { useState } from 'react';
 
-import { Button } from 'components';
+import { Button, Backdrop, Modal } from 'components';
 import './index.scss';
 
 const propTypes = {
@@ -41,6 +42,7 @@ const ExamplePicker = ({
   emptyText,
 }) => {
   let content;
+  const [showModal, setShowModal] = useState(false);
 
   const handleKeyDown = (code, id) => {
     if (code === 'Enter' || code === 'NumpadEnter') {
@@ -72,7 +74,10 @@ const ExamplePicker = ({
                   btnStyle="tertiary"
                   width="hug"
                   className="example-picker__cut-button"
-                  onClick={() => handleCut(id)}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setShowModal(true);
+                  }}
                 >
                   cut
                 </Button>
@@ -95,7 +100,23 @@ const ExamplePicker = ({
     );
   }
 
-  return <div className="example-picker">{content}</div>;
+  return (
+    <div className="example-picker">
+      {content}
+      {showModal && (
+        <Modal>
+          <Backdrop />
+          <CutExample
+            example={examples.find((item) => item.id === selected)?.value}
+            handleCut={(cropped) => {
+              handleCut(selected, cropped);
+            }}
+            handleCancel={() => console.log('cancel')}
+          />
+        </Modal>
+      )}
+    </div>
+  );
 };
 
 ExamplePicker.displayName = 'Example Picker';
