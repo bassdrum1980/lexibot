@@ -27,15 +27,19 @@
   align-items: flex-end;
 }
 
-@mixin flex-justify-center {
-  justify-content: center;
-}
-
 @mixin flex-align-bottom--col {
   justify-content: flex-end;
 }
 
 @mixin flex-align-justify-center {
   align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-align-content-center {
+  align-content: center;
+}
+
+@mixin flex-justify-center {
   justify-content: center;
 }

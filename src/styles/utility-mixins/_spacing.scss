@@ -116,6 +116,43 @@
   margin-bottom: -$spacing-px-2;
 }
 
+@mixin margin-l-2 {
+  margin-right: $spacing-px-2;
+}
+@mixin margin-l-4 {
+  margin-right: $spacing-px-4;
+}
+@mixin margin-l-8 {
+  margin-right: $spacing-px-8;
+}
+@mixin margin-l-12 {
+  margin-right: $spacing-px-12;
+}
+@mixin margin-l-16 {
+  margin-right: $spacing-px-16;
+}
+@mixin margin-l-20 {
+  margin-right: $spacing-px-20;
+}
+@mixin margin-l-24 {
+  margin-right: $spacing-px-24;
+}
+@mixin margin-l-32 {
+  margin-right: $spacing-px-32;
+}
+@mixin margin-l-40 {
+  margin-right: $spacing-px-40;
+}
+@mixin margin-l-48 {
+  margin-right: $spacing-px-48;
+}
+@mixin margin-l-64 {
+  margin-right: $spacing-px-64;
+}
+@mixin margin-l-96 {
+  margin-right: $spacing-px-96;
+}
+
 // Paddings
 @mixin padding-none {
   padding: 0;

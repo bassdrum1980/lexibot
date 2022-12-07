@@ -6,6 +6,7 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
+import classnames from 'classnames';
 
 import { Button, Controls } from 'components';
 import './index.scss';
@@ -24,7 +25,7 @@ const CropExample = ({ example, handleCut, handleCancel }) => {
   const [tokens, setTokens] = useState(
     example.split(' ').map((token) => ({
       token,
-      selected: true,
+      active: true,
       id: nanoid(),
     }))
   );
@@ -32,7 +33,7 @@ const CropExample = ({ example, handleCut, handleCancel }) => {
   const toggleToken = (id) => {
     const nextTokens = [...tokens];
     const current = nextTokens.find((token) => token.id === id);
-    current.selected = !current.selected;
+    current.active = !current.active;
     setTokens(nextTokens);
   };
 
@@ -41,24 +42,27 @@ const CropExample = ({ example, handleCut, handleCancel }) => {
   };
 
   return (
-    <div className="cut-example">
-      <div className="cut-example__content">
-        {tokens.map(({ token, id, selected }) => {
-          if (selected) return <span>{token}</span>;
-
-          return (
+    <div className="crop-example">
+      <div className="crop-example__content">
+        <div className="crop-example__sentence">
+          {tokens.map(({ token, id, active }) => (
             <Button
               type="button"
-              btnStyle="link"
+              btnStyle="pseudo"
               width="hug"
+              size="inline"
               onClick={() => toggleToken(id)}
+              className={classnames('crop-example__token', {
+                'crop-example__token--active': !active,
+              })}
             >
               {token}
             </Button>
-          );
-        })}
+          ))}
+        </div>
+        <p className="crop-example__hint">touch to toggle</p>
       </div>
-      <div className="cut-example__footer">
+      <div className="crop-example__footer">
         <Controls className="controls--plain">
           <Button
             type="button"

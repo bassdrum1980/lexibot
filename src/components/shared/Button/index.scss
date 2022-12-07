@@ -10,6 +10,7 @@
   &--secondary,
   &--tertiary,
   &--link,
+  &--pseudo,
   &--destructive {
     @include font-ui;
     @include font-weight-bold;
