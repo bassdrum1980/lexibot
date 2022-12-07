@@ -7,19 +7,12 @@
     @include flex-wrap;
     gap: $spacing-px-12 $spacing-px-16;
   }
-}
 
-.variant-picker__variant {
-  @include font-content;
-  @include font-size-content;
-  @include line-height-20;
-  @include border-pseudo-b;
-}
-
-.variant-picker__variant--selected {
-  @include border-none;
-  @include font-weight-bold;
-  color: var(--primary1000);
+  .variant-picker__variant--selected {
+    @include border-none;
+    @include font-weight-bold;
+    color: var(--primary1000);
+  }
 }
 
 .variant-picker__empty-text {

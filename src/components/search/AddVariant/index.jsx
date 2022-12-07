@@ -39,7 +39,12 @@ const AddVariant = ({ label, onAdd, onCancel }) => {
           >
             Add
           </Button>
-          <Button type="button" btnStyle="link" width="fill" onClick={onCancel}>
+          <Button
+            type="button"
+            btnStyle="plain"
+            width="fill"
+            onClick={onCancel}
+          >
             Cancel
           </Button>
         </Controls>

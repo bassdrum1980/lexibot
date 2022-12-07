@@ -46,7 +46,7 @@ const VariantPicker = ({
           <li key={id}>
             <Button
               size="inline"
-              btnStyle="plain"
+              btnStyle="pseudo"
               width="hug"
               className={classnames('variant-picker__variant', {
                 'variant-picker__variant--selected': selected === id,
