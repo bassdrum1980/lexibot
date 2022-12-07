@@ -18,6 +18,10 @@
   border: none;
 }
 
+@mixin border-radius-none {
+  border-radius: 0;
+}
+
 @mixin border-radius-full {
   border-radius: px-to-rem(9999px);
 }

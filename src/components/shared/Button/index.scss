@@ -29,19 +29,31 @@
   &--tertiary {
     @include border;
   }
-  &--link {
+  &--plain {
     color: var(--gray1000);
     @include font-weight-regular;
     @include bg-none;
+    @include border-none;
   }
   &--destructive {
     color: map.get($color-danger, 600);
     @include border--danger;
   }
-  &--plain {
-    @include padding-none;
+  &--link,
+  &--pseudo {
+    @include font-content;
+    @include font-size-content;
+    @include font-weight-regular;
+    @include line-height-20;
+    color: var(--gray1000);
+
     @include bg-none;
     @include border-none;
+    @include border-radius-none;
+  }
+
+  &--pseudo {
+    @include border-pseudo-b;
   }
 
   // Sizes
@@ -69,6 +81,7 @@
   }
   &--inline {
     // no paddings
+    @include padding-none;
   }
 
   // Widths
