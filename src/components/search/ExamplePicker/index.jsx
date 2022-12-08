@@ -24,7 +24,7 @@ const propTypes = {
   emptyTitle: PropTypes.string,
   emptyText: PropTypes.string,
   handleSelect: PropTypes.func.isRequired,
-  handleCut: PropTypes.func.isRequired,
+  handleCrop: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
@@ -37,7 +37,7 @@ const ExamplePicker = ({
   examples,
   selected,
   handleSelect,
-  handleCut,
+  handleCrop,
   emptyTitle,
   emptyText,
 }) => {
@@ -48,6 +48,15 @@ const ExamplePicker = ({
     if (code === 'Enter' || code === 'NumpadEnter') {
       handleSelect(id);
     }
+  };
+
+  const handleModalCancel = () => {
+    setShowModal(false);
+  };
+
+  const handleModalCrop = (cropped) => {
+    handleCrop(cropped);
+    setShowModal(false);
   };
 
   if (examples.length > 0) {
@@ -108,10 +117,8 @@ const ExamplePicker = ({
           <Backdrop />
           <CropExample
             example={examples.find((item) => item.id === selected)?.value}
-            handleCut={(cropped) => {
-              handleCut(selected, cropped);
-            }}
-            handleCancel={() => console.log('cancel')}
+            handleCrop={handleModalCrop}
+            handleCancel={handleModalCancel}
           />
         </Modal>
       )}

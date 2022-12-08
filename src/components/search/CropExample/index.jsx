@@ -13,7 +13,7 @@ import './index.scss';
 
 const propTypes = {
   example: PropTypes.string,
-  handleCut: PropTypes.func.isRequired,
+  handleCrop: PropTypes.func.isRequired,
   handleCancel: PropTypes.func.isRequired,
 };
 
@@ -21,11 +21,11 @@ const defaultProps = {
   example: '',
 };
 
-const CropExample = ({ example, handleCut, handleCancel }) => {
+const CropExample = ({ example, handleCrop, handleCancel }) => {
   const [tokens, setTokens] = useState(
     example.split(' ').map((token) => ({
-      token,
-      active: true,
+      value: token,
+      isActive: true,
       id: nanoid(),
     }))
   );
@@ -33,30 +33,35 @@ const CropExample = ({ example, handleCut, handleCancel }) => {
   const toggleToken = (id) => {
     const nextTokens = [...tokens];
     const current = nextTokens.find((token) => token.id === id);
-    current.active = !current.active;
+    current.isActive = !current.isActive;
     setTokens(nextTokens);
   };
 
   const handleSubmit = () => {
-    handleCut(tokens.reduce((cropped, token) => cropped + token.token, ''));
+    const values = tokens
+      .filter(({ isActive }) => isActive)
+      .map(({ value }) => value);
+
+    handleCrop(values.join(' '));
   };
 
   return (
     <div className="crop-example">
       <div className="crop-example__content">
         <div className="crop-example__sentence">
-          {tokens.map(({ token, id, active }) => (
+          {tokens.map(({ value, id, isActive }) => (
             <Button
+              key={id}
               type="button"
               btnStyle="pseudo"
               width="hug"
               size="inline"
               onClick={() => toggleToken(id)}
               className={classnames('crop-example__token', {
-                'crop-example__token--active': !active,
+                'crop-example__token--active': !isActive,
               })}
             >
-              {token}
+              {value}
             </Button>
           ))}
         </div>
@@ -70,7 +75,7 @@ const CropExample = ({ example, handleCut, handleCancel }) => {
             width="fill"
             onClick={handleSubmit}
           >
-            Add
+            Crop
           </Button>
           <Button
             type="button"

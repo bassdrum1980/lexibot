@@ -53,6 +53,19 @@ const ConfigureCard = ({ definitionId }) => {
     });
   };
 
+  const handleCrop = (cropped) => {
+    const updatedExamples = card.examples.map((example) =>
+      example.id === card.currentExampleId
+        ? { value: cropped, id: example.id }
+        : example
+    );
+
+    setCard({
+      ...card,
+      examples: updatedExamples,
+    });
+  };
+
   return (
     <>
       <CardFormHeader
@@ -72,7 +85,7 @@ const ConfigureCard = ({ definitionId }) => {
             examples={card.examples}
             selected={card.currentExampleId}
             handleSelect={(id) => handleSelectVariant(id, 'currentExampleId')}
-            handleCut={(id) => console.log(id)}
+            handleCrop={handleCrop}
             emptyText="No available examples, bummer. Add your own example."
           />
         </CardFormSection>
