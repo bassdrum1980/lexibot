@@ -18,6 +18,7 @@ export default function tokenizeSentence(sentence) {
     throw new Error(
       `tokenizeSentence expected 'string' but was given '${typeof sentence}'`
     );
+
   if (sentence.length === 0) return [];
 
   return sentence.split(' ').map((token) => ({

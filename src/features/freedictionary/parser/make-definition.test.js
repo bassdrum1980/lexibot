@@ -86,16 +86,30 @@ describe('sunny day scenarios', () => {
     expect(result.antonyms[0]).toHaveProperty('id');
   });
 
+  test('definition has id', () => {
+    expect(result).toHaveProperty('id');
+  });
+
   test('definition.examples is an array', () => {
     expect(result.examples).toBeInstanceOf(Array);
   });
 
-  test('definition.examples[i] is an object with value & id fields', () => {
-    expect(result.examples[0]).toHaveProperty('value');
-    expect(result.examples[0]).toHaveProperty('id');
+  test('every example is an object with value & id fields', () => {
+    result.examples.forEach((example) => {
+      expect(example).toHaveProperty('value');
+      expect(example).toHaveProperty('id');
+    });
   });
 
-  test('definition has id', () => {
-    expect(result).toHaveProperty('id');
+  test("example's value is an array of tokens", () => {
+    expect(result.examples[0].value).toBeInstanceOf(Array);
+  });
+
+  test("every example's token has value, id and isActive properties", () => {
+    result.examples[0].value.forEach((token) => {
+      expect(token).toHaveProperty('value');
+      expect(token).toHaveProperty('id');
+      expect(token).toHaveProperty('isActive');
+    });
   });
 });

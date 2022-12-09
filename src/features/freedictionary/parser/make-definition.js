@@ -12,7 +12,7 @@
  */
 
 import { nanoid } from '@reduxjs/toolkit';
-import { addIdToEntities } from 'helpers';
+import { addIdToEntities, tokenizeSentence } from 'helpers';
 
 export default function makeDefinition(
   sourceDefinition,
@@ -29,11 +29,20 @@ export default function makeDefinition(
   definition.definition = sourceDefinition.definition;
   definition.synonyms = addIdToEntities(sourceDefinition.synonyms);
   definition.antonyms = addIdToEntities(sourceDefinition.antonyms);
-  // the current API gives us one or zero examples per definition
-  // (string / undefined)
-  // I still want it to be an array
-  // (since the user can add custom examples)
-  definition.examples = addIdToEntities([sourceDefinition.example]);
   definition.id = nanoid();
+
+  // The current API gives us one example maximum per definition (string),
+  // some definitions don't have example (undefined).
+  if (sourceDefinition.example) {
+    // Example is tokenized, it allows me easily crop/uncrop it
+    // on ConfigureCard level.
+    const tokenizedExample = tokenizeSentence(sourceDefinition.example);
+    // I want 'examples' to be an array
+    // (since the user can add custom examples on ConfigureCard level).
+    definition.examples = addIdToEntities([tokenizedExample]);
+  } else {
+    definition.examples = [];
+  }
+
   return definition;
 }
