@@ -47,7 +47,14 @@
     "import/no-unresolved": [
       "error",
       {
-        "ignore": ["config", "pages", "features", "components", "styles"]
+        "ignore": [
+          "config",
+          "pages",
+          "features",
+          "components",
+          "styles",
+          "helpers"
+        ]
       }
     ],
     "jsx-a11y/label-has-associated-control": [
