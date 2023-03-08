@@ -1,3 +1,5 @@
+import { wordInstance } from './api';
+
 /**
  * Fetch universal user ID and preferences from the json-server db
  * (universal ID — legacy, the app used to work with various
@@ -27,18 +29,14 @@ export const fetchUserAttributes = async ({ tgid }) => {
 
 /**
  * Fetch 'word' data from the json-server db
- * (I downloaded and saved a few jsons from Free Dictionary API)
- * !! I'm omitting translationEnabled and targetLanguage flags in this version!!
+ * !!omitting translationEnabled and targetLanguage flags!!
  * @param {String} word // word id
- * @success
- *    @param {String} word
- *    @param {Array} data
  */
 export const fetchFreeDictionary = async ({ word }) => {
-  const response = await fetch(`http://localhost:3001/words/${word}`);
-  if (response.ok) {
-    const data = await response.json();
-    return data;
+  try {
+    const response = await wordInstance.get(`/${word}`);
+    return response.data;
+  } catch (error) {
+    throw new Error('Word Not Found');
   }
-  throw new Error(response.statusText);
 };
