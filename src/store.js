@@ -1,10 +1,11 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import logger from 'redux-logger';
-
-// import { functionsAPI as api } from 'config';
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { jsonserverAPI as api } from 'config';
 import {
-  queryReducer, freedictionaryReducer, loadingReducer, userReducer,
+  queryReducer,
+  freedictionaryReducer,
+  loadingReducer,
+  userReducer,
 } from 'features';
 
 const search = combineReducers({
@@ -19,9 +20,10 @@ export const store = configureStore({
     loading: loadingReducer,
   },
   devTools: true,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-    thunk: {
-      extraArgument: api,
-    },
-  }).concat(logger),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      thunk: {
+        extraArgument: api,
+      },
+    }).concat(logger),
 });
