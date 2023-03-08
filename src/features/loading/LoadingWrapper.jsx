@@ -6,14 +6,21 @@
  * or has finished with an error.
  */
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { useCallback } from 'react';
 
 import { Modal, Warning, Spinner } from 'components';
 import { selectError, selectLoading } from 'features';
+import { resetError } from './loading-slice';
 
 const LoadingWrapper = ({ children }) => {
+  const dispatch = useDispatch();
   const error = useSelector(selectError);
   const loading = useSelector(selectLoading);
+
+  const onResetError = useCallback(() => {
+    dispatch(resetError());
+  }, [dispatch]);
 
   // to avoid mount / unmount of children on every change
   // in the 'loading' slice, I always render children +
@@ -35,7 +42,7 @@ const LoadingWrapper = ({ children }) => {
           className="warning--error"
           title={error}
           message={'Looks like something unexpected\njust has happened...'}
-          onClick={() => console.log('click')}
+          onClick={onResetError}
         />
       </Modal>
     );
