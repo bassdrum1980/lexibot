@@ -1,4 +1,6 @@
-import { wordInstance } from './api';
+import { userInstance, wordInstance } from './api';
+
+// TODO: errors handling
 
 /**
  * Fetch universal user ID and preferences from the json-server db
@@ -18,13 +20,16 @@ import { wordInstance } from './api';
  *    @param {String} targetLanguage
  */
 export const fetchUserAttributes = async ({ tgid }) => {
-  const response = await fetch(`http://localhost:3001/users?tgid=${tgid}`);
-  const users = await response.json();
-
-  if (users.length) {
-    return { data: users[0] };
+  try {
+    const response = await userInstance.get('', {
+      params: {
+        tgid,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    throw new Error('User Not Found');
   }
-  throw new Error('User Not Found');
 };
 
 /**
