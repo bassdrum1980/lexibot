@@ -1,10 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import { Search, Study, References } from 'pages';
@@ -19,11 +15,11 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route path={`${routes.searchURL}/*`} element={<Search />} />
+          <Route path={`${routes.searchURL}`} element={<Search />} />
           <Route path={routes.studyURL} element={<Study />} />
           <Route path={routes.referencesURL} element={<References />} />
         </Route>
       </Routes>
     </BrowserRouter>
-  </Provider>,
+  </Provider>
 );
