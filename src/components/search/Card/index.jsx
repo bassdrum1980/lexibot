@@ -20,7 +20,13 @@ const propTypes = {
         definition: PropTypes.string.isRequired,
         examples: PropTypes.arrayOf(
           PropTypes.shape({
-            value: PropTypes.string,
+            value: PropTypes.arrayOf(
+              PropTypes.shape({
+                value: PropTypes.string,
+                id: PropTypes.string,
+                isActive: PropTypes.bool,
+              })
+            ),
             id: PropTypes.string,
           })
         ),
