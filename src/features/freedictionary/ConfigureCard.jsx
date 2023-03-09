@@ -3,7 +3,6 @@
  * out of data from the api
  */
 
-import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
@@ -18,12 +17,11 @@ import {
   VariantPicker,
   ExamplePicker,
 } from 'components';
+import { selectDictonaryCurrentId } from './freedictionary-slice';
 
-const propTypes = {
-  definitionId: PropTypes.string.isRequired,
-};
+const ConfigureCard = () => {
+  const definitionId = useSelector(selectDictonaryCurrentId);
 
-const ConfigureCard = ({ definitionId }) => {
   const definitionData = useSelector((state) =>
     selectDictionaryDefinition(state, definitionId)
   );
@@ -149,5 +147,4 @@ const ConfigureCard = ({ definitionId }) => {
 };
 
 ConfigureCard.displayName = 'Configure Card';
-ConfigureCard.propTypes = propTypes;
 export default ConfigureCard;

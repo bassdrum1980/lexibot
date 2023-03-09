@@ -1,14 +1,17 @@
-import { Routes, Route } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import SearchDetails from './SearchDetails';
 import SearchIndex from './SearchIndex';
+import { selectDictonaryCurrentId } from '../../features/freedictionary/freedictionary-slice';
 
-const Search = () => (
-  <Routes>
-    <Route path="/" element={<SearchIndex />} />
-    <Route path=":definitionId" element={<SearchDetails />} />
-  </Routes>
-);
+const Search = () => {
+  const currentDefinitionId = useSelector(selectDictonaryCurrentId);
+
+  const children =
+    currentDefinitionId.length > 0 ? <SearchDetails /> : <SearchIndex />;
+
+  return children;
+};
 
 Search.displayName = 'Search Root Page';
 

@@ -3,18 +3,21 @@
  * one Card per 'meaning'.
  */
 
-import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { useCallback } from 'react';
 
 import { selectDictionaryMeanings } from 'features';
 import { Card, Cards } from 'components';
+import { setCurrentDefinitionId } from './freedictionary-slice';
 
 const SearchResults = () => {
   // get meanings from the slice
   const meanings = useSelector(selectDictionaryMeanings);
   // handler to proceed to details page
-  const navigate = useNavigate();
-  const handleClick = (id) => navigate(id);
+  const dispatch = useDispatch();
+  const handleClick = useCallback((id) => {
+    dispatch(setCurrentDefinitionId(id));
+  }, []);
 
   return (
     <Cards>
