@@ -16,7 +16,13 @@ import './index.scss';
 const propTypes = {
   examples: PropTypes.arrayOf(
     PropTypes.shape({
-      value: PropTypes.string,
+      value: PropTypes.arrayOf(
+        PropTypes.shape({
+          value: PropTypes.string,
+          id: PropTypes.string,
+          isActive: PropTypes.bool,
+        })
+      ),
       id: PropTypes.string,
     })
   ).isRequired,
@@ -62,38 +68,44 @@ const ExamplePicker = ({
   if (examples.length > 0) {
     content = (
       <>
-        {examples.map(({ value, id }) => (
-          <div
-            key={id}
-            className={classnames('example-picker__example', {
-              'example-picker__example--selected': selected === id,
-            })}
-            role="button"
-            tabIndex="0"
-            onClick={() => handleSelect(id)}
-            onKeyDown={({ code }) => {
-              handleKeyDown(code, id);
-            }}
-          >
-            <p className="example-picker__text">{value}</p>
-            {selected === id && (
-              <div className="example-picker__cut-wrapper">
-                <Button
-                  size="s"
-                  btnStyle="tertiary"
-                  width="hug"
-                  className="example-picker__cut-button"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    setShowModal(true);
-                  }}
-                >
-                  crop
-                </Button>
-              </div>
-            )}
-          </div>
-        ))}
+        {examples.map(({ value, id }) => {
+          const text = value.reduce(
+            (acc, el) => (el.isActive ? `${acc} ${el.value}` : acc),
+            ''
+          );
+          return (
+            <div
+              key={id}
+              className={classnames('example-picker__example', {
+                'example-picker__example--selected': selected === id,
+              })}
+              role="button"
+              tabIndex="0"
+              onClick={() => handleSelect(id)}
+              onKeyDown={({ code }) => {
+                handleKeyDown(code, id);
+              }}
+            >
+              <p className="example-picker__text">{text}</p>
+              {selected === id && (
+                <div className="example-picker__cut-wrapper">
+                  <Button
+                    size="s"
+                    btnStyle="tertiary"
+                    width="hug"
+                    className="example-picker__cut-button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setShowModal(true);
+                    }}
+                  >
+                    crop
+                  </Button>
+                </div>
+              )}
+            </div>
+          );
+        })}
       </>
     );
   }

@@ -1,18 +1,23 @@
 /**
- * Component allow to crop an example,
+ * Component, crops an example,
  * examples are often verbose, hence the need in cropping feature.
  */
 
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import { nanoid } from '@reduxjs/toolkit';
 import classnames from 'classnames';
 
 import { Button, Controls } from 'components';
 import './index.scss';
 
 const propTypes = {
-  example: PropTypes.string,
+  example: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.string,
+      id: PropTypes.string,
+      isActive: PropTypes.bool,
+    })
+  ),
   handleCrop: PropTypes.func.isRequired,
   handleCancel: PropTypes.func.isRequired,
 };
@@ -22,27 +27,21 @@ const defaultProps = {
 };
 
 const CropExample = ({ example, handleCrop, handleCancel }) => {
-  const [tokens, setTokens] = useState(
-    example.split(' ').map((token) => ({
-      value: token,
-      isActive: true,
-      id: nanoid(),
-    }))
-  );
+  const [tokens, setTokens] = useState(example);
 
-  const toggleToken = (id) => {
-    const nextTokens = [...tokens];
-    const current = nextTokens.find((token) => token.id === id);
-    current.isActive = !current.isActive;
-    setTokens(nextTokens);
-  };
+  const toggleToken = (id) =>
+    setTokens(
+      tokens.map((token) => {
+        if (token.id !== id) return token;
+        return {
+          ...token,
+          isActive: !token.isActive,
+        };
+      })
+    );
 
   const handleSubmit = () => {
-    const values = tokens
-      .filter(({ isActive }) => isActive)
-      .map(({ value }) => value);
-
-    handleCrop(values.join(' '));
+    handleCrop(tokens);
   };
 
   return (
