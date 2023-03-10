@@ -4,7 +4,7 @@
  */
 
 import { useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
 
 import { selectDictionaryDefinition } from 'features';
@@ -18,6 +18,7 @@ import {
   ExamplePicker,
 } from 'components';
 import { selectDictonaryCurrentId } from './freedictionary-slice';
+import tokenizeSentence from '../../helpers/tokenize-sentence';
 
 const ConfigureCard = () => {
   const definitionId = useSelector(selectDictonaryCurrentId);
@@ -35,6 +36,7 @@ const ConfigureCard = () => {
     currentHintId: '',
   });
 
+  // covers basic 'add' cases
   const handleAddVariant = (value, key, currentKey) => {
     const id = nanoid();
     setCard({
@@ -43,6 +45,25 @@ const ConfigureCard = () => {
       [currentKey]: id,
     });
   };
+
+  // covers 'add example' case (split and tokenize)
+  const handleAddExample = useCallback(
+    (value) => {
+      const id = nanoid();
+      setCard({
+        ...card,
+        examples: [
+          ...card.examples,
+          {
+            id,
+            value: tokenizeSentence(value),
+          },
+        ],
+        currentExampleId: id,
+      });
+    },
+    [card]
+  );
 
   const handleSelectVariant = (id, currentKey) => {
     setCard({
@@ -75,9 +96,7 @@ const ConfigureCard = () => {
         <CardFormSection
           title="Examples"
           addLabel="example"
-          handleAdd={(value) =>
-            handleAddVariant(value, 'examples', 'currentExampleId')
-          }
+          handleAdd={handleAddExample}
         >
           <ExamplePicker
             examples={card.examples}

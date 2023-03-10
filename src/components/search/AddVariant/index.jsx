@@ -4,7 +4,7 @@
  */
 
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
 import { FormGroup, Textarea, Button, Controls } from 'components';
 import './index.scss';
@@ -18,9 +18,13 @@ const propTypes = {
 const AddVariant = ({ label, onAdd, onCancel }) => {
   const [variant, setVariant] = useState('');
 
-  const handleInput = ({ target }) => {
+  const handleInput = useCallback(({ target }) => {
     setVariant(target.value);
-  };
+  }, []);
+
+  const handleAdd = useCallback(() => {
+    onAdd(variant);
+  }, [variant]);
 
   return (
     <div className="add-variant">
@@ -35,7 +39,7 @@ const AddVariant = ({ label, onAdd, onCancel }) => {
             type="button"
             btnStyle="tertiary"
             width="fill"
-            onClick={() => onAdd(variant)}
+            onClick={handleAdd}
           >
             Add
           </Button>
