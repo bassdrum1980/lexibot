@@ -37,6 +37,9 @@ const freedictionarySlice = createSlice({
     resetCurrentDefinitionId: (state) => {
       state.currentDefinitionId = '';
     },
+    resetCardPosted: (state) => {
+      state.cardPosted = false;
+    },
   },
   extraReducers: {
     [fetchFreeDictionary.fulfilled]: (state, action) => {
@@ -51,8 +54,11 @@ const freedictionarySlice = createSlice({
 });
 
 export const freedictionaryReducer = freedictionarySlice.reducer;
-export const { setCurrentDefinitionId, resetCurrentDefinitionId } =
-  freedictionarySlice.actions;
+export const {
+  setCurrentDefinitionId,
+  resetCurrentDefinitionId,
+  resetCardPosted,
+} = freedictionarySlice.actions;
 export const selectDictionaryWord = (state) => state.search.word;
 export const selectDictionaryRawData = (state) =>
   state.search.freedictionary.rawData;
