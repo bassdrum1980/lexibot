@@ -1,5 +1,6 @@
 export { default as CropExample } from './search/CropExample';
 export { default as Backdrop } from './shared/Backdrop';
+export { default as Success } from './shared/Success';
 export { default as AddVariant } from './search/AddVariant';
 export { default as ExamplePicker } from './search/ExamplePicker';
 export { default as VariantPicker } from './search/VariantPicker';
