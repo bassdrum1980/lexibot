@@ -1,16 +1,27 @@
 import { useSelector } from 'react-redux';
 
+import { Success } from 'components';
 import SearchDetails from './SearchDetails';
 import SearchIndex from './SearchIndex';
-import { selectDictonaryCurrentId } from '../../features/freedictionary/freedictionary-slice';
+import {
+  selectDictonaryCurrentId,
+  selectCardPosted,
+} from '../../features/freedictionary/freedictionary-slice';
 
 const Search = () => {
   const currentDefinitionId = useSelector(selectDictonaryCurrentId);
+  const isCardPosted = useSelector(selectCardPosted);
 
-  const children =
-    currentDefinitionId.length > 0 ? <SearchDetails /> : <SearchIndex />;
+  // if card has just been posted — show success
+  if (isCardPosted) {
+    return <Success>Card has been saved!</Success>;
+  }
 
-  return children;
+  // if there is an active definition, show details
+  if (currentDefinitionId) return <SearchDetails />;
+
+  // otherwise, show the search itself
+  return <SearchIndex />;
 };
 
 Search.displayName = 'Search Root Page';

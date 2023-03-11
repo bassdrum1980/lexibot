@@ -20,7 +20,7 @@ import {
 import { selectDictonaryCurrentId } from './freedictionary-slice';
 import tokenizeSentence from '../../helpers/tokenize-sentence';
 
-const ConfigureCard = () => {
+const ConfigureCard = ({ handleSubmit }) => {
   const definitionId = useSelector(selectDictonaryCurrentId);
 
   const definitionData = useSelector((state) =>
@@ -83,6 +83,11 @@ const ConfigureCard = () => {
       ...card,
       examples: updatedExamples,
     });
+  };
+
+  const handleSaveCard = () => {
+    console.log(card);
+    handleSubmit(card);
   };
 
   return (
@@ -156,7 +161,7 @@ const ConfigureCard = () => {
           size="m"
           btnStyle="primary"
           width="fill"
-          onClick={() => true}
+          onClick={handleSaveCard}
         >
           Save Card
         </Button>
