@@ -1,12 +1,11 @@
 import { useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { Page, BackNav, Success } from 'components';
 import { ConfigureCard } from 'features';
 import {
   resetCurrentDefinitionId,
   postCard,
-  selectCardPosted,
 } from '../../features/freedictionary/freedictionary-slice';
 
 const SearchDetails = () => {
@@ -22,18 +21,10 @@ const SearchDetails = () => {
     dispatch(postCard(card));
   }, []);
 
-  // if card has just been posted -- show successs
-  const isCardPosted = useSelector(selectCardPosted);
-
   return (
     <Page>
-      {isCardPosted && <Success>Card has been saved!</Success>}
-      {!isCardPosted && (
-        <>
-          <BackNav title="Back to search" onClick={handleBack} />
-          <ConfigureCard handleSubmit={handleSubmit} />
-        </>
-      )}
+      <BackNav title="Back to search" onClick={handleBack} />
+      <ConfigureCard handleSubmit={handleSubmit} />
     </Page>
   );
 };

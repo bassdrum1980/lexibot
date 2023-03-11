@@ -4,9 +4,30 @@
  * updates preferences...
  */
 
+import { Button } from 'components';
 import './index.scss';
 
-const Success = ({ children }) => <div className="success">{children}</div>;
+const Success = ({ primaryText, secondaryText, handleClose, children }) => (
+  <div className="success">
+    <div className="success__header">
+      <h1>{primaryText}</h1>
+      <p>{secondaryText}</p>
+    </div>
+    <div className="success__body">
+      <div className="success__body__content">{children}</div>
+      <div className="success__body__footer">
+        <Button
+          type="button"
+          btnStyle="tertiary"
+          width="hug"
+          onClick={handleClose}
+        >
+          Close
+        </Button>
+      </div>
+    </div>
+  </div>
+);
 
 Success.displayName = 'Success Dialog';
 
