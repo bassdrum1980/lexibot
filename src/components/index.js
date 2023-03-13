@@ -1,3 +1,4 @@
+export { default as Alert } from './shared/Alert';
 export { default as CropExample } from './search/CropExample';
 export { default as Backdrop } from './shared/Backdrop';
 export { default as Success } from './shared/Success';
