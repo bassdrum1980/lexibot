@@ -24,7 +24,7 @@ const initialState = {
   rawData: null,
   meanings: [],
   currentDefinitionId: '',
-  cardPosted: false,
+  cardPosted: true,
 };
 
 const freedictionarySlice = createSlice({

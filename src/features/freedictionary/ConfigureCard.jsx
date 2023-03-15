@@ -86,7 +86,6 @@ const ConfigureCard = ({ handleSubmit }) => {
   };
 
   const handleSaveCard = () => {
-    console.log(card);
     handleSubmit(card);
   };
 

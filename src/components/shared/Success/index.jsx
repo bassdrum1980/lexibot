@@ -4,14 +4,13 @@
  * updates preferences...
  */
 
-import { Button } from 'components';
+import { Button, Alert } from 'components';
 import './index.scss';
 
 const Success = ({ primaryText, secondaryText, handleClose, children }) => (
   <div className="success">
     <div className="success__header">
-      <h1>{primaryText}</h1>
-      <p>{secondaryText}</p>
+      <Alert primaryText={primaryText} secondaryText={secondaryText} />
     </div>
     <div className="success__body">
       <div className="success__body__content">{children}</div>

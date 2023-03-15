@@ -1,9 +1,3 @@
-/**
- * Component is shown when the user finishes a flow,
- * e.g. — creates new card, finishes a study session,
- * updates preferences...
- */
-
 import { Icon } from 'components';
 
 import './index.scss';

@@ -1,26 +1,19 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { useCallback } from 'react';
+import { useSelector } from 'react-redux';
 
-import { Success } from 'components';
+import SearchSuccess from '../../features/freedictionary/SearchSuccess';
 import SearchDetails from './SearchDetails';
 import SearchIndex from './SearchIndex';
 import {
   selectDictonaryCurrentId,
   selectCardPosted,
-  resetCardPosted,
 } from '../../features/freedictionary/freedictionary-slice';
 
 const Search = () => {
   const currentDefinitionId = useSelector(selectDictonaryCurrentId);
   const isCardPosted = useSelector(selectCardPosted);
-  const dispatch = useDispatch();
-
-  const handleSuccessClose = useCallback(() => {
-    dispatch(resetCardPosted());
-  }, []);
 
   // if card has just been posted - show Success
-  if (isCardPosted) return <Success handleClose={handleSuccessClose} />;
+  if (isCardPosted) return <SearchSuccess />;
 
   // if there is an active definition - Details
   if (currentDefinitionId) return <SearchDetails />;
