@@ -31,6 +31,9 @@
 
 .success__body__content {
   flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
 }
 
 .success__body__footer {

@@ -16,7 +16,7 @@ const SvgSprite = () => (
         name: 'plus-primary',
         svg: [
           '<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">',
-          '<circle cx="16" cy="16" r="15.75" fill="#fff" stroke="var(--primary1000)" stroke-width=".5"/>',
+          '<circle cx="16" cy="16" r="15.75" fill="#ffffff" stroke="var(--primary1000)" stroke-width=".5"/>',
           '<path stroke="var(--primary1000)" stroke-linecap="round" stroke-linejoin="round" d="M8 16h16M16 24V8"/>',
           '</svg>',
         ].join(''),
