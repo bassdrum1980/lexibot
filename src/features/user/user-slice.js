@@ -32,3 +32,4 @@ const userSlice = createSlice({
 
 export const userReducer = userSlice.reducer;
 export const selectUser = (state) => state.user.user;
+export const selectTotalCards = (state) => state.user.user?.totalCards || 0;

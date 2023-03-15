@@ -1,14 +1,21 @@
-import { useDispatch } from 'react-redux';
 import { useCallback } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { Success, SearchSuccessContent } from 'components';
-import { resetCardPosted } from './freedictionary-slice';
+import { setAddOneMore } from './freedictionary-slice';
+import { selectTotalCards } from '../user/user-slice';
 
 const SearchSuccess = () => {
   const dispatch = useDispatch();
-  const handleSuccessClose = useCallback(() => {
-    dispatch(resetCardPosted());
-  }, []);
+  const handleSuccessClose = () => {
+    console.log('close the app');
+  };
+
+  const handleOneMore = () => {
+    dispatch(setAddOneMore());
+  };
+
+  const totalCards = useSelector(selectTotalCards);
 
   return (
     <Success
@@ -17,17 +24,12 @@ const SearchSuccess = () => {
       handleClose={handleSuccessClose}
     >
       <SearchSuccessContent
-        totalCards={754}
-        handleOneMore={() => console.log('more')}
+        totalCards={totalCards}
+        handleOneMore={handleOneMore}
       />
     </Success>
   );
 };
-
-// внутри саксесс-боди flex
-// я передаю туда из серч компонентов вьюху
-// она растягивается на весь боди и рендерит свои дела
-// все данные и хэндлеры во вьюху идут отсюда
 
 SearchSuccess.displayName = 'Search Success Dialog';
 

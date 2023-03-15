@@ -24,21 +24,22 @@ const initialState = {
   rawData: null,
   meanings: [],
   currentDefinitionId: '',
-  cardPosted: true,
+  cardPosted: false,
 };
 
 const freedictionarySlice = createSlice({
   name: '@@freedictionary',
   initialState,
   reducers: {
+    setAddOneMore: (state) => {
+      state.currentDefinitionId = '';
+      state.cardPosted = false;
+    },
     setCurrentDefinitionId: (state, action) => {
       state.currentDefinitionId = action.payload;
     },
     resetCurrentDefinitionId: (state) => {
       state.currentDefinitionId = '';
-    },
-    resetCardPosted: (state) => {
-      state.cardPosted = false;
     },
   },
   extraReducers: {
@@ -55,6 +56,7 @@ const freedictionarySlice = createSlice({
 
 export const freedictionaryReducer = freedictionarySlice.reducer;
 export const {
+  setAddOneMore,
   setCurrentDefinitionId,
   resetCurrentDefinitionId,
   resetCardPosted,
