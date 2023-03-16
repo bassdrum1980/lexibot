@@ -8,13 +8,10 @@ const SearchIndex = () => {
   const results = useSelector(selectDictionaryMeanings);
 
   return (
-    <Page className={
-        classnames(
-          'page--search',
-          'page--narrow-padding',
-          { 'page--align-bottom': !results.length },
-        )
-        }
+    <Page
+      className={classnames('page--search', 'page--narrow-padding', {
+        'page--align-bottom': !results.length,
+      })}
     >
       <SearchField />
       {Boolean(results.length) && <SearchResults />}

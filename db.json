@@ -6,7 +6,8 @@
       "tgid": 999000999000999,
       "autoPlayEnabled": true,
       "translationEnabled": true,
-      "targetLanguage": "ru"
+      "targetLanguage": "ru",
+      "totalCards": 754
     }
   ],
   "words": [
@@ -17,8 +18,14 @@
           "word": "fast",
           "phonetic": "/fɑːst/",
           "phonetics": [
-            { "text": "/fɑːst/", "audio": "" },
-            { "text": "/fɑːst/", "audio": "" },
+            {
+              "text": "/fɑːst/",
+              "audio": ""
+            },
+            {
+              "text": "/fɑːst/",
+              "audio": ""
+            },
             {
               "text": "/fæst/",
               "audio": "https://api.dictionaryapi.dev/media/pronunciations/en/fast-uk.mp3",
@@ -231,8 +238,14 @@
           "word": "fast",
           "phonetic": "/fɑːst/",
           "phonetics": [
-            { "text": "/fɑːst/", "audio": "" },
-            { "text": "/fɑːst/", "audio": "" },
+            {
+              "text": "/fɑːst/",
+              "audio": ""
+            },
+            {
+              "text": "/fɑːst/",
+              "audio": ""
+            },
             {
               "text": "/fæst/",
               "audio": "https://api.dictionaryapi.dev/media/pronunciations/en/fast-uk.mp3",
@@ -396,14 +409,24 @@
           "word": "torrid",
           "phonetic": "/ˈtɒɹɪd/",
           "phonetics": [
-            { "text": "/ˈtɒɹɪd/", "audio": "" },
-            { "text": "/ˈtɑɹɪd/", "audio": "" }
+            {
+              "text": "/ˈtɒɹɪd/",
+              "audio": ""
+            },
+            {
+              "text": "/ˈtɑɹɪd/",
+              "audio": ""
+            }
           ],
           "meanings": [
             {
               "partOfSpeech": "adjective",
               "definitions": [
-                { "definition": "Very hot and dry.", "synonyms": [], "antonyms": [] },
+                {
+                  "definition": "Very hot and dry.",
+                  "synonyms": [],
+                  "antonyms": []
+                },
                 {
                   "definition": "Full of intense emotions arising from sexual love; ardent and passionate.",
                   "synonyms": [],
@@ -428,5 +451,6 @@
         }
       ]
     }
-  ]
+  ],
+  "cards": []
 }

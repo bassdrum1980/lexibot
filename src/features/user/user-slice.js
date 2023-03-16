@@ -3,6 +3,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 import { calculateOffset } from './calculate-offset';
+import { postCard } from '../freedictionary/freedictionary-slice';
 
 export const fetchUser = createAsyncThunk(
   '@@user/fetch-user',
@@ -25,10 +26,15 @@ const userSlice = createSlice({
   reducers: {},
   extraReducers: {
     [fetchUser.fulfilled]: (state, action) => {
-      state.user = action.payload;
+      const [user] = action.payload;
+      state.user = user;
+    },
+    [postCard.fulfilled]: (state) => {
+      if (state.user?.totalCards) state.user.totalCards += 1;
     },
   },
 });
 
 export const userReducer = userSlice.reducer;
 export const selectUser = (state) => state.user.user;
+export const selectTotalCards = (state) => state.user.user?.totalCards || 0;

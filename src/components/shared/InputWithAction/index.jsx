@@ -7,23 +7,11 @@ const propTypes = {
   iconName: PropTypes.string.isRequired,
 };
 
-const InputWithAction = ({
-  iconName,
-  ...rest
-}) => (
+const InputWithAction = ({ iconName, ...rest }) => (
   <div className="action-wrapper">
-    <Input
-      type="text"
-      {...rest}
-    />
-    <button
-      className="action-wrapper__button"
-      type="submit"
-    >
-      <Icon
-        name={iconName}
-        size={32}
-      />
+    <Input type="text" {...rest} />
+    <button className="action-wrapper__button" type="submit">
+      <Icon name={iconName} size={32} />
     </button>
   </div>
 );

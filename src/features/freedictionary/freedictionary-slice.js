@@ -6,9 +6,15 @@ import parser from './parser/parser';
 export const fetchFreeDictionary = createAsyncThunk(
   '@@freedictionary/fetch-word',
   async (word, { extra }) => {
-    const result = await extra.fetchFreeDictionary({
-      word,
-    });
+    const result = await extra.fetchFreeDictionary(word);
+    return result;
+  }
+);
+
+export const postCard = createAsyncThunk(
+  '@@freedictionary/post-card',
+  async (card, { extra }) => {
+    const result = await extra.postCard(card);
     return result;
   }
 );
@@ -18,12 +24,17 @@ const initialState = {
   rawData: null,
   meanings: [],
   currentDefinitionId: '',
+  cardPosted: false,
 };
 
 const freedictionarySlice = createSlice({
   name: '@@freedictionary',
   initialState,
   reducers: {
+    setAddOneMore: (state) => {
+      state.currentDefinitionId = '';
+      state.cardPosted = false;
+    },
     setCurrentDefinitionId: (state, action) => {
       state.currentDefinitionId = action.payload;
     },
@@ -37,12 +48,19 @@ const freedictionarySlice = createSlice({
       state.rawData = action.payload.data;
       state.meanings = parser(action.payload.data);
     },
+    [postCard.fulfilled]: (state) => {
+      state.cardPosted = true;
+    },
   },
 });
 
 export const freedictionaryReducer = freedictionarySlice.reducer;
-export const { setCurrentDefinitionId, resetCurrentDefinitionId } =
-  freedictionarySlice.actions;
+export const {
+  setAddOneMore,
+  setCurrentDefinitionId,
+  resetCurrentDefinitionId,
+  resetCardPosted,
+} = freedictionarySlice.actions;
 export const selectDictionaryWord = (state) => state.search.word;
 export const selectDictionaryRawData = (state) =>
   state.search.freedictionary.rawData;
@@ -58,3 +76,5 @@ export const selectDictionaryDefinition = (state, definitionId) => {
 };
 export const selectDictonaryCurrentId = (state) =>
   state.search.freedictionary.currentDefinitionId;
+export const selectCardPosted = (state) =>
+  state.search.freedictionary.cardPosted;

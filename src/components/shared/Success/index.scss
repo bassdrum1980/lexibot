@@ -1,0 +1,41 @@
+@import 'styles/variables.scss';
+
+.success {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  text-align: center;
+  background: var(--gradient-primary);
+}
+
+.success__header {
+  min-height: 35vh;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxODQiIGhlaWdodD0iMjMyIiBmaWxsPSJub25lIj48cGF0aCBmaWxsPSIjZmZmIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0wIDIwMC44NDN2LTM5LjQ0NmwuOTkyLS45NjRjMy45MDYtMy43OTYgMTAuMTU2LTMuNzk2IDE0LjA2MyAwbDQ0LjE0IDQyLjUxMyA5My43NS05MS4wOTljMy45MDctMy43OTYgMTAuMTU3LTMuNzk2IDE0LjA2MyAwbDE0LjA2MiAxMy42NjVjMy45MDcgMy43OTYgMy45MDcgMTAuMjQ4IDAgMTQuMDQ0TDg1LjkzNyAyMzJIMzIuMDYzTDAgMjAwLjg0M1oiIGNsaXAtcnVsZT0iZXZlbm9kZCIgb3BhY2l0eT0iLjEiLz48cGF0aCBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9Ii4xIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0wIDc1LjgzN1Y0OC44NjNsMTguODQ2IDE4LjEzOCA0NS45MzctNDQuNjA3YTQuOTU1IDQuOTU1IDAgMCAxIDYuODkgMGw2Ljg5MSA2LjY5MWMxLjkxNSAxLjg1OSAxLjkxNSA1LjAxOCAwIDYuODc3TDIyLjI5MSA5MC42MDZjLTEuOTE0IDEuODU5LTUuMTY4IDEuODU5LTcuMDgyIDBMMCA3NS44MzdaIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiLz48L3N2Zz4='),
+    url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDQiIGhlaWdodD0iMjMyIiBmaWxsPSJub25lIj48cGF0aCBmaWxsPSIjZmZmIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMDQgNDR2MjAuODc3bC0yNi43NTQgMjUuOTVjLTEuNDg0IDEuNDQtNC4wMDggMS40NC01LjQ5MiAwbC0yNC42NC0yMy45Yy0xLjQ4NS0xLjQ0LTEuNDg1LTMuODg4IDAtNS4zMjhsNS4zNDMtNS4xODNhMy44NDUgMy44NDUgMCAwIDEgNS4zNDQgMGwxNi43NzMgMTYuMTI2TDEwNCA0NFpNMzAuMDU0IDIzMkg4Ljk0NmwtOC4xODQtNy44MDVhMi40ODkgMi40ODkgMCAwIDEgMC0zLjU4NGwzLjY1Ni0zLjQ4N2EyLjY2NSAyLjY2NSAwIDAgMSAzLjY1NiAwbDExLjQ3NyAxMC44NDkgMjQuMzc1LTIzLjI0N2EyLjY2NSAyLjY2NSAwIDAgMSAzLjY1NiAwbDMuNjU2IDMuNDg3YTIuNDg5IDIuNDg5IDAgMCAxIDAgMy41ODRMMzAuMDU0IDIzMloiIGNsaXAtcnVsZT0iZXZlbm9kZCIgb3BhY2l0eT0iLjEiLz48L3N2Zz4=');
+  background-position: left bottom, right bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.success__body {
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+  background: var(--gradient-primary--light);
+}
+
+.success__body__content {
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.success__body__footer {
+  padding: $spacing-px-40 0;
+}

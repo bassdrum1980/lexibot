@@ -13,6 +13,15 @@ const SvgSprite = () => (
         ].join(''),
       },
       {
+        name: 'plus-primary',
+        svg: [
+          '<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">',
+          '<circle cx="16" cy="16" r="15.75" fill="#ffffff" stroke="var(--primary1000)" stroke-width=".5"/>',
+          '<path stroke="var(--primary1000)" stroke-linecap="round" stroke-linejoin="round" d="M8 16h16M16 24V8"/>',
+          '</svg>',
+        ].join(''),
+      },
+      {
         name: 'star-flame',
         svg: [
           '<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">',
@@ -51,6 +60,14 @@ const SvgSprite = () => (
         svg: [
           '<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">',
           '<path fill-rule="evenodd" clip-rule="evenodd" d="M15.5 6.5C10.5294 6.5 6.5 10.5294 6.5 15.5C6.5 20.4706 10.5294 24.5 15.5 24.5C18.3411 24.5 20.8748 23.1835 22.5242 21.1273L27.2133 24.4096C27.4395 24.568 27.7513 24.513 27.9096 24.2867C28.068 24.0605 28.013 23.7487 27.7867 23.5904L23.1058 20.3137C23.9887 18.9216 24.5 17.2705 24.5 15.5C24.5 10.5294 20.4706 6.5 15.5 6.5ZM7.5 15.5C7.5 11.0817 11.0817 7.5 15.5 7.5C19.9183 7.5 23.5 11.0817 23.5 15.5C23.5 19.9183 19.9183 23.5 15.5 23.5C11.0817 23.5 7.5 19.9183 7.5 15.5Z" fill="var(--gray1000)" />',
+          '</svg>',
+        ].join(''),
+      },
+      {
+        name: 'check-round',
+        svg: [
+          '<svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg">',
+          '<path fill="#fff" fill-rule="evenodd" d="M35 70c19.33 0 35-15.67 35-35S54.33 0 35 0 0 15.67 0 35s15.67 35 35 35Zm-2.014-25.66a1.189 1.189 0 0 1-1.638 0l-7.349-7.243a1.147 1.147 0 0 1 0-1.614l1.594-1.571a1.134 1.134 0 0 1 1.593 0l5.003 4.886 10.625-10.47a1.134 1.134 0 0 1 1.594 0l1.594 1.57a1.147 1.147 0 0 1 0 1.614L32.986 44.34Z" clip-rule="evenodd"/>',
           '</svg>',
         ].join(''),
       },

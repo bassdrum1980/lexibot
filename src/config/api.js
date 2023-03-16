@@ -39,3 +39,12 @@ export const wordInstance = axios.create({
   },
   withCredentials: false,
 });
+
+export const cardInstance = axios.create({
+  baseURL: 'http://localhost:3001/cards/',
+  headers: {
+    'Content-Type': 'application/json',
+    Accept: 'application/json',
+  },
+  withCredentials: false,
+});
