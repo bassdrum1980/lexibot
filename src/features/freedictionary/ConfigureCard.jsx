@@ -4,7 +4,7 @@
  */
 
 import { useSelector } from 'react-redux';
-import { useState, useCallback } from 'react';
+import { useState } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
 
 import {
@@ -49,23 +49,20 @@ const ConfigureCard = ({ handleSubmit }) => {
   };
 
   // covers 'add example' case (split and tokenize)
-  const handleAddExample = useCallback(
-    (value) => {
-      const id = nanoid();
-      setCard({
-        ...card,
-        examples: [
-          ...card.examples,
-          {
-            id,
-            value: tokenizeSentence(value),
-          },
-        ],
-        currentExampleId: id,
-      });
-    },
-    [card]
-  );
+  const handleAddExample = (value) => {
+    const id = nanoid();
+    setCard({
+      ...card,
+      examples: [
+        ...card.examples,
+        {
+          id,
+          value: tokenizeSentence(value),
+        },
+      ],
+      currentExampleId: id,
+    });
+  };
 
   const handleSelectVariant = (id, currentKey) => {
     setCard({
