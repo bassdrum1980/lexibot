@@ -1,4 +1,3 @@
-import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { Page, BackNav } from 'components';
@@ -12,14 +11,14 @@ const SearchDetails = () => {
   const dispatch = useDispatch();
 
   // handle back to search
-  const handleBack = useCallback(() => {
+  const handleBack = () => {
     dispatch(resetCurrentDefinitionId());
-  }, []);
+  };
 
   // handle card submit
-  const handleSubmit = useCallback((card) => {
+  const handleSubmit = (card) => {
     dispatch(postCard(card));
-  }, []);
+  };
 
   return (
     <Page>

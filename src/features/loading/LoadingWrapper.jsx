@@ -7,7 +7,6 @@
  */
 
 import { useSelector, useDispatch } from 'react-redux';
-import { useCallback } from 'react';
 
 import { selectError, selectLoading } from 'features/loading/loading-slice';
 import { Modal, Warning, Spinner } from 'components';
@@ -18,9 +17,9 @@ const LoadingWrapper = ({ children }) => {
   const error = useSelector(selectError);
   const loading = useSelector(selectLoading);
 
-  const onResetError = useCallback(() => {
+  const onResetError = () => {
     dispatch(resetError());
-  }, [dispatch]);
+  };
 
   // to avoid mount / unmount of children on every change
   // in the 'loading' slice, I always render children +
