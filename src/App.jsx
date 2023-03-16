@@ -1,8 +1,9 @@
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 
+import UserLoader from 'features/user/UserLoader';
+import LoadingWrapper from 'features/loading/LoadingWrapper';
 import { ThemeProvider } from 'components';
-import { UserLoader, LoadingWrapper } from 'features';
 import { searchURL } from './routing';
 
 const App = () => {

@@ -61,9 +61,6 @@ export const {
   resetCurrentDefinitionId,
   resetCardPosted,
 } = freedictionarySlice.actions;
-export const selectDictionaryWord = (state) => state.search.word;
-export const selectDictionaryRawData = (state) =>
-  state.search.freedictionary.rawData;
 export const selectDictionaryMeanings = (state) =>
   state.search.freedictionary.meanings;
 export const selectDictionaryDefinition = (state, definitionId) => {

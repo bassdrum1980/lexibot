@@ -1,4 +1,4 @@
-import { userInstance, wordInstance, cardInstance } from './api';
+import { userInstance, wordInstance, cardInstance } from 'api/axios';
 
 // TODO: error handling
 

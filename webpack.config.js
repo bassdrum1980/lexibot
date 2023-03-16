@@ -12,6 +12,7 @@ module.exports = {
   resolve: {
     alias: {
       config: path.resolve(__dirname, 'src/config/'),
+      api: path.resolve(__dirname, 'src/api/'),
       pages: path.resolve(__dirname, 'src/pages/'),
       features: path.resolve(__dirname, 'src/features/'),
       components: path.resolve(__dirname, 'src/components/'),

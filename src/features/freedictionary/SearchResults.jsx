@@ -6,9 +6,11 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useCallback } from 'react';
 
-import { selectDictionaryMeanings } from 'features';
+import {
+  selectDictionaryMeanings,
+  setCurrentDefinitionId,
+} from 'features/freedictionary/freedictionary-slice';
 import { Card, Cards } from 'components';
-import { setCurrentDefinitionId } from './freedictionary-slice';
 
 const SearchResults = () => {
   // get meanings from the slice
