@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { testTgID } from 'config';
+import { testTgID } from 'config/telegram';
 import { fetchUser } from 'features/user/user-slice';
 
 const UserLoader = ({ children }) => {

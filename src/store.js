@@ -1,6 +1,6 @@
 import logger from 'redux-logger';
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import { jsonserverAPI as api } from 'config';
+import { jsonserverAPI as api } from 'api';
 import { queryReducer } from 'features/query/query-slice';
 import { freedictionaryReducer } from 'features/freedictionary/freedictionary-slice';
 import { userReducer } from 'features/user/user-slice';

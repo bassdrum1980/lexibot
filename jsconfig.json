@@ -3,8 +3,9 @@
     "baseUrl": "src",
     "paths": {
       "config/*": ["config/*"],
-      "pages/*": ["pages/*"],
+      "api/*": ["api/*"],
       "features/*": ["features/*"],
+      "pages/*": ["pages/*"],
       "components/*": ["components/*"],
       "styles/*": ["styles/*"],
       "helpers/*": ["helpers/*"]
