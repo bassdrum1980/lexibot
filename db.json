@@ -6,7 +6,8 @@
       "tgid": 999000999000999,
       "autoPlayEnabled": true,
       "translationEnabled": true,
-      "targetLanguage": "ru"
+      "targetLanguage": "ru",
+      "totalCards": 754
     }
   ],
   "words": [
@@ -50,26 +51,12 @@
               "definitions": [
                 {
                   "definition": "A train that calls at only some stations it passes between its origin and destination, typically just the principal stations",
-                  "synonyms": [
-                    "express",
-                    "express train"
-                  ],
-                  "antonyms": [
-                    "local",
-                    "slow train",
-                    "stopper"
-                  ]
+                  "synonyms": ["express", "express train"],
+                  "antonyms": ["local", "slow train", "stopper"]
                 }
               ],
-              "synonyms": [
-                "express",
-                "express train"
-              ],
-              "antonyms": [
-                "local",
-                "slow train",
-                "stopper"
-              ]
+              "synonyms": ["express", "express train"],
+              "antonyms": ["local", "slow train", "stopper"]
             },
             {
               "partOfSpeech": "adjective",
@@ -84,21 +71,13 @@
                     "stuck",
                     "tight"
                   ],
-                  "antonyms": [
-                    "loose"
-                  ],
+                  "antonyms": ["loose"],
                   "example": "That rope is dangerously loose. Make it fast!"
                 },
                 {
                   "definition": "Firm against attack; fortified by nature or art; impregnable; strong.",
-                  "synonyms": [
-                    "fortified",
-                    "impenetrable"
-                  ],
-                  "antonyms": [
-                    "penetrable",
-                    "weak"
-                  ]
+                  "synonyms": ["fortified", "impenetrable"],
+                  "antonyms": ["penetrable", "weak"]
                 },
                 {
                   "definition": "(of people) Steadfast, with unwavering feeling. (Now mostly in set phrases like fast friend(s).)",
@@ -107,11 +86,7 @@
                 },
                 {
                   "definition": "Moving with great speed, or capable of doing so; swift, rapid.",
-                  "synonyms": [
-                    "quick",
-                    "rapid",
-                    "speedy"
-                  ],
+                  "synonyms": ["quick", "rapid", "speedy"],
                   "antonyms": [],
                   "example": "I am going to buy a fast car."
                 },
@@ -128,19 +103,12 @@
                 },
                 {
                   "definition": "Deep or sound (of sleep); fast asleep (of people).",
-                  "synonyms": [
-                    "deep",
-                    "sound"
-                  ],
-                  "antonyms": [
-                    "light"
-                  ]
+                  "synonyms": ["deep", "sound"],
+                  "antonyms": ["light"]
                 },
                 {
                   "definition": "(of dyes or colours) Not running or fading when subjected to detrimental conditions such as wetness or intense light; permanent.",
-                  "synonyms": [
-                    "colour-fast"
-                  ],
+                  "synonyms": ["colour-fast"],
                   "antonyms": [],
                   "example": "All the washing has come out pink. That red tee-shirt was not fast."
                 },
@@ -157,13 +125,8 @@
                 },
                 {
                   "definition": "Ahead of the correct time or schedule.",
-                  "synonyms": [
-                    "ahead"
-                  ],
-                  "antonyms": [
-                    "behind",
-                    "slow"
-                  ],
+                  "synonyms": ["ahead"],
+                  "antonyms": ["behind", "slow"],
                   "example": "There must be something wrong with the hall clock. It is always fast."
                 },
                 {
@@ -210,24 +173,14 @@
               "definitions": [
                 {
                   "definition": "In a firm or secure manner, securely; in such a way as not to be moved; safe, sound .",
-                  "synonyms": [
-                    "firmly",
-                    "securely",
-                    "tightly"
-                  ],
-                  "antonyms": [
-                    "loosely"
-                  ],
+                  "synonyms": ["firmly", "securely", "tightly"],
+                  "antonyms": ["loosely"],
                   "example": "Hold this rope as fast as you can."
                 },
                 {
                   "definition": "(of sleeping) Deeply or soundly .",
-                  "synonyms": [
-                    "deeply"
-                  ],
-                  "antonyms": [
-                    "lightly"
-                  ],
+                  "synonyms": ["deeply"],
+                  "antonyms": ["lightly"],
                   "example": "He is fast asleep."
                 },
                 {
@@ -238,25 +191,14 @@
                 },
                 {
                   "definition": "Quickly, with great speed; within a short time .",
-                  "synonyms": [
-                    "quickly",
-                    "rapidly",
-                    "speedily",
-                    "swiftly"
-                  ],
-                  "antonyms": [
-                    "slowly"
-                  ],
+                  "synonyms": ["quickly", "rapidly", "speedily", "swiftly"],
+                  "antonyms": ["slowly"],
                   "example": "Do it as fast as you can."
                 },
                 {
                   "definition": "Ahead of the correct time or schedule.",
-                  "synonyms": [
-                    "ahead"
-                  ],
-                  "antonyms": [
-                    "behind"
-                  ],
+                  "synonyms": ["ahead"],
+                  "antonyms": ["behind"],
                   "example": "I think my watch is running fast."
                 }
               ],
@@ -271,12 +213,7 @@
                 "speedily",
                 "swiftly"
               ],
-              "antonyms": [
-                "behind",
-                "lightly",
-                "loosely",
-                "slowly"
-              ]
+              "antonyms": ["behind", "lightly", "loosely", "slowly"]
             },
             {
               "partOfSpeech": "interjection",
@@ -284,24 +221,18 @@
                 {
                   "definition": "Short for \"stand fast\", a warning not to pass between the arrow and the target",
                   "synonyms": [],
-                  "antonyms": [
-                    "loose"
-                  ]
+                  "antonyms": ["loose"]
                 }
               ],
               "synonyms": [],
-              "antonyms": [
-                "loose"
-              ]
+              "antonyms": ["loose"]
             }
           ],
           "license": {
             "name": "CC BY-SA 3.0",
             "url": "https://creativecommons.org/licenses/by-sa/3.0"
           },
-          "sourceUrls": [
-            "https://en.wiktionary.org/wiki/fast"
-          ]
+          "sourceUrls": ["https://en.wiktionary.org/wiki/fast"]
         },
         {
           "word": "fast",
@@ -340,9 +271,7 @@
               "definitions": [
                 {
                   "definition": "The act or practice of abstaining from food or of eating very little food.",
-                  "synonyms": [
-                    "fasting"
-                  ],
+                  "synonyms": ["fasting"],
                   "antonyms": []
                 },
                 {
@@ -352,9 +281,7 @@
                   "example": "Lent and Ramadan are fasts of two religions."
                 }
               ],
-              "synonyms": [
-                "fasting"
-              ],
+              "synonyms": ["fasting"],
               "antonyms": []
             },
             {
@@ -375,9 +302,7 @@
             "name": "CC BY-SA 3.0",
             "url": "https://creativecommons.org/licenses/by-sa/3.0"
           },
-          "sourceUrls": [
-            "https://en.wiktionary.org/wiki/fast"
-          ]
+          "sourceUrls": ["https://en.wiktionary.org/wiki/fast"]
         }
       ]
     },
@@ -422,9 +347,7 @@
             "name": "CC BY-SA 3.0",
             "url": "https://creativecommons.org/licenses/by-sa/3.0"
           },
-          "sourceUrls": [
-            "https://en.wiktionary.org/wiki/impeccable"
-          ]
+          "sourceUrls": ["https://en.wiktionary.org/wiki/impeccable"]
         }
       ]
     },
@@ -467,22 +390,15 @@
                   "example": "Only prudent expenditure may provide quality within a restrictive budget"
                 }
               ],
-              "synonyms": [
-                "considerate",
-                "provident"
-              ],
-              "antonyms": [
-                "imprudent"
-              ]
+              "synonyms": ["considerate", "provident"],
+              "antonyms": ["imprudent"]
             }
           ],
           "license": {
             "name": "CC BY-SA 3.0",
             "url": "https://creativecommons.org/licenses/by-sa/3.0"
           },
-          "sourceUrls": [
-            "https://en.wiktionary.org/wiki/prudent"
-          ]
+          "sourceUrls": ["https://en.wiktionary.org/wiki/prudent"]
         }
       ]
     },
@@ -531,67 +447,10 @@
             "name": "CC BY-SA 3.0",
             "url": "https://creativecommons.org/licenses/by-sa/3.0"
           },
-          "sourceUrls": [
-            "https://en.wiktionary.org/wiki/torrid"
-          ]
+          "sourceUrls": ["https://en.wiktionary.org/wiki/torrid"]
         }
       ]
     }
   ],
-  "cards": [
-    {
-      "word": "fast",
-      "phoneticsText": "/fɑːst/",
-      "phoneticsAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/fast-uk.mp3",
-      "partOfSpeech": "noun",
-      "definition": "A train that calls at only some stations it passes between its origin and destination, typically just the principal stations",
-      "synonyms": [
-        {
-          "value": "express",
-          "id": "1A1ksU7q9mXsMNz1WXkDo"
-        },
-        {
-          "value": "express train",
-          "id": "yITJ9BN14TZsHv2wigda4"
-        }
-      ],
-      "antonyms": [
-        {
-          "value": "local",
-          "id": "0Vqp2gURGC61z1u8UJTvI"
-        },
-        {
-          "value": "slow train",
-          "id": "OWb2VpnhVGgdmW90nGyQE"
-        },
-        {
-          "value": "stopper",
-          "id": "YHHy889NKkovUwdYg-eGN"
-        }
-      ],
-      "id": "2sEAx_YNo33W1zeTWkCB0",
-      "examples": [],
-      "currentSynonymId": "1A1ksU7q9mXsMNz1WXkDo",
-      "currentAntonymId": "OWb2VpnhVGgdmW90nGyQE",
-      "currentExampleId": "",
-      "hints": [],
-      "currentHintId": ""
-    },
-    {
-      "word": "fast",
-      "phoneticsText": "/fɑːst/",
-      "phoneticsAudio": "https://api.dictionaryapi.dev/media/pronunciations/en/fast-uk.mp3",
-      "partOfSpeech": "adjective",
-      "definition": "(of people) Steadfast, with unwavering feeling. (Now mostly in set phrases like fast friend(s).)",
-      "synonyms": [],
-      "antonyms": [],
-      "id": "dJcSgkZ4BU3k5-R3Ju_Td",
-      "examples": [],
-      "currentSynonymId": "",
-      "currentAntonymId": "",
-      "currentExampleId": "",
-      "hints": [],
-      "currentHintId": ""
-    }
-  ]
+  "cards": []
 }
