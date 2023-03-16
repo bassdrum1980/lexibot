@@ -9,8 +9,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useCallback } from 'react';
 
+import { selectError, selectLoading } from 'features/loading/loading-slice';
 import { Modal, Warning, Spinner } from 'components';
-import { selectError, selectLoading } from 'features';
 import { resetError } from './loading-slice';
 
 const LoadingWrapper = ({ children }) => {

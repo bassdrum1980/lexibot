@@ -1,12 +1,12 @@
 import { useSelector } from 'react-redux';
 
-import SearchSuccess from '../../features/freedictionary/SearchSuccess';
-import SearchDetails from './SearchDetails';
-import SearchIndex from './SearchIndex';
+import SearchSuccess from 'features/freedictionary/SearchSuccess';
 import {
   selectDictonaryCurrentId,
   selectCardPosted,
-} from '../../features/freedictionary/freedictionary-slice';
+} from 'features/freedictionary/freedictionary-slice';
+import SearchDetails from './SearchDetails';
+import SearchIndex from './SearchIndex';
 
 const Search = () => {
   const currentDefinitionId = useSelector(selectDictonaryCurrentId);

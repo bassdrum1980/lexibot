@@ -1,7 +1,10 @@
 import { useSelector } from 'react-redux';
 import classnames from 'classnames';
 
-import { SearchField, SearchResults, selectDictionaryMeanings } from 'features';
+import SearchField from 'features/query/SearchField';
+
+import SearchResults from 'features/freedictionary/SearchResults';
+import { selectDictionaryMeanings } from 'features/freedictionary/freedictionary-slice';
 import { Page } from 'components';
 
 const SearchIndex = () => {

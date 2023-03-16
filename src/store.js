@@ -1,12 +1,10 @@
 import logger from 'redux-logger';
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { jsonserverAPI as api } from 'config';
-import {
-  queryReducer,
-  freedictionaryReducer,
-  loadingReducer,
-  userReducer,
-} from 'features';
+import { queryReducer } from 'features/query/query-slice';
+import { freedictionaryReducer } from 'features/freedictionary/freedictionary-slice';
+import { userReducer } from 'features/user/user-slice';
+import { loadingReducer } from 'features/loading/loading-slice';
 
 const search = combineReducers({
   query: queryReducer,

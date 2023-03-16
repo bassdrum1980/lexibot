@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { testTgID } from 'config';
-import { fetchUser } from 'features';
+import { fetchUser } from 'features/user/user-slice';
 
 const UserLoader = ({ children }) => {
   const dispatch = useDispatch();
@@ -10,9 +10,7 @@ const UserLoader = ({ children }) => {
     dispatch(fetchUser(testTgID));
   }, []);
 
-  return (
-    children
-  );
+  return children;
 };
 
 UserLoader.displayName = 'UserLoader';

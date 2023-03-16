@@ -3,7 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useMemo, useEffect } from 'react';
 
 import { InputWithAction } from 'components';
-import { selectQuery, setQuery, fetchFreeDictionary } from 'features';
+import { fetchFreeDictionary } from 'features/freedictionary/freedictionary-slice';
+import { selectQuery, setQuery } from 'features/query/query-slice';
 
 const SearchField = () => {
   const dispatch = useDispatch();

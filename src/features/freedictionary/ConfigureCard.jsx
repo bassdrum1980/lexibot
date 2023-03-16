@@ -7,7 +7,10 @@ import { useSelector } from 'react-redux';
 import { useState, useCallback } from 'react';
 import { nanoid } from '@reduxjs/toolkit';
 
-import { selectDictionaryDefinition } from 'features';
+import {
+  selectDictionaryDefinition,
+  selectDictonaryCurrentId,
+} from 'features/freedictionary/freedictionary-slice';
 import {
   CardFormHeader,
   CardFormBody,
@@ -17,8 +20,7 @@ import {
   VariantPicker,
   ExamplePicker,
 } from 'components';
-import { selectDictonaryCurrentId } from './freedictionary-slice';
-import tokenizeSentence from '../../helpers/tokenize-sentence';
+import tokenizeSentence from 'helpers/tokenize-sentence';
 
 const ConfigureCard = ({ handleSubmit }) => {
   const definitionId = useSelector(selectDictonaryCurrentId);

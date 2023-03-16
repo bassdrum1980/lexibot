@@ -1,12 +1,12 @@
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { Page, BackNav, Success } from 'components';
-import { ConfigureCard } from 'features';
+import { Page, BackNav } from 'components';
+import ConfigureCard from 'features/freedictionary/ConfigureCard';
 import {
   resetCurrentDefinitionId,
   postCard,
-} from '../../features/freedictionary/freedictionary-slice';
+} from 'features/freedictionary/freedictionary-slice';
 
 const SearchDetails = () => {
   const dispatch = useDispatch();
