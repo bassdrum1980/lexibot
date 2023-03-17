@@ -6,7 +6,8 @@
 
 import PropTypes from 'prop-types';
 
-import { Pill, Icon } from 'components';
+import IconChevronRight from 'svg/IconChevronRight/IconChevronRight';
+import { Pill } from 'components';
 import './index.scss';
 
 const propTypes = {
@@ -72,7 +73,7 @@ const Card = ({ meaning, handleClick }) => {
             <p>{definition}</p>
             <div className="card__action">
               <button className="card__action__btn" type="button">
-                <Icon name="chevron-right" size={32} />
+                <IconChevronRight />
               </button>
             </div>
           </li>

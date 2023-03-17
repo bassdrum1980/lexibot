@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
-import { Icon } from 'components';
+import IconStar from 'svg/IconStar/IconStar';
 import { getWeekStats } from './getWeekStats';
 import './index.scss';
 
@@ -17,31 +17,25 @@ const defaultProps = {
   type: 'default',
 };
 
-const Week = ({
-  stats,
-  className,
-  ...rest
-}) => {
+const Week = ({ stats, className, ...rest }) => {
   const currentStats = getWeekStats(stats);
 
   return (
     <div
       className={classnames(
         'week',
-        Array.isArray(className) ? className.join(' ') : className,
+        Array.isArray(className) ? className.join(' ') : className
       )}
       {...rest}
     >
       <ul className="week__list">
         {currentStats.map(({ id, day, isPracticed }) => (
-          <li
-            key={id}
-            className="week__item"
-          >
+          <li key={id} className="week__item">
             <span>{day}</span>
-            <Icon
-              name={isPracticed ? 'star-flame' : 'star'}
-              size={24}
+            <IconStar
+              fill={isPracticed ? 'var(--flame1000)' : 'var(--gray300)'}
+              width="24"
+              height="24"
             />
           </li>
         ))}

@@ -6,7 +6,9 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
-import { Icon, Modal, AddVariant, Backdrop } from 'components';
+import IconPlus from 'svg/IconPlus/IconPlus';
+
+import { Modal, AddVariant, Backdrop } from 'components';
 import './index.scss';
 
 const propTypes = {
@@ -27,7 +29,7 @@ const CardFormSection = ({ title, addLabel, handleAdd, children }) => {
           type="button"
           onClick={() => setShowModal(true)}
         >
-          <Icon name="plus" size={32} />
+          <IconPlus />
         </button>
       </div>
       {children}

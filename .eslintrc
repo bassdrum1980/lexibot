@@ -48,12 +48,14 @@
       "error",
       {
         "ignore": [
+          "api",
           "config",
           "pages",
           "features",
           "components",
           "styles",
-          "helpers"
+          "helpers",
+          "svg"
         ]
       }
     ],

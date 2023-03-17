@@ -5,6 +5,7 @@ import { useMemo, useEffect } from 'react';
 import { InputWithAction } from 'components';
 import { fetchFreeDictionary } from 'features/freedictionary/freedictionary-slice';
 import { selectQuery, setQuery } from 'features/query/query-slice';
+import IconSearch from 'svg/IconSearch/IconSearch';
 
 const SearchField = () => {
   const dispatch = useDispatch();
@@ -46,7 +47,9 @@ const SearchField = () => {
         className="form-input--rounded form-input--font-ui form-input--noborder"
         iconName="search"
         name="searchField"
-      />
+      >
+        <IconSearch />
+      </InputWithAction>
     </form>
   );
 };
