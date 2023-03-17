@@ -8,6 +8,7 @@
       "pages/*": ["pages/*"],
       "components/*": ["components/*"],
       "styles/*": ["styles/*"],
+      "svg/*": ["svg/*"],
       "helpers/*": ["helpers/*"]
     }
   }
