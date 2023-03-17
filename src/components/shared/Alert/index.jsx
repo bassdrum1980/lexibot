@@ -1,11 +1,10 @@
-import { Icon } from 'components';
-
+import IconCheckRound from 'svg/IconCheckRound/IConCheckRound';
 import './index.scss';
 
 const Alert = ({ primaryText, secondaryText }) => (
   <div className="alert">
     <div className="alert-icon">
-      <Icon name="check-round" size={70} />
+      <IconCheckRound width={70} height={70} />
     </div>
     <h2>{primaryText}</h2>
     <p>{secondaryText}</p>

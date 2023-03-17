@@ -9,7 +9,6 @@ import {
   FormGroup,
   Input,
   Textarea,
-  Icon,
 } from 'components';
 
 const References = () => {
@@ -62,8 +61,6 @@ const References = () => {
       >
         Good
       </ButtonLegend>
-      <Icon name="mic" size={24} color="red" />
-      <Icon name="mic" size={48} color="blue" />
       <Spinner />
       <Week stats={[20, 12, 34, 11, 9, 31, 17]} />
       <hr />

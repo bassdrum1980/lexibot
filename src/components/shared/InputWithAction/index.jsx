@@ -1,17 +1,22 @@
+/**
+ * The component expects a 32x32 svg icon
+ * passed as children.
+ */
+
 import PropTypes from 'prop-types';
 
-import { Input, Icon } from 'components';
+import { Input } from 'components';
 import './index.scss';
 
 const propTypes = {
   iconName: PropTypes.string.isRequired,
 };
 
-const InputWithAction = ({ iconName, ...rest }) => (
+const InputWithAction = ({ iconName, children, ...rest }) => (
   <div className="action-wrapper">
     <Input type="text" {...rest} />
     <button className="action-wrapper__button" type="submit">
-      <Icon name={iconName} size={32} />
+      {children}
     </button>
   </div>
 );

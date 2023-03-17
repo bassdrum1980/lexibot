@@ -1,4 +1,5 @@
-import { Icon, Button } from 'components';
+import { Button } from 'components';
+import IconPlusPrimary from 'svg/IconPlusPrimary/IconPlusPrimary';
 import './index.scss';
 
 const SearchSuccessContent = ({ totalCards, handleOneMore }) => (
@@ -11,7 +12,7 @@ const SearchSuccessContent = ({ totalCards, handleOneMore }) => (
       width="hug"
       onClick={handleOneMore}
     >
-      <Icon name="plus-primary" size={32} />
+      <IconPlusPrimary />
       <span>
         Care to add one
         <br />

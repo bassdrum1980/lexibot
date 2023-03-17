@@ -2,8 +2,7 @@
  * Component renders a generic header for full-page forms.
  */
 import PropTypes from 'prop-types';
-
-import { Icon } from 'components';
+import IconChevronLeft from 'svg/IconChevronLeft/IconChevronLeft';
 import './index.scss';
 
 const propTypes = {
@@ -17,15 +16,8 @@ const defaultProps = {
 
 const BackNav = ({ title, onClick }) => (
   <div className="form-header">
-    <button
-      onClick={onClick}
-      className="form-header__btn"
-      type="button"
-    >
-      <Icon
-        name="chevron-left"
-        size={32}
-      />
+    <button onClick={onClick} className="form-header__btn" type="button">
+      <IconChevronLeft />
     </button>
     {title}
   </div>
