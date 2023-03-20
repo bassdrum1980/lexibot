@@ -23,7 +23,7 @@ const AddVariant = ({ label, onAdd, onCancel }) => {
   };
 
   const handleAdd = () => {
-    onAdd(variant);
+    if (variant.length > 0) onAdd(variant);
   };
 
   return (
