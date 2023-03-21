@@ -1,7 +1,7 @@
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
-import IconStar from 'svg/IconStar/IconStar';
+import IconStar from 'svg/IconStar';
 import { getWeekStats } from './getWeekStats';
 import './index.scss';
 

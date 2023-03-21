@@ -1,4 +1,4 @@
-import IconCheckRound from 'svg/IconCheckRound/IConCheckRound';
+import IconCheckRound from 'svg/IconCheckRound';
 import './index.scss';
 
 const Alert = ({ primaryText, secondaryText }) => (

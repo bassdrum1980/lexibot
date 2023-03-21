@@ -2,7 +2,7 @@
  * Component renders a generic header for full-page forms.
  */
 import PropTypes from 'prop-types';
-import IconChevronLeft from 'svg/IconChevronLeft/IconChevronLeft';
+import IconChevronLeft from 'svg/IconChevronLeft';
 import './index.scss';
 
 const propTypes = {

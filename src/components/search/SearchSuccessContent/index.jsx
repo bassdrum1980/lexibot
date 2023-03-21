@@ -1,5 +1,5 @@
 import { Button } from 'components';
-import IconPlusPrimary from 'svg/IconPlusPrimary/IconPlusPrimary';
+import IconPlusPrimary from 'svg/IconPlusPrimary';
 import './index.scss';
 
 const SearchSuccessContent = ({ totalCards, handleOneMore }) => (

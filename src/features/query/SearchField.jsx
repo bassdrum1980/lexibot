@@ -5,7 +5,7 @@ import { useMemo, useEffect } from 'react';
 import { InputWithAction } from 'components';
 import { fetchFreeDictionary } from 'features/freedictionary/freedictionary-slice';
 import { selectQuery, setQuery } from 'features/query/query-slice';
-import IconSearch from 'svg/IconSearch/IconSearch';
+import IconSearch from 'svg/IconSearch';
 
 const SearchField = () => {
   const dispatch = useDispatch();

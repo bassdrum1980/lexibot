@@ -6,7 +6,7 @@
 
 import PropTypes from 'prop-types';
 
-import IconChevronRight from 'svg/IconChevronRight/IconChevronRight';
+import IconChevronRight from 'svg/IconChevronRight';
 import { Pill } from 'components';
 import './index.scss';
 
