@@ -3,18 +3,18 @@
  * passed as children.
  */
 
-import PropTypes from 'prop-types';
-
+import { ReactNode } from 'react';
 import { Input } from 'components';
+import { InputType } from '../Input';
 import './index.scss';
 
-const propTypes = {
-  iconName: PropTypes.string.isRequired,
-};
+interface InputWithActionType extends InputType {
+  children: ReactNode,
+}
 
-const InputWithAction = ({ iconName, children, ...rest }) => (
+const InputWithAction: React.FC<InputWithActionType> = ({ children, ...rest }) => (
   <div className="action-wrapper">
-    <Input type="text" {...rest} />
+    <Input {...rest} />
     <button className="action-wrapper__button" type="submit">
       {children}
     </button>
@@ -22,6 +22,5 @@ const InputWithAction = ({ iconName, children, ...rest }) => (
 );
 
 InputWithAction.displayName = 'Input With Action';
-InputWithAction.propTypes = propTypes;
 
 export default InputWithAction;
