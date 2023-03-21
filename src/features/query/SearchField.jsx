@@ -40,13 +40,12 @@ const SearchField = () => {
   return (
     <form onSubmit={onSubmit} autoComplete="off">
       <InputWithAction
-        type="text"
-        onChange={debouncedOnChange}
-        defaultValue={query}
-        placeholder="Search Free Dictionary"
-        className="form-input--rounded form-input--font-ui form-input--noborder"
-        iconName="search"
         name="searchField"
+        type="text"
+        placeholder="Search Free Dictionary"
+        defaultValue={query}
+        className="form-input--rounded form-input--font-ui form-input--noborder"
+        onChange={debouncedOnChange}
       >
         <IconSearch />
       </InputWithAction>

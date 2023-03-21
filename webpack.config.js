@@ -20,7 +20,7 @@ module.exports = {
       svg: path.resolve(__dirname, 'src/svg/'),
       helpers: path.resolve(__dirname, 'src/helpers/'),
     },
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   devServer: {
     port: '3000',
@@ -31,7 +31,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /.(js|jsx)$/,
+        test: /.(js|jsx|ts|tsx)$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
         options: {

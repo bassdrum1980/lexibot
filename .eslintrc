@@ -1,5 +1,9 @@
 {
-  "extends": ["airbnb", "eslint-config-prettier"],
+  "extends": [
+    "airbnb",
+    "eslint-config-prettier",
+    "eslint-config-standard-with-typescript"
+  ],
   "plugins": ["babel", "jest"],
   "parserOptions": {
     "ecmaVersion": 12,
@@ -24,13 +28,15 @@
       "ignorePackages",
       {
         "js": "never",
-        "jsx": "never"
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
       }
     ],
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [".js", ".jsx"]
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     ],
     "react/function-component-definition": [
