@@ -6,8 +6,7 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
-import IconPlus from 'svg/IconPlus/IconPlus';
-
+import IconPlus from 'svg/IconPlus';
 import { Modal, AddVariant, Backdrop } from 'components';
 import './index.scss';
 
