@@ -4,13 +4,14 @@
 
 .card {
   background-color: #fff;
-  @include border-radius-m;
+  border-radius: $border-radius-medium;
   margin-top: $spacing-px-16;
 }
 
 .card__title {
-  @include border-radius-top-m;
   padding: $grid-padding;
+  border-top-left-radius: $border-radius-medium;
+  border-top-right-radius: $border-radius-medium;
   background-color: var(--gray100);
 }
 

@@ -22,7 +22,7 @@
 
     content: '';
 
-    @include border-radius-full;
+    border-radius: px-to-rem(9999px);
     opacity: 0.2;
   }
 

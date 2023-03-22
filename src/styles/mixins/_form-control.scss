@@ -1,18 +1,16 @@
 @mixin form-control {
+  @include font-content;
+  @include font-size-content;
+  border-radius: $border-radius-small;
   display: block;
   width: 100%;
   padding: $spacing-px-12 $spacing-px-16;
   box-sizing: border-box;
-
-  @include font-content;
   font-weight: $font-weight-regular;
-  @include font-size-content;
   line-height: $line-height-28;
   color: var(--gray1000);
   caret-color: var(--gray1000);
-
-  @include border;
-  @include border-radius-sm;
+  border: solid $border-size-1 $border-color;
   background-color: var(--gray100);
 }
 
@@ -33,8 +31,7 @@
   &--invalid {
     color: map.get($color-danger, 700);
     caret-color: map.get($color-danger, 700);
-
-    @include border--danger;
+    border: solid $border-size-1 $border-color--danger;
     background-color: map.get($color-danger, 50);
 
     &:focus {
@@ -46,7 +43,7 @@
 @mixin form-input--rounded {
   padding-left: $spacing-px-20;
   padding-right: $spacing-px-20;
-  @include border-radius-full;
+  border-radius: px-to-rem(9999px);
 }
 
 @mixin form-input--ui {
@@ -57,5 +54,5 @@
 }
 
 @mixin form-input--noborder {
-  @include border-none;
+  border: none;
 }

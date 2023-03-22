@@ -3,9 +3,9 @@
 @import 'styles/utility-mixins/index.scss';
 
 .button--legend {
+  border-radius: $border-radius-small;
   line-height: $line-height-20;
-  @include border;
-  @include border-radius-sm;
+  border: solid $border-size-1 $border-color;
 
   .button__legend {
     @include font-size-ui-sssm;

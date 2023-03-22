@@ -4,9 +4,9 @@
 
 .card-form-section {
   &:not(:last-child) {
-    @include border-b;
     margin-bottom: $spacing-px-32;
     padding-bottom: $spacing-px-24;
+    border-bottom: solid $border-size-1 $border-color;
   }
 }
 

@@ -9,7 +9,7 @@
   }
 
   .variant-picker__variant--selected {
-    @include border-none;
+    border: none;
     font-weight: $font-weight-bold;
     color: var(--primary1000);
   }

@@ -20,25 +20,25 @@
     color: var(--primary1000);
 
     background-color: #fff;
-    @include border-none;
-    @include border-radius-full;
+    border: none;
+    border-radius: px-to-rem(9999px);
   }
   &--primary {
     color: #fff;
     background-color: var(--primary1000);
   }
   &--tertiary {
-    @include border;
+    border: solid $border-size-1 $border-color;
   }
   &--plain {
     color: var(--gray1000);
     font-weight: $font-weight-regular;
     background-color: transparent;
-    @include border-none;
+    border: none;
   }
   &--destructive {
     color: map.get($color-danger, 600);
-    @include border--danger;
+    border: solid $border-size-1 $border-color--danger;
   }
   &--link,
   &--pseudo {
@@ -47,19 +47,18 @@
     font-weight: $font-weight-regular;
     line-height: $line-height-20;
     color: var(--gray1000);
-
     background-color: transparent;
-    @include border-none;
-    @include border-radius-none;
+    border: none;
+    border-radius: 0;
   }
 
   &--pseudo {
-    @include border-pseudo-b;
+    border-bottom: 1px dotted $border-color--em;
   }
 
   // Sizes
   &--s {
-    @include border-radius-sm;
+    border-radius: $border-radius-small;
     @include font-size-ui-ssm;
     letter-spacing: $letter-spacing-05;
     padding: $spacing-px-4 $spacing-px-8;

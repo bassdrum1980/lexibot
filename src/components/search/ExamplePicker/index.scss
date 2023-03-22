@@ -3,18 +3,18 @@
 
 .example-picker__example {
   @include flex-row;
-  @include border;
-  @include border-radius-sm;
+  border-radius: $border-radius-small;
   padding: $grid-padding $grid-padding--narrow;
   column-gap: $spacing-px-20;
   background-color: var(--gray100);
+  border: solid $border-size-1 $border-color;
 
   &:not(:last-child) {
     margin-bottom: $spacing-px-8;
   }
 
   &--selected {
-    @include border--primary;
+    border: solid $border-size-1 $border-color--primary;
   }
 }
 
