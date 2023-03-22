@@ -13,58 +13,57 @@
   &--pseudo,
   &--destructive {
     @include font-ui;
-    @include font-weight-bold;
+    font-weight: $font-weight-bold;
     @include font-size-ui;
-    @include line-height-24;
+    line-height: $line-height-24;
     text-align: center;
     color: var(--primary1000);
 
-    @include bg-white;
-    @include border-none;
-    @include border-radius-full;
+    background-color: #fff;
+    border: none;
+    border-radius: px-to-rem(9999px);
   }
   &--primary {
     color: #fff;
-    @include bg-primary;
+    background-color: var(--primary1000);
   }
   &--tertiary {
-    @include border;
+    border: solid $border-size-1 $border-color;
   }
   &--plain {
     color: var(--gray1000);
-    @include font-weight-regular;
-    @include bg-none;
-    @include border-none;
+    font-weight: $font-weight-regular;
+    background-color: transparent;
+    border: none;
   }
   &--destructive {
     color: map.get($color-danger, 600);
-    @include border--danger;
+    border: solid $border-size-1 $border-color--danger;
   }
   &--link,
   &--pseudo {
     @include font-content;
     @include font-size-content;
-    @include font-weight-regular;
-    @include line-height-20;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-20;
     color: var(--gray1000);
-
-    @include bg-none;
-    @include border-none;
-    @include border-radius-none;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
   }
 
   &--pseudo {
-    @include border-pseudo-b;
+    border-bottom: 1px dotted $border-color--em;
   }
 
   // Sizes
   &--s {
-    padding: $spacing-px-4 $spacing-px-8;
-    @include border-radius-sm;
+    border-radius: $border-radius-small;
     @include font-size-ui-ssm;
-    @include line-height-14;
-    @include font-weight-light;
-    @include letter-spacing-05;
+    letter-spacing: $letter-spacing-05;
+    padding: $spacing-px-4 $spacing-px-8;
+    line-height: $line-height-14;
+    font-weight: $font-weight-light;
   }
   &--sm {
     padding: $spacing-px-12;
@@ -82,7 +81,7 @@
   }
   &--inline {
     // no paddings
-    @include padding-none;
+    padding: 0;
   }
 
   // Widths

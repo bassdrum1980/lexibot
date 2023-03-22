@@ -2,7 +2,7 @@
 @import 'styles/utility-mixins/index.scss';
 
 .card-form-body {
+  flex-grow: 1;
   padding: $grid-padding $grid-padding $spacing-px-32;
-  @include flex-grow;
-  @include bg-white;
+  background-color: #fff;
 }

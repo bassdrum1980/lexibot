@@ -3,40 +3,41 @@
 @import 'styles/mixins/index.scss';
 
 .card {
-  @include margin-t-16;
-  @include bg-white;
-  @include border-radius-m;
+  background-color: #fff;
+  border-radius: $border-radius-medium;
+  margin-top: $spacing-px-16;
 }
 
 .card__title {
-  @include grid-padding;
-  @include border-radius-top-m;
+  padding: $grid-padding;
+  border-top-left-radius: $border-radius-medium;
+  border-top-right-radius: $border-radius-medium;
   background-color: var(--gray100);
 }
 
 .card__body {
   @include font-content;
   @include font-size-content;
-  @include line-height-24;
+  line-height: $line-height-24;
   padding: $spacing-px-24 $spacing-px-16 $spacing-px-32 $spacing-px-20;
 
   li:not(:last-child) {
-    @include margin-b-20;
+    margin-bottom: $spacing-px-20;
   }
 }
 
 .card__definition {
-  @include flex-row;
+  display: flex;
 
   p {
-    @include flex-grow;
+    flex-grow: 1;
     padding-top: $spacing-px-4;
     padding-right: $grid-padding--narrow;
   }
 }
 
 .card__action {
-  @include line-height-zero;
+  line-height: 0;
 }
 
 .card__action__btn {

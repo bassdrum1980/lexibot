@@ -4,26 +4,26 @@
 @import 'styles/mixins/index.scss';
 
 .pill {
-  position: relative;
-  display: inline-block;
-
   @include font-ui;
   @include font-size-ui-ssm;
-  @include font-weight-bold;
-  @include line-height-16;
+
+  position: relative;
+  display: inline-block;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-16;
   text-transform: uppercase;
-  
+
   &:after {
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
     height: $spacing-px-2;
-    
+
     content: '';
-    
-    @include border-radius-full;
-    opacity: .2;
+
+    border-radius: px-to-rem(9999px);
+    opacity: 0.2;
   }
 
   @include pill-variants($color-pill);

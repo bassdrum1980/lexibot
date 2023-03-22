@@ -2,21 +2,21 @@
 @import 'styles/utility-mixins/index.scss';
 
 .progress {
-  @include border-radius-full;
-  
+  border-radius: px-to-rem(9999px);
+
   position: relative;
   height: $spacing-px-4;
-  background-color: rgba(255, 255, 255, .4);
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 .progress__bar {
-  @include bg-white;
+  background-color: #fff;
 
   position: absolute;
   left: 0;
   top: 0;
   bottom: 0;
-  
+
   border-radius: inherit;
   transition: width 500ms ease-out;
 }

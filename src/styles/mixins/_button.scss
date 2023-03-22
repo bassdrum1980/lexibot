@@ -1,6 +1,6 @@
 @mixin button--icon {
-  @include padding-none;
-  @include bg-none;
-  @include border-none;
-  @include line-height-zero;
+  background-color: transparent;
+  border: none;
+  line-height: 0;
+  padding: 0;
 }

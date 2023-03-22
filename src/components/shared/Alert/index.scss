@@ -10,13 +10,13 @@
 
   h2 {
     @include font-size-ui-h2;
-    @include font-weight-bold;
+    font-weight: $font-weight-bold;
 
     margin-bottom: $spacing-px-4;
   }
 
   p {
     @include font-size-ui-sm;
-    @include line-height-20;
+    line-height: $line-height-20;
   }
 }

@@ -4,29 +4,31 @@
 
 .warning {
   height: 100%;
-  @include flex-column;
-  @include bg-white;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
   text-align: center;
 }
 
 .warning__content {
-  @include flex-grow;
-  @include flex-row;
-  @include flex-align-justify-center;
-  
-  @include grid-padding--hor;
   @include font-ui;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  padding-left: $grid-padding;
+  padding-right: $grid-padding;
 
   h2 {
-    @include margin-b-8;
     @include font-size-ui-h2;
-    @include font-weight-bold;
-    @include line-height-24;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-24;
+    margin-bottom: $spacing-px-8;
   }
 
   p {
     @include font-size-ui-sm;
-    @include line-height-20;
+    line-height: $line-height-20;
 
     white-space: pre-line;
     color: var(--gray800);
@@ -50,6 +52,6 @@
 }
 
 .warning__footer {
-  @include flex-no-grow;
+  flex-grow: 0;
   padding: $spacing-px-40 0;
 }

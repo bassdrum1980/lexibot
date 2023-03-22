@@ -2,15 +2,17 @@
 @import 'styles/utility-mixins/index.scss';
 
 .add-variant {
-  @include flex-column;
-  @include flex-align-bottom--col;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   height: 100vh;
 }
 
 .add-variant__content,
 .add-variant__footer {
-  @include grid-padding--hor;
-  @include bg-white;
+  background-color: #fff;
+  padding-left: $grid-padding;
+  padding-right: $grid-padding;
 }
 
 .add-variant__content {

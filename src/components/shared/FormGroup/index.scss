@@ -6,9 +6,9 @@
   .form-group__label,
   .form-group__validationText {
     @include font-ui;
-    @include font-weight-regular;
-    @include line-height-16;
-    @include letter-spacing-05;
+    letter-spacing: $letter-spacing-05;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-16;
 
     text-transform: uppercase;
   }
@@ -20,7 +20,7 @@
   }
 
   .form-group__label__text {
-    @include margin-b-8;
+    margin-bottom: $spacing-px-8;
   }
 
   .form-group__validationText {
@@ -32,7 +32,7 @@
 
   &.form-group--has-label {
     position: relative;
-    
+
     .form-group__validationText {
       position: absolute;
       right: 0;
@@ -46,7 +46,7 @@
       position: relative;
       top: -$spacing-px-2;
       margin-left: $spacing-px-2;
-  
+
       color: map.get($color-danger, 600);
       content: '*';
     }

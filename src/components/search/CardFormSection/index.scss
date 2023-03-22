@@ -4,24 +4,23 @@
 
 .card-form-section {
   &:not(:last-child) {
-    @include margin-b-32;
-    @include border-b;
+    margin-bottom: $spacing-px-32;
     padding-bottom: $spacing-px-24;
+    border-bottom: solid $border-size-1 $border-color;
   }
 }
 
 .card-form-section__title {
-  @include flex-row;
-  @include margin-b-12;
+  display: flex;
+  margin-bottom: $spacing-px-12;
 
   h2 {
-    @include flex-grow;
     @include font-ui;
     @include font-size-ui-h2;
-    @include font-weight-thin;
-
+    flex-grow: 1;
     padding-top: $spacing-px-4;
     padding-right: $grid-padding--narrow;
+    font-weight: $font-weight-thin;
   }
 }
 

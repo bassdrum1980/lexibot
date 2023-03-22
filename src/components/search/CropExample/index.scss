@@ -2,40 +2,39 @@
 @import 'styles/utility-mixins/index.scss';
 
 .crop-example {
-  @include flex-column;
-  @include flex-align-bottom--col;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   height: 100vh;
 }
 
 .crop-example__content,
 .crop-example__footer {
-  @include grid-padding--hor;
-  @include bg-white;
+  background-color: #fff;
+  padding-left: $grid-padding;
+  padding-right: $grid-padding;
 }
 
 .crop-example__content {
   //padding-top: $spacing-px-40;
-  @include flex-column;
+  display: flex;
+  flex-direction: column;
   min-height: 50vh;
   text-align: center;
 }
 
 .crop-example__sentence {
-  @include flex-grow;
-  @include grid-padding;
-
-  @include flex-row;
-  @include flex-wrap;
-  @include flex-justify-center;
-  @include flex-align-content-center;
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  padding: $grid-padding;
 
   .crop-example__token {
-    @include margin-t-8;
-    @include margin-r-8;
-    @include margin-b-8;
-    @include margin-l-8;
     @include font-size-content-h2;
-    @include line-height-32;
+    line-height: $line-height-32;
+    margin: $spacing-px-8;
 
     &--active {
       @include font-content;
@@ -47,8 +46,8 @@
 
 .crop-example__hint {
   @include font-size-ui-sm;
-  @include font-weight-light;
-  @include line-height-16;
+  line-height: $line-height-16;
+  font-weight: $font-weight-light;
   color: var(--gray500);
 }
 
