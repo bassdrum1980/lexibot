@@ -3,20 +3,19 @@
 @import 'styles/mixins/index.scss';
 
 .form-header {
-  @include grid-padding-narrow;
   @include bg-primary;
   @include font-ui;
   @include font-size-ui-sm;
   @include flex-row;
   @include flex-align-center;
   //@include letter-spacing-05;
-  
+  padding: $grid-padding--narrow;
   color: #fff;
 }
 
 .form-header__btn {
-  @include margin-r-8;
   @include button--icon;
-  
+
+  margin-right: $spacing-px-8;
   margin-left: -$spacing-px-2;
 }

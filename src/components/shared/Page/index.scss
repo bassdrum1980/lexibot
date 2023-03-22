@@ -19,7 +19,7 @@
   }
 
   &--narrow-padding {
-    @include grid-padding-narrow;
+    padding: $grid-padding--narrow;
   }
 
   &--align-bottom {

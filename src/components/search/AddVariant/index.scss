@@ -9,8 +9,9 @@
 
 .add-variant__content,
 .add-variant__footer {
-  @include grid-padding--hor;
   @include bg-white;
+  padding-left: $grid-padding;
+  padding-right: $grid-padding;
 }
 
 .add-variant__content {

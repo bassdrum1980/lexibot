@@ -24,8 +24,8 @@
 }
 
 .variant-picker__empty-title {
-  @include margin-b-4;
   @include line-height-20;
   @include font-size-ui-sm;
   @include font-weight-bold;
+  margin-bottom: $spacing-px-4;
 }

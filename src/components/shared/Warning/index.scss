@@ -13,15 +13,15 @@
   @include flex-grow;
   @include flex-row;
   @include flex-align-justify-center;
-  
-  @include grid-padding--hor;
   @include font-ui;
+  padding-left: $grid-padding;
+  padding-right: $grid-padding;
 
   h2 {
-    @include margin-b-8;
     @include font-size-ui-h2;
     @include font-weight-bold;
     @include line-height-24;
+    margin-bottom: $spacing-px-8;
   }
 
   p {

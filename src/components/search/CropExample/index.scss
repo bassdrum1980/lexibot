@@ -9,8 +9,9 @@
 
 .crop-example__content,
 .crop-example__footer {
-  @include grid-padding--hor;
   @include bg-white;
+  padding-left: $grid-padding;
+  padding-right: $grid-padding;
 }
 
 .crop-example__content {
@@ -22,20 +23,16 @@
 
 .crop-example__sentence {
   @include flex-grow;
-  @include grid-padding;
-
   @include flex-row;
   @include flex-wrap;
   @include flex-justify-center;
   @include flex-align-content-center;
+  padding: $grid-padding;
 
   .crop-example__token {
-    @include margin-t-8;
-    @include margin-r-8;
-    @include margin-b-8;
-    @include margin-l-8;
     @include font-size-content-h2;
     @include line-height-32;
+    margin: $spacing-px-8;
 
     &--active {
       @include font-content;

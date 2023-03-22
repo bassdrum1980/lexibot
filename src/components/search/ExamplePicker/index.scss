@@ -3,15 +3,14 @@
 
 .example-picker__example {
   @include flex-row;
-  @include grid-padding;
-  @include grid-padding-narrow--hor;
   @include border;
   @include border-radius-sm;
+  padding: $grid-padding $grid-padding--narrow;
   column-gap: $spacing-px-20;
   background-color: var(--gray100);
 
   &:not(:last-child) {
-    @include margin-b-8;
+    margin-bottom: $spacing-px-8;
   }
 
   &--selected {
@@ -32,8 +31,8 @@
 }
 
 .example-picker__cut-button {
-  @include -margin-t-2;
-  @include -margin-b-2;
+  margin-top: -$spacing-px-2;
+  margin-bottom: -$spacing-px-2;
 }
 
 .example-picker__empty-text {
@@ -45,8 +44,8 @@
 }
 
 .example-picker__empty-title {
-  @include margin-b-4;
   @include line-height-20;
   @include font-size-ui-sm;
   @include font-weight-bold;
+  margin-bottom: $spacing-px-4;
 }

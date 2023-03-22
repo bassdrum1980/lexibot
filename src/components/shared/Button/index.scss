@@ -82,7 +82,7 @@
   }
   &--inline {
     // no paddings
-    @include padding-none;
+    padding: 0;
   }
 
   // Widths

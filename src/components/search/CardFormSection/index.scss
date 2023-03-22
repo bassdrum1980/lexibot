@@ -4,15 +4,15 @@
 
 .card-form-section {
   &:not(:last-child) {
-    @include margin-b-32;
     @include border-b;
+    margin-bottom: $spacing-px-32;
     padding-bottom: $spacing-px-24;
   }
 }
 
 .card-form-section__title {
   @include flex-row;
-  @include margin-b-12;
+  margin-bottom: $spacing-px-12;
 
   h2 {
     @include flex-grow;

@@ -9,7 +9,7 @@
 .week__list {
   @include flex-row;
   @include flex-justify-center;
-  
+
   padding: $spacing-px-4 0;
 }
 
@@ -18,10 +18,10 @@
   text-align: center;
 
   span {
-    @include margin-b-4;
     @include font-ui;
     @include font-size-ui-sm;
 
+    margin-bottom: $spacing-px-4;
     display: block;
     text-transform: uppercase;
     color: var(--gray500);
