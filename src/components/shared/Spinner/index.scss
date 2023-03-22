@@ -6,7 +6,7 @@
   height: 100%;
   @include flex-column;
   @include flex-align-justify-center;
-  @include bg-white;
+  background-color: #fff;
 }
 
 .spinner__spinner {

@@ -9,7 +9,7 @@
 
 .add-variant__content,
 .add-variant__footer {
-  @include bg-white;
+  background-color: #fff;
   padding-left: $grid-padding;
   padding-right: $grid-padding;
 }

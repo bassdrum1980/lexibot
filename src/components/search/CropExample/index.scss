@@ -9,7 +9,7 @@
 
 .crop-example__content,
 .crop-example__footer {
-  @include bg-white;
+  background-color: #fff;
   padding-left: $grid-padding;
   padding-right: $grid-padding;
 }

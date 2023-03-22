@@ -3,7 +3,7 @@
 @import 'styles/mixins/index.scss';
 
 .card {
-  @include bg-white;
+  background-color: #fff;
   @include border-radius-m;
   margin-top: $spacing-px-16;
 }

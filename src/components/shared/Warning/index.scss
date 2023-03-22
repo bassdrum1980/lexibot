@@ -5,7 +5,7 @@
 .warning {
   height: 100%;
   @include flex-column;
-  @include bg-white;
+  background-color: #fff;
   text-align: center;
 }
 

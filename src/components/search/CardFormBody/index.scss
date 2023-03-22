@@ -4,5 +4,5 @@
 .card-form-body {
   padding: $grid-padding $grid-padding $spacing-px-32;
   @include flex-grow;
-  @include bg-white;
+  background-color: #fff;
 }

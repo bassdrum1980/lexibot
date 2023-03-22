@@ -19,13 +19,13 @@
     text-align: center;
     color: var(--primary1000);
 
-    @include bg-white;
+    background-color: #fff;
     @include border-none;
     @include border-radius-full;
   }
   &--primary {
     color: #fff;
-    @include bg-primary;
+    background-color: var(--primary1000);
   }
   &--tertiary {
     @include border;
@@ -33,7 +33,7 @@
   &--plain {
     color: var(--gray1000);
     font-weight: $font-weight-regular;
-    @include bg-none;
+    background-color: transparent;
     @include border-none;
   }
   &--destructive {
@@ -48,7 +48,7 @@
     line-height: $line-height-20;
     color: var(--gray1000);
 
-    @include bg-none;
+    background-color: transparent;
     @include border-none;
     @include border-radius-none;
   }
