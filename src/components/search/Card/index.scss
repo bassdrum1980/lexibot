@@ -27,10 +27,10 @@
 }
 
 .card__definition {
-  @include flex-row;
+  display: flex;
 
   p {
-    @include flex-grow;
+    flex-grow: 1;
     padding-top: $spacing-px-4;
     padding-right: $grid-padding--narrow;
   }

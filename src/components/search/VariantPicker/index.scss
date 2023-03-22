@@ -3,8 +3,8 @@
 
 .variant-picker {
   ul {
-    @include flex-row;
-    @include flex-wrap;
+    display: flex;
+    flex-wrap: wrap;
     gap: $spacing-px-12 $spacing-px-16;
   }
 

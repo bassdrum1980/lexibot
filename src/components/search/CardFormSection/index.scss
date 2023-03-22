@@ -11,13 +11,13 @@
 }
 
 .card-form-section__title {
-  @include flex-row;
+  display: flex;
   margin-bottom: $spacing-px-12;
 
   h2 {
-    @include flex-grow;
     @include font-ui;
     @include font-size-ui-h2;
+    flex-grow: 1;
     padding-top: $spacing-px-4;
     padding-right: $grid-padding--narrow;
     font-weight: $font-weight-thin;

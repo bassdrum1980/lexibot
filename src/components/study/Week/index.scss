@@ -7,9 +7,8 @@
 }
 
 .week__list {
-  @include flex-row;
-  @include flex-justify-center;
-
+  display: flex;
+  justify-content: center;
   padding: $spacing-px-4 0;
 }
 

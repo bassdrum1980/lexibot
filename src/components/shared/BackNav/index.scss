@@ -5,12 +5,12 @@
 .form-header {
   @include font-ui;
   @include font-size-ui-sm;
-  @include flex-row;
-  @include flex-align-center;
-  //letter-spacing: $letter-spacing-05;
+  display: flex;
+  align-items: center;
   background-color: var(--primary1000);
   padding: $grid-padding--narrow;
   color: #fff;
+  //letter-spacing: $letter-spacing-05;
 }
 
 .form-header__btn {

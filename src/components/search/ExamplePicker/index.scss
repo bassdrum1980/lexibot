@@ -2,7 +2,7 @@
 @import 'styles/utility-mixins/index.scss';
 
 .example-picker__example {
-  @include flex-row;
+  display: flex;
   border-radius: $border-radius-small;
   padding: $grid-padding $grid-padding--narrow;
   column-gap: $spacing-px-20;
@@ -19,15 +19,15 @@
 }
 
 .example-picker__text {
-  @include flex-grow;
   @include font-content;
   @include font-size-content;
+  flex-grow: 1;
   line-height: $line-height-20;
   font-style: $font-style-cursive;
 }
 
 .example-picker__cut-wrapper {
-  @include flex-no-grow;
+  flex-grow: 0;
 }
 
 .example-picker__cut-button {

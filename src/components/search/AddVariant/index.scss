@@ -2,8 +2,9 @@
 @import 'styles/utility-mixins/index.scss';
 
 .add-variant {
-  @include flex-column;
-  @include flex-align-bottom--col;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   height: 100vh;
 }
 

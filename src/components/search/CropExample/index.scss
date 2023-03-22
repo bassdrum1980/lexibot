@@ -2,8 +2,9 @@
 @import 'styles/utility-mixins/index.scss';
 
 .crop-example {
-  @include flex-column;
-  @include flex-align-bottom--col;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   height: 100vh;
 }
 
@@ -16,17 +17,18 @@
 
 .crop-example__content {
   //padding-top: $spacing-px-40;
-  @include flex-column;
+  display: flex;
+  flex-direction: column;
   min-height: 50vh;
   text-align: center;
 }
 
 .crop-example__sentence {
-  @include flex-grow;
-  @include flex-row;
-  @include flex-wrap;
-  @include flex-justify-center;
-  @include flex-align-content-center;
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
   padding: $grid-padding;
 
   .crop-example__token {
