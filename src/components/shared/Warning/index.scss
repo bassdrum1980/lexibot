@@ -19,14 +19,14 @@
 
   h2 {
     @include font-size-ui-h2;
-    @include font-weight-bold;
-    @include line-height-24;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-24;
     margin-bottom: $spacing-px-8;
   }
 
   p {
     @include font-size-ui-sm;
-    @include line-height-20;
+    line-height: $line-height-20;
 
     white-space: pre-line;
     color: var(--gray800);

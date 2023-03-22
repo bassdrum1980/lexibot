@@ -17,7 +17,7 @@
 .card__body {
   @include font-content;
   @include font-size-content;
-  @include line-height-24;
+  line-height: $line-height-24;
   padding: $spacing-px-24 $spacing-px-16 $spacing-px-32 $spacing-px-20;
 
   li:not(:last-child) {
@@ -36,7 +36,7 @@
 }
 
 .card__action {
-  @include line-height-zero;
+  line-height: 0;
 }
 
 .card__action__btn {

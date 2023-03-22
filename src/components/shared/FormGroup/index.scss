@@ -6,9 +6,9 @@
   .form-group__label,
   .form-group__validationText {
     @include font-ui;
-    @include font-weight-regular;
-    @include line-height-16;
-    @include letter-spacing-05;
+    letter-spacing: $letter-spacing-05;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-16;
 
     text-transform: uppercase;
   }

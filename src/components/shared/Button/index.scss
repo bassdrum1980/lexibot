@@ -13,9 +13,9 @@
   &--pseudo,
   &--destructive {
     @include font-ui;
-    @include font-weight-bold;
+    font-weight: $font-weight-bold;
     @include font-size-ui;
-    @include line-height-24;
+    line-height: $line-height-24;
     text-align: center;
     color: var(--primary1000);
 
@@ -32,7 +32,7 @@
   }
   &--plain {
     color: var(--gray1000);
-    @include font-weight-regular;
+    font-weight: $font-weight-regular;
     @include bg-none;
     @include border-none;
   }
@@ -44,8 +44,8 @@
   &--pseudo {
     @include font-content;
     @include font-size-content;
-    @include font-weight-regular;
-    @include line-height-20;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-20;
     color: var(--gray1000);
 
     @include bg-none;
@@ -59,12 +59,12 @@
 
   // Sizes
   &--s {
-    padding: $spacing-px-4 $spacing-px-8;
     @include border-radius-sm;
     @include font-size-ui-ssm;
-    @include line-height-14;
-    @include font-weight-light;
-    @include letter-spacing-05;
+    letter-spacing: $letter-spacing-05;
+    padding: $spacing-px-4 $spacing-px-8;
+    line-height: $line-height-14;
+    font-weight: $font-weight-light;
   }
   &--sm {
     padding: $spacing-px-12;

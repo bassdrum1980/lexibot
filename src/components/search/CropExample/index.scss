@@ -31,7 +31,7 @@
 
   .crop-example__token {
     @include font-size-content-h2;
-    @include line-height-32;
+    line-height: $line-height-32;
     margin: $spacing-px-8;
 
     &--active {
@@ -44,8 +44,8 @@
 
 .crop-example__hint {
   @include font-size-ui-sm;
-  @include font-weight-light;
-  @include line-height-16;
+  line-height: $line-height-16;
+  font-weight: $font-weight-light;
   color: var(--gray500);
 }
 

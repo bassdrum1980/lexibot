@@ -8,7 +8,7 @@
   @include font-size-ui-sm;
   @include flex-row;
   @include flex-align-center;
-  //@include letter-spacing-05;
+  //letter-spacing: $letter-spacing-05;
   padding: $grid-padding--narrow;
   color: #fff;
 }

@@ -18,10 +18,9 @@
     @include flex-grow;
     @include font-ui;
     @include font-size-ui-h2;
-    @include font-weight-thin;
-
     padding-top: $spacing-px-4;
     padding-right: $grid-padding--narrow;
+    font-weight: $font-weight-thin;
   }
 }
 

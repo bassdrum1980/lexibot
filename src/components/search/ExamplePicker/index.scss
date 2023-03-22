@@ -22,8 +22,8 @@
   @include flex-grow;
   @include font-content;
   @include font-size-content;
-  @include line-height-20;
-  @include font-style-cursive;
+  line-height: $line-height-20;
+  font-style: $font-style-cursive;
 }
 
 .example-picker__cut-wrapper {
@@ -38,14 +38,14 @@
 .example-picker__empty-text {
   @include font-ui;
   @include font-size-ui-sm;
-  @include font-weight-light;
-  @include line-height-20;
+  font-weight: $font-weight-light;
+  line-height: $line-height-20;
   color: var(--gray800);
 }
 
 .example-picker__empty-title {
-  @include line-height-20;
+  line-height: $line-height-20;
   @include font-size-ui-sm;
-  @include font-weight-bold;
+  font-weight: $font-weight-bold;
   margin-bottom: $spacing-px-4;
 }

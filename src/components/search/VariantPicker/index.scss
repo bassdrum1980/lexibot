@@ -10,7 +10,7 @@
 
   .variant-picker__variant--selected {
     @include border-none;
-    @include font-weight-bold;
+    font-weight: $font-weight-bold;
     color: var(--primary1000);
   }
 }
@@ -18,14 +18,14 @@
 .variant-picker__empty-text {
   @include font-ui;
   @include font-size-ui-sm;
-  @include font-weight-light;
-  @include line-height-20;
+  font-weight: $font-weight-light;
+  line-height: $line-height-20;
   color: var(--gray800);
 }
 
 .variant-picker__empty-title {
-  @include line-height-20;
+  line-height: $line-height-20;
   @include font-size-ui-sm;
-  @include font-weight-bold;
+  font-weight: $font-weight-bold;
   margin-bottom: $spacing-px-4;
 }

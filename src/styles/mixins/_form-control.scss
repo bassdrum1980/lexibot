@@ -5,9 +5,9 @@
   box-sizing: border-box;
 
   @include font-content;
-  @include font-weight-regular;
+  font-weight: $font-weight-regular;
   @include font-size-content;
-  @include line-height-28;
+  line-height: $line-height-28;
   color: var(--gray1000);
   caret-color: var(--gray1000);
 
@@ -33,7 +33,7 @@
   &--invalid {
     color: map.get($color-danger, 700);
     caret-color: map.get($color-danger, 700);
-    
+
     @include border--danger;
     background-color: map.get($color-danger, 50);
 
@@ -52,8 +52,8 @@
 @mixin form-input--ui {
   @include font-ui;
   @include font-size-ui;
-  @include font-weight-bold;
-  //@include letter-spacing-05;
+  font-weight: $font-weight-bold;
+  //letter-spacing: $letter-spacing-05;
 }
 
 @mixin form-input--noborder {
