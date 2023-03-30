@@ -1,6 +1,7 @@
 import logger from 'redux-logger';
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import * as api from 'api/json-server-api';
+import * as jsonServerApi from 'api/json-server-api';
+import * as freeDictionaryApi from 'api/free-dictionary-api';
 import { queryReducer } from 'features/query/query-slice';
 import { freedictionaryReducer } from 'features/freedictionary/freedictionary-slice';
 import { userReducer } from 'features/user/user-slice';
@@ -21,7 +22,10 @@ export const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       thunk: {
-        extraArgument: api,
+        extraArgument: {
+          jsonServerApi,
+          freeDictionaryApi,
+        },
       },
     }).concat(logger),
 });

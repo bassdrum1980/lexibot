@@ -6,7 +6,7 @@ import parser from './parser/parser';
 export const fetchFreeDictionary = createAsyncThunk(
   '@@freedictionary/fetch-word',
   async (word, { extra }) => {
-    const result = await extra.fetchFreeDictionary(word);
+    const result = await extra.jsonServerApi.fetchFreeDictionary(word);
     return result;
   }
 );

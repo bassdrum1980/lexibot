@@ -8,7 +8,7 @@ import { postCard } from '../freedictionary/freedictionary-slice';
 export const fetchUser = createAsyncThunk(
   '@@user/fetch-user',
   async (tgid, { extra }) => {
-    const result = await extra.fetchUserAttributes({
+    const result = await extra.jsonServerApi.fetchUserAttributes({
       tgid,
       timezone: calculateOffset(),
     });
