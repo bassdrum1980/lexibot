@@ -1,13 +1,12 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { testTgID } from 'config/telegram';
 import { fetchUser } from 'features/user/user-slice';
 
 const UserLoader = ({ children }) => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchUser(testTgID));
+    dispatch(fetchUser(process.env.TEST_TG_ID));
   }, []);
 
   return children;

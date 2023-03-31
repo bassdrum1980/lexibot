@@ -6,7 +6,7 @@ import parser from './parser/parser';
 export const fetchFreeDictionary = createAsyncThunk(
   '@@freedictionary/fetch-word',
   async (word, { extra }) => {
-    const result = await extra.fetchFreeDictionary(word);
+    const result = await extra.freeDictionaryApi.fetchFreeDictionary(word);
     return result;
   }
 );
@@ -14,7 +14,7 @@ export const fetchFreeDictionary = createAsyncThunk(
 export const postCard = createAsyncThunk(
   '@@freedictionary/post-card',
   async (card, { extra }) => {
-    const result = await extra.postCard(card);
+    const result = await extra.jsonServerApi.postCard(card);
     return result;
   }
 );
