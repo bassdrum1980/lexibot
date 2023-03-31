@@ -39,8 +39,8 @@ const LoadingWrapper = ({ children }) => {
       <Modal>
         <Warning
           className="warning--error"
-          title={error}
-          message={'Looks like something unexpected\njust has happened...'}
+          title={error.name}
+          message={error.message}
           onClick={onResetError}
         />
       </Modal>

@@ -1,9 +1,15 @@
 import { wordInstanceFreeDictionary } from 'api/axios';
 
-// TODO: error handling
+class CustomError extends Error {
+  constructor(name, message) {
+    super(message);
+    this.name = name;
+    this.message = message;
+  }
+}
 
 /**
- * Fetch 'word' data from the json-server db
+ * Fetch 'word' data from the Free Dictionary API
  * !!omitting translationEnabled and targetLanguage flags!!
  * @param {String} word // word id
  */
@@ -12,6 +18,15 @@ export const fetchFreeDictionary = async (word) => {
     const response = await wordInstanceFreeDictionary.get(`/${word}`);
     return response.data;
   } catch (error) {
-    throw new Error('Word Not Found');
+    if (error.response && error.response.status === 404) {
+      throw new CustomError(
+        'Oops! Word not found',
+        "We couldn't find a definition for the word you entered. Please check for any typos and try again."
+      );
+    }
+    throw new CustomError(
+      'Something went wrong',
+      "We're sorry, but there was an issue with the server. Please try again later."
+    );
   }
 };
