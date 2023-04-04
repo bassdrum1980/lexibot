@@ -24,7 +24,7 @@ module.exports = {
       components: path.resolve(__dirname, 'src/components/'),
       styles: path.resolve(__dirname, 'src/styles/'),
       svg: path.resolve(__dirname, 'src/svg/'),
-      helpers: path.resolve(__dirname, 'src/helpers/'),
+      helpers: path.resolve(__dirname, 'src/utils/helpers/'),
     },
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },

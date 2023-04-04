@@ -24,7 +24,7 @@
       "components/*": ["components/*"],
       "styles/*": ["styles/*"],
       "svg/*": ["svg/*"],
-      "helpers/*": ["helpers/*"]
+      "helpers/*": ["utils/helpers/*"]
     }
   },
   "include": ["src"]
