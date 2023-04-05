@@ -9,7 +9,8 @@
       "components/*": ["components/*"],
       "styles/*": ["styles/*"],
       "svg/*": ["svg/*"],
-      "helpers/*": ["helpers/*"]
+      "helpers/*": ["utils/helpers/*"],
+      "errors/*": ["utils/errors/*"]
     }
   }
 }
