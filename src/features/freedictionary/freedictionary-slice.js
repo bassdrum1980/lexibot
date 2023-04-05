@@ -2,12 +2,17 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 import parser from './parser/parser';
+import makeErrorSerializable from 'helpers/make-error-serializable';
 
 export const fetchFreeDictionary = createAsyncThunk(
   '@@freedictionary/fetch-word',
-  async (word, { extra }) => {
-    const result = await extra.freeDictionaryApi.fetchFreeDictionary(word);
-    return result;
+  async (word, { extra, rejectWithValue }) => {
+    try {
+      const result = await extra.freeDictionaryApi.fetchFreeDictionary(word);
+      return result;
+    } catch (error) {
+      return rejectWithValue(makeErrorSerializable(error));
+    }
   }
 );
 
