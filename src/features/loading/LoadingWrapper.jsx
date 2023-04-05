@@ -38,8 +38,8 @@ const LoadingWrapper = ({ children }) => {
     modal = (
       <Modal>
         <Warning
-          className="warning--error"
-          title={error.name}
+          className={`warning--${error.type}`}
+          title={error.title}
           message={error.message}
           onClick={onResetError}
         />

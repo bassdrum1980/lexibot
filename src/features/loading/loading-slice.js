@@ -24,7 +24,7 @@ const loadingSlice = createSlice({
     builder.addMatcher(
       (action) => action.type.endsWith('/rejected'),
       (state, action) => {
-        state.error = action.error;
+        state.error = action.payload;
         state.loading = 'idle';
       }
     );
