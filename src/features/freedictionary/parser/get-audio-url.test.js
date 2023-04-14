@@ -30,21 +30,23 @@ const phoneticsNoUrl = [
   { text: '/fɑːst/', audio: '' },
 ];
 
-test('founds first entry with audio url and returns it', () => {
-  expect(getAudioUrl(phoneticsUrl)).toBe(phoneticsUrlExpected);
-});
+describe('sunny day', () => {
+  test('founds first entry with audio url and returns it', () => {
+    expect(getAudioUrl(phoneticsUrl)).toBe(phoneticsUrlExpected);
+  });
 
-test('if no entry has audio > returns empty url', () => {
-  expect(getAudioUrl(phoneticsNoUrl)).toBe('');
-});
+  test('if no entry has audio > returns empty url', () => {
+    expect(getAudioUrl(phoneticsNoUrl)).toBe('');
+  });
 
-test('if receives non-array > returns empty url', () => {
-  expect(getAudioUrl(undefined)).toBe('');
-  expect(getAudioUrl('')).toBe('');
-  expect(getAudioUrl(null)).toBe('');
-  expect(getAudioUrl({})).toBe('');
-});
+  test('if receives non-array > returns empty url', () => {
+    expect(getAudioUrl(undefined)).toBe('');
+    expect(getAudioUrl('')).toBe('');
+    expect(getAudioUrl(null)).toBe('');
+    expect(getAudioUrl({})).toBe('');
+  });
 
-test('if receives an empty array > returns empty url', () => {
-  expect(getAudioUrl([])).toBe('');
+  test('if receives an empty array > returns empty url', () => {
+    expect(getAudioUrl([])).toBe('');
+  });
 });
