@@ -4,18 +4,11 @@
  * returns the url from the first entry that got one
  */
 
-type Phonetics = {
-  text: string;
-  audio: string;
-  sourceUrl?: string;
-  license?: {
-    name: string;
-    url: string;
-  };
-};
+import { RawPhonetic } from 'types/free-dictionary/index';
 
-export default function getAudioUrl(phonetics: Phonetics[]): string {
-  // TODO: remove the following code after the outer code migrated to .ts as well
+export default function getAudioUrl(phonetics: RawPhonetic[]): string {
+  // TODO: remove the following code after the outer code migrated to .TS as well
+  // update tests too
   if (!Array.isArray(phonetics)) {
     return '';
   }
