@@ -29,7 +29,6 @@ const initialState = {
   rawData: null,
   meanings: [],
   currentDefinitionId: '',
-  cardPosted: false,
 };
 
 const freedictionarySlice = createSlice({
@@ -38,7 +37,6 @@ const freedictionarySlice = createSlice({
   reducers: {
     setAddOneMore: (state) => {
       state.currentDefinitionId = '';
-      state.cardPosted = false;
     },
     setCurrentDefinitionId: (state, action) => {
       state.currentDefinitionId = action.payload;
@@ -53,9 +51,6 @@ const freedictionarySlice = createSlice({
       state.rawData = action.payload.data;
       state.meanings = parser(action.payload.data);
     },
-    [postCard.fulfilled]: (state) => {
-      state.cardPosted = true;
-    },
   },
 });
 
@@ -64,7 +59,6 @@ export const {
   setAddOneMore,
   setCurrentDefinitionId,
   resetCurrentDefinitionId,
-  resetCardPosted,
 } = freedictionarySlice.actions;
 export const selectDictionaryMeanings = (state) =>
   state.search.freedictionary.meanings;
@@ -78,5 +72,3 @@ export const selectDictionaryDefinition = (state, definitionId) => {
 };
 export const selectDictonaryCurrentId = (state) =>
   state.search.freedictionary.currentDefinitionId;
-export const selectCardPosted = (state) =>
-  state.search.freedictionary.cardPosted;
