@@ -4,6 +4,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   error: null,
   loading: 'idle', // loading, idle
+  cardPosted: false,
 };
 
 const loadingSlice = createSlice({
@@ -12,6 +13,9 @@ const loadingSlice = createSlice({
   reducers: {
     resetError: (state) => {
       state.error = null;
+    },
+    resetCardPosted: (state) => {
+      state.cardPosted = false;
     },
   },
   extraReducers: (builder) => {
@@ -34,10 +38,23 @@ const loadingSlice = createSlice({
         state.loading = 'idle';
       }
     );
+    builder.addMatcher(
+      (action) => action.type.endsWith('post-card/fulfilled'),
+      (state) => {
+        state.cardPosted = true;
+      }
+    );
+    builder.addMatcher(
+      (action) => action.type.endsWith('setAddOneMore'),
+      (state) => {
+        state.cardPosted = false;
+      }
+    );
   },
 });
 
 export const loadingReducer = loadingSlice.reducer;
-export const { resetError } = loadingSlice.actions;
+export const { resetError, resetCardPosted } = loadingSlice.actions;
 export const selectError = (state) => state.loading.error;
 export const selectLoading = (state) => state.loading.loading;
+export const selectCardPosted = (state) => state.loading.cardPosted;
