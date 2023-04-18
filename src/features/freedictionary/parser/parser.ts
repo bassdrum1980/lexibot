@@ -3,15 +3,14 @@
  * returns an array of meanings
  * ('meaning' — a set of definitions that share
  * same part of speech, phonetics and, sometimes, thesaurus).
- * @param {Array} apiData
- * @returns {Array} of meanings
  */
 
 import getAudioUrl from './get-audio-url';
 import makeMeaning from './make-meaning';
+import { RawLexicalEntry, Meaning } from 'types/free-dictionary';
 
-const parser = (apiData) => {
-  const meanings = [];
+const parser = (apiData: RawLexicalEntry[]): Meaning[] => {
+  const meanings: Meaning[] = [];
 
   // apiData is an array of lexical entries
   apiData.forEach((lexical) => {

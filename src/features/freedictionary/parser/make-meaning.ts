@@ -3,33 +3,30 @@
  * + extra few arguments,
  * builds and returns a usable 'meaning' object
  * with a set of ready-to-use definitions
- * @param {Object} sourceMeaning
- * @param {String} word
- * @param {String} transcription
- * @param {String} audioUrl
- * @returns {Object}
  */
 
 import { nanoid } from '@reduxjs/toolkit';
 import makeDefinition from './make-definition';
+import { RawMeaning, Meaning, Definition } from 'types/free-dictionary';
 
 export default function makeMeaning(
-  sourceMeaning,
-  word,
-  transcription,
-  audioUrl
-) {
-  const { partOfSpeech, definitions } = sourceMeaning;
+  rawMeaning: RawMeaning,
+  word: string,
+  transcription: string,
+  audioUrl: string
+): Meaning {
+  const { partOfSpeech, definitions } = rawMeaning;
 
-  const meaning = {};
-  meaning.definitions = [];
-  meaning.partOfSpeech = partOfSpeech;
-  meaning.id = nanoid();
+  const meaning: Meaning = {
+    definitions: [],
+    partOfSpeech,
+    id: nanoid(),
+  };
 
   // definition is the smallest particicle of data
-  definitions.forEach((sourceDefinition) => {
-    const definition = makeDefinition(
-      sourceDefinition,
+  definitions.forEach((rawDefinition) => {
+    const definition: Definition = makeDefinition(
+      rawDefinition,
       word,
       transcription,
       audioUrl,

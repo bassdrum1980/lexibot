@@ -1,10 +1,5 @@
 import { nanoid } from '@reduxjs/toolkit';
-
-interface Token {
-  value: string;
-  isActive: boolean;
-  id: string;
-}
+import { Token } from 'types/free-dictionary';
 
 export default function tokenizeSentence(sentence: string): Token[] {
   return sentence

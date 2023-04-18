@@ -1,5 +1,6 @@
 import makeDefinition from './make-definition';
 
+// TODO: update tests after make definition's outer code has migrated to TS
 const word = 'prudent';
 const transcription = '/ˈpɹuːdənt/';
 const audioUrl =
