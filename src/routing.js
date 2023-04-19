@@ -4,4 +4,6 @@
 
 export const searchURL = 'search';
 export const studyURL = 'study';
+export const signinURL = 'signin';
+export const signupURL = 'signup';
 export const referencesURL = 'references';
