@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 
-import { Success, SearchSuccessContent } from 'components';
+import { Success } from 'components';
+import SearchSuccessContent from './SearchSuccessContent';
 import { setAddOneMore } from './freedictionary-slice';
 import { selectTotalCards } from '../user/user-slice';
 
