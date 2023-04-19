@@ -1,7 +1,7 @@
 /**
  * Shows system messages
  * (errors, warnings, info)
-*/
+ */
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
@@ -12,6 +12,7 @@ const propTypes = {
   className: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
   title: PropTypes.string,
   message: PropTypes.string,
+  buttonText: PropTypes.string,
   onClick: PropTypes.func.isRequired,
 };
 
@@ -19,6 +20,7 @@ const defaultProps = {
   title: '',
   message: '',
   className: '',
+  buttonText: 'Reset',
 };
 
 const Warning = ({
@@ -26,12 +28,13 @@ const Warning = ({
   title,
   message,
   onClick,
+  buttonText,
   ...rest
 }) => (
   <div
     className={classnames(
       'warning',
-      Array.isArray(className) ? className.join(' ') : className,
+      Array.isArray(className) ? className.join(' ') : className
     )}
     {...rest}
   >
@@ -42,13 +45,8 @@ const Warning = ({
       </div>
     </div>
     <div className="warning__footer">
-      <Button
-        type="button"
-        btnStyle="tertiary"
-        width="hug"
-        onClick={onClick}
-      >
-        Reset
+      <Button type="button" btnStyle="tertiary" width="hug" onClick={onClick}>
+        {buttonText}
       </Button>
     </div>
   </div>
