@@ -5,6 +5,7 @@ const initialState = {
   error: null,
   loading: 'idle', // loading, idle
   cardPosted: false,
+  userSignedUp: false,
 };
 
 const loadingSlice = createSlice({
@@ -16,6 +17,9 @@ const loadingSlice = createSlice({
     },
     resetCardPosted: (state) => {
       state.cardPosted = false;
+    },
+    resetUserSignedUp: (state) => {
+      state.userSignedUp = false;
     },
   },
   extraReducers: (builder) => {
@@ -50,11 +54,19 @@ const loadingSlice = createSlice({
         state.cardPosted = false;
       }
     );
+    builder.addMatcher(
+      (action) => action.type.endsWith('sign-up/fulfilled'),
+      (state) => {
+        state.userSignedUp = true;
+      }
+    );
   },
 });
 
 export const loadingReducer = loadingSlice.reducer;
-export const { resetError, resetCardPosted } = loadingSlice.actions;
+export const { resetError, resetCardPosted, resetUserSignedUp } =
+  loadingSlice.actions;
 export const selectError = (state) => state.loading.error;
 export const selectLoading = (state) => state.loading.loading;
 export const selectCardPosted = (state) => state.loading.cardPosted;
+export const selectUserSignedUp = (state) => state.loading.userSignedUp;
