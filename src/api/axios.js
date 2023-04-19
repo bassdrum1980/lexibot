@@ -19,6 +19,15 @@ export const wordInstance = axios.create({
   withCredentials: false,
 });
 
+export const cardInstance = axios.create({
+  baseURL: 'http://localhost:3001/cards/',
+  headers: {
+    'Content-Type': 'application/json',
+    Accept: 'application/json',
+  },
+  withCredentials: false,
+});
+
 export const wordInstanceFreeDictionary = axios.create({
   baseURL: `${process.env.SERVER_URL}/freedictionary`,
   headers: {
@@ -28,8 +37,8 @@ export const wordInstanceFreeDictionary = axios.create({
   withCredentials: false,
 });
 
-export const cardInstance = axios.create({
-  baseURL: 'http://localhost:3001/cards/',
+export const authInstance = axios.create({
+  baseURL: `${process.env.SERVER_URL}/api`,
   headers: {
     'Content-Type': 'application/json',
     Accept: 'application/json',
