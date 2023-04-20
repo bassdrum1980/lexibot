@@ -13,7 +13,6 @@ const SignUpForm = ({ handleSubmit }) => {
   };
 
   const onSubmit = (event) => {
-    event.preventDefault();
     handleSubmit(event, data);
   };
 

@@ -2,12 +2,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Page } from 'components';
 import SignUpSuccess from 'features/user/SignUpSuccess';
 import SignUpForm from 'features/user/SignUpForm';
-import { signUp } from 'features/user/user-slice';
+import { signUp } from 'features/user/user-slice-actions';
 import { selectUserSignedUp } from 'features/loading/loading-slice';
 
 const SignUp = () => {
   const dispatch = useDispatch();
-  const userSignedUp = useSelector(selectUserSignedUp);
+  const isUserSignedUp = useSelector(selectUserSignedUp);
 
   const handleSubmit = (event, data) => {
     event.preventDefault();
@@ -16,7 +16,7 @@ const SignUp = () => {
 
   return (
     <Page>
-      {userSignedUp ? (
+      {isUserSignedUp ? (
         <SignUpSuccess />
       ) : (
         <SignUpForm handleSubmit={handleSubmit} />
