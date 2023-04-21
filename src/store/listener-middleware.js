@@ -7,15 +7,13 @@ export const listenerMiddleware = createListenerMiddleware();
 listenerMiddleware.startListening({
   actionCreator: signOut,
   effect: () => {
-    console.log('signOut');
     localStorage.removeItem('token');
   },
 });
 
 listenerMiddleware.startListening({
   actionCreator: signIn.fulfilled,
-  effect: () => {
-    console.log('signIn');
-    localStorage.removeItem('token');
+  effect: (action) => {
+    localStorage.setItem('token', JSON.stringify(action.payload.token));
   },
 });
