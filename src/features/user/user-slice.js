@@ -16,7 +16,8 @@ const userSlice = createSlice({
     signOut: (state) => {
       state.user = null;
       state.token = null;
-      localStorage.removeItem('token');
+      // localStorage.removeItem('token');
+      // moved to listenerMiddleware
     },
   },
   extraReducers: {
@@ -30,7 +31,8 @@ const userSlice = createSlice({
     [signIn.fulfilled]: (state, action) => {
       state.token = action.payload.token;
       state.user = action.payload.user;
-      localStorage.setItem('token', JSON.stringify(action.payload.token));
+      // localStorage.setItem('token', JSON.stringify(action.payload.token));
+      // moved to listenerMiddleware
     },
   },
 });
