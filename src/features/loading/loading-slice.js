@@ -7,6 +7,7 @@ const initialState = {
   cardPosted: false,
   userSignedUp: false,
   userActivated: false,
+  userSignedOut: false,
 };
 
 const loadingSlice = createSlice({
@@ -24,6 +25,9 @@ const loadingSlice = createSlice({
     },
     resetUserActivated: (state) => {
       state.userActivated = false;
+    },
+    resetUserSignedOut: (state) => {
+      state.userSignedOut = false;
     },
   },
   extraReducers: (builder) => {
@@ -70,6 +74,12 @@ const loadingSlice = createSlice({
         state.userActivated = true;
       }
     );
+    builder.addMatcher(
+      (action) => action.type.endsWith('signOut'),
+      (state) => {
+        state.userSignedOut = true;
+      }
+    );
   },
 });
 
@@ -79,9 +89,11 @@ export const {
   resetCardPosted,
   resetUserSignedUp,
   resetUserActivated,
+  resetUserSignedOut,
 } = loadingSlice.actions;
 export const selectError = (state) => state.loading.error;
 export const selectLoading = (state) => state.loading.loading;
 export const selectCardPosted = (state) => state.loading.cardPosted;
 export const selectUserSignedUp = (state) => state.loading.userSignedUp;
 export const selectUserActivated = (state) => state.loading.userActivated;
+export const selectUserSignedOut = (state) => state.loading.userSignedOut;

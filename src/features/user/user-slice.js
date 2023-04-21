@@ -12,7 +12,13 @@ const initialState = {
 const userSlice = createSlice({
   name: '@@user',
   initialState,
-  reducers: {},
+  reducers: {
+    signOut: (state) => {
+      state.user = null;
+      state.token = null;
+      localStorage.removeItem('token');
+    },
+  },
   extraReducers: {
     [fetchUser.fulfilled]: (state, action) => {
       const [user] = action.payload;
@@ -30,6 +36,7 @@ const userSlice = createSlice({
 });
 
 export const userReducer = userSlice.reducer;
+export const { signOut } = userSlice.actions;
 export const selectUser = (state) => state.user.user;
 export const selectTotalCards = (state) => state.user.user?.totalCards || 0;
 export const selectToken = (state) => state.user.token;
