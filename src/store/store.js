@@ -7,6 +7,7 @@ import { queryReducer } from 'features/query/query-slice';
 import { freedictionaryReducer } from 'features/freedictionary/freedictionary-slice';
 import { userReducer } from 'features/user/user-slice';
 import { loadingReducer } from 'features/loading/loading-slice';
+import { listenerMiddleware } from './listener-middleware';
 
 const search = combineReducers({
   query: queryReducer,
@@ -29,5 +30,7 @@ export const store = configureStore({
           authApi,
         },
       },
-    }).concat(logger),
+    })
+      .prepend(listenerMiddleware.middleware)
+      .concat(logger),
 });

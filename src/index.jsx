@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { Search, Study, References, SignIn, SignUp, Activate } from 'pages';
 import App from './App';
 import * as routes from './routing';
-import { store } from './store';
+import { store } from './store/store';
 import 'styles/index.scss';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
