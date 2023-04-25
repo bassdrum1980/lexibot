@@ -6,9 +6,12 @@ import makeErrorSerializable from 'helpers/make-error-serializable';
 
 export const fetchFreeDictionary = createAsyncThunk(
   '@@freedictionary/fetch-word',
-  async (word, { extra, rejectWithValue }) => {
+  async (word, { extra, rejectWithValue, getState }) => {
     try {
-      const result = await extra.freeDictionaryApi.fetchFreeDictionary(word);
+      const result = await extra.freeDictionaryApi.fetchFreeDictionary({
+        word,
+        token: getState().user.token,
+      });
       return result;
     } catch (error) {
       return rejectWithValue(makeErrorSerializable(error));
