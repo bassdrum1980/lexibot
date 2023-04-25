@@ -16,13 +16,13 @@ const userSlice = createSlice({
     signOut: (state) => {
       state.user = null;
       state.token = null;
-      localStorage.removeItem('token');
+      // localStorage.removeItem('token');
+      // moved to listenerMiddleware
     },
   },
   extraReducers: {
     [fetchUser.fulfilled]: (state, action) => {
-      const [user] = action.payload;
-      state.user = user;
+      state.user = action.payload;
     },
     [postCard.fulfilled]: (state) => {
       if (state.user?.totalCards) state.user.totalCards += 1;
@@ -30,7 +30,8 @@ const userSlice = createSlice({
     [signIn.fulfilled]: (state, action) => {
       state.token = action.payload.token;
       state.user = action.payload.user;
-      localStorage.setItem('token', JSON.stringify(action.payload.token));
+      // localStorage.setItem('token', JSON.stringify(action.payload.token));
+      // moved to listenerMiddleware
     },
   },
 });

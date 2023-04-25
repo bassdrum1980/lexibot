@@ -5,7 +5,6 @@ import { HttpError } from 'errors/http-errors';
  * Activate user account
  * @param {String} token
  */
-
 export const postActivateAccount = async ({ token }) => {
   try {
     const response = await authInstance.post('/activate', {
@@ -100,7 +99,6 @@ export const postSignUp = async ({ firstName, email, password }) => {
  * @property {String} token
  * @property {Object} user
  */
-
 export const postSignIn = async ({ email, password }) => {
   try {
     const response = await authInstance.post('/signin', {
@@ -127,6 +125,36 @@ export const postSignIn = async ({ email, password }) => {
           400
         );
       }
+    }
+
+    throw new HttpError(
+      'error',
+      'Something Went Wrong',
+      "We're sorry, but there was an issue with the server. Please try again later.",
+      error?.response?.status
+    );
+  }
+};
+
+/**
+ * Get User Profile
+ */
+export const getUserProfile = async ({ token }) => {
+  try {
+    const response = await authInstance.get('/user', {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    if (error.response && error.response.status === 401) {
+      throw new HttpError(
+        'error',
+        'Oops! Unauthorized',
+        'You are not authorized to access this resource. Please sign in.',
+        401
+      );
     }
 
     throw new HttpError(

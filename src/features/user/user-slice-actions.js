@@ -1,6 +1,20 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { calculateOffset } from './calculate-offset';
 import makeErrorSerializable from 'helpers/make-error-serializable';
+
+// get user profile
+export const fetchUser = createAsyncThunk(
+  '@@user/fetch-user',
+  async (_, { extra, rejectWithValue, getState }) => {
+    try {
+      const result = await extra.authApi.getUserProfile({
+        token: getState().user.token,
+      });
+      return result;
+    } catch (error) {
+      return rejectWithValue(makeErrorSerializable(error));
+    }
+  }
+);
 
 export const activateAccount = createAsyncThunk(
   '@@user/activate-account',
@@ -47,13 +61,19 @@ export const signIn = createAsyncThunk(
   }
 );
 
-export const fetchUser = createAsyncThunk(
-  '@@user/fetch-user',
-  async (tgid, { extra }) => {
-    const result = await extra.jsonServerApi.fetchUserAttributes({
-      tgid,
-      timezone: calculateOffset(),
-    });
-    return result;
-  }
-);
+// TODO: we used to calculate timezone offset and send it to the server
+// together with the user id. It allowed the server to calculate the
+// user's local time (since the user has to study before 3am (local time) next day).
+// There is no server support for this feature yet, so it is commented out.
+// import { calculateOffset } from './calculate-offset';
+//
+// export const fetchUser = createAsyncThunk(
+//   '@@user/fetch-user',
+//   async (tgid, { extra }) => {
+//     const result = await extra.jsonServerApi.fetchUserAttributes({
+//       tgid,
+//       timezone: calculateOffset(),
+//     });
+//     return result;
+//   }
+// );

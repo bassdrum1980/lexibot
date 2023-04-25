@@ -5,19 +5,24 @@
  * if any async action is in progress
  * or has finished with an error.
  */
-
 import { useSelector, useDispatch } from 'react-redux';
-
+import { useNavigate } from 'react-router-dom';
 import { selectError, selectLoading } from 'features/loading/loading-slice';
 import { Modal, Warning, Spinner } from 'components';
-import { resetError } from './loading-slice';
+import { resetError, resetInvalidToken } from './loading-slice';
+import { selectInvalidToken } from 'features/loading/loading-slice';
+import { signinURL } from '../../routing';
 
 const LoadingWrapper = ({ children }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const error = useSelector(selectError);
   const loading = useSelector(selectLoading);
+  const invalidToken = useSelector(selectInvalidToken);
 
-  const onResetError = () => {
+  // in case of invalid token
+  // onResetError is redefined (see the code below)
+  let onResetError = () => {
     dispatch(resetError());
   };
 
@@ -32,6 +37,14 @@ const LoadingWrapper = ({ children }) => {
         <Spinner />
       </Modal>
     );
+  }
+
+  if (error && invalidToken) {
+    onResetError = () => {
+      dispatch(resetError());
+      dispatch(resetInvalidToken());
+      navigate(signinURL);
+    };
   }
 
   if (error) {
