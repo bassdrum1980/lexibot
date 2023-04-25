@@ -6,9 +6,13 @@ import { HttpError } from 'errors/http-errors';
  * !!omitting translationEnabled and targetLanguage flags!!
  * @param {String} word // word id
  */
-export const fetchFreeDictionary = async (word) => {
+export const fetchFreeDictionary = async ({ word, token }) => {
   try {
-    const response = await wordInstance.get(`/${word}`);
+    const response = await wordInstance.get(`/${word}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
     return response.data;
   } catch (error) {
     if (error.response && error.response.status === 404) {
