@@ -8,6 +8,7 @@ const initialState = {
   userSignedUp: false,
   userActivated: false,
   userSignedOut: false,
+  invalidToken: false,
 };
 
 const loadingSlice = createSlice({
@@ -28,6 +29,9 @@ const loadingSlice = createSlice({
     },
     resetUserSignedOut: (state) => {
       state.userSignedOut = false;
+    },
+    resetInvalidToken: (state) => {
+      state.invalidToken = false;
     },
   },
   extraReducers: (builder) => {
@@ -80,6 +84,12 @@ const loadingSlice = createSlice({
         state.userSignedOut = true;
       }
     );
+    builder.addMatcher(
+      (action) => action.type.endsWith('fetch-user/rejected'),
+      (state) => {
+        state.invalidToken = true;
+      }
+    );
   },
 });
 
@@ -90,6 +100,7 @@ export const {
   resetUserSignedUp,
   resetUserActivated,
   resetUserSignedOut,
+  resetInvalidToken,
 } = loadingSlice.actions;
 export const selectError = (state) => state.loading.error;
 export const selectLoading = (state) => state.loading.loading;
@@ -97,3 +108,4 @@ export const selectCardPosted = (state) => state.loading.cardPosted;
 export const selectUserSignedUp = (state) => state.loading.userSignedUp;
 export const selectUserActivated = (state) => state.loading.userActivated;
 export const selectUserSignedOut = (state) => state.loading.userSignedOut;
+export const selectInvalidToken = (state) => state.loading.invalidToken;
