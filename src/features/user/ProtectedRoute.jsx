@@ -7,6 +7,7 @@ import { fetchUser } from 'features/user/user-slice-actions';
 import {
   selectUserSignedOut,
   resetUserSignedOut,
+  setDestination,
 } from 'features/loading/loading-slice';
 
 const ProtectedRoute = () => {
@@ -18,6 +19,8 @@ const ProtectedRoute = () => {
   // Checking authorization
   useEffect(() => {
     if (!token) {
+      // Set destination to current location
+      dispatch(setDestination(window.location.pathname));
       navigate(signinURL);
     }
 
