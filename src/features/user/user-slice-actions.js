@@ -6,7 +6,7 @@ export const fetchUser = createAsyncThunk(
   '@@user/fetch-user',
   async (_, { extra, rejectWithValue, getState }) => {
     try {
-      const result = await extra.authApi.getUserProfile({
+      const result = await extra.profileApi.getUserProfile({
         token: getState().user.token,
       });
       return result;

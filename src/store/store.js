@@ -3,6 +3,7 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import * as jsonServerApi from 'api/json-server-api';
 import * as freeDictionaryApi from 'api/free-dictionary-api';
 import * as authApi from 'api/auth';
+import * as profileApi from 'api/profile';
 import { queryReducer } from 'features/query/query-slice';
 import { freedictionaryReducer } from 'features/freedictionary/freedictionary-slice';
 import { userReducer } from 'features/user/user-slice';
@@ -28,6 +29,7 @@ export const store = configureStore({
           jsonServerApi,
           freeDictionaryApi,
           authApi,
+          profileApi,
         },
       },
     }).concat(logger, listenerMiddleware.middleware),
