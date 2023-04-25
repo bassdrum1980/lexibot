@@ -22,8 +22,7 @@ const userSlice = createSlice({
   },
   extraReducers: {
     [fetchUser.fulfilled]: (state, action) => {
-      const [user] = action.payload;
-      state.user = user;
+      state.user = action.payload;
     },
     [postCard.fulfilled]: (state) => {
       if (state.user?.totalCards) state.user.totalCards += 1;
