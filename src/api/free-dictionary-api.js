@@ -1,4 +1,4 @@
-import { wordInstanceFreeDictionary } from 'api/axios';
+import { wordInstance } from 'api/axios';
 import { HttpError } from 'errors/http-errors';
 
 /**
@@ -8,7 +8,7 @@ import { HttpError } from 'errors/http-errors';
  */
 export const fetchFreeDictionary = async (word) => {
   try {
-    const response = await wordInstanceFreeDictionary.get(`/${word}`);
+    const response = await wordInstance.get(`/${word}`);
     return response.data;
   } catch (error) {
     if (error.response && error.response.status === 404) {

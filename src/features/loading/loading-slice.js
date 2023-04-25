@@ -8,7 +8,9 @@ const initialState = {
   userSignedUp: false,
   userActivated: false,
   userSignedOut: false,
+  userSignedIn: false,
   invalidToken: false,
+  destination: null,
 };
 
 const loadingSlice = createSlice({
@@ -30,8 +32,17 @@ const loadingSlice = createSlice({
     resetUserSignedOut: (state) => {
       state.userSignedOut = false;
     },
+    resetUserSignedIn: (state) => {
+      state.userSignedIn = false;
+    },
     resetInvalidToken: (state) => {
       state.invalidToken = false;
+    },
+    setDestination: (state, action) => {
+      state.destination = action.payload;
+    },
+    resetDestination: (state) => {
+      state.destination = null;
     },
   },
   extraReducers: (builder) => {
@@ -73,15 +84,21 @@ const loadingSlice = createSlice({
       }
     );
     builder.addMatcher(
-      (action) => action.type.endsWith('activate-account/fulfilled'),
+      (action) => action.type.endsWith('sign-in/fulfilled'),
       (state) => {
-        state.userActivated = true;
+        state.userSignedIn = true;
       }
     );
     builder.addMatcher(
       (action) => action.type.endsWith('signOut'),
       (state) => {
         state.userSignedOut = true;
+      }
+    );
+    builder.addMatcher(
+      (action) => action.type.endsWith('activate-account/fulfilled'),
+      (state) => {
+        state.userActivated = true;
       }
     );
     builder.addMatcher(
@@ -100,7 +117,10 @@ export const {
   resetUserSignedUp,
   resetUserActivated,
   resetUserSignedOut,
+  resetUserSignedIn,
   resetInvalidToken,
+  setDestination,
+  resetDestination,
 } = loadingSlice.actions;
 export const selectError = (state) => state.loading.error;
 export const selectLoading = (state) => state.loading.loading;
@@ -108,4 +128,6 @@ export const selectCardPosted = (state) => state.loading.cardPosted;
 export const selectUserSignedUp = (state) => state.loading.userSignedUp;
 export const selectUserActivated = (state) => state.loading.userActivated;
 export const selectUserSignedOut = (state) => state.loading.userSignedOut;
+export const selectUserSignedIn = (state) => state.loading.userSignedIn;
 export const selectInvalidToken = (state) => state.loading.invalidToken;
+export const selectDestination = (state) => state.loading.destination;
