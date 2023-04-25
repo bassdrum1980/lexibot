@@ -1,11 +1,12 @@
-import { createListenerMiddleware } from '@reduxjs/toolkit';
+import { createListenerMiddleware, isAnyOf } from '@reduxjs/toolkit';
 import { signOut } from 'features/user/user-slice';
 import { signIn } from 'features/user/user-slice-actions';
+import { resetInvalidToken } from 'features/loading/loading-slice';
 
 export const listenerMiddleware = createListenerMiddleware();
 
 listenerMiddleware.startListening({
-  actionCreator: signOut,
+  matcher: isAnyOf(resetInvalidToken, signOut),
   effect: () => {
     localStorage.removeItem('token');
   },

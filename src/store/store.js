@@ -30,7 +30,5 @@ export const store = configureStore({
           authApi,
         },
       },
-    })
-      .prepend(listenerMiddleware.middleware)
-      .concat(logger),
+    }).concat(logger, listenerMiddleware.middleware),
 });
