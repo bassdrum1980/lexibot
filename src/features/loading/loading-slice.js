@@ -1,5 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
+import { signinURL } from '../../routing';
 
 const initialState = {
   error: null,
@@ -39,7 +40,11 @@ const loadingSlice = createSlice({
       state.invalidToken = false;
     },
     setDestination: (state, action) => {
-      state.destination = action.payload;
+      // destination is used to redirect user after signin
+      // we don't want to redirect user to signin page after signin
+      if (!action.payload.endsWith(signinURL)) {
+        state.destination = action.payload;
+      }
     },
     resetDestination: (state) => {
       state.destination = null;
