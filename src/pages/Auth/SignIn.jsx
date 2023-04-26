@@ -25,6 +25,7 @@ const SignIn = () => {
   // Redirect after sign in
   const userSignedIn = useSelector(selectUserSignedIn);
   const destination = useSelector(selectDestination);
+
   useEffect(() => {
     if (userSignedIn) {
       dispatch(resetUserSignedIn());

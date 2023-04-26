@@ -5,6 +5,14 @@ import LoadingWrapper from 'features/loading/LoadingWrapper';
 import { ThemeProvider } from 'components';
 import { searchURL } from './routing';
 
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  selectUserSignedOut,
+  resetUserSignedOut,
+  setDestination,
+  selectDestination,
+} from 'features/loading/loading-slice';
+
 const App = () => {
   const { pathname } = useLocation();
   const navigate = useNavigate();
@@ -12,6 +20,22 @@ const App = () => {
   useEffect(() => {
     if (pathname === '/') navigate(searchURL);
   }, []);
+
+  // Sign Out
+  const dispatch = useDispatch();
+  const isSignedOut = useSelector(selectUserSignedOut);
+  useEffect(() => {
+    if (isSignedOut) {
+      dispatch(resetUserSignedOut());
+      navigate(searchURL);
+    }
+  }, [isSignedOut, navigate]);
+
+  // Save destination
+  const destination = useSelector(selectDestination);
+  useEffect(() => {
+    dispatch(setDestination(pathname));
+  }, [pathname, dispatch]);
 
   return (
     <ThemeProvider>
