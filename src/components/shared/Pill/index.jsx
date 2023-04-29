@@ -4,9 +4,11 @@ import PropTypes from 'prop-types';
 import './index.scss';
 
 /**
- * "type" — corresponds to the relating part of speech
+ * "type" — corresponds to a relating part of speech
  * 'noun', 'interjection', 'preposition', 'conjunction',
  * 'verb', 'adverb', 'adjective', 'various'
+ *
+ * 'default' -- gray pill
  */
 
 const propTypes = {
@@ -19,14 +21,12 @@ const defaultProps = {
   type: 'default',
 };
 
-const Pill = ({
-  children, type, className, ...rest
-}) => (
+const Pill = ({ children, type, className, ...rest }) => (
   <div
     className={classnames(
       'pill',
       Array.isArray(className) ? className.join(' ') : className,
-      `pill--${type}`,
+      `pill--${type}`
     )}
     {...rest}
   >

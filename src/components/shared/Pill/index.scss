@@ -26,5 +26,13 @@
     opacity: 0.2;
   }
 
+  &--default {
+    font-weight: $font-weight-regular;
+    color: var(--gray500);
+    &:after {
+      background-color: var(--gray500);
+    }
+  }
+
   @include pill-variants($color-pill);
 }
