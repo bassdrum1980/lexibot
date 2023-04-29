@@ -1,0 +1,57 @@
+@import 'styles/variables.scss';
+@import 'styles/utility-mixins/index.scss';
+
+.study-intro,
+.study-intro__body {
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.study-intro__body {
+  justify-content: center;
+  text-align: center;
+}
+
+.study-intro__total,
+.study-intro__estimated {
+  color: #fff;
+}
+
+.study-intro__total {
+  margin-bottom: $spacing-px-24;
+  padding: 0 $spacing-px-24 $spacing-px-32;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  align-self: center;
+
+  h1 {
+    @include font-size-ui-h1;
+    margin-bottom: $spacing-px-12;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-60;
+  }
+
+  p {
+    @include font-size-ui-sm;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-14;
+    text-transform: uppercase;
+  }
+}
+
+.study-intro__estimated {
+  @include font-size-ui;
+  margin-bottom: $spacing-px-24;
+  line-height: $line-height-16;
+
+  & > * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .icon {
+    margin-right: $spacing-px-2;
+    margin-left: -$spacing-px-12;
+  }
+}
