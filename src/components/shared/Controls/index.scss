@@ -12,4 +12,11 @@
   &--narrow {
     padding: $grid-padding--narrow;
   }
+
+  &--row {
+    display: flex;
+    flex-direction: row;
+
+    column-gap: $spacing-px-6;
+  }
 }
