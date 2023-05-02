@@ -11,16 +11,8 @@ const defaultProps = {
   legend: '',
 };
 
-const ButtonLegend = ({
-  legend,
-  children,
-  ...rest
-}) => (
-  <Button
-    btnStyle="legend"
-    size="sm"
-    {...rest}
-  >
+const ButtonLegend = ({ legend, children, ...rest }) => (
+  <Button className="button--legend" size="sm" {...rest}>
     {children}
     {legend && <span className="button__legend">{legend}</span>}
   </Button>
