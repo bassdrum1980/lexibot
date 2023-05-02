@@ -2,6 +2,7 @@ import classnames from 'classnames';
 import { Page } from 'components';
 import StudyIntro from 'features/study/StudyIntro/StudyIntro';
 import StudyTraining from 'features/study/StudyTraining/StudyTraining';
+import StudyDone from 'features/study/StudyDone/StudyDone';
 
 const Study = () => {
   // if no cards a warning shall be shown on the LoadingWrapper level
@@ -68,6 +69,7 @@ const Study = () => {
     pageModifiers = 'page--study-intro page--narrow-padding';
   }
   if (cards && studyInProgress) pageContent = <StudyTraining />;
+  if (studyIsDone) pageContent = <StudyDone />;
 
   return (
     <Page className={classnames('page--study', pageModifiers)}>

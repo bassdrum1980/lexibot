@@ -1,0 +1,44 @@
+@import 'styles/variables.scss';
+@import 'styles/utility-mixins/index.scss';
+@import 'styles/mixins/index.scss';
+
+.study-done {
+}
+
+.study-done__week-stats {
+  margin-top: 6vh;
+}
+
+.study-done__streak {
+  @include separator-top;
+  margin-top: $spacing-px-20;
+  margin-left: 7.5%;
+  margin-right: 7.5%;
+
+  h4 {
+    @include font-size-ui;
+    color: var(--primary1000);
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+
+    & > * {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    span {
+      line-height: $line-height-32;
+    }
+
+    .icon {
+      position: relative;
+      top: -1px;
+      margin-right: $spacing-px-2;
+    }
+  }
+
+  p {
+    @include font-size-ui-sm;
+    color: var(--gray800);
+  }
+}
