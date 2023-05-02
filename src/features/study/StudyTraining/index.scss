@@ -1,5 +1,6 @@
 @import 'styles/variables.scss';
 @import 'styles/utility-mixins/index.scss';
+@import 'styles/mixins/index.scss';
 
 .study-training {
   flex-grow: 1;
@@ -101,26 +102,13 @@
 }
 
 .study-training__back__example {
+  @include separator-top;
   @include font-size-content;
-
-  position: relative;
-  margin-top: $spacing-px-28;
-  padding-top: $spacing-px-24;
 
   line-height: $line-height-24;
   font-weight: $font-weight-light;
   font-style: italic;
   color: var(--gray800);
-
-  &:before {
-    position: absolute;
-    top: 0;
-    left: 20%;
-    right: 20%;
-    height: px-to-rem(0.5px);
-    background-color: var(--gray300);
-    content: '';
-  }
 
   span {
     position: relative;
