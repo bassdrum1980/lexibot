@@ -14,8 +14,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   background-color: #fff;
+
+  @include font-content;
 }
 
 .study-training__progress {
@@ -26,6 +27,8 @@
 .study-training__front {
   position: relative;
   text-align: center;
+  align-items: center;
+  padding: 0 $grid-padding;
 
   .study-training__front__nav {
     position: absolute;
@@ -35,7 +38,6 @@
 }
 
 .study-training__front__word {
-  @include font-content;
   @include font-size-content-h1;
 
   margin-top: $spacing-px-4;
@@ -51,4 +53,127 @@
   & > * {
     margin-top: $spacing-px-12;
   }
+}
+
+.study-training__back__header {
+  position: relative;
+  padding: $grid-padding $spacing-px-24;
+  background-color: var(--gray100);
+
+  .study-training__back__header__nav {
+    position: absolute;
+    right: $grid-padding;
+    bottom: $grid-padding;
+  }
+}
+
+.study-training__back__content {
+  --margin: 7.5%;
+
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: $grid-padding;
+}
+
+.study-training__back__word {
+  @include font-size-content-h4;
+
+  margin-top: $spacing-px-8;
+  line-height: $line-height-20;
+  font-weight: $font-weight-bold;
+}
+
+.study-training__back__definition,
+.study-training__back__example {
+  margin-left: var(--margin);
+  margin-right: var(--margin);
+}
+
+.study-training__back__definition {
+  @include font-size-content-h3;
+
+  line-height: $line-height-36;
+  font-weight: $font-weight-bold;
+  text-align: center;
+}
+
+.study-training__back__example {
+  @include font-size-content;
+
+  position: relative;
+  margin-top: $spacing-px-28;
+  padding-top: $spacing-px-24;
+
+  line-height: $line-height-24;
+  font-weight: $font-weight-light;
+  font-style: italic;
+  color: var(--gray800);
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 20%;
+    right: 20%;
+    height: px-to-rem(0.5px);
+    background-color: var(--gray300);
+    content: '';
+  }
+
+  span {
+    position: relative;
+    display: block;
+    text-align: center;
+
+    &:before,
+    &:after {
+      position: relative;
+      color: var(--gray300);
+    }
+
+    &:before {
+      content: '\201C';
+      left: -$spacing-px-4;
+    }
+
+    &:after {
+      content: '\201D';
+      right: -$spacing-px-4;
+    }
+  }
+}
+
+.study-training__back__thesaurus {
+  display: flex;
+  padding-bottom: $grid-padding;
+
+  span {
+    @include font-size-content;
+
+    display: block;
+    font-weight: $font-weight-light;
+    font-style: italic;
+    line-height: $line-height-20;
+  }
+
+  & > * {
+    flex-grow: 1;
+    text-align: center;
+  }
+}
+
+.study-training__back__thesaurus__antonym {
+  .icon {
+    transform: rotate(45deg);
+  }
+}
+
+.study-training__back__btn-more {
+  @include font-ui;
+  @include font-size-ui-sm;
+
+  color: var(--gray500);
+  font-weight: $font-weight-light;
 }

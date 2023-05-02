@@ -1,6 +1,6 @@
 import '../index.scss';
 
-const IconPlusPrimary = ({ width = 32, height = 32 }) => (
+const IconPlusPrimaryRound = ({ width = 32, height = 32 }) => (
   <svg
     className="icon"
     width={width}
@@ -26,4 +26,4 @@ const IconPlusPrimary = ({ width = 32, height = 32 }) => (
   </svg>
 );
 
-export default IconPlusPrimary;
+export default IconPlusPrimaryRound;
