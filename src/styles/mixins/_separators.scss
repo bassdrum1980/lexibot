@@ -1,0 +1,15 @@
+@mixin separator-top {
+  position: relative;
+  margin-top: $spacing-px-28;
+  padding-top: $spacing-px-24;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 15%;
+    right: 15%;
+    height: px-to-rem(0.5px);
+    background-color: var(--gray300);
+    content: '';
+  }
+}
