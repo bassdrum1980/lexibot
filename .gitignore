@@ -24,3 +24,7 @@ src/config/firebase.js
 # design files
 /!
 .env
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
