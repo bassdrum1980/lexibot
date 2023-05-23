@@ -23,7 +23,10 @@ const Activate = () => {
       {isUserActivated ? (
         <ActivateSuccess />
       ) : (
-        <ActivateForm handleSubmit={handleSubmit} firstName={firstName} />
+        <ActivateForm
+          handleSubmit={handleSubmit}
+          firstName={firstName}
+        />
       )}
     </Page>
   );
