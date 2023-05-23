@@ -9,8 +9,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   selectUserSignedOut,
   resetUserSignedOut,
-  setDestination,
-  selectDestination,
 } from 'features/loading/loading-slice';
 
 const App = () => {
@@ -30,12 +28,6 @@ const App = () => {
       navigate(searchURL);
     }
   }, [isSignedOut, navigate]);
-
-  // Save destination
-  const destination = useSelector(selectDestination);
-  useEffect(() => {
-    dispatch(setDestination(pathname));
-  }, [pathname, dispatch]);
 
   return (
     <ThemeProvider>

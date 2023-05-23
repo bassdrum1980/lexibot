@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useNavigate, Outlet, Navigate } from 'react-router-dom';
+import { Outlet, Navigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectUser, selectToken } from './user-slice';
 import { signinURL } from '../../routing.js';
@@ -7,7 +7,6 @@ import { fetchUser } from 'features/user/user-slice-actions';
 
 const ProtectedRoute = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const token = useSelector(selectToken);
   const user = useSelector(selectUser);
 
