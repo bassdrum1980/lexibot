@@ -4,6 +4,7 @@ import * as jsonServerApi from 'api/json-server-api';
 import * as freeDictionaryApi from 'api/free-dictionary-api';
 import * as authApi from 'api/auth';
 import * as profileApi from 'api/profile';
+import * as cardsApi from 'api/cards';
 import { queryReducer } from 'features/query/query-slice';
 import { freedictionaryReducer } from 'features/freedictionary/freedictionary-slice';
 import { userReducer } from 'features/user/user-slice';
@@ -30,6 +31,7 @@ export const store = configureStore({
           freeDictionaryApi,
           authApi,
           profileApi,
+          cardsApi,
         },
       },
     }).concat(logger, listenerMiddleware.middleware),
