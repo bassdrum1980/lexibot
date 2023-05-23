@@ -7,8 +7,6 @@ import { signIn } from 'features/user/user-slice-actions';
 import {
   selectUserSignedIn,
   resetUserSignedIn,
-  selectDestination,
-  resetDestination,
 } from 'features/loading/loading-slice';
 import { searchURL } from '../../routing';
 
@@ -24,15 +22,13 @@ const SignIn = () => {
 
   // Redirect after sign in
   const userSignedIn = useSelector(selectUserSignedIn);
-  const destination = useSelector(selectDestination);
 
   useEffect(() => {
     if (userSignedIn) {
       dispatch(resetUserSignedIn());
-      navigate(destination ? destination : `/${searchURL}`);
-      dispatch(resetDestination());
+      navigate(`/${searchURL}`);
     }
-  }, [userSignedIn, destination, dispatch, navigate]);
+  }, [userSignedIn, dispatch, navigate]);
 
   return (
     <Page>
