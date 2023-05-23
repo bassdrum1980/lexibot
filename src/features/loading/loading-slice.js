@@ -11,7 +11,6 @@ const initialState = {
   userSignedOut: false,
   userSignedIn: false,
   invalidToken: false,
-  destination: null,
 };
 
 const loadingSlice = createSlice({
@@ -38,16 +37,6 @@ const loadingSlice = createSlice({
     },
     resetInvalidToken: (state) => {
       state.invalidToken = false;
-    },
-    setDestination: (state, action) => {
-      // destination is used to redirect user after signin
-      // we don't want to redirect user to signin page after signin
-      if (!action.payload.endsWith(signinURL)) {
-        state.destination = action.payload;
-      }
-    },
-    resetDestination: (state) => {
-      state.destination = null;
     },
   },
   extraReducers: (builder) => {
@@ -124,8 +113,6 @@ export const {
   resetUserSignedOut,
   resetUserSignedIn,
   resetInvalidToken,
-  setDestination,
-  resetDestination,
 } = loadingSlice.actions;
 export const selectError = (state) => state.loading.error;
 export const selectLoading = (state) => state.loading.loading;
@@ -135,4 +122,3 @@ export const selectUserActivated = (state) => state.loading.userActivated;
 export const selectUserSignedOut = (state) => state.loading.userSignedOut;
 export const selectUserSignedIn = (state) => state.loading.userSignedIn;
 export const selectInvalidToken = (state) => state.loading.invalidToken;
-export const selectDestination = (state) => state.loading.destination;
