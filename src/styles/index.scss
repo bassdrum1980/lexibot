@@ -15,3 +15,9 @@ body {
     overflow-y: hidden;
   }
 }
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}

@@ -1,6 +1,19 @@
 @mixin button--icon {
-  background-color: transparent;
-  border: none;
-  line-height: 0;
   padding: 0;
+  line-height: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@mixin button--link {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  text-decoration: underline;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
