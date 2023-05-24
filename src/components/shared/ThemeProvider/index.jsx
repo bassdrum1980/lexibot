@@ -6,15 +6,18 @@ import './index.scss';
 
 const ThemeProvider = ({ children }) => {
   // Get current pathname, strip of leading '/',
-  // use it to define current theme.
+  // use it to define the current theme.
   let { pathname } = useLocation();
   pathname = pathname.replace(/^\/+/g, '');
 
   return (
-    <div className={classnames('theme-provider', {
-      'theme-provider--search': pathname.startsWith(routes.searchURL),
-      'theme-provider--study': pathname.startsWith(routes.studyURL),
-    })}
+    <div
+      className={classnames(
+        'theme-provider',
+        pathname.startsWith(routes.searchURL)
+          ? 'theme-provider--search'
+          : 'theme-provider--default'
+      )}
     >
       {children}
     </div>

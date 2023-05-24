@@ -38,22 +38,16 @@ $grid-optical-compensation--s: -4.25vh;
 // Z-indexes
 $z-index-modal: 1000;
 
-// TODO: продолжить с миксинами (бордеры например, на фокус у меня нет миксина)
-
 /*
   Colors
 
   Most of the color palettes are theme specific.
-  I store them in sass maps, translate them
+  We store them in sass maps, translate
   to sets of css custom properties and attach to 
-  the '.container' element (see layout.scss).
-
-  Thus, you can see me using custom properties for
-  theme-specific colors and sass variables / map.get() 
-  expressions for shared colors.
+  the '.container' element (see <ThemeProvider /> component).
 
   Naming convention — 
-  $color-colorname--theme => $color-gray--study
+  $color-colorname--theme-name => $color-gray--study
 */
 
 // Shared colors
@@ -133,8 +127,8 @@ $color-gradient: (
     ),
 );
 
-// 'Study' theme
-$color-gray--study: (
+// 'Default' theme
+$color-gray--default: (
   100: color.adjust(map.get($color-gray, 100), $hue: 7),
   200: color.adjust(map.get($color-gray, 200), $hue: 14),
   300: color.adjust(map.get($color-gray, 300), $hue: 14),
@@ -146,10 +140,10 @@ $color-gray--study: (
   900: color.adjust(map.get($color-gray, 900), $hue: 14),
   1000: color.adjust(map.get($color-gray, 1000), $hue: 14),
 );
-$color-primary--study: (
+$color-primary--default: (
   1000: #136fd1,
 );
-$color-gradient--study: (
+$color-gradient--default: (
   'primary': linear-gradient(175deg, #26aaf4 0%, #126fd1 100%),
   'primary--light': linear-gradient(175deg, #ffffff 0%, #f7fafc 100%),
 );

@@ -5,14 +5,12 @@
 
 .theme-provider {
   /* Color themes */
-  @include theme-to-custom-properties($color-gray, 'gray');
-  @include theme-to-custom-properties($color-primary, 'primary');
   @include theme-to-custom-properties($color-flame, 'flame');
 
-  &--study {
-    @include theme-to-custom-properties($color-gray--study, 'gray');
-    @include theme-to-custom-properties($color-primary--study, 'primary');
-    @include theme-to-custom-properties($color-gradient--study, 'gradient-');
+  &--default {
+    @include theme-to-custom-properties($color-gray--default, 'gray');
+    @include theme-to-custom-properties($color-primary--default, 'primary');
+    @include theme-to-custom-properties($color-gradient--default, 'gradient-');
   }
 
   &--search {
