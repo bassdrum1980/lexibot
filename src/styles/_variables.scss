@@ -155,6 +155,11 @@ $color-gradient--default: (
     ),
   'primary--light': linear-gradient(175deg, #ffffff 0%, #f7fafc 100%),
 );
+$color-logo--default: (
+  100: #ffffff,
+  200: #a7ccf4,
+  300: #73abe7,
+);
 
 // 'Search' theme
 $color-gray--search: (
@@ -183,6 +188,11 @@ $color-gradient--search: (
       #b21ce8 96.58%
     ),
   'primary--light': linear-gradient(175deg, #ffffff 0%, #f9f5fa 100%),
+);
+$color-logo--search: (
+  100: #ffffff,
+  200: #e4b0f7,
+  300: #ce70f1,
 );
 
 // TYPOGRAPHY
