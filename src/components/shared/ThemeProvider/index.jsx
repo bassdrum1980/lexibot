@@ -1,29 +1,23 @@
+import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import classnames from 'classnames';
-
 import * as routes from '../../../routing';
-import './index.scss';
 
+// Depending on the current route, the theme changes.
+// This is done by adding a class to the body element.
 const ThemeProvider = ({ children }) => {
   // Get current pathname, strip of leading '/',
-  // use it to define the current theme.
   let { pathname } = useLocation();
   pathname = pathname.replace(/^\/+/g, '');
 
-  return (
-    <div
-      className={classnames(
-        'theme-provider',
-        pathname.startsWith(routes.searchURL)
-          ? 'theme-provider--search'
-          : 'theme-provider--default'
-      )}
-    >
-      {children}
-    </div>
-  );
+  useEffect(() => {
+    document.body.classList.add(
+      pathname.startsWith(routes.searchURL) ? 'theme-search' : 'theme-default'
+    );
+  }, [pathname]);
+
+  return children;
 };
 
-ThemeProvider.displayName = 'ThemeProvider';
+ThemeProvider.displayName = 'Theme Provider';
 
 export default ThemeProvider;
