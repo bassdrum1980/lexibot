@@ -10,6 +10,7 @@ const ThemeProvider = ({ children }) => {
   pathname = pathname.replace(/^\/+/g, '');
 
   useEffect(() => {
+    document.body.className = '';
     document.body.classList.add(
       pathname.startsWith(routes.searchURL) ? 'theme-search' : 'theme-default'
     );
