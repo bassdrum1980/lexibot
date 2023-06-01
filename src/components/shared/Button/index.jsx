@@ -17,6 +17,7 @@ const propTypes = {
     'legend',
     'link',
     'pseudo',
+    'icon',
     null,
   ]),
   onClick: PropTypes.func.isRequired,

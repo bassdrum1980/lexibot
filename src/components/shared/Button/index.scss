@@ -51,6 +51,12 @@
     border: none;
     border-radius: 0;
   }
+  &--icon {
+    padding: 0;
+    line-height: 0;
+    background: transparent;
+    border: none;
+  }
 
   &--pseudo {
     border-bottom: 1px dotted $border-color--em;
