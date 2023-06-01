@@ -1,3 +1,5 @@
+export { default as AppNav } from './shared/AppNav';
+export { default as PageHeader } from './shared/PageHeader';
 export { default as Alert } from './shared/Alert';
 export { default as CropExample } from './search/CropExample';
 export { default as Backdrop } from './shared/Backdrop';
