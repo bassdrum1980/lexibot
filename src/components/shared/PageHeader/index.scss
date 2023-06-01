@@ -1,0 +1,36 @@
+@import 'styles/variables.scss';
+@import 'styles/utility-mixins/';
+
+.page-header {
+  // TODO:
+  // This header will need to be positioned as fixed
+  // it will be portalled to the body element
+  // it's height will be changing on scroll
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  // overflow: hidden;
+  // z-index: $z-index-header;
+
+  height: px-to-rem($header-height);
+
+  display: flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.page-header__lexibot {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.page-header__nav__btn {
+  padding: 0;
+  line-height: 0;
+
+  border: none;
+  background-color: transparent;
+
+  cursor: pointer;
+}

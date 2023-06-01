@@ -31,6 +31,10 @@ body {
     @include theme-to-custom-properties($color-gradient--search, 'gradient-');
     @include theme-to-custom-properties($color-logo--search, 'logo');
   }
+
+  /* Layout custom properties */
+  --header-height: $header-height;
+  --header-height--min: $header-height--min;
 }
 
 a {

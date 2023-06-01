@@ -36,7 +36,12 @@ $grid-optical-compensation: -8.5vh;
 $grid-optical-compensation--s: -4.25vh;
 
 // Z-indexes
+$z-index-header: 100;
 $z-index-modal: 1000;
+
+// Header heights
+$header-height: 4rem;
+$header-height--min: 2.5rem;
 
 /*
   Colors
