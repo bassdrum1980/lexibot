@@ -21,8 +21,15 @@ export const fetchFreeDictionary = createAsyncThunk(
 
 export const postCard = createAsyncThunk(
   '@@freedictionary/post-card',
-  async (card, { extra }) => {
-    const result = await extra.jsonServerApi.postCard(card);
+  async (card, { extra, getState }) => {
+    const result = await extra.cardsApi.postCard({
+      token: getState().user.token,
+      userId: getState().user.user.id,
+      word: card.word,
+      attributes: {
+        ...card,
+      },
+    });
     return result;
   }
 );

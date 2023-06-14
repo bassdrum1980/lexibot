@@ -36,3 +36,12 @@ export const profileInstance = axios.create({
   },
   withCredentials: false,
 });
+
+export const cardsInstance = axios.create({
+  baseURL: `${process.env.SERVER_URL}/cards`,
+  headers: {
+    'Content-Type': 'application/json',
+    Accept: 'application/json',
+  },
+  withCredentials: false,
+});
