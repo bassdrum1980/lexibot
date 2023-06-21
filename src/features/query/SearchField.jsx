@@ -38,13 +38,16 @@ const SearchField = () => {
   );
 
   return (
-    <form onSubmit={onSubmit} autoComplete="off">
+    <form
+      onSubmit={onSubmit}
+      autoComplete="off"
+    >
       <InputWithAction
         name="searchField"
         type="text"
         placeholder="Search Free Dictionary"
         defaultValue={query}
-        className="form-input--rounded form-input--font-ui form-input--noborder"
+        className="form-input--rounded form-input--font-ui form-input--noborder form-input--white form-input--bold"
         onChange={debouncedOnChange}
       >
         <IconSearch />
