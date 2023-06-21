@@ -19,4 +19,12 @@
   &--noborder {
     @include form-input--noborder;
   }
+
+  &--white {
+    @include form-input--white;
+  }
+
+  &--bold {
+    @include form-input--bold;
+  }
 }
