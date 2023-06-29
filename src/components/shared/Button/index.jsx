@@ -24,17 +24,18 @@ const propTypes = {
   className: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
 };
 
-const defaultProps = {
-  type: 'button',
-  size: 'm',
-  width: 'fill',
-  btnStyle: 'primary',
-  className: '',
-};
-
 const Button = React.forwardRef(
   (
-    { type, size, width, btnStyle, className, onClick, children, ...rest },
+    {
+      type = 'button',
+      size = 'm',
+      width = 'fill',
+      btnStyle = 'primary',
+      className,
+      onClick,
+      children,
+      ...rest
+    },
     ref
   ) => (
     <button
@@ -57,6 +58,5 @@ const Button = React.forwardRef(
 
 Button.displayName = 'Button'; // dev tools alias
 Button.propTypes = propTypes;
-Button.defaultProps = defaultProps;
 
 export default Button;
