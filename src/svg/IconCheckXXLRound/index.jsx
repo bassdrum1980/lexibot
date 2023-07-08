@@ -29,10 +29,10 @@ const IconCheckXXLRound = ({ width = 70, height = 70 }) => (
         y2="70.738"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#DE32ED" />
+        <stop stopColor="#DE32ED" />
         <stop
           offset="1"
-          stop-color="#B31CE8"
+          stopColor="#B31CE8"
         />
       </linearGradient>
       <linearGradient
@@ -43,10 +43,10 @@ const IconCheckXXLRound = ({ width = 70, height = 70 }) => (
         y2="45.762"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="#DE32ED" />
+        <stop stopColor="#DE32ED" />
         <stop
           offset="1"
-          stop-color="#B31CE8"
+          stopColor="#B31CE8"
         />
       </linearGradient>
     </defs>
