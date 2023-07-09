@@ -1,8 +1,8 @@
-import classnames from 'classnames';
 import { useState } from 'react';
-import { createPortal } from 'react-dom';
-import { AppNav } from 'components';
-import { Page, PageHeader } from 'components';
+import { Page, PageHeader, PageFooter, AppNav } from 'components';
+import SearchField from 'features/query/SearchField';
+import StudyBanner from 'features/study/StudyBanner';
+import './index.scss';
 
 const Home = () => {
   // TODO: render pageHeader through portal
@@ -24,10 +24,15 @@ const Home = () => {
   };
 
   return (
-    <Page className={classnames('page--narrow-padding')}>
-      <PageHeader handleNavClick={handleNavClick} />
-      <h1>Home</h1>
+    <Page className="page--narrow-padding home-page">
       {isNavOpen && <AppNav handleClose={handleNavClick} />}
+      <PageHeader
+        handleNavClick={handleNavClick}
+        className="home-page__section home-page__section--first-child"
+      />
+      <SearchField className="home-page__section" />
+      <StudyBanner className="home-page__section" />
+      <PageFooter className="home-page__section home-page__section--last-child" />
     </Page>
   );
 };
