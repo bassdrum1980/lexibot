@@ -1,10 +1,20 @@
+import classnames from 'classnames';
 import { Link } from 'react-router-dom';
 import IconLogoCardsXL from 'svg/IconLogoCardsXL';
 import './index.scss';
 
-const PageFooter = () => {
+type PageFooterType = {
+  className?: string | string[];
+};
+
+const PageFooter: React.FC<PageFooterType> = ({ className }) => {
   return (
-    <div className="page-footer">
+    <div
+      className={classnames(
+        'page-footer',
+        Array.isArray(className) ? className.join(' ') : className
+      )}
+    >
       <IconLogoCardsXL />
       <div className="page-footer__copy">&copy; 2023 Lexibot</div>
       <div className="page-footer__nav">

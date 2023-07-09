@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
+import classnames from 'classnames';
 import { Link } from 'react-router-dom';
 import IconBurgerXL from 'svg/IconBurgerXL';
 import IconLogoCardsXL from 'svg/IconLogoCardsXL';
 import IconLexibot from 'svg/IconLexibot';
 import './index.scss';
 
-const PageHeader = ({ handleNavClick }) => {
+const PageHeader = ({ handleNavClick, className }) => {
   // TODO:
   // This header will need to be rendered through portal
   // somewhere in the body
@@ -15,7 +15,12 @@ const PageHeader = ({ handleNavClick }) => {
   // in order to clip content in page__content
 
   return (
-    <div className="page-header">
+    <div
+      className={classnames(
+        'page-header',
+        Array.isArray(className) ? className.join(' ') : className
+      )}
+    >
       <div className="page-header__logo">
         <Link to="/">
           <IconLogoCardsXL />
