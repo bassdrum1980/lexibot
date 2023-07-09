@@ -1,6 +1,5 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
-import { signinURL } from '../../routing';
 
 const initialState = {
   error: null,

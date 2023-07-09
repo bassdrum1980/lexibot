@@ -1,0 +1,24 @@
+@import 'styles/variables.scss';
+@import 'styles/utility-mixins/';
+
+.page-footer {
+  margin-bottom: $spacing-px-24;
+  text-align: center;
+  color: var(--gray400);
+
+  @include font-ui;
+  @include font-size-ui-ssm;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-20;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.page-footer__nav {
+  & > * {
+    margin: 0 $spacing-px-4;
+  }
+}

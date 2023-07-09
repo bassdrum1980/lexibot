@@ -28,10 +28,47 @@
   }
 
   &--narrow-padding {
-    padding: $grid-padding--narrow;
+    padding: 0 $grid-padding--narrow;
   }
 
   &--align-bottom {
     justify-content: flex-end;
   }
 }
+
+.page {
+  min-height: 100vh;
+}
+
+// TODO:
+// Use the following styles to clip page content
+// so it hides under the header on scroll, but shows scrollbar
+// 64px is the base header's height
+// 40px is the min header's height
+// 16px is the scrollbar width (use similar hook to calculate it -
+// https://www.robinwieruch.de/react-hook-scrollbar-width/)
+// all of the above should be stored in theme variables
+// header needs to be rendered with portal
+// under the document.body
+// .page {
+//   height: 100vh;
+//   overflow: hidden;
+//   padding: 0 !important;
+// }
+// .page__content {
+//   height: 100vh;
+//   overflow-y: auto;
+// }
+// .page__content-wrapper {
+//   height: 100vh;
+//   overflow: hidden;
+//   clip-path: polygon(
+//     0 0,
+//     0 64px,
+//     calc(100vw - 16px) 64px,
+//     calc(100vw - 16px) 0,
+//     100vw 0,
+//     100vw 100vh,
+//     0 100vh
+//   );
+// }

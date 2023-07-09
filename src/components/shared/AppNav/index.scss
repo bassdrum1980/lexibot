@@ -1,0 +1,44 @@
+@use 'sass:color';
+@import 'styles/variables.scss';
+@import 'styles/utility-mixins/';
+@import 'styles/mixins/';
+
+.app-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: var(--gray200);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-nav__list {
+  @include font-size-ui-h2;
+  margin-top: $grid-optical-compensation--s;
+
+  text-align: center;
+  line-height: $line-height-60;
+
+  button {
+    @include button--link;
+    @include font-size-ui-h2;
+    color: var(--primary1000);
+  }
+}
+
+.app-nav__close {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  @include button--icon;
+
+  .icon {
+    transform: rotate(45deg);
+  }
+}

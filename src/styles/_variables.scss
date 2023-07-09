@@ -36,24 +36,23 @@ $grid-optical-compensation: -8.5vh;
 $grid-optical-compensation--s: -4.25vh;
 
 // Z-indexes
+$z-index-header: 100;
 $z-index-modal: 1000;
 
-// TODO: продолжить с миксинами (бордеры например, на фокус у меня нет миксина)
+// Header heights
+$header-height: 4rem;
+$header-height--min: 2.5rem;
 
 /*
   Colors
 
   Most of the color palettes are theme specific.
-  I store them in sass maps, translate them
+  We store them in sass maps, translate
   to sets of css custom properties and attach to 
-  the '.container' element (see layout.scss).
-
-  Thus, you can see me using custom properties for
-  theme-specific colors and sass variables / map.get() 
-  expressions for shared colors.
+  the '.container' element (see <ThemeProvider /> component).
 
   Naming convention — 
-  $color-colorname--theme => $color-gray--study
+  $color-colorname--theme-name => $color-gray--study
 */
 
 // Shared colors
@@ -133,8 +132,8 @@ $color-gradient: (
     ),
 );
 
-// 'Study' theme
-$color-gray--study: (
+// 'Default' theme
+$color-gray--default: (
   100: color.adjust(map.get($color-gray, 100), $hue: 7),
   200: color.adjust(map.get($color-gray, 200), $hue: 14),
   300: color.adjust(map.get($color-gray, 300), $hue: 14),
@@ -146,12 +145,25 @@ $color-gray--study: (
   900: color.adjust(map.get($color-gray, 900), $hue: 14),
   1000: color.adjust(map.get($color-gray, 1000), $hue: 14),
 );
-$color-primary--study: (
+$color-primary--default: (
   1000: #136fd1,
 );
-$color-gradient--study: (
-  'primary': linear-gradient(175deg, #26aaf4 0%, #126fd1 100%),
+$color-gradient--default: (
+  'primary':
+    linear-gradient(
+      355deg,
+      #126fd1 2.51%,
+      #1d92e6 32.4%,
+      #25a3eb 59.83%,
+      #1c92e6 81.88%,
+      #126fd1 96.58%
+    ),
   'primary--light': linear-gradient(175deg, #ffffff 0%, #f7fafc 100%),
+);
+$color-logo--default: (
+  100: #ffffff,
+  200: #a7ccf4,
+  300: #73abe7,
 );
 
 // 'Search' theme
@@ -171,8 +183,21 @@ $color-primary--search: (
   1000: #b21ce8,
 );
 $color-gradient--search: (
-  'primary': linear-gradient(175deg, #de32ed 0%, #b31ce8 100%),
+  'primary':
+    linear-gradient(
+      355deg,
+      #b21ce8 2.51%,
+      #c923eb 32.4%,
+      #de32ed 59.83%,
+      #c923eb 81.88%,
+      #b21ce8 96.58%
+    ),
   'primary--light': linear-gradient(175deg, #ffffff 0%, #f9f5fa 100%),
+);
+$color-logo--search: (
+  100: #ffffff,
+  200: #e4b0f7,
+  300: #ce70f1,
 );
 
 // TYPOGRAPHY

@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import debounce from 'lodash/debounce';
 import { useSelector, useDispatch } from 'react-redux';
 import { useMemo, useEffect } from 'react';
@@ -7,7 +8,7 @@ import { fetchFreeDictionary } from 'features/freedictionary/freedictionary-slic
 import { selectQuery, setQuery } from 'features/query/query-slice';
 import IconSearch from 'svg/IconSearch';
 
-const SearchField = () => {
+const SearchField = ({ className }) => {
   const dispatch = useDispatch();
   const query = useSelector(selectQuery);
 
@@ -38,13 +39,19 @@ const SearchField = () => {
   );
 
   return (
-    <form onSubmit={onSubmit} autoComplete="off">
+    <form
+      onSubmit={onSubmit}
+      autoComplete="off"
+      className={classnames(
+        Array.isArray(className) ? className.join(' ') : className
+      )}
+    >
       <InputWithAction
         name="searchField"
         type="text"
         placeholder="Search Free Dictionary"
         defaultValue={query}
-        className="form-input--rounded form-input--font-ui form-input--noborder"
+        className="form-input--rounded form-input--font-ui form-input--noborder form-input--white form-input--bold"
         onChange={debouncedOnChange}
       >
         <IconSearch />

@@ -49,10 +49,21 @@
 @mixin form-input--ui {
   @include font-ui;
   @include font-size-ui;
-  font-weight: $font-weight-bold;
   //letter-spacing: $letter-spacing-05;
 }
 
 @mixin form-input--noborder {
   border: none;
+}
+
+@mixin form-input--white {
+  background-color: #fff;
+}
+
+@mixin form-input--bold {
+  font-weight: $font-weight-bold;
+
+  &::placeholder {
+    font-weight: $font-weight-regular;
+  }
 }

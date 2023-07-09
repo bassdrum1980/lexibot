@@ -1,0 +1,17 @@
+@import 'styles/variables.scss';
+@import 'styles/utility-mixins/index.scss';
+
+.home-page {
+}
+
+.home-page__section {
+  margin-bottom: px-to-rem(16px);
+}
+
+.home-page__section--first-child {
+  margin-bottom: 0;
+}
+
+.home-page__section--last-child {
+  margin-bottom: px-to-rem(24px);
+}
