@@ -3,9 +3,13 @@ import { Banner, BannerNothing, BannerCompleted } from 'components';
 
 type StudyBannerProps = {
   className?: string | string[];
+  handleStudyClick?: () => void;
 };
 
-const StudyBanner: React.FC<StudyBannerProps> = ({ className }) => {
+const StudyBanner: React.FC<StudyBannerProps> = ({
+  className,
+  handleStudyClick,
+}) => {
   // temporary variable to test the different banners
   const banner: string = '';
   let content;
@@ -18,7 +22,7 @@ const StudyBanner: React.FC<StudyBannerProps> = ({ className }) => {
       content = <BannerNothing />;
       break;
     default:
-      content = <Banner />;
+      content = <Banner handleClick={handleStudyClick} />;
   }
 
   return (

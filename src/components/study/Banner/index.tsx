@@ -5,9 +5,10 @@ import './index.scss';
 
 type BannerType = {
   className?: string | string[];
+  handleClick?: () => void;
 };
 
-const Banner: React.FC<BannerType> = ({ className }) => (
+const Banner: React.FC<BannerType> = ({ className, handleClick }) => (
   <div
     className={classnames(
       'banner',
@@ -29,7 +30,7 @@ const Banner: React.FC<BannerType> = ({ className }) => (
       className="banner__button"
       btnStyle="tertiary"
       width="hug"
-      onClick={() => console.log('Study')}
+      onClick={handleClick}
     >
       Study
     </Button>
