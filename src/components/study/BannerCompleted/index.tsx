@@ -16,10 +16,10 @@ const BannerCompleted: React.FC<BannerCompletedType> = ({ className }) => (
   >
     <IconCheckXXLRound />
     <h2 className="banner__title">Study Completed</h2>
-    <p className="banner__text">
+    <div className="banner__text">
       Congratulations! You have completed all of your flashcards for today.
       Check back tomorrow for more study material.
-    </p>
+    </div>
   </div>
 );
 

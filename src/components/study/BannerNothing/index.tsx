@@ -16,10 +16,10 @@ const BannerNothing: React.FC<BannerNothingType> = ({ className }) => (
   >
     <IconNothingXXLRound />
     <h2 className="banner__title">Nothing to Study</h2>
-    <p className="banner__text">
+    <div className="banner__text">
       Your queue is currently empty. Add new ones to continue your learning
       journey.
-    </p>
+    </div>
   </div>
 );
 

@@ -19,12 +19,12 @@ const Banner: React.FC<BannerType> = ({ className }) => (
       <br />
       There are 20 cards in the queue.
     </h2>
-    <p className="banner__text">
+    <div className="banner__text">
       <div className="banner__text__estimated">
         <IconClock fill="var(--gray700)" />
         It will take 5-7 minutes
       </div>
-    </p>
+    </div>
     <Button
       className="banner__button"
       btnStyle="tertiary"
