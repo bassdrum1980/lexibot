@@ -20,9 +20,21 @@
   @include font-content;
 }
 
-.study-training__progress {
-  padding: $spacing-px-10 $spacing-px-16;
+.study-training__header {
+  display: flex;
+  align-items: center;
+  column-gap: $spacing-px-8;
+  height: $spacing-px-32;
+  padding: 0 $spacing-px-16 0 $spacing-px-8;
   background-color: var(--primary1000);
+}
+
+.study-training__pause {
+  @include button--icon;
+}
+
+.study-training__progress {
+  flex-grow: 1;
 }
 
 .study-training__front {
@@ -30,12 +42,12 @@
   text-align: center;
   align-items: center;
   padding: 0 $grid-padding;
+}
 
-  .study-training__front__nav {
-    position: absolute;
-    right: $grid-padding;
-    bottom: $grid-padding;
-  }
+.study-training__front__nav {
+  position: absolute;
+  right: $grid-padding;
+  bottom: $grid-padding;
 }
 
 .study-training__front__word {

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Progress } from 'components';
+import IconPause from 'svg/IconPause';
 import Front from './Front';
 import Back from './Back';
 import './index.scss';
@@ -19,6 +20,9 @@ const StudyTraining = () => {
   return (
     <div className="study-training">
       <div className="study-training__header">
+        <button className="study-training__pause">
+          <IconPause />
+        </button>
         <div className="study-training__progress">
           <Progress progress={20} />
         </div>
