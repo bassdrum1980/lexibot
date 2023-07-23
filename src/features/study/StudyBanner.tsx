@@ -22,7 +22,13 @@ const StudyBanner: React.FC<StudyBannerProps> = ({
       content = <BannerNothing />;
       break;
     default:
-      content = <Banner handleClick={handleStudyClick} />;
+      content = (
+        <Banner
+          name="Alexander"
+          cardsTotal={20}
+          handleClick={handleStudyClick}
+        />
+      );
   }
 
   return (
