@@ -1,25 +1,33 @@
 import classnames from 'classnames';
-import IconClock from 'svg/IconClock';
 import { Button } from 'components';
+import IconClock from 'svg/IconClock';
 import './index.scss';
 
 type BannerType = {
+  name: string;
+  cardsTotal: number;
   className?: string | string[];
   handleClick?: () => void;
 };
 
-const Banner: React.FC<BannerType> = ({ className, handleClick }) => (
+const Banner: React.FC<BannerType> = ({
+  name,
+  cardsTotal,
+  className,
+  handleClick,
+}) => (
   <div
     className={classnames(
       'banner',
       Array.isArray(className) ? className.join(' ') : className
     )}
   >
-    <h2 className="banner__title">
-      Hey Alexander!
-      <br />
-      There are 20 cards in the queue.
-    </h2>
+    <div className="banner__title">
+      <h2 data-testid="welcome">Hey {name}!</h2>
+      <p data-testid="cards-total">
+        There are {cardsTotal} cards in the queue.
+      </p>
+    </div>
     <div className="banner__text">
       <div className="banner__text__estimated">
         <IconClock fill="var(--gray700)" />
