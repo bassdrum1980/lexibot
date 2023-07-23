@@ -13,10 +13,11 @@
   &--pseudo,
   &--destructive {
     @include font-ui;
+    @include font-size-ui-sm;
     font-weight: $font-weight-bold;
-    @include font-size-ui;
     line-height: $line-height-24;
     text-align: center;
+    text-transform: uppercase;
     color: var(--primary1000);
 
     background-color: #fff;
@@ -28,17 +29,17 @@
     background-color: var(--primary1000);
   }
   &--tertiary {
-    border: solid $border-size-1 $border-color;
+    box-shadow: 0 0 0 $border-size-1 $border-color inset;
   }
   &--plain {
     color: var(--gray1000);
     font-weight: $font-weight-regular;
     background-color: transparent;
-    border: none;
+    box-shadow: none;
   }
   &--destructive {
     color: map.get($color-danger, 600);
-    border: solid $border-size-1 $border-color--danger;
+    box-shadow: 0 0 0 $border-size-1 $border-color--danger inset;
   }
   &--link,
   &--pseudo {
@@ -48,14 +49,14 @@
     line-height: $line-height-20;
     color: var(--gray1000);
     background-color: transparent;
-    border: none;
+    box-shadow: none;
     border-radius: 0;
   }
   &--icon {
     padding: 0;
     line-height: 0;
     background: transparent;
-    border: none;
+    box-shadow: none;
   }
 
   &--pseudo {
