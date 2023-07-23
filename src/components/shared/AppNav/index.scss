@@ -30,8 +30,8 @@
 
 .app-nav__close {
   position: absolute;
-  left: 0;
-  top: 0;
+  left: $spacing-px-6;
+  top: $spacing-px-6;
 
   @include button--icon;
 
