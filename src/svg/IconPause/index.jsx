@@ -17,8 +17,8 @@ const IconPause = ({ width = 20, height = 20 }) => (
     />
     <path
       stroke="var(--primary1000)"
-      stroke-linecap="round"
-      stroke-width="2"
+      strokeLinecap="round"
+      strokeWidth="2"
       d="M8 13V7M12 13V7"
     />
   </svg>
