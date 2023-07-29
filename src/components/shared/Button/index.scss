@@ -4,6 +4,7 @@
 
 .button {
   box-sizing: border-box;
+  border: none;
 
   // Styles
   &--primary,
@@ -21,7 +22,6 @@
     color: var(--primary1000);
 
     background-color: #fff;
-    border: none;
     border-radius: px-to-rem(9999px);
   }
   &--primary {
