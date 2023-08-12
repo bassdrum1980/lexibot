@@ -1,21 +1,20 @@
 import { useEffect } from 'react';
 import { Outlet, Navigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectUser, selectToken } from './user-slice';
+import { selectToken } from './user-slice';
 import { signinURL } from '../../routing.js';
 import { fetchUser } from 'features/user/user-slice-actions';
 
 const ProtectedRoute = () => {
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
-  const user = useSelector(selectUser);
 
   // Fetch profile
   useEffect(() => {
-    if (token && !user) {
+    if (token) {
       dispatch(fetchUser());
     }
-  }, [token, user, dispatch]);
+  }, [token, dispatch]);
 
   if (!token) {
     return <Navigate to={signinURL} />;
