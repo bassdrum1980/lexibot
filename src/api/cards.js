@@ -9,6 +9,7 @@ export const postCard = async ({ token, userId, word, attributes }) => {
     const response = await cardsInstance.post(
       '/',
       {
+        userId,
         word,
         attributes,
       },
