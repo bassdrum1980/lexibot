@@ -28,3 +28,4 @@ src/config/firebase.js
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
+*storybook.log
