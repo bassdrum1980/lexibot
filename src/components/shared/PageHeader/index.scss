@@ -1,5 +1,6 @@
 @import 'styles/variables.scss';
 @import 'styles/utility-mixins/';
+@import 'styles/mixins/';
 
 .page-header {
   // TODO:
@@ -26,11 +27,5 @@
 }
 
 .page-header__nav__btn {
-  padding: 0;
-  line-height: 0;
-
-  border: none;
-  background-color: transparent;
-
-  cursor: pointer;
+  @include button--icon;
 }

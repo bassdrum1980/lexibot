@@ -2,7 +2,7 @@
 @import 'styles/utility-mixins/index.scss';
 
 .progress {
-  border-radius: px-to-rem(9999px);
+  border-radius: $spacing-px-2;
 
   position: relative;
   height: $spacing-px-4;

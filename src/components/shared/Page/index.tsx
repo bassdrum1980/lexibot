@@ -13,7 +13,7 @@ const Page: React.FC<PageType> = ({ className, children }) => (
       Array.isArray(className) ? className.join(' ') : className
     )}
   >
-    <div className="page__content">{children}</div>
+    {children}
   </div>
 );
 

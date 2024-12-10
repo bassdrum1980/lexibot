@@ -8,3 +8,8 @@
   bottom: 0;
   z-index: $z-index-modal;
 }
+
+.modal--flex {
+  display: flex;
+  flex-direction: column;
+}
