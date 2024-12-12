@@ -21,7 +21,7 @@ type ButtonType = {
   children: React.ReactNode;
 };
 
-const Button = ({
+export const Button = ({
   type = 'button',
   size = 'm',
   width = 'fill',
@@ -46,6 +46,5 @@ const Button = ({
     {children}
   </button>
 );
-Button.displayName = 'Button';
 
 export default Button;
