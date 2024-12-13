@@ -1,0 +1,26 @@
+@use 'sass:map';
+@import 'styles/variables.scss';
+
+.storybook-bg-container {
+  margin-bottom: 1rem;
+  padding: 2rem;
+
+  display: flex;
+  justify-content: center;
+
+  &.storybook-bg-container--study {
+    background-color: map.get($color-primary--default, 1000);
+  }
+
+  &.storybook-bg-container--study-gray {
+    background-color: map.get($color-gray--default, 100);
+  }
+
+  &.storybook-bg-container--search {
+    background-color: map.get($color-primary--search, 1000);
+  }
+
+  &.storybook-bg-container--search-gray {
+    background-color: map.get($color-gray--search, 100);
+  }
+}
