@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import Button, { BUTTON_SIZES, BUTTON_WIDTHS } from './index';
+import { Button, BUTTON_SIZES, BUTTON_WIDTHS } from './button';
 import { StorybookBgContainer } from 'components';
 
 type Story = StoryObj<typeof Button>;
