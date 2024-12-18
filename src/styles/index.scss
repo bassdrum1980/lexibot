@@ -15,26 +15,29 @@ body {
     overflow-y: hidden;
   }
 
-  /* Color themes */
-  @include theme-to-custom-properties($color-flame, 'flame');
-
-  &.theme-default {
-    @include theme-to-custom-properties($color-gray--default, 'gray');
-    @include theme-to-custom-properties($color-primary--default, 'primary');
-    @include theme-to-custom-properties($color-gradient--default, 'gradient-');
-    @include theme-to-custom-properties($color-logo--default, 'logo');
-  }
-
-  &.theme-search {
-    @include theme-to-custom-properties($color-gray--search, 'gray');
-    @include theme-to-custom-properties($color-primary--search, 'primary');
-    @include theme-to-custom-properties($color-gradient--search, 'gradient-');
-    @include theme-to-custom-properties($color-logo--search, 'logo');
-  }
-
   /* Layout custom properties */
   --header-height: $header-height;
   --header-height--min: $header-height--min;
+}
+
+/* Color themes */
+.theme-default,
+.theme-search {
+  @include theme-to-custom-properties($color-flame, 'flame');
+}
+
+.theme-default {
+  @include theme-to-custom-properties($color-gray--default, 'gray');
+  @include theme-to-custom-properties($color-primary--default, 'primary');
+  @include theme-to-custom-properties($color-gradient--default, 'gradient-');
+  @include theme-to-custom-properties($color-logo--default, 'logo');
+}
+
+.theme-search {
+  @include theme-to-custom-properties($color-gray--search, 'gray');
+  @include theme-to-custom-properties($color-primary--search, 'primary');
+  @include theme-to-custom-properties($color-gradient--search, 'gradient-');
+  @include theme-to-custom-properties($color-logo--search, 'logo');
 }
 
 a {
