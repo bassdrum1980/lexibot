@@ -1,0 +1,20 @@
+@use 'sass:map';
+@import 'styles/variables.scss';
+
+.storybook-bg-container {
+  margin-bottom: 1rem;
+  padding: 2rem;
+
+  display: flex;
+  justify-content: center;
+
+  &.storybook-bg-container--default,
+  &.storybook-bg-container--search {
+    background: var(--gradient-primary);
+  }
+
+  &.storybook-bg-container--default-gray,
+  &.storybook-bg-container--search-gray {
+    background-color: var(--gray100);
+  }
+}
