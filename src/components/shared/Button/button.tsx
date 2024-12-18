@@ -5,19 +5,21 @@ import './index.scss';
 // Exporting for use in storybook
 export const BUTTON_SIZES = ['s', 'sm', 'm', 'l', 'inline'];
 export const BUTTON_WIDTHS = ['fill', 'hug'];
+export const BUTTON_STYLES = [
+  'primary',
+  'secondary',
+  'tertiary',
+  'plain',
+  'destructive',
+  'legend',
+  'link',
+  'pseudo',
+  'icon',
+];
 
 type ButtonSize = (typeof BUTTON_SIZES)[number];
 type ButtonWidth = (typeof BUTTON_WIDTHS)[number];
-type ButtonStyle =
-  | 'primary'
-  | 'secondary'
-  | 'tertiary'
-  | 'plain'
-  | 'destructive'
-  | 'legend'
-  | 'link'
-  | 'pseudo'
-  | 'icon';
+type ButtonStyle = (typeof BUTTON_STYLES)[number];
 
 interface ButtonType {
   type?: 'button' | 'reset' | 'submit';
@@ -29,16 +31,16 @@ interface ButtonType {
   children: React.ReactNode;
 }
 
-export const Button = ({
+export const Button: React.FC<ButtonType> = ({
   type = 'button',
-  btnStyle = 'primary',
-  size = 'm',
-  width = 'fill',
+  btnStyle = BUTTON_STYLES[0],
+  size = BUTTON_WIDTHS[2],
+  width = BUTTON_WIDTHS[0],
   className,
   onClick,
   children,
   ...rest
-}: ButtonType) => (
+}) => (
   <button
     type={type}
     onClick={onClick}
