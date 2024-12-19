@@ -27,7 +27,7 @@ export const FormGroup: Story = {
     isRequired: false,
     isValid: true,
     label: 'Label',
-    validationText: 'Required',
+    validationText: 'Note',
   },
   render: (args) => (
     <StorybookBgContainer>
