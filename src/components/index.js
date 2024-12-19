@@ -10,7 +10,7 @@ export {
   BUTTON_STYLES,
   BUTTON_WIDTHS,
 } from './shared/Button';
-export { ButtonLegend } from './shared/ButtonLegend';
+export { ButtonLegend, ButtonLegendType } from './shared/ButtonLegend';
 export { Controls } from './shared/Controls';
 export { FormGroup } from './shared/FormGroup';
 export { Input } from './shared/Input';

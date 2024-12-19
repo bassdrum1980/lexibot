@@ -5,7 +5,7 @@ import { StorybookBgContainer } from 'components';
 type Story = StoryObj<typeof Button>;
 
 const meta: Meta<typeof Button> = {
-  title: 'Components / Button',
+  title: 'Components / Shared / Button',
   component: Button,
   parameters: {
     controls: {
@@ -15,20 +15,26 @@ const meta: Meta<typeof Button> = {
   argTypes: {
     size: {
       control: 'select',
-      options: BUTTON_SIZES,
+      options: [
+        BUTTON_SIZES.SMALL,
+        BUTTON_SIZES.SMALL_MEDIUM,
+        BUTTON_SIZES.MEDIUM,
+        BUTTON_SIZES.LARGE,
+        BUTTON_SIZES.INLINE,
+      ],
     },
     width: {
       control: 'select',
-      options: BUTTON_WIDTHS,
+      options: [BUTTON_WIDTHS.FILL, BUTTON_WIDTHS.HUG],
     },
   },
 };
 
 export const Primary: Story = {
   args: {
-    size: BUTTON_SIZES[2],
-    width: BUTTON_WIDTHS[1],
-    btnStyle: BUTTON_STYLES[0],
+    size: BUTTON_SIZES.MEDIUM,
+    width: BUTTON_WIDTHS.HUG,
+    btnStyle: BUTTON_STYLES.PRIMARY,
   },
   render: (args) => (
     <StorybookBgContainer>
@@ -39,9 +45,9 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
   args: {
-    size: BUTTON_SIZES[2],
-    width: BUTTON_WIDTHS[1],
-    btnStyle: BUTTON_STYLES[1],
+    size: BUTTON_SIZES.MEDIUM,
+    width: BUTTON_WIDTHS.HUG,
+    btnStyle: BUTTON_STYLES.SECONDARY,
   },
   render: (args) => (
     <StorybookBgContainer>
@@ -52,9 +58,9 @@ export const Secondary: Story = {
 
 export const Tertiary: Story = {
   args: {
-    size: BUTTON_SIZES[2],
-    width: BUTTON_WIDTHS[1],
-    btnStyle: BUTTON_STYLES[2],
+    size: BUTTON_SIZES.MEDIUM,
+    width: BUTTON_WIDTHS.HUG,
+    btnStyle: BUTTON_STYLES.TERTIARY,
   },
   render: (args) => (
     <StorybookBgContainer>
@@ -65,9 +71,9 @@ export const Tertiary: Story = {
 
 export const Plain: Story = {
   args: {
-    size: BUTTON_SIZES[2],
-    width: BUTTON_WIDTHS[1],
-    btnStyle: BUTTON_STYLES[3],
+    size: BUTTON_SIZES.SMALL_MEDIUM,
+    width: BUTTON_WIDTHS.HUG,
+    btnStyle: BUTTON_STYLES.PLAIN,
   },
   render: (args) => (
     <StorybookBgContainer>
@@ -78,9 +84,9 @@ export const Plain: Story = {
 
 export const Destructive: Story = {
   args: {
-    size: BUTTON_SIZES[2],
-    width: BUTTON_WIDTHS[1],
-    btnStyle: BUTTON_STYLES[4],
+    size: BUTTON_SIZES.MEDIUM,
+    width: BUTTON_WIDTHS.HUG,
+    btnStyle: BUTTON_STYLES.DESTRUCTIVE,
   },
   render: (args) => (
     <StorybookBgContainer>
@@ -91,9 +97,9 @@ export const Destructive: Story = {
 
 export const Link: Story = {
   args: {
-    size: BUTTON_SIZES[4],
-    width: BUTTON_WIDTHS[1],
-    btnStyle: BUTTON_STYLES[6],
+    size: BUTTON_SIZES.INLINE,
+    width: BUTTON_WIDTHS.HUG,
+    btnStyle: BUTTON_STYLES.LINK,
   },
   render: (args) => (
     <StorybookBgContainer>
@@ -104,9 +110,9 @@ export const Link: Story = {
 
 export const Pseudo: Story = {
   args: {
-    size: BUTTON_SIZES[4],
-    width: BUTTON_WIDTHS[1],
-    btnStyle: BUTTON_STYLES[7],
+    size: BUTTON_SIZES.INLINE,
+    width: BUTTON_WIDTHS.HUG,
+    btnStyle: BUTTON_STYLES.PSEUDO,
   },
   render: (args) => (
     <StorybookBgContainer>
@@ -117,9 +123,9 @@ export const Pseudo: Story = {
 
 export const Icon: Story = {
   args: {
-    size: BUTTON_SIZES[2],
-    width: BUTTON_WIDTHS[1],
-    btnStyle: BUTTON_STYLES[8],
+    size: BUTTON_SIZES.MEDIUM,
+    width: BUTTON_WIDTHS.HUG,
+    btnStyle: BUTTON_STYLES.ICON,
   },
   render: (args) => (
     <StorybookBgContainer>

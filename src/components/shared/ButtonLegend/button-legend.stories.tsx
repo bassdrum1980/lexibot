@@ -6,7 +6,7 @@ import { StorybookBgContainer } from 'components';
 type Story = StoryObj<typeof ButtonLegend>;
 
 const meta: Meta<typeof ButtonLegend> = {
-  title: 'Components / Button w Legend',
+  title: 'Components / Shared / Button w Legend',
   component: ButtonLegend,
   parameters: {
     controls: {
@@ -16,12 +16,26 @@ const meta: Meta<typeof ButtonLegend> = {
   argTypes: {
     size: {
       control: 'select',
-      options: BUTTON_SIZES,
+      options: [
+        BUTTON_SIZES.SMALL,
+        BUTTON_SIZES.SMALL_MEDIUM,
+        BUTTON_SIZES.MEDIUM,
+        BUTTON_SIZES.LARGE,
+        BUTTON_SIZES.INLINE,
+      ],
     },
-    // убрать
     btnStyle: {
       control: 'select',
-      options: BUTTON_STYLES,
+      options: [
+        BUTTON_STYLES.PRIMARY,
+        BUTTON_STYLES.SECONDARY,
+        BUTTON_STYLES.TERTIARY,
+        BUTTON_STYLES.PLAIN,
+        BUTTON_STYLES.DESTRUCTIVE,
+        BUTTON_STYLES.LINK,
+        BUTTON_STYLES.PSEUDO,
+        BUTTON_STYLES.ICON,
+      ],
     },
   },
 };
@@ -29,9 +43,9 @@ const meta: Meta<typeof ButtonLegend> = {
 export const Legend: Story = {
   args: {
     legend: '3 days',
-    width: BUTTON_WIDTHS[1],
-    btnStyle: BUTTON_STYLES[2],
-    size: BUTTON_SIZES[1],
+    width: BUTTON_WIDTHS.HUG,
+    btnStyle: BUTTON_STYLES.TERTIARY,
+    size: BUTTON_SIZES.SMALL_MEDIUM,
   },
   render: (args) => (
     <StorybookBgContainer>

@@ -2,29 +2,35 @@ import React from 'react';
 import classnames from 'classnames';
 import './button.scss';
 
-// Exporting for use in storybook
-export const BUTTON_SIZES = ['s', 'sm', 'm', 'l', 'inline'];
-export const BUTTON_WIDTHS = ['fill', 'hug'];
-export const BUTTON_STYLES = [
-  'primary',
-  'secondary',
-  'tertiary',
-  'plain',
-  'destructive',
-  'link',
-  'pseudo',
-  'icon',
-];
+export enum BUTTON_SIZES {
+  SMALL = 's',
+  SMALL_MEDIUM = 'sm',
+  MEDIUM = 'm',
+  LARGE = 'l',
+  INLINE = 'inline',
+}
 
-type ButtonSize = (typeof BUTTON_SIZES)[number];
-type ButtonWidth = (typeof BUTTON_WIDTHS)[number];
-type ButtonStyle = (typeof BUTTON_STYLES)[number];
+export enum BUTTON_WIDTHS {
+  FILL = 'fill',
+  HUG = 'hug',
+}
+
+export enum BUTTON_STYLES {
+  PRIMARY = 'primary',
+  SECONDARY = 'secondary',
+  TERTIARY = 'tertiary',
+  PLAIN = 'plain',
+  DESTRUCTIVE = 'destructive',
+  LINK = 'link',
+  PSEUDO = 'pseudo',
+  ICON = 'icon',
+}
 
 export interface ButtonType {
   type?: 'button' | 'reset' | 'submit';
-  size?: ButtonSize;
-  width?: ButtonWidth;
-  btnStyle?: ButtonStyle;
+  size?: BUTTON_SIZES;
+  width?: BUTTON_WIDTHS;
+  btnStyle?: BUTTON_STYLES;
   className?: string | string[];
   onClick?: () => void;
   children: React.ReactNode;
@@ -32,9 +38,9 @@ export interface ButtonType {
 
 export const Button: React.FC<ButtonType> = ({
   type = 'button',
-  btnStyle = BUTTON_STYLES[0],
-  size = BUTTON_WIDTHS[2],
-  width = BUTTON_WIDTHS[0],
+  btnStyle = BUTTON_STYLES.PRIMARY,
+  size = BUTTON_SIZES.MEDIUM,
+  width = BUTTON_WIDTHS.FILL,
   className,
   onClick,
   children,

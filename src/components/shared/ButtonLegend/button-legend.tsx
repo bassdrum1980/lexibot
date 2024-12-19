@@ -1,4 +1,4 @@
-import { Button, ButtonType } from 'components';
+import { Button, ButtonType, BUTTON_SIZES, BUTTON_STYLES } from 'components';
 import './button-legend.scss';
 
 interface ButtonLegendType extends ButtonType {
@@ -12,8 +12,8 @@ export const ButtonLegend: React.FC<ButtonLegendType> = ({
 }) => (
   <Button
     className="button--legend"
-    size="sm"
-    btnStyle="tertiary"
+    size={BUTTON_SIZES.SMALL_MEDIUM}
+    btnStyle={BUTTON_STYLES.TERTIARY}
     {...rest}
   >
     {children}
