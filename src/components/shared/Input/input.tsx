@@ -1,5 +1,5 @@
 import classnames from 'classnames';
-import './index.scss';
+import './input.scss';
 
 export interface InputType {
   name: string;
