@@ -1,13 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Input } from './input';
+import { Input as InputComponent } from './input';
 import { StorybookBgContainer } from 'components';
-import { createImmutableStateInvariantMiddleware } from '@reduxjs/toolkit';
 
-type Story = StoryObj<typeof Input>;
+type Story = StoryObj<typeof InputComponent>;
 
-const meta: Meta<typeof Input> = {
+const meta: Meta<typeof InputComponent> = {
   title: 'Components / Shared / Input',
-  component: Input,
+  component: InputComponent,
   parameters: {
     controls: {
       include: ['isInvalid'],
@@ -20,14 +19,14 @@ const meta: Meta<typeof Input> = {
   },
 };
 
-export const InputField: Story = {
+export const Input: Story = {
   args: {
     isInvalid: false,
-    defaultValue: 'Default Value',
+    placeholder: 'Placeholder Value',
   },
   render: (args) => (
     <StorybookBgContainer>
-      <Input {...args}>Primary</Input>
+      <InputComponent {...args}>Primary</InputComponent>
     </StorybookBgContainer>
   ),
 };

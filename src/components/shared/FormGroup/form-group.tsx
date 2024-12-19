@@ -1,30 +1,21 @@
 import classnames from 'classnames';
-import PropTypes from 'prop-types';
+import './form-group.scss';
 
-import './index.scss';
+export interface FormGroupType {
+  label: string;
+  validationText?: string;
+  isRequired?: boolean;
+  isValid?: boolean;
+  className?: string | string[];
+  children: React.ReactNode;
+}
 
-const propTypes = {
-  label: PropTypes.string,
-  validationText: PropTypes.string,
-  isRequired: PropTypes.bool,
-  isValid: PropTypes.bool,
-  className: PropTypes.oneOfType([PropTypes.string, PropTypes.array]),
-};
-
-const defaultProps = {
-  label: '',
-  validationText: '',
-  isRequired: false,
-  isValid: true,
-  className: '',
-};
-
-export const FormGroup = ({
+export const FormGroup: React.FC<FormGroupType> = ({
   label,
-  validationText,
-  isRequired,
-  isValid,
-  className,
+  validationText = 'Required',
+  isRequired = false,
+  isValid = true,
+  className = '',
   children,
   ...rest
 }) => (
@@ -47,6 +38,3 @@ export const FormGroup = ({
     )}
   </div>
 );
-
-FormGroup.propTypes = propTypes;
-FormGroup.defaultProps = defaultProps;
