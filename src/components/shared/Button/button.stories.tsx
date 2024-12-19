@@ -7,13 +7,6 @@ type Story = StoryObj<typeof Button>;
 const meta: Meta<typeof Button> = {
   title: 'Components / Button',
   component: Button,
-  decorators: [
-    (Story) => (
-      <div style={{ padding: '1rem' }}>
-        <Story />
-      </div>
-    ),
-  ],
   parameters: {
     controls: {
       include: ['size', 'width'],

@@ -10,6 +10,13 @@ const preview = {
       },
     },
   },
+  decorators: [
+    (Story) => (
+      <div style={{ padding: '1rem' }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export default preview;

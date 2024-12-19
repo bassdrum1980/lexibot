@@ -3,7 +3,13 @@ export { Alert } from './shared/Alert';
 export { AppNav } from './shared/AppNav';
 export { BackNav } from './shared/BackNav';
 export { Backdrop } from './shared/Backdrop';
-export { Button } from './shared/Button';
+export {
+  Button,
+  ButtonType,
+  BUTTON_SIZES,
+  BUTTON_STYLES,
+  BUTTON_WIDTHS,
+} from './shared/Button';
 export { ButtonLegend } from './shared/ButtonLegend';
 export { Controls } from './shared/Controls';
 export { FormGroup } from './shared/FormGroup';

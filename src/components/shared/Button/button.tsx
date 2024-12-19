@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import './index.scss';
+import './button.scss';
 
 // Exporting for use in storybook
 export const BUTTON_SIZES = ['s', 'sm', 'm', 'l', 'inline'];
@@ -11,7 +11,6 @@ export const BUTTON_STYLES = [
   'tertiary',
   'plain',
   'destructive',
-  'legend',
   'link',
   'pseudo',
   'icon',
@@ -21,7 +20,7 @@ type ButtonSize = (typeof BUTTON_SIZES)[number];
 type ButtonWidth = (typeof BUTTON_WIDTHS)[number];
 type ButtonStyle = (typeof BUTTON_STYLES)[number];
 
-interface ButtonType {
+export interface ButtonType {
   type?: 'button' | 'reset' | 'submit';
   size?: ButtonSize;
   width?: ButtonWidth;
