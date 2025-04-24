@@ -1,4 +1,5 @@
-import { Button, ButtonType, BUTTON_SIZES, BUTTON_STYLES } from 'components';
+import { Button, BUTTON_SIZES, BUTTON_STYLES } from 'components';
+import { ButtonType } from '../Button';
 import './button-legend.scss';
 
 export interface ButtonLegendType extends ButtonType {

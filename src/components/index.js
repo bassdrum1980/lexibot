@@ -5,12 +5,11 @@ export { BackNav } from './shared/BackNav';
 export { Backdrop } from './shared/Backdrop';
 export {
   Button,
-  ButtonType,
   BUTTON_SIZES,
   BUTTON_STYLES,
   BUTTON_WIDTHS,
 } from './shared/Button';
-export { ButtonLegend, ButtonLegendType } from './shared/ButtonLegend';
+export { ButtonLegend } from './shared/ButtonLegend';
 export { Controls } from './shared/Controls';
 export { FormGroup } from './shared/FormGroup';
 export { Input } from './shared/Input';
